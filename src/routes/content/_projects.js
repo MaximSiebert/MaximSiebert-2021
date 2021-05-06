@@ -87,7 +87,7 @@ const content = [
 		title: 'Fabric',
 		role: 'Designer',
     year: '2018',
-    url: 'https://www.format.com/themes/search?utf8=%E2%9C%93&query=fabric'
+    url: 'https://www.format.com/website-templates/fabric'
   },
   {
 		title: 'Plaza Ventures',
@@ -99,7 +99,7 @@ const content = [
 		title: 'Spruce',
 		role: 'Designer + Developer',
     year: '2018',
-    url: 'https://www.format.com/themes/search?utf8=%E2%9C%93&query=spruce'
+    url: 'https://www.format.com/website-templates/spruce'
   },
   {
 		title: 'Viewport Design',
@@ -150,7 +150,7 @@ const content = [
     url: 'https://hairdresser-header-43444.netlify.app/'
   },
   {
-		title: 'Tachny.Tools',
+		title: 'Tachy.Tools',
 		role: 'Designer + Developer',
     year: '2017',
     url: 'http://blunt.af/tachy.tools/'

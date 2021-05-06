@@ -2,12 +2,12 @@ const content = [
   {
 		title: 'Peggy',
 		role: 'Principal Designer',
-    date: '11/2021 → Present',
+    date: '11/2020 → Present',
     url: 'https://peggy.com'
   },
   {
 		title: 'Blunt',
-		role: 'Founder + Creative Director',
+		role: 'Founder',
     date: '09/2017 → Present',
     url: 'https://blunt.af'
   },
