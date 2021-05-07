@@ -1,8 +1,8 @@
 {
-	"background_color": "#ffffff",
-	"theme_color": "#333333",
-	"name": "TODO",
-	"short_name": "TODO",
+	"background_color": "#f5f5f5",
+	"theme_color": "#141414",
+	"name": "Maxim Siebert",
+	"short_name": "Maxim Siebert",
 	"display": "minimal-ui",
 	"start_url": "/",
 	"icons": [
