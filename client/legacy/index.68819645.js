@@ -1,4 +1,4 @@
-import { r as regenerator, _ as _inherits, a as _getPrototypeOf, b as _possibleConstructorReturn, c as _classCallCheck, i as init, d as _assertThisInitialized, e as dispatch_dev, f as _createClass, S as SvelteComponentDev, v as validate_each_argument, s as safe_not_equal, g as element, t as text, h as space, j as claim_element, k as children, l as claim_text, m as detach_dev, n as claim_space, o as add_location, p as attr_dev, q as insert_dev, u as append_dev, w as set_data_dev, x as query_selector_all, y as _slicedToArray, z as noop, A as destroy_each, B as validate_slots } from './client.cf78f411.js';
+import { r as regenerator, _ as _inherits, a as _getPrototypeOf, b as _possibleConstructorReturn, c as _classCallCheck, i as init, d as _assertThisInitialized, e as dispatch_dev, f as _createClass, S as SvelteComponentDev, v as validate_each_argument, s as safe_not_equal, g as element, t as text, h as space, j as claim_element, k as children, l as claim_text, m as detach_dev, n as claim_space, o as add_location, p as attr_dev, q as insert_dev, u as append_dev, w as set_data_dev, x as query_selector_all, y as _slicedToArray, z as noop, A as destroy_each, B as validate_slots } from './client.a5edfaac.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -793,7 +793,7 @@ function create_fragment(ctx) {
       t35 = text(
       /*year*/
       ctx[6]);
-      t36 = text(" ©");
+      t36 = text("©");
       this.h();
     },
     l: function claim(nodes) {
@@ -1042,7 +1042,7 @@ function create_fragment(ctx) {
       t35 = claim_text(p11_nodes,
       /*year*/
       ctx[6]);
-      t36 = claim_text(p11_nodes, " ©");
+      t36 = claim_text(p11_nodes, "©");
       p11_nodes.forEach(detach_dev);
       div18_nodes.forEach(detach_dev);
       div19_nodes.forEach(detach_dev);
