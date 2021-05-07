@@ -1,4 +1,4 @@
-import { r as regenerator, _ as _inherits, a as _getPrototypeOf, b as _possibleConstructorReturn, c as _classCallCheck, i as init, d as _assertThisInitialized, e as dispatch_dev, f as _createClass, S as SvelteComponentDev, v as validate_each_argument, s as safe_not_equal, g as element, t as text, h as space, j as claim_element, k as children, l as claim_text, m as detach_dev, n as claim_space, o as add_location, p as attr_dev, q as insert_dev, u as append_dev, w as set_data_dev, x as query_selector_all, y as _slicedToArray, z as noop, A as destroy_each, B as validate_slots } from './client.46bb4cde.js';
+import { r as regenerator, _ as _inherits, a as _getPrototypeOf, b as _possibleConstructorReturn, c as _classCallCheck, i as init, d as _assertThisInitialized, e as dispatch_dev, f as _createClass, S as SvelteComponentDev, v as validate_each_argument, s as safe_not_equal, g as element, t as text, h as space, j as claim_element, k as children, l as claim_text, m as detach_dev, n as claim_space, o as add_location, p as attr_dev, q as insert_dev, u as append_dev, w as set_data_dev, x as query_selector_all, y as _slicedToArray, z as noop, A as destroy_each, B as validate_slots } from './client.c8a03453.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -797,7 +797,7 @@ function create_fragment(ctx) {
       t36 = text(
       /*year*/
       ctx[6]);
-      t37 = text("©");
+      t37 = text(" ©");
       this.h();
     },
     l: function claim(nodes) {
@@ -1051,7 +1051,7 @@ function create_fragment(ctx) {
       t36 = claim_text(p11_nodes,
       /*year*/
       ctx[6]);
-      t37 = claim_text(p11_nodes, "©");
+      t37 = claim_text(p11_nodes, " ©");
       p11_nodes.forEach(detach_dev);
       div19_nodes.forEach(detach_dev);
       div20_nodes.forEach(detach_dev);
@@ -1087,7 +1087,7 @@ function create_fragment(ctx) {
       add_location(div7, file, 89, 2, 3061);
       attr_dev(div8, "class", "w-full ml-auto md:w-8/12");
       add_location(div8, file, 92, 2, 3180);
-      attr_dev(section0, "class", "flex flex-wrap mb-4 sm:mb-8 md:mb-12");
+      attr_dev(section0, "class", "flex flex-wrap mb-5 sm:mb-8 md:mb-12");
       add_location(section0, file, 88, 1, 3004);
       add_location(p3, file, 111, 4, 3841);
       attr_dev(div9, "class", "w-4/12 px-4");
@@ -1104,7 +1104,7 @@ function create_fragment(ctx) {
       add_location(header1, file, 108, 1, 3735);
       attr_dev(div13, "class", "w-full ml-auto md:w-8/12");
       add_location(div13, file, 122, 2, 4101);
-      attr_dev(section1, "class", "flex flex-wrap mb-4 sm:mb-8 md:mb-12");
+      attr_dev(section1, "class", "flex flex-wrap mb-5 sm:mb-8 md:mb-12");
       add_location(section1, file, 121, 1, 4044);
       attr_dev(p6, "class", "mb-2");
       add_location(p6, file, 140, 3, 4773);
@@ -1131,7 +1131,7 @@ function create_fragment(ctx) {
       add_location(div19, file, 166, 3, 5742);
       attr_dev(div20, "class", "flex w-4/12 ml-auto sm:w-8/12");
       add_location(div20, file, 162, 2, 5613);
-      attr_dev(div21, "class", "flex pt-4 mt-auto text-gray-600 sm:pt-8 md:pt-12 dark:text-gray-400");
+      attr_dev(div21, "class", "flex pt-5 mt-auto text-gray-600 sm:pt-8 md:pt-12 dark:text-gray-400");
       add_location(div21, file, 158, 1, 5453);
       attr_dev(div22, "class", "flex flex-col min-h-screen py-4 text-xs bg-gray-100 lg:py-4 lg:px-4 dark:bg-black dark:text-white");
       add_location(div22, file, 67, 0, 2277);
