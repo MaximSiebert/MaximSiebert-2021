@@ -5,11 +5,13 @@
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
-    "export": "sapper export --legacy",
-    "start": "node __sapper__/build"
+    "export": "sapper export --basepath / --legacy",
+    "start": "node __sapper__/build",
+    "deploy": "npm run export && node ./scripts/gh-pages.js"
   },
   "dependencies": {
     "compression": "^1.7.1",
+    "gh-pages": "^3.1.0",
     "polka": "next",
     "sirv": "^1.0.0"
   },

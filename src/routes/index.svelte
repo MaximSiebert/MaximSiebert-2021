@@ -7,7 +7,16 @@
 		const getExperiences = await this.fetch(`content/experiences.json`);
 		const experiences = await getExperiences.json();
 
-		return { projects, experiences  }
+		const getCollaborators = await this.fetch(`content/collaborators.json`);
+		const collaborators = await getCollaborators.json();
+
+		const getServices = await this.fetch(`content/services.json`);
+		const services = await getServices.json();
+
+		const getLinks = await this.fetch(`content/links.json`);
+		const links = await getLinks.json();
+
+		return {projects, experiences, collaborators, services, links}
 
 	}
 </script>
@@ -15,6 +24,9 @@
 <script>
 	export let projects;
 	export let experiences;
+	export let collaborators;
+	export let services;
+	export let links;
 
 	var time = '';
 	var year = '';
@@ -50,13 +62,13 @@
 </script>
 
 <svelte:head>
-	<title>Maxim Siebert</title>
+	<title>Maxim Siebert – Designer & Developer</title>
 </svelte:head>
 
 <div class="flex flex-col min-h-screen py-4 text-xs bg-gray-100 lg:py-8 lg:px-4 dark:bg-black dark:text-white">
-	<div class="px-4 mb-4 lg:mb-8 loader"></div>
+	<!-- <div class="px-4 mb-4 lg:mb-8 loader"></div> -->
 	<header class="flex flex-wrap mb-2">
-		<div class="w-full px-4 mb-8 md:w-3/12 md:mb-0">
+		<div class="w-full px-4 mb-8 lg:w-3/12 md:w-4/12 md:mb-0">
 			<a href="/" class="inline-block mb-2 hover:underline md:mb-0">Maxim Siebert</a>
 			<div class="block text-gray-600 dark:text-gray-400 md:hidden">
 				{@html description}
@@ -75,7 +87,7 @@
 		</div>
 	</header>
 	<section class="flex flex-wrap mb-8 md:mb-12">
-		<div class="hidden w-3/12 px-4 text-gray-600 dark:text-gray-400 md:block">
+		<div class="hidden w-4/12 px-4 text-gray-600 lg:w-3/12 dark:text-gray-400 md:block">
 			{@html description}
 		</div>
 		<div class="w-full ml-auto md:w-8/12">
@@ -107,7 +119,7 @@
 			</div>
 		</div>
 	</header>
-	<section class="flex flex-wrap">
+	<section class="flex flex-wrap mb-8 md:mb-12">
 		<div class="w-full ml-auto md:w-8/12">
 			{#each experiences as experience}
 				<a class="flex block ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white" href="{experience.url}" target="_blank" rel="noreferrer noopener">
@@ -124,6 +136,26 @@
 			{/each}
 		</div>
 	</section>
+	<section class="flex flex-wrap w-full ml-auto md:w-8/12">
+		<div class="w-4/12 px-4">
+			<p class="mb-2">Services</p>
+			{#each services as service}
+				<p class="text-gray-600 dark:text-gray-400">{service.title}</p>
+			{/each}
+		</div>
+		<div class="hidden w-4/12 px-4 sm:block">
+			<p class="mb-2">Selected Collaborators</p>
+			{#each collaborators as collaborator}
+				<p class="text-gray-600 dark:text-gray-400">{collaborator.title}</p>
+			{/each}
+		</div>
+		<div class="w-8/12 px-4 text-right sm:w-4/12">
+			<p class="mb-2">Links</p>
+			{#each links as link}
+				<p><a href="{link.url}" class="text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white"  target="_blank" rel="noreferrer noopener">{link.title}</a></p>
+			{/each}
+		</div>
+	</section>
 	<div class="flex pt-8 mt-auto text-gray-600 md:pt-12 dark:text-gray-400">
 		<div class="w-8/12 px-4 sm:w-3/12">
 			<p>Ottawa – {time} ET</p>
@@ -133,7 +165,7 @@
 				<p>Updated 05/2021</p>
 			</div>
 			<div class="flex justify-end w-full px-4 sm:w-4/12">
-				<p>© 2011 – {year}</p>
+				<p>2011 – {year} ©</p>
 			</div>
 		</div>
 	</div>
