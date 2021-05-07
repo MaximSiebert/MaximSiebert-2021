@@ -1,4 +1,4 @@
-import { r as regenerator, _ as _inherits, a as _getPrototypeOf, b as _possibleConstructorReturn, c as _classCallCheck, i as init, d as _assertThisInitialized, e as dispatch_dev, f as _createClass, S as SvelteComponentDev, v as validate_each_argument, s as safe_not_equal, g as element, t as text, h as space, j as claim_element, k as children, l as claim_text, m as detach_dev, n as claim_space, o as add_location, p as attr_dev, q as insert_dev, u as append_dev, w as set_data_dev, x as query_selector_all, y as _slicedToArray, z as noop, A as destroy_each, B as validate_slots } from './client.29c08883.js';
+import { r as regenerator, _ as _inherits, a as _getPrototypeOf, b as _possibleConstructorReturn, c as _classCallCheck, i as init, d as _assertThisInitialized, e as dispatch_dev, f as _createClass, S as SvelteComponentDev, v as validate_each_argument, s as safe_not_equal, g as element, t as text, h as space, j as claim_element, k as children, l as claim_text, m as detach_dev, n as claim_space, o as add_location, p as attr_dev, q as insert_dev, u as append_dev, w as set_data_dev, x as query_selector_all, y as _slicedToArray, z as noop, A as destroy_each, B as validate_slots } from './client.8769e344.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -1532,7 +1532,7 @@ function instance($$self, $$props, $$invalidate) {
   var links = $$props.links;
   var time = "";
   var year = "";
-  var description = "is a French Canadian Designer & Developer. He's currently a Principal Designer at <a href=\"https://blunt.af/\" class=\"hover:text-black dark:hover:text-white hover:underline\" target=\"_blank\" rel=\"noreferrer noopener\">Peggy</a> and freelances through his studio <a href=\"https://blunt.af/\" class=\"hover:text-black dark:hover:text-white hover:underline\" target=\"_blank\" rel=\"noreferrer noopener\">Blunt</a>. This site lists most of the work he's done over the years, if you'd like to discuss new commissions or collaborate with Maxim email him at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:underline\">maxim@hey.com</a>.";
+  var description = "is a French Canadian designer & developer. He's currently a Principal Designer at <a href=\"https://blunt.af/\" class=\"hover:text-black dark:hover:text-white hover:underline\" target=\"_blank\" rel=\"noreferrer noopener\">Peggy</a> and freelances through his studio <a href=\"https://blunt.af/\" class=\"hover:text-black dark:hover:text-white hover:underline\" target=\"_blank\" rel=\"noreferrer noopener\">Blunt</a>. This site lists most of the work he's done over the years, if you'd like to discuss new commissions or collaborate with Maxim email him at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:underline\">maxim@hey.com</a>.";
 
   function updateClock() {
     var now = new Date(),
