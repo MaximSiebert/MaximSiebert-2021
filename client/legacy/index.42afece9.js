@@ -1,5 +1,40 @@
-import { r as regenerator, _ as _inherits, a as _getPrototypeOf, b as _possibleConstructorReturn, c as _classCallCheck, i as init, d as _assertThisInitialized, e as dispatch_dev, f as _createClass, S as SvelteComponentDev, v as validate_each_argument, s as safe_not_equal, g as element, t as text, h as space, j as claim_element, k as children, l as claim_text, m as detach_dev, n as claim_space, o as add_location, p as attr_dev, q as insert_dev, u as append_dev, w as set_data_dev, x as query_selector_all, y as _slicedToArray, z as noop, A as destroy_each, B as validate_slots } from './client.bee22309.js';
-import { _ as _asyncToGenerator } from './asyncToGenerator.5229e80b.js';
+import { r as regenerator, _ as _inherits, a as _getPrototypeOf, b as _possibleConstructorReturn, c as _classCallCheck, i as init, d as _assertThisInitialized, e as dispatch_dev, f as _createClass, S as SvelteComponentDev, v as validate_each_argument, s as safe_not_equal, g as element, t as text, h as space, j as claim_element, k as children, l as claim_text, m as detach_dev, n as claim_space, o as add_location, p as attr_dev, q as insert_dev, u as append_dev, w as set_data_dev, x as query_selector_all, y as _slicedToArray, z as noop, A as destroy_each, B as validate_slots } from './client.cf78f411.js';
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
+
+function _asyncToGenerator(fn) {
+  return function () {
+    var self = this,
+        args = arguments;
+    return new Promise(function (resolve, reject) {
+      var gen = fn.apply(self, args);
+
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+
+      _next(undefined);
+    });
+  };
+}
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
@@ -421,7 +456,7 @@ function create_each_block_1(ctx) {
     },
     h: function hydrate() {
       attr_dev(p, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p, file, 148, 4, 5039);
+      add_location(p, file, 148, 4, 5033);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -486,8 +521,8 @@ function create_each_block(ctx) {
       attr_dev(a, "class", "text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 154, 7, 5238);
-      add_location(p, file, 154, 4, 5235);
+      add_location(a, file, 154, 7, 5232);
+      add_location(p, file, 154, 4, 5229);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -720,7 +755,7 @@ function create_fragment(ctx) {
       t21 = space();
       div14 = element("div");
       p7 = element("p");
-      t22 = text("Selected Collaborators");
+      t22 = text("Selected Clients");
       t23 = space();
 
       for (var _i8 = 0; _i8 < each_blocks_1.length; _i8 += 1) {
@@ -936,7 +971,7 @@ function create_fragment(ctx) {
         class: true
       });
       var p7_nodes = children(p7);
-      t22 = claim_text(p7_nodes, "Selected Collaborators");
+      t22 = claim_text(p7_nodes, "Selected Clients");
       p7_nodes.forEach(detach_dev);
       t23 = claim_space(div14_nodes);
 
@@ -1069,24 +1104,24 @@ function create_fragment(ctx) {
       attr_dev(div14, "class", "hidden w-4/12 px-4 sm:block");
       add_location(div14, file, 145, 2, 4906);
       attr_dev(p8, "class", "mb-2");
-      add_location(p8, file, 152, 3, 5180);
+      add_location(p8, file, 152, 3, 5174);
       attr_dev(div15, "class", "w-8/12 px-4 text-right sm:w-4/12");
-      add_location(div15, file, 151, 2, 5130);
+      add_location(div15, file, 151, 2, 5124);
       attr_dev(section2, "class", "flex flex-wrap w-full ml-auto md:w-8/12");
       add_location(section2, file, 138, 1, 4667);
-      add_location(p9, file, 160, 3, 5567);
+      add_location(p9, file, 160, 3, 5561);
       attr_dev(div16, "class", "w-8/12 px-4 sm:w-3/12");
-      add_location(div16, file, 159, 2, 5528);
-      add_location(p10, file, 164, 4, 5697);
+      add_location(div16, file, 159, 2, 5522);
+      add_location(p10, file, 164, 4, 5691);
       attr_dev(div17, "class", "hidden w-8/12 px-4 sm:block");
-      add_location(div17, file, 163, 3, 5651);
-      add_location(p11, file, 167, 4, 5790);
+      add_location(div17, file, 163, 3, 5645);
+      add_location(p11, file, 167, 4, 5784);
       attr_dev(div18, "class", "flex justify-end w-full px-4 sm:w-4/12");
-      add_location(div18, file, 166, 3, 5733);
+      add_location(div18, file, 166, 3, 5727);
       attr_dev(div19, "class", "flex w-4/12 ml-auto sm:w-8/12");
-      add_location(div19, file, 162, 2, 5604);
+      add_location(div19, file, 162, 2, 5598);
       attr_dev(div20, "class", "flex pt-8 mt-auto text-gray-600 md:pt-12 dark:text-gray-400");
-      add_location(div20, file, 158, 1, 5452);
+      add_location(div20, file, 158, 1, 5446);
       attr_dev(div21, "class", "flex flex-col min-h-screen py-4 text-xs bg-gray-100 lg:py-8 lg:px-4 dark:bg-black dark:text-white");
       add_location(div21, file, 67, 0, 2277);
     },
