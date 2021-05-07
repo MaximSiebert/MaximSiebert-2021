@@ -1,4 +1,4 @@
-import { r as regenerator, _ as _inherits, a as _getPrototypeOf, b as _possibleConstructorReturn, c as _classCallCheck, i as init, d as _assertThisInitialized, e as dispatch_dev, f as _createClass, S as SvelteComponentDev, v as validate_each_argument, s as safe_not_equal, g as element, t as text, h as space, j as claim_element, k as children, l as claim_text, m as detach_dev, n as claim_space, o as add_location, p as attr_dev, q as insert_dev, u as append_dev, w as set_data_dev, x as query_selector_all, y as _slicedToArray, z as noop, A as destroy_each, B as validate_slots } from './client.a5edfaac.js';
+import { r as regenerator, _ as _inherits, a as _getPrototypeOf, b as _possibleConstructorReturn, c as _classCallCheck, i as init, d as _assertThisInitialized, e as dispatch_dev, f as _createClass, S as SvelteComponentDev, v as validate_each_argument, s as safe_not_equal, g as element, t as text, h as space, j as claim_element, k as children, l as claim_text, m as detach_dev, n as claim_space, o as add_location, p as attr_dev, q as insert_dev, u as append_dev, w as set_data_dev, x as query_selector_all, y as _slicedToArray, z as noop, A as destroy_each, B as validate_slots } from './client.96577d7c.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -155,22 +155,22 @@ function create_each_block_4(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file, 96, 6, 3474);
-      attr_dev(div0, "class", "w-4/12 px-4");
-      add_location(div0, file, 95, 5, 3442);
-      add_location(p1, file, 99, 6, 3562);
+      add_location(p0, file, 96, 6, 3503);
+      attr_dev(div0, "class", "w-8/12 px-4 sm:w-4/12");
+      add_location(div0, file, 95, 5, 3461);
+      add_location(p1, file, 99, 6, 3591);
       attr_dev(div1, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div1, file, 98, 5, 3514);
-      add_location(p2, file, 102, 6, 3660);
-      attr_dev(div2, "class", "flex justify-end w-8/12 px-4 sm:w-4/12");
-      add_location(div2, file, 101, 5, 3601);
+      add_location(div1, file, 98, 5, 3543);
+      add_location(p2, file, 102, 6, 3679);
+      attr_dev(div2, "class", "flex justify-end w-4/12 px-4");
+      add_location(div2, file, 101, 5, 3630);
       attr_dev(a, "class", "flex block ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "href", a_href_value =
       /*project*/
       ctx[21].url);
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 94, 4, 3255);
+      add_location(a, file, 94, 4, 3274);
     },
     m: function mount(target, anchor) {
       insert_dev(target, a, anchor);
@@ -310,22 +310,22 @@ function create_each_block_3(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file, 126, 6, 4396);
+      add_location(p0, file, 126, 6, 4423);
       attr_dev(div0, "class", "w-4/12 px-4");
-      add_location(div0, file, 125, 5, 4364);
-      add_location(p1, file, 129, 6, 4487);
+      add_location(div0, file, 125, 5, 4391);
+      add_location(p1, file, 129, 6, 4514);
       attr_dev(div1, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div1, file, 128, 5, 4439);
-      add_location(p2, file, 132, 6, 4588);
+      add_location(div1, file, 128, 5, 4466);
+      add_location(p2, file, 132, 6, 4615);
       attr_dev(div2, "class", "flex justify-end w-8/12 px-4 sm:w-4/12");
-      add_location(div2, file, 131, 5, 4529);
+      add_location(div2, file, 131, 5, 4556);
       attr_dev(a, "class", "flex block ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "href", a_href_value =
       /*experience*/
       ctx[18].url);
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 124, 4, 4174);
+      add_location(a, file, 124, 4, 4201);
     },
     m: function mount(target, anchor) {
       insert_dev(target, a, anchor);
@@ -405,7 +405,7 @@ function create_each_block_2(ctx) {
     },
     h: function hydrate() {
       attr_dev(p, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p, file, 142, 4, 4820);
+      add_location(p, file, 142, 4, 4857);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -456,7 +456,7 @@ function create_each_block_1(ctx) {
     },
     h: function hydrate() {
       attr_dev(p, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p, file, 148, 4, 5033);
+      add_location(p, file, 148, 4, 5070);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -521,8 +521,8 @@ function create_each_block(ctx) {
       attr_dev(a, "class", "text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 154, 7, 5232);
-      add_location(p, file, 154, 4, 5229);
+      add_location(a, file, 154, 7, 5259);
+      add_location(p, file, 154, 4, 5256);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -1054,74 +1054,74 @@ function create_fragment(ctx) {
       document.title = "Maxim Siebert – Designer & Developer";
       attr_dev(a, "href", "/");
       attr_dev(a, "class", "inline-block mb-2 hover:underline md:mb-0");
-      add_location(a, file, 71, 3, 2546);
+      add_location(a, file, 71, 3, 2557);
       attr_dev(div0, "class", "block text-gray-600 dark:text-gray-400 md:hidden");
-      add_location(div0, file, 72, 3, 2629);
-      attr_dev(div1, "class", "w-full px-4 mb-8 lg:w-3/12 md:w-4/12 md:mb-0");
-      add_location(div1, file, 70, 2, 2484);
-      add_location(p0, file, 78, 4, 2814);
+      add_location(div0, file, 72, 3, 2640);
+      attr_dev(div1, "class", "w-full px-4 mb-4 sm:mb-8 lg:w-3/12 md:w-4/12 md:mb-0");
+      add_location(div1, file, 70, 2, 2487);
+      add_location(p0, file, 78, 4, 2825);
       attr_dev(div2, "class", "w-4/12 px-4");
-      add_location(div2, file, 77, 3, 2784);
-      add_location(p1, file, 81, 4, 2888);
+      add_location(div2, file, 77, 3, 2795);
+      add_location(p1, file, 81, 4, 2899);
       attr_dev(div3, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div3, file, 80, 3, 2842);
-      add_location(p2, file, 84, 4, 2970);
+      add_location(div3, file, 80, 3, 2853);
+      add_location(p2, file, 84, 4, 2981);
       attr_dev(div4, "class", "flex justify-end w-8/12 px-4 sm:w-4/12");
-      add_location(div4, file, 83, 3, 2913);
+      add_location(div4, file, 83, 3, 2924);
       attr_dev(div5, "class", "flex w-full ml-auto md:w-8/12");
-      add_location(div5, file, 76, 2, 2737);
+      add_location(div5, file, 76, 2, 2748);
       attr_dev(header0, "class", "flex flex-wrap mb-2");
-      add_location(header0, file, 69, 1, 2445);
+      add_location(header0, file, 69, 1, 2448);
       attr_dev(div6, "class", "hidden w-4/12 px-4 text-gray-600 lg:w-3/12 dark:text-gray-400 md:block");
-      add_location(div6, file, 89, 2, 3062);
+      add_location(div6, file, 89, 2, 3081);
       attr_dev(div7, "class", "w-full ml-auto md:w-8/12");
-      add_location(div7, file, 92, 2, 3181);
-      attr_dev(section0, "class", "flex flex-wrap mb-8 md:mb-12");
-      add_location(section0, file, 88, 1, 3013);
-      add_location(p3, file, 111, 4, 3842);
+      add_location(div7, file, 92, 2, 3200);
+      attr_dev(section0, "class", "flex flex-wrap mb-4 sm:mb-8 md:mb-12");
+      add_location(section0, file, 88, 1, 3024);
+      add_location(p3, file, 111, 4, 3861);
       attr_dev(div8, "class", "w-4/12 px-4");
-      add_location(div8, file, 110, 3, 3812);
-      add_location(p4, file, 114, 4, 3919);
+      add_location(div8, file, 110, 3, 3831);
+      add_location(p4, file, 114, 4, 3938);
       attr_dev(div9, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div9, file, 113, 3, 3873);
-      add_location(p5, file, 117, 4, 4002);
+      add_location(div9, file, 113, 3, 3892);
+      add_location(p5, file, 117, 4, 4021);
       attr_dev(div10, "class", "flex justify-end w-8/12 px-4 sm:w-4/12");
-      add_location(div10, file, 116, 3, 3945);
+      add_location(div10, file, 116, 3, 3964);
       attr_dev(div11, "class", "flex w-full ml-auto md:w-8/12");
-      add_location(div11, file, 109, 2, 3765);
+      add_location(div11, file, 109, 2, 3784);
       attr_dev(header1, "class", "flex mb-2");
-      add_location(header1, file, 108, 1, 3736);
+      add_location(header1, file, 108, 1, 3755);
       attr_dev(div12, "class", "w-full ml-auto md:w-8/12");
-      add_location(div12, file, 122, 2, 4094);
-      attr_dev(section1, "class", "flex flex-wrap mb-8 md:mb-12");
-      add_location(section1, file, 121, 1, 4045);
+      add_location(div12, file, 122, 2, 4121);
+      attr_dev(section1, "class", "flex flex-wrap mb-4 sm:mb-8 md:mb-12");
+      add_location(section1, file, 121, 1, 4064);
       attr_dev(p6, "class", "mb-2");
-      add_location(p6, file, 140, 3, 4756);
-      attr_dev(div13, "class", "w-4/12 px-4");
-      add_location(div13, file, 139, 2, 4727);
+      add_location(p6, file, 140, 3, 4793);
+      attr_dev(div13, "class", "w-8/12 px-4 sm:w-4/12");
+      add_location(div13, file, 139, 2, 4754);
       attr_dev(p7, "class", "mb-2");
-      add_location(p7, file, 146, 3, 4951);
+      add_location(p7, file, 146, 3, 4988);
       attr_dev(div14, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div14, file, 145, 2, 4906);
+      add_location(div14, file, 145, 2, 4943);
       attr_dev(p8, "class", "mb-2");
-      add_location(p8, file, 152, 3, 5174);
-      attr_dev(div15, "class", "w-8/12 px-4 text-right sm:w-4/12");
-      add_location(div15, file, 151, 2, 5124);
+      add_location(p8, file, 152, 3, 5201);
+      attr_dev(div15, "class", "w-4/12 px-4 text-right");
+      add_location(div15, file, 151, 2, 5161);
       attr_dev(section2, "class", "flex flex-wrap w-full ml-auto md:w-8/12");
-      add_location(section2, file, 138, 1, 4667);
-      add_location(p9, file, 160, 3, 5561);
+      add_location(section2, file, 138, 1, 4694);
+      add_location(p9, file, 160, 3, 5596);
       attr_dev(div16, "class", "w-8/12 px-4 sm:w-3/12");
-      add_location(div16, file, 159, 2, 5522);
-      add_location(p10, file, 164, 4, 5691);
+      add_location(div16, file, 159, 2, 5557);
+      add_location(p10, file, 164, 4, 5726);
       attr_dev(div17, "class", "hidden w-8/12 px-4 sm:block");
-      add_location(div17, file, 163, 3, 5645);
-      add_location(p11, file, 167, 4, 5784);
+      add_location(div17, file, 163, 3, 5680);
+      add_location(p11, file, 167, 4, 5819);
       attr_dev(div18, "class", "flex justify-end w-full px-4 sm:w-4/12");
-      add_location(div18, file, 166, 3, 5727);
+      add_location(div18, file, 166, 3, 5762);
       attr_dev(div19, "class", "flex w-4/12 ml-auto sm:w-8/12");
-      add_location(div19, file, 162, 2, 5598);
-      attr_dev(div20, "class", "flex pt-8 mt-auto text-gray-600 md:pt-12 dark:text-gray-400");
-      add_location(div20, file, 158, 1, 5446);
+      add_location(div19, file, 162, 2, 5633);
+      attr_dev(div20, "class", "flex pt-4 mt-auto text-gray-600 sm:pt-8 md:pt-12 dark:text-gray-400");
+      add_location(div20, file, 158, 1, 5473);
       attr_dev(div21, "class", "flex flex-col min-h-screen py-4 text-xs bg-gray-100 lg:py-8 lg:px-4 dark:bg-black dark:text-white");
       add_location(div21, file, 67, 0, 2277);
     },
