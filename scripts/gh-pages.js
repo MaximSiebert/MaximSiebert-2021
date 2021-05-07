@@ -7,7 +7,7 @@ ghpages.publish(
         repo: 'https://github.com/MaximSiebert/MaximSiebert-2021.git',
         user: {
             name: 'Maxim Siebert',
-            email: 'maxim@hey.com'
+            email: 'maxim.siebert@gmail.com'
         }
     },
     () => {
