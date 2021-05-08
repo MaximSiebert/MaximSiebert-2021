@@ -72,6 +72,12 @@ const content = [
     url: 'https://www.figma.com/file/fHNJQ0LVE1xVWdXsAW7ThW/Ada-Brand?node-id=1%3A3740'
   },
   {
+		title: 'Maxim Siebert',
+		role: 'Designer & Developer',
+    year: '2018',
+    url: 'https://maximsiebert.github.io/maximsiebert/'
+  },
+  {
 		title: 'Nice Sites',
 		role: 'Designer + Developer',
     year: '2018',

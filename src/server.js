@@ -10,7 +10,6 @@ const url = dev ? '/' : 'MaximSiebert-2021'; // <<-
 
 polka() // You can also use Express
 	.use(
-		'MaximSiebert-2021',
 		compression({ threshold: 0 }),
 		sirv('static', { dev }),
 		sapper.middleware()
