@@ -170,11 +170,3 @@
 		</div>
 	</div>
 </div>
-
-<!-- {#each projects as project}
-	{project.title}
-	{project.role}
-	{project.year}
-	{project.url}
-	<br>
-{/each} -->
