@@ -1909,7 +1909,7 @@ function create_if_block$1(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(pre, file, 21, 3, 521);
+      add_location(pre, file, 21, 3, 550);
     },
     m: function mount(target, anchor) {
       insert_dev(target, pre, anchor);
@@ -1939,10 +1939,10 @@ function create_if_block$1(ctx) {
 function create_fragment$1(ctx) {
   var title_value;
   var t0;
-  var div2;
-  var div0;
-  var t1;
   var div1;
+  var a;
+  var t1;
+  var div0;
   var h1;
   var t2;
   var t3;
@@ -1960,10 +1960,10 @@ function create_fragment$1(ctx) {
   var block = {
     c: function create() {
       t0 = space();
-      div2 = element("div");
-      div0 = element("div");
-      t1 = space();
       div1 = element("div");
+      a = element("a");
+      t1 = space();
+      div0 = element("div");
       h1 = element("h1");
       t2 = text(
       /*status*/
@@ -1979,20 +1979,21 @@ function create_fragment$1(ctx) {
       var head_nodes = query_selector_all("[data-svelte=\"svelte-1e46zjp\"]", document.head);
       head_nodes.forEach(detach_dev);
       t0 = claim_space(nodes);
-      div2 = claim_element(nodes, "DIV", {
-        class: true
-      });
-      var div2_nodes = children(div2);
-      div0 = claim_element(div2_nodes, "DIV", {
-        class: true
-      });
-      children(div0).forEach(detach_dev);
-      t1 = claim_space(div2_nodes);
-      div1 = claim_element(div2_nodes, "DIV", {
+      div1 = claim_element(nodes, "DIV", {
         class: true
       });
       var div1_nodes = children(div1);
-      h1 = claim_element(div1_nodes, "H1", {
+      a = claim_element(div1_nodes, "A", {
+        href: true,
+        class: true
+      });
+      children(a).forEach(detach_dev);
+      t1 = claim_space(div1_nodes);
+      div0 = claim_element(div1_nodes, "DIV", {
+        class: true
+      });
+      var div0_nodes = children(div0);
+      h1 = claim_element(div0_nodes, "H1", {
         class: true
       });
       var h1_nodes = children(h1);
@@ -2000,44 +2001,45 @@ function create_fragment$1(ctx) {
       /*status*/
       ctx[0]);
       h1_nodes.forEach(detach_dev);
-      t3 = claim_space(div1_nodes);
-      p = claim_element(div1_nodes, "P", {
+      t3 = claim_space(div0_nodes);
+      p = claim_element(div0_nodes, "P", {
         class: true
       });
       var p_nodes = children(p);
       t4 = claim_text(p_nodes, "Ceci n'est pas une page.");
       p_nodes.forEach(detach_dev);
-      t5 = claim_space(div1_nodes);
-      if (if_block) if_block.l(div1_nodes);
+      t5 = claim_space(div0_nodes);
+      if (if_block) if_block.l(div0_nodes);
+      div0_nodes.forEach(detach_dev);
       div1_nodes.forEach(detach_dev);
-      div2_nodes.forEach(detach_dev);
       this.h();
     },
     h: function hydrate() {
-      attr_dev(div0, "class", "px-4 mb-5 loader");
-      add_location(div0, file, 13, 1, 283);
+      attr_dev(a, "href", "/");
+      attr_dev(a, "class", "self-start inline-block px-4 mb-5 loader");
+      add_location(a, file, 13, 1, 283);
       attr_dev(h1, "class", "mb-1 sm:mb-2");
-      add_location(h1, file, 15, 2, 342);
+      add_location(h1, file, 15, 2, 371);
       attr_dev(p, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p, file, 16, 2, 383);
-      attr_dev(div1, "class", "px-4");
-      add_location(div1, file, 14, 1, 321);
-      attr_dev(div2, "class", "flex flex-col min-h-screen py-5 text-xs bg-gray-100 lg:px-4 dark:bg-black dark:text-white");
-      add_location(div2, file, 12, 0, 178);
+      add_location(p, file, 16, 2, 412);
+      attr_dev(div0, "class", "px-4");
+      add_location(div0, file, 14, 1, 350);
+      attr_dev(div1, "class", "flex flex-col min-h-screen py-5 text-xs bg-gray-100 lg:px-4 dark:bg-black dark:text-white");
+      add_location(div1, file, 12, 0, 178);
     },
     m: function mount(target, anchor) {
       insert_dev(target, t0, anchor);
-      insert_dev(target, div2, anchor);
-      append_dev(div2, div0);
-      append_dev(div2, t1);
-      append_dev(div2, div1);
-      append_dev(div1, h1);
+      insert_dev(target, div1, anchor);
+      append_dev(div1, a);
+      append_dev(div1, t1);
+      append_dev(div1, div0);
+      append_dev(div0, h1);
       append_dev(h1, t2);
-      append_dev(div1, t3);
-      append_dev(div1, p);
+      append_dev(div0, t3);
+      append_dev(div0, p);
       append_dev(p, t4);
-      append_dev(div1, t5);
-      if (if_block) if_block.m(div1, null);
+      append_dev(div0, t5);
+      if (if_block) if_block.m(div0, null);
     },
     p: function update(ctx, _ref) {
       var _ref2 = _slicedToArray(_ref, 1),
@@ -2067,7 +2069,7 @@ function create_fragment$1(ctx) {
         } else {
           if_block = create_if_block$1(ctx);
           if_block.c();
-          if_block.m(div1, null);
+          if_block.m(div0, null);
         }
       } else if (if_block) {
         if_block.d(1);
@@ -2078,7 +2080,7 @@ function create_fragment$1(ctx) {
     o: noop,
     d: function destroy(detaching) {
       if (detaching) detach_dev(t0);
-      if (detaching) detach_dev(div2);
+      if (detaching) detach_dev(div1);
       if (if_block) if_block.d();
     }
   };
@@ -2726,7 +2728,7 @@ var App = /*#__PURE__*/function (_SvelteComponentDev) {
 var ignore = [/^\/content\/collaborators\.json$/, /^\/content\/experiences\.json$/, /^\/content\/projects\.json$/, /^\/content\/services\.json$/, /^\/content\/links\.json$/];
 var components = [{
   js: function js() {
-    return Promise.all([import('./index.ac57aca2.js'), __inject_styles(["client-6979b1e4.css"])]).then(function(x) { return x[0]; });
+    return Promise.all([import('./index.8a6cb154.js'), __inject_styles(["client-6979b1e4.css"])]).then(function(x) { return x[0]; });
   }
 }];
 var routes = [{
