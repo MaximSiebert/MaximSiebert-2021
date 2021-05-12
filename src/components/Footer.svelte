@@ -1,18 +1,8 @@
 <script>
-    import { onMount } from "svelte";
-    let updatedDate;
+    import fetch from 'cross-fetch';
 
-    onMount(async () => {
-		fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`, {
-            headers: {
-                'Accept' : 'application/vnd.github.v3+json'
-            }
-        })
-        .then(r => r.json())
-        .then(data => {
-            updatedDate = data.commit.commit.author.date;
-        });
-	});
+    let promise = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)
+    .then(r => r.json());
 
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -53,7 +43,15 @@
     </div>
     <div class="flex w-4/12 ml-auto sm:w-8/12">
         <div class="hidden w-8/12 px-4 sm:block">
-            <p>Updated – {monthNames[new Date(updatedDate).getMonth()]} {new Date(updatedDate).getFullYear()}</p>
+            <p>
+                {#await promise}
+                
+                {:then data}
+                    Updated – 
+                    {monthNames[new Date(data.commit.commit.author.date).getMonth()]}
+                    {new Date(data.commit.commit.author.date).getFullYear()}
+                {/await}
+            </p>
         </div>
         <div class="flex justify-end w-full px-4 sm:w-4/12">
             <p>2011 – {year} ©</p>
