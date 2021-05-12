@@ -53,7 +53,7 @@
     </div>
     <div class="flex w-4/12 ml-auto sm:w-8/12">
         <div class="hidden w-8/12 px-4 sm:block">
-            <p>Updated {monthNames[new Date(updatedDate).getMonth()]} {new Date(updatedDate).getFullYear()}</p>
+            <p>Updated – {monthNames[new Date(updatedDate).getMonth()]} {new Date(updatedDate).getFullYear()}</p>
         </div>
         <div class="flex justify-end w-full px-4 sm:w-4/12">
             <p>2011 – {year} ©</p>
