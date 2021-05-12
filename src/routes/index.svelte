@@ -1,6 +1,5 @@
 <script context="module">
-	export async function preload({ params, query }) {
-
+	export async function preload() {
 		const getProjects = await this.fetch(`content/projects.json`);
 		const projects = await getProjects.json();
 
@@ -17,7 +16,6 @@
 		const links = await getLinks.json();
 
 		return {projects, experiences, collaborators, services, links}
-
 	}
 </script>
 
