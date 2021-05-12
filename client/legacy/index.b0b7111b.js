@@ -1,4 +1,4 @@
-import { _ as _inherits, a as _getPrototypeOf, b as _possibleConstructorReturn, c as _classCallCheck, i as init, s as safe_not_equal, d as _assertThisInitialized, e as dispatch_dev, S as SvelteComponentDev, v as validate_slots, o as onMount, f as element, t as text, g as space, h as claim_element, j as children, k as claim_text, l as detach_dev, m as claim_space, n as add_location, p as attr_dev, q as insert_dev, r as append_dev, u as _slicedToArray, w as set_data_dev, x as noop, y as regenerator, z as _createClass, A as validate_each_argument, B as create_component, C as query_selector_all, D as claim_component, E as mount_component, F as transition_in, G as transition_out, H as destroy_each, I as destroy_component } from './client.131e3278.js';
+import { _ as _inherits, a as _getPrototypeOf, b as _possibleConstructorReturn, c as _classCallCheck, i as init, s as safe_not_equal, d as _assertThisInitialized, e as dispatch_dev, S as SvelteComponentDev, v as validate_slots, o as onMount, f as element, t as text, g as space, h as claim_element, j as children, k as claim_text, l as detach_dev, m as claim_space, n as add_location, p as attr_dev, q as insert_dev, r as append_dev, u as _slicedToArray, w as set_data_dev, x as noop, y as regenerator, z as _createClass, A as validate_each_argument, B as create_component, C as query_selector_all, D as claim_component, E as mount_component, F as transition_in, G as transition_out, H as destroy_each, I as destroy_component } from './client.60446ba7.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -152,19 +152,19 @@ function create_fragment$1(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file$1, 51, 8, 1338);
+      add_location(p0, file$1, 52, 8, 1339);
       attr_dev(div0, "class", "w-8/12 px-4 sm:w-3/12");
-      add_location(div0, file$1, 50, 4, 1294);
-      add_location(p1, file$1, 55, 12, 1485);
+      add_location(div0, file$1, 51, 4, 1295);
+      add_location(p1, file$1, 56, 12, 1486);
       attr_dev(div1, "class", "hidden w-8/12 px-4 sm:block");
-      add_location(div1, file$1, 54, 8, 1431);
-      add_location(p2, file$1, 58, 12, 1673);
+      add_location(div1, file$1, 55, 8, 1432);
+      add_location(p2, file$1, 59, 12, 1674);
       attr_dev(div2, "class", "flex justify-end w-full px-4 sm:w-4/12");
-      add_location(div2, file$1, 57, 8, 1608);
+      add_location(div2, file$1, 58, 8, 1609);
       attr_dev(div3, "class", "flex w-4/12 ml-auto sm:w-8/12");
-      add_location(div3, file$1, 53, 4, 1379);
+      add_location(div3, file$1, 54, 4, 1380);
       attr_dev(div4, "class", "flex pt-5 mt-auto text-gray-600 sm:pt-8 md:pt-12 dark:text-gray-400");
-      add_location(div4, file$1, 49, 0, 1208);
+      add_location(div4, file$1, 50, 0, 1209);
     },
     m: function mount(target, anchor) {
       insert_dev(target, div4, anchor);
@@ -259,6 +259,7 @@ function instance$1($$self, $$props, $$invalidate) {
       }
     }, _callee);
   })));
+  var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   var time = "";
   var year = "";
 
@@ -285,7 +286,6 @@ function instance$1($$self, $$props, $$invalidate) {
     setTimeout(updateClock, 1000);
   }
 
-  var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   updateClock();
   var writable_props = [];
   Object.keys($$props).forEach(function (key) {
@@ -296,10 +296,10 @@ function instance$1($$self, $$props, $$invalidate) {
     return {
       onMount: onMount,
       updatedDate: updatedDate,
+      monthNames: monthNames,
       time: time,
       year: year,
-      updateClock: updateClock,
-      monthNames: monthNames
+      updateClock: updateClock
     };
   };
 
