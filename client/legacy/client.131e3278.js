@@ -1161,6 +1161,10 @@ function get_current_component() {
   return current_component;
 }
 
+function onMount(fn) {
+  get_current_component().$$.on_mount.push(fn);
+}
+
 function afterUpdate(fn) {
   get_current_component().$$.after_update.push(fn);
 }
@@ -2728,7 +2732,7 @@ var App = /*#__PURE__*/function (_SvelteComponentDev) {
 var ignore = [/^\/content\/collaborators\.json$/, /^\/content\/experiences\.json$/, /^\/content\/projects\.json$/, /^\/content\/services\.json$/, /^\/content\/links\.json$/];
 var components = [{
   js: function js() {
-    return Promise.all([import('./index.d76a1f1a.js'), __inject_styles(["client-6979b1e4.css"])]).then(function(x) { return x[0]; });
+    return Promise.all([import('./index.30a863a4.js'), __inject_styles(["client-6979b1e4.css"])]).then(function(x) { return x[0]; });
   }
 }];
 var routes = [{
@@ -3625,6 +3629,6 @@ start$1({
   target: document.querySelector('#sapper')
 });
 
-export { create_component as A, query_selector_all as B, claim_component as C, mount_component as D, transition_in as E, transition_out as F, destroy_each as G, destroy_component as H, SvelteComponentDev as S, _inherits as _, _getPrototypeOf as a, _possibleConstructorReturn as b, _classCallCheck as c, _assertThisInitialized as d, dispatch_dev as e, element as f, space as g, claim_element as h, init$1 as i, children as j, claim_text as k, detach_dev as l, claim_space as m, add_location as n, attr_dev as o, insert_dev as p, append_dev as q, _slicedToArray as r, safe_not_equal as s, text as t, set_data_dev as u, validate_slots as v, noop as w, regenerator as x, _createClass as y, validate_each_argument as z };
+export { validate_each_argument as A, create_component as B, query_selector_all as C, claim_component as D, mount_component as E, transition_in as F, transition_out as G, destroy_each as H, destroy_component as I, SvelteComponentDev as S, _inherits as _, _getPrototypeOf as a, _possibleConstructorReturn as b, _classCallCheck as c, _assertThisInitialized as d, dispatch_dev as e, element as f, space as g, claim_element as h, init$1 as i, children as j, claim_text as k, detach_dev as l, claim_space as m, add_location as n, onMount as o, attr_dev as p, insert_dev as q, append_dev as r, safe_not_equal as s, text as t, _slicedToArray as u, validate_slots as v, set_data_dev as w, noop as x, regenerator as y, _createClass as z };
 
 import __inject_styles from './inject_styles.fe622066.js';
