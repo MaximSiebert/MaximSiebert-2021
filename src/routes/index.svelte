@@ -41,7 +41,7 @@
 	<a href="/" class="self-start inline-block px-4 mb-5 loader"></a>
 	<header class="flex flex-wrap mb-1 sm:mb-2">
 		<div class="w-full px-4 mb-5 sm:mb-8 lg:w-3/12 md:w-4/12 md:mb-0">
-			<a href="/" class="inline-block mb-1 sm:mb-2 hover:underline md:mb-0">Maxim Siebert</a>
+			<h1 class="inline-block mb-1 sm:mb-2 md:mb-0">Maxim Siebert</h1>
 			<div class="block text-gray-600 dark:text-gray-400 md:hidden">
 				{@html description}
 			</div>
