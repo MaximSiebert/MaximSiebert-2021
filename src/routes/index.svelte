@@ -66,7 +66,7 @@
 </svelte:head>
 
 <div class="flex flex-col min-h-screen py-5 text-xs bg-gray-100 lg:px-4 dark:bg-black dark:text-white">
-	<div class="px-4 mb-5 loader"></div>
+	<a href="/" class="self-start inline-block px-4 mb-5 loader"></a>
 	<header class="flex flex-wrap mb-1 sm:mb-2">
 		<div class="w-full px-4 mb-5 sm:mb-8 lg:w-3/12 md:w-4/12 md:mb-0">
 			<a href="/" class="inline-block mb-1 sm:mb-2 hover:underline md:mb-0">Maxim Siebert</a>
