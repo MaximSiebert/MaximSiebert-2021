@@ -1,4 +1,4 @@
-import { _ as _inherits, a as _getPrototypeOf, b as _possibleConstructorReturn, c as _classCallCheck, i as init, s as safe_not_equal, d as _assertThisInitialized, e as dispatch_dev, S as SvelteComponentDev, v as validate_slots, o as onMount, f as element, t as text, g as space, h as claim_element, j as children, k as claim_text, l as detach_dev, m as claim_space, n as add_location, p as attr_dev, q as insert_dev, r as append_dev, u as _slicedToArray, w as set_data_dev, x as noop, y as regenerator, z as _createClass, A as validate_each_argument, B as create_component, C as query_selector_all, D as claim_component, E as mount_component, F as transition_in, G as transition_out, H as destroy_each, I as destroy_component } from './client.78ed2977.js';
+import { _ as _inherits, a as _getPrototypeOf, b as _possibleConstructorReturn, c as _classCallCheck, i as init, s as safe_not_equal, d as _assertThisInitialized, e as dispatch_dev, S as SvelteComponentDev, v as validate_slots, o as onMount, f as element, t as text, g as space, h as claim_element, j as children, k as claim_text, l as detach_dev, m as claim_space, n as add_location, p as attr_dev, q as insert_dev, r as append_dev, u as _slicedToArray, w as set_data_dev, x as noop, y as regenerator, z as _createClass, A as validate_each_argument, B as create_component, C as query_selector_all, D as claim_component, E as mount_component, F as transition_in, G as transition_out, H as destroy_each, I as destroy_component } from './client.3b254c6c.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -84,7 +84,7 @@ function create_fragment$1(ctx) {
       div3 = element("div");
       div1 = element("div");
       p1 = element("p");
-      t4 = text("Updated ");
+      t4 = text("Updated – ");
       t5 = text(t5_value);
       t6 = space();
       t7 = text(t7_value);
@@ -127,7 +127,7 @@ function create_fragment$1(ctx) {
       var div1_nodes = children(div1);
       p1 = claim_element(div1_nodes, "P", {});
       var p1_nodes = children(p1);
-      t4 = claim_text(p1_nodes, "Updated ");
+      t4 = claim_text(p1_nodes, "Updated – ");
       t5 = claim_text(p1_nodes, t5_value);
       t6 = claim_space(p1_nodes);
       t7 = claim_text(p1_nodes, t7_value);
@@ -158,9 +158,9 @@ function create_fragment$1(ctx) {
       add_location(p1, file$1, 55, 12, 1485);
       attr_dev(div1, "class", "hidden w-8/12 px-4 sm:block");
       add_location(div1, file$1, 54, 8, 1431);
-      add_location(p2, file$1, 58, 12, 1673);
+      add_location(p2, file$1, 58, 12, 1675);
       attr_dev(div2, "class", "flex justify-end w-full px-4 sm:w-4/12");
-      add_location(div2, file$1, 57, 8, 1608);
+      add_location(div2, file$1, 57, 8, 1610);
       attr_dev(div3, "class", "flex w-4/12 ml-auto sm:w-8/12");
       add_location(div3, file$1, 53, 4, 1379);
       attr_dev(div4, "class", "flex pt-5 mt-auto text-gray-600 sm:pt-8 md:pt-12 dark:text-gray-400");
