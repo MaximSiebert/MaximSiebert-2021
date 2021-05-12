@@ -1,4 +1,4 @@
-import { _ as _inherits, a as _getPrototypeOf, b as _possibleConstructorReturn, c as _classCallCheck, i as init, s as safe_not_equal, d as _assertThisInitialized, e as dispatch_dev, S as SvelteComponentDev, v as validate_slots, o as onMount, f as element, t as text, g as space, h as claim_element, j as children, k as claim_text, l as detach_dev, m as claim_space, n as add_location, p as attr_dev, q as insert_dev, r as append_dev, u as _slicedToArray, w as set_data_dev, x as noop, y as regenerator, z as _createClass, A as validate_each_argument, B as create_component, C as query_selector_all, D as claim_component, E as mount_component, F as transition_in, G as transition_out, H as destroy_each, I as destroy_component } from './client.3b254c6c.js';
+import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as set_data_dev, z as update_await_block_branch, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.6c7f831c.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -36,10 +36,675 @@ function _asyncToGenerator(fn) {
   };
 }
 
+var browserPonyfill = createCommonjsModule(function (module, exports) {
+  var global = typeof self !== 'undefined' ? self : commonjsGlobal;
+
+  var __self__ = function () {
+    function F() {
+      this.fetch = false;
+      this.DOMException = global.DOMException;
+    }
+
+    F.prototype = global;
+    return new F();
+  }();
+
+  (function (self) {
+    (function (exports) {
+      var support = {
+        searchParams: 'URLSearchParams' in self,
+        iterable: 'Symbol' in self && 'iterator' in Symbol,
+        blob: 'FileReader' in self && 'Blob' in self && function () {
+          try {
+            new Blob();
+            return true;
+          } catch (e) {
+            return false;
+          }
+        }(),
+        formData: 'FormData' in self,
+        arrayBuffer: 'ArrayBuffer' in self
+      };
+
+      function isDataView(obj) {
+        return obj && DataView.prototype.isPrototypeOf(obj);
+      }
+
+      if (support.arrayBuffer) {
+        var viewClasses = ['[object Int8Array]', '[object Uint8Array]', '[object Uint8ClampedArray]', '[object Int16Array]', '[object Uint16Array]', '[object Int32Array]', '[object Uint32Array]', '[object Float32Array]', '[object Float64Array]'];
+
+        var isArrayBufferView = ArrayBuffer.isView || function (obj) {
+          return obj && viewClasses.indexOf(Object.prototype.toString.call(obj)) > -1;
+        };
+      }
+
+      function normalizeName(name) {
+        if (typeof name !== 'string') {
+          name = String(name);
+        }
+
+        if (/[^a-z0-9\-#$%&'*+.^_`|~]/i.test(name)) {
+          throw new TypeError('Invalid character in header field name');
+        }
+
+        return name.toLowerCase();
+      }
+
+      function normalizeValue(value) {
+        if (typeof value !== 'string') {
+          value = String(value);
+        }
+
+        return value;
+      } // Build a destructive iterator for the value list
+
+
+      function iteratorFor(items) {
+        var iterator = {
+          next: function next() {
+            var value = items.shift();
+            return {
+              done: value === undefined,
+              value: value
+            };
+          }
+        };
+
+        if (support.iterable) {
+          iterator[Symbol.iterator] = function () {
+            return iterator;
+          };
+        }
+
+        return iterator;
+      }
+
+      function Headers(headers) {
+        this.map = {};
+
+        if (headers instanceof Headers) {
+          headers.forEach(function (value, name) {
+            this.append(name, value);
+          }, this);
+        } else if (Array.isArray(headers)) {
+          headers.forEach(function (header) {
+            this.append(header[0], header[1]);
+          }, this);
+        } else if (headers) {
+          Object.getOwnPropertyNames(headers).forEach(function (name) {
+            this.append(name, headers[name]);
+          }, this);
+        }
+      }
+
+      Headers.prototype.append = function (name, value) {
+        name = normalizeName(name);
+        value = normalizeValue(value);
+        var oldValue = this.map[name];
+        this.map[name] = oldValue ? oldValue + ', ' + value : value;
+      };
+
+      Headers.prototype['delete'] = function (name) {
+        delete this.map[normalizeName(name)];
+      };
+
+      Headers.prototype.get = function (name) {
+        name = normalizeName(name);
+        return this.has(name) ? this.map[name] : null;
+      };
+
+      Headers.prototype.has = function (name) {
+        return this.map.hasOwnProperty(normalizeName(name));
+      };
+
+      Headers.prototype.set = function (name, value) {
+        this.map[normalizeName(name)] = normalizeValue(value);
+      };
+
+      Headers.prototype.forEach = function (callback, thisArg) {
+        for (var name in this.map) {
+          if (this.map.hasOwnProperty(name)) {
+            callback.call(thisArg, this.map[name], name, this);
+          }
+        }
+      };
+
+      Headers.prototype.keys = function () {
+        var items = [];
+        this.forEach(function (value, name) {
+          items.push(name);
+        });
+        return iteratorFor(items);
+      };
+
+      Headers.prototype.values = function () {
+        var items = [];
+        this.forEach(function (value) {
+          items.push(value);
+        });
+        return iteratorFor(items);
+      };
+
+      Headers.prototype.entries = function () {
+        var items = [];
+        this.forEach(function (value, name) {
+          items.push([name, value]);
+        });
+        return iteratorFor(items);
+      };
+
+      if (support.iterable) {
+        Headers.prototype[Symbol.iterator] = Headers.prototype.entries;
+      }
+
+      function consumed(body) {
+        if (body.bodyUsed) {
+          return Promise.reject(new TypeError('Already read'));
+        }
+
+        body.bodyUsed = true;
+      }
+
+      function fileReaderReady(reader) {
+        return new Promise(function (resolve, reject) {
+          reader.onload = function () {
+            resolve(reader.result);
+          };
+
+          reader.onerror = function () {
+            reject(reader.error);
+          };
+        });
+      }
+
+      function readBlobAsArrayBuffer(blob) {
+        var reader = new FileReader();
+        var promise = fileReaderReady(reader);
+        reader.readAsArrayBuffer(blob);
+        return promise;
+      }
+
+      function readBlobAsText(blob) {
+        var reader = new FileReader();
+        var promise = fileReaderReady(reader);
+        reader.readAsText(blob);
+        return promise;
+      }
+
+      function readArrayBufferAsText(buf) {
+        var view = new Uint8Array(buf);
+        var chars = new Array(view.length);
+
+        for (var i = 0; i < view.length; i++) {
+          chars[i] = String.fromCharCode(view[i]);
+        }
+
+        return chars.join('');
+      }
+
+      function bufferClone(buf) {
+        if (buf.slice) {
+          return buf.slice(0);
+        } else {
+          var view = new Uint8Array(buf.byteLength);
+          view.set(new Uint8Array(buf));
+          return view.buffer;
+        }
+      }
+
+      function Body() {
+        this.bodyUsed = false;
+
+        this._initBody = function (body) {
+          this._bodyInit = body;
+
+          if (!body) {
+            this._bodyText = '';
+          } else if (typeof body === 'string') {
+            this._bodyText = body;
+          } else if (support.blob && Blob.prototype.isPrototypeOf(body)) {
+            this._bodyBlob = body;
+          } else if (support.formData && FormData.prototype.isPrototypeOf(body)) {
+            this._bodyFormData = body;
+          } else if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body)) {
+            this._bodyText = body.toString();
+          } else if (support.arrayBuffer && support.blob && isDataView(body)) {
+            this._bodyArrayBuffer = bufferClone(body.buffer); // IE 10-11 can't handle a DataView body.
+
+            this._bodyInit = new Blob([this._bodyArrayBuffer]);
+          } else if (support.arrayBuffer && (ArrayBuffer.prototype.isPrototypeOf(body) || isArrayBufferView(body))) {
+            this._bodyArrayBuffer = bufferClone(body);
+          } else {
+            this._bodyText = body = Object.prototype.toString.call(body);
+          }
+
+          if (!this.headers.get('content-type')) {
+            if (typeof body === 'string') {
+              this.headers.set('content-type', 'text/plain;charset=UTF-8');
+            } else if (this._bodyBlob && this._bodyBlob.type) {
+              this.headers.set('content-type', this._bodyBlob.type);
+            } else if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body)) {
+              this.headers.set('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+            }
+          }
+        };
+
+        if (support.blob) {
+          this.blob = function () {
+            var rejected = consumed(this);
+
+            if (rejected) {
+              return rejected;
+            }
+
+            if (this._bodyBlob) {
+              return Promise.resolve(this._bodyBlob);
+            } else if (this._bodyArrayBuffer) {
+              return Promise.resolve(new Blob([this._bodyArrayBuffer]));
+            } else if (this._bodyFormData) {
+              throw new Error('could not read FormData body as blob');
+            } else {
+              return Promise.resolve(new Blob([this._bodyText]));
+            }
+          };
+
+          this.arrayBuffer = function () {
+            if (this._bodyArrayBuffer) {
+              return consumed(this) || Promise.resolve(this._bodyArrayBuffer);
+            } else {
+              return this.blob().then(readBlobAsArrayBuffer);
+            }
+          };
+        }
+
+        this.text = function () {
+          var rejected = consumed(this);
+
+          if (rejected) {
+            return rejected;
+          }
+
+          if (this._bodyBlob) {
+            return readBlobAsText(this._bodyBlob);
+          } else if (this._bodyArrayBuffer) {
+            return Promise.resolve(readArrayBufferAsText(this._bodyArrayBuffer));
+          } else if (this._bodyFormData) {
+            throw new Error('could not read FormData body as text');
+          } else {
+            return Promise.resolve(this._bodyText);
+          }
+        };
+
+        if (support.formData) {
+          this.formData = function () {
+            return this.text().then(decode);
+          };
+        }
+
+        this.json = function () {
+          return this.text().then(JSON.parse);
+        };
+
+        return this;
+      } // HTTP methods whose capitalization should be normalized
+
+
+      var methods = ['DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT'];
+
+      function normalizeMethod(method) {
+        var upcased = method.toUpperCase();
+        return methods.indexOf(upcased) > -1 ? upcased : method;
+      }
+
+      function Request(input, options) {
+        options = options || {};
+        var body = options.body;
+
+        if (input instanceof Request) {
+          if (input.bodyUsed) {
+            throw new TypeError('Already read');
+          }
+
+          this.url = input.url;
+          this.credentials = input.credentials;
+
+          if (!options.headers) {
+            this.headers = new Headers(input.headers);
+          }
+
+          this.method = input.method;
+          this.mode = input.mode;
+          this.signal = input.signal;
+
+          if (!body && input._bodyInit != null) {
+            body = input._bodyInit;
+            input.bodyUsed = true;
+          }
+        } else {
+          this.url = String(input);
+        }
+
+        this.credentials = options.credentials || this.credentials || 'same-origin';
+
+        if (options.headers || !this.headers) {
+          this.headers = new Headers(options.headers);
+        }
+
+        this.method = normalizeMethod(options.method || this.method || 'GET');
+        this.mode = options.mode || this.mode || null;
+        this.signal = options.signal || this.signal;
+        this.referrer = null;
+
+        if ((this.method === 'GET' || this.method === 'HEAD') && body) {
+          throw new TypeError('Body not allowed for GET or HEAD requests');
+        }
+
+        this._initBody(body);
+      }
+
+      Request.prototype.clone = function () {
+        return new Request(this, {
+          body: this._bodyInit
+        });
+      };
+
+      function decode(body) {
+        var form = new FormData();
+        body.trim().split('&').forEach(function (bytes) {
+          if (bytes) {
+            var split = bytes.split('=');
+            var name = split.shift().replace(/\+/g, ' ');
+            var value = split.join('=').replace(/\+/g, ' ');
+            form.append(decodeURIComponent(name), decodeURIComponent(value));
+          }
+        });
+        return form;
+      }
+
+      function parseHeaders(rawHeaders) {
+        var headers = new Headers(); // Replace instances of \r\n and \n followed by at least one space or horizontal tab with a space
+        // https://tools.ietf.org/html/rfc7230#section-3.2
+
+        var preProcessedHeaders = rawHeaders.replace(/\r?\n[\t ]+/g, ' ');
+        preProcessedHeaders.split(/\r?\n/).forEach(function (line) {
+          var parts = line.split(':');
+          var key = parts.shift().trim();
+
+          if (key) {
+            var value = parts.join(':').trim();
+            headers.append(key, value);
+          }
+        });
+        return headers;
+      }
+
+      Body.call(Request.prototype);
+
+      function Response(bodyInit, options) {
+        if (!options) {
+          options = {};
+        }
+
+        this.type = 'default';
+        this.status = options.status === undefined ? 200 : options.status;
+        this.ok = this.status >= 200 && this.status < 300;
+        this.statusText = 'statusText' in options ? options.statusText : 'OK';
+        this.headers = new Headers(options.headers);
+        this.url = options.url || '';
+
+        this._initBody(bodyInit);
+      }
+
+      Body.call(Response.prototype);
+
+      Response.prototype.clone = function () {
+        return new Response(this._bodyInit, {
+          status: this.status,
+          statusText: this.statusText,
+          headers: new Headers(this.headers),
+          url: this.url
+        });
+      };
+
+      Response.error = function () {
+        var response = new Response(null, {
+          status: 0,
+          statusText: ''
+        });
+        response.type = 'error';
+        return response;
+      };
+
+      var redirectStatuses = [301, 302, 303, 307, 308];
+
+      Response.redirect = function (url, status) {
+        if (redirectStatuses.indexOf(status) === -1) {
+          throw new RangeError('Invalid status code');
+        }
+
+        return new Response(null, {
+          status: status,
+          headers: {
+            location: url
+          }
+        });
+      };
+
+      exports.DOMException = self.DOMException;
+
+      try {
+        new exports.DOMException();
+      } catch (err) {
+        exports.DOMException = function (message, name) {
+          this.message = message;
+          this.name = name;
+          var error = Error(message);
+          this.stack = error.stack;
+        };
+
+        exports.DOMException.prototype = Object.create(Error.prototype);
+        exports.DOMException.prototype.constructor = exports.DOMException;
+      }
+
+      function fetch(input, init) {
+        return new Promise(function (resolve, reject) {
+          var request = new Request(input, init);
+
+          if (request.signal && request.signal.aborted) {
+            return reject(new exports.DOMException('Aborted', 'AbortError'));
+          }
+
+          var xhr = new XMLHttpRequest();
+
+          function abortXhr() {
+            xhr.abort();
+          }
+
+          xhr.onload = function () {
+            var options = {
+              status: xhr.status,
+              statusText: xhr.statusText,
+              headers: parseHeaders(xhr.getAllResponseHeaders() || '')
+            };
+            options.url = 'responseURL' in xhr ? xhr.responseURL : options.headers.get('X-Request-URL');
+            var body = 'response' in xhr ? xhr.response : xhr.responseText;
+            resolve(new Response(body, options));
+          };
+
+          xhr.onerror = function () {
+            reject(new TypeError('Network request failed'));
+          };
+
+          xhr.ontimeout = function () {
+            reject(new TypeError('Network request failed'));
+          };
+
+          xhr.onabort = function () {
+            reject(new exports.DOMException('Aborted', 'AbortError'));
+          };
+
+          xhr.open(request.method, request.url, true);
+
+          if (request.credentials === 'include') {
+            xhr.withCredentials = true;
+          } else if (request.credentials === 'omit') {
+            xhr.withCredentials = false;
+          }
+
+          if ('responseType' in xhr && support.blob) {
+            xhr.responseType = 'blob';
+          }
+
+          request.headers.forEach(function (value, name) {
+            xhr.setRequestHeader(name, value);
+          });
+
+          if (request.signal) {
+            request.signal.addEventListener('abort', abortXhr);
+
+            xhr.onreadystatechange = function () {
+              // DONE (success or failure)
+              if (xhr.readyState === 4) {
+                request.signal.removeEventListener('abort', abortXhr);
+              }
+            };
+          }
+
+          xhr.send(typeof request._bodyInit === 'undefined' ? null : request._bodyInit);
+        });
+      }
+
+      fetch.polyfill = true;
+
+      if (!self.fetch) {
+        self.fetch = fetch;
+        self.Headers = Headers;
+        self.Request = Request;
+        self.Response = Response;
+      }
+
+      exports.Headers = Headers;
+      exports.Request = Request;
+      exports.Response = Response;
+      exports.fetch = fetch;
+      Object.defineProperty(exports, '__esModule', {
+        value: true
+      });
+      return exports;
+    })({});
+  })(__self__);
+
+  __self__.fetch.ponyfill = true; // Remove "polyfill" property added by whatwg-fetch
+
+  delete __self__.fetch.polyfill; // Choose between native implementation (global) or custom implementation (__self__)
+  // var ctx = global.fetch ? global : __self__;
+
+  var ctx = __self__; // this line disable service worker support temporarily
+
+  exports = ctx.fetch; // To enable: import fetch from 'cross-fetch'
+
+  exports.default = ctx.fetch; // For TypeScript consumers without esModuleInterop.
+
+  exports.fetch = ctx.fetch; // To enable: import {fetch} from 'cross-fetch'
+
+  exports.Headers = ctx.Headers;
+  exports.Request = ctx.Request;
+  exports.Response = ctx.Response;
+  module.exports = exports;
+});
+
 function _createSuper$1(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct$1(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct$1() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-var file$1 = "src/components/Footer.svelte";
+var file$1 = "src/components/Footer.svelte"; // (1:0) <script>     import fetch from 'cross-fetch';      let promise = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];   var time = '';  var year = '';   function updateClock() {   var now = new Date(), // current date    hour = now.getHours(),    minutes = now.getMinutes(),    sep = ':',    ampm = 'am';      if (hour >= 12) {     hour -= 12;     ampm = 'pm';   }
+
+function create_catch_block(ctx) {
+  var block = {
+    c: noop,
+    l: noop,
+    m: noop,
+    p: noop,
+    d: noop
+  };
+  dispatch_dev("SvelteRegisterBlock", {
+    block: block,
+    id: create_catch_block.name,
+    type: "catch",
+    source: "(1:0) <script>     import fetch from 'cross-fetch';      let promise = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      const monthNames = [\\\"January\\\", \\\"February\\\", \\\"March\\\", \\\"April\\\", \\\"May\\\", \\\"June\\\", \\\"July\\\", \\\"August\\\", \\\"September\\\", \\\"October\\\", \\\"November\\\", \\\"December\\\"];   var time = '';  var year = '';   function updateClock() {   var now = new Date(), // current date    hour = now.getHours(),    minutes = now.getMinutes(),    sep = ':',    ampm = 'am';      if (hour >= 12) {     hour -= 12;     ampm = 'pm';   }",
+    ctx: ctx
+  });
+  return block;
+} // (49:16) {:then data}
+
+
+function create_then_block(ctx) {
+  var t0;
+  var t1_value =
+  /*monthNames*/
+  ctx[3][new Date(
+  /*data*/
+  ctx[5].commit.commit.author.date).getMonth()] + "";
+  var t1;
+  var t2;
+  var t3_value = new Date(
+  /*data*/
+  ctx[5].commit.commit.author.date).getFullYear() + "";
+  var t3;
+  var block = {
+    c: function create() {
+      t0 = text("Updated – \n                    ");
+      t1 = text(t1_value);
+      t2 = space();
+      t3 = text(t3_value);
+    },
+    l: function claim(nodes) {
+      t0 = claim_text(nodes, "Updated – \n                    ");
+      t1 = claim_text(nodes, t1_value);
+      t2 = claim_space(nodes);
+      t3 = claim_text(nodes, t3_value);
+    },
+    m: function mount(target, anchor) {
+      insert_dev(target, t0, anchor);
+      insert_dev(target, t1, anchor);
+      insert_dev(target, t2, anchor);
+      insert_dev(target, t3, anchor);
+    },
+    p: noop,
+    d: function destroy(detaching) {
+      if (detaching) detach_dev(t0);
+      if (detaching) detach_dev(t1);
+      if (detaching) detach_dev(t2);
+      if (detaching) detach_dev(t3);
+    }
+  };
+  dispatch_dev("SvelteRegisterBlock", {
+    block: block,
+    id: create_then_block.name,
+    type: "then",
+    source: "(49:16) {:then data}",
+    ctx: ctx
+  });
+  return block;
+} // (47:32)                                   {:then data}
+
+
+function create_pending_block(ctx) {
+  var block = {
+    c: noop,
+    l: noop,
+    m: noop,
+    p: noop,
+    d: noop
+  };
+  dispatch_dev("SvelteRegisterBlock", {
+    block: block,
+    id: create_pending_block.name,
+    type: "pending",
+    source: "(47:32)                                   {:then data}",
+    ctx: ctx
+  });
+  return block;
+}
 
 function create_fragment$1(ctx) {
   var div4;
@@ -53,23 +718,23 @@ function create_fragment$1(ctx) {
   var div1;
   var p1;
   var t4;
-  var t5_value =
-  /*monthNames*/
-  ctx[3][new Date(
-  /*updatedDate*/
-  ctx[0]).getMonth()] + "";
-  var t5;
-  var t6;
-  var t7_value = new Date(
-  /*updatedDate*/
-  ctx[0]).getFullYear() + "";
-  var t7;
-  var t8;
   var div2;
   var p2;
-  var t9;
-  var t10;
-  var t11;
+  var t5;
+  var t6;
+  var t7;
+  var info = {
+    ctx: ctx,
+    current: null,
+    token: null,
+    hasCatch: false,
+    pending: create_pending_block,
+    then: create_then_block,
+    catch: create_catch_block,
+    value: 5
+  };
+  handle_promise(/*promise*/
+  ctx[2], info);
   var block = {
     c: function create() {
       div4 = element("div");
@@ -78,24 +743,21 @@ function create_fragment$1(ctx) {
       t0 = text("Ottawa – ");
       t1 = text(
       /*time*/
-      ctx[1]);
+      ctx[0]);
       t2 = text(" ET");
       t3 = space();
       div3 = element("div");
       div1 = element("div");
       p1 = element("p");
-      t4 = text("Updated – ");
-      t5 = text(t5_value);
-      t6 = space();
-      t7 = text(t7_value);
-      t8 = space();
+      info.block.c();
+      t4 = space();
       div2 = element("div");
       p2 = element("p");
-      t9 = text("2011 – ");
-      t10 = text(
+      t5 = text("2011 – ");
+      t6 = text(
       /*year*/
-      ctx[2]);
-      t11 = text(" ©");
+      ctx[1]);
+      t7 = text(" ©");
       this.h();
     },
     l: function claim(nodes) {
@@ -112,7 +774,7 @@ function create_fragment$1(ctx) {
       t0 = claim_text(p0_nodes, "Ottawa – ");
       t1 = claim_text(p0_nodes,
       /*time*/
-      ctx[1]);
+      ctx[0]);
       t2 = claim_text(p0_nodes, " ET");
       p0_nodes.forEach(detach_dev);
       div0_nodes.forEach(detach_dev);
@@ -127,24 +789,21 @@ function create_fragment$1(ctx) {
       var div1_nodes = children(div1);
       p1 = claim_element(div1_nodes, "P", {});
       var p1_nodes = children(p1);
-      t4 = claim_text(p1_nodes, "Updated – ");
-      t5 = claim_text(p1_nodes, t5_value);
-      t6 = claim_space(p1_nodes);
-      t7 = claim_text(p1_nodes, t7_value);
+      info.block.l(p1_nodes);
       p1_nodes.forEach(detach_dev);
       div1_nodes.forEach(detach_dev);
-      t8 = claim_space(div3_nodes);
+      t4 = claim_space(div3_nodes);
       div2 = claim_element(div3_nodes, "DIV", {
         class: true
       });
       var div2_nodes = children(div2);
       p2 = claim_element(div2_nodes, "P", {});
       var p2_nodes = children(p2);
-      t9 = claim_text(p2_nodes, "2011 – ");
-      t10 = claim_text(p2_nodes,
+      t5 = claim_text(p2_nodes, "2011 – ");
+      t6 = claim_text(p2_nodes,
       /*year*/
-      ctx[2]);
-      t11 = claim_text(p2_nodes, " ©");
+      ctx[1]);
+      t7 = claim_text(p2_nodes, " ©");
       p2_nodes.forEach(detach_dev);
       div2_nodes.forEach(detach_dev);
       div3_nodes.forEach(detach_dev);
@@ -152,19 +811,19 @@ function create_fragment$1(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file$1, 51, 8, 1338);
+      add_location(p0, file$1, 41, 8, 1094);
       attr_dev(div0, "class", "w-8/12 px-4 sm:w-3/12");
-      add_location(div0, file$1, 50, 4, 1294);
-      add_location(p1, file$1, 55, 12, 1485);
+      add_location(div0, file$1, 40, 4, 1050);
+      add_location(p1, file$1, 45, 12, 1241);
       attr_dev(div1, "class", "hidden w-8/12 px-4 sm:block");
-      add_location(div1, file$1, 54, 8, 1431);
-      add_location(p2, file$1, 58, 12, 1675);
+      add_location(div1, file$1, 44, 8, 1187);
+      add_location(p2, file$1, 56, 12, 1648);
       attr_dev(div2, "class", "flex justify-end w-full px-4 sm:w-4/12");
-      add_location(div2, file$1, 57, 8, 1610);
+      add_location(div2, file$1, 55, 8, 1583);
       attr_dev(div3, "class", "flex w-4/12 ml-auto sm:w-8/12");
-      add_location(div3, file$1, 53, 4, 1379);
+      add_location(div3, file$1, 43, 4, 1135);
       attr_dev(div4, "class", "flex pt-5 mt-auto text-gray-600 sm:pt-8 md:pt-12 dark:text-gray-400");
-      add_location(div4, file$1, 49, 0, 1208);
+      add_location(div4, file$1, 39, 0, 964);
     },
     m: function mount(target, anchor) {
       insert_dev(target, div4, anchor);
@@ -177,48 +836,44 @@ function create_fragment$1(ctx) {
       append_dev(div4, div3);
       append_dev(div3, div1);
       append_dev(div1, p1);
-      append_dev(p1, t4);
-      append_dev(p1, t5);
-      append_dev(p1, t6);
-      append_dev(p1, t7);
-      append_dev(div3, t8);
+      info.block.m(p1, info.anchor = null);
+
+      info.mount = function () {
+        return p1;
+      };
+
+      info.anchor = null;
+      append_dev(div3, t4);
       append_dev(div3, div2);
       append_dev(div2, p2);
-      append_dev(p2, t9);
-      append_dev(p2, t10);
-      append_dev(p2, t11);
+      append_dev(p2, t5);
+      append_dev(p2, t6);
+      append_dev(p2, t7);
     },
-    p: function update(ctx, _ref) {
+    p: function update(new_ctx, _ref) {
       var _ref2 = _slicedToArray(_ref, 1),
           dirty = _ref2[0];
 
+      ctx = new_ctx;
       if (dirty &
       /*time*/
-      2) set_data_dev(t1,
+      1) set_data_dev(t1,
       /*time*/
+      ctx[0]);
+      update_await_block_branch(info, ctx, dirty);
+      if (dirty &
+      /*year*/
+      2) set_data_dev(t6,
+      /*year*/
       ctx[1]);
-      if (dirty &
-      /*updatedDate*/
-      1 && t5_value !== (t5_value =
-      /*monthNames*/
-      ctx[3][new Date(
-      /*updatedDate*/
-      ctx[0]).getMonth()] + "")) set_data_dev(t5, t5_value);
-      if (dirty &
-      /*updatedDate*/
-      1 && t7_value !== (t7_value = new Date(
-      /*updatedDate*/
-      ctx[0]).getFullYear() + "")) set_data_dev(t7, t7_value);
-      if (dirty &
-      /*year*/
-      4) set_data_dev(t10,
-      /*year*/
-      ctx[2]);
     },
     i: noop,
     o: noop,
     d: function destroy(detaching) {
       if (detaching) detach_dev(div4);
+      info.block.d();
+      info.token = null;
+      info = null;
     }
   };
   dispatch_dev("SvelteRegisterBlock", {
@@ -236,29 +891,9 @@ function instance$1($$self, $$props, $$invalidate) {
       slots = _$$props$$$slots === void 0 ? {} : _$$props$$$slots;
       $$props.$$scope;
   validate_slots("Footer", slots, []);
-  var updatedDate;
-  onMount( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regenerator.mark(function _callee() {
-    return regenerator.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            fetch("https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages", {
-              headers: {
-                "Accept": "application/vnd.github.v3+json"
-              }
-            }).then(function (r) {
-              return r.json();
-            }).then(function (data) {
-              $$invalidate(0, updatedDate = data.commit.commit.author.date);
-            });
-
-          case 1:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  })));
+  var promise = browserPonyfill("https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages").then(function (r) {
+    return r.json();
+  });
   var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   var time = "";
   var year = "";
@@ -280,8 +915,8 @@ function instance$1($$self, $$props, $$invalidate) {
     hour = hour ? hour : 12; // the hour '0' should be '12'
     // set the content of the element with the ID time to the formatted string
 
-    $$invalidate(1, time = hour + sep + minutes + " " + ampm);
-    $$invalidate(2, year = now.getFullYear()); // call this function again in 1000ms
+    $$invalidate(0, time = hour + sep + minutes + " " + ampm);
+    $$invalidate(1, year = now.getFullYear()); // call this function again in 1000ms
 
     setTimeout(updateClock, 1000);
   }
@@ -294,8 +929,8 @@ function instance$1($$self, $$props, $$invalidate) {
 
   $$self.$capture_state = function () {
     return {
-      onMount: onMount,
-      updatedDate: updatedDate,
+      fetch: browserPonyfill,
+      promise: promise,
       monthNames: monthNames,
       time: time,
       year: year,
@@ -304,16 +939,16 @@ function instance$1($$self, $$props, $$invalidate) {
   };
 
   $$self.$inject_state = function ($$props) {
-    if ("updatedDate" in $$props) $$invalidate(0, updatedDate = $$props.updatedDate);
-    if ("time" in $$props) $$invalidate(1, time = $$props.time);
-    if ("year" in $$props) $$invalidate(2, year = $$props.year);
+    if ("promise" in $$props) $$invalidate(2, promise = $$props.promise);
+    if ("time" in $$props) $$invalidate(0, time = $$props.time);
+    if ("year" in $$props) $$invalidate(1, year = $$props.year);
   };
 
   if ($$props && "$$inject" in $$props) {
     $$self.$inject_state($$props.$$inject);
   }
 
-  return [updatedDate, time, year, monthNames];
+  return [time, year, promise, monthNames];
 }
 
 var Footer = /*#__PURE__*/function (_SvelteComponentDev) {

@@ -75,6 +75,8 @@ function _slicedToArray(arr, i) {
   return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
 }
 
+var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
 function createCommonjsModule(fn, basedir, module) {
 	return module = {
 	  path: basedir,
@@ -969,6 +971,10 @@ function assign(tar, src) {
   return tar;
 }
 
+function is_promise(value) {
+  return value && _typeof(value) === 'object' && typeof value.then === 'function';
+}
+
 function add_location(element, file, line, column, char) {
   element.__svelte_meta = {
     loc: {
@@ -1161,10 +1167,6 @@ function get_current_component() {
   return current_component;
 }
 
-function onMount(fn) {
-  get_current_component().$$.on_mount.push(fn);
-}
-
 function afterUpdate(fn) {
   get_current_component().$$.after_update.push(fn);
 }
@@ -1291,6 +1293,99 @@ function transition_out(block, local, detach, callback) {
     });
     block.o(local);
   }
+}
+
+function handle_promise(promise, info) {
+  var token = info.token = {};
+
+  function update(type, index, key, value) {
+    if (info.token !== token) return;
+    info.resolved = value;
+    var child_ctx = info.ctx;
+
+    if (key !== undefined) {
+      child_ctx = child_ctx.slice();
+      child_ctx[key] = value;
+    }
+
+    var block = type && (info.current = type)(child_ctx);
+    var needs_flush = false;
+
+    if (info.block) {
+      if (info.blocks) {
+        info.blocks.forEach(function (block, i) {
+          if (i !== index && block) {
+            group_outros();
+            transition_out(block, 1, 1, function () {
+              if (info.blocks[i] === block) {
+                info.blocks[i] = null;
+              }
+            });
+            check_outros();
+          }
+        });
+      } else {
+        info.block.d(1);
+      }
+
+      block.c();
+      transition_in(block, 1);
+      block.m(info.mount(), info.anchor);
+      needs_flush = true;
+    }
+
+    info.block = block;
+    if (info.blocks) info.blocks[index] = block;
+
+    if (needs_flush) {
+      flush();
+    }
+  }
+
+  if (is_promise(promise)) {
+    var _current_component = get_current_component();
+
+    promise.then(function (value) {
+      set_current_component(_current_component);
+      update(info.then, 1, info.value, value);
+      set_current_component(null);
+    }, function (error) {
+      set_current_component(_current_component);
+      update(info.catch, 2, info.error, error);
+      set_current_component(null);
+
+      if (!info.hasCatch) {
+        throw error;
+      }
+    }); // if we previously had a then/catch block, destroy it
+
+    if (info.current !== info.pending) {
+      update(info.pending, 0);
+      return true;
+    }
+  } else {
+    if (info.current !== info.then) {
+      update(info.then, 1, info.value, promise);
+      return true;
+    }
+
+    info.resolved = promise;
+  }
+}
+
+function update_await_block_branch(info, ctx, dirty) {
+  var child_ctx = ctx.slice();
+  var resolved = info.resolved;
+
+  if (info.current === info.then) {
+    child_ctx[info.value] = resolved;
+  }
+
+  if (info.current === info.catch) {
+    child_ctx[info.error] = resolved;
+  }
+
+  info.block.p(child_ctx, dirty);
 }
 
 var globals = typeof window !== 'undefined' ? window : typeof globalThis !== 'undefined' ? globalThis : global;
@@ -2732,7 +2827,7 @@ var App = /*#__PURE__*/function (_SvelteComponentDev) {
 var ignore = [/^\/content\/collaborators\.json$/, /^\/content\/experiences\.json$/, /^\/content\/projects\.json$/, /^\/content\/services\.json$/, /^\/content\/links\.json$/];
 var components = [{
   js: function js() {
-    return Promise.all([import('./index.f4ffb7e7.js'), __inject_styles(["client-6979b1e4.css"])]).then(function(x) { return x[0]; });
+    return Promise.all([import('./index.4ba15ae1.js'), __inject_styles(["client-6979b1e4.css"])]).then(function(x) { return x[0]; });
   }
 }];
 var routes = [{
@@ -3629,6 +3724,6 @@ start$1({
   target: document.querySelector('#sapper')
 });
 
-export { validate_each_argument as A, create_component as B, query_selector_all as C, claim_component as D, mount_component as E, transition_in as F, transition_out as G, destroy_each as H, destroy_component as I, SvelteComponentDev as S, _inherits as _, _getPrototypeOf as a, _possibleConstructorReturn as b, _classCallCheck as c, _assertThisInitialized as d, dispatch_dev as e, element as f, space as g, claim_element as h, init$1 as i, children as j, claim_text as k, detach_dev as l, claim_space as m, add_location as n, onMount as o, attr_dev as p, insert_dev as q, append_dev as r, safe_not_equal as s, text as t, _slicedToArray as u, validate_slots as v, set_data_dev as w, noop as x, regenerator as y, _createClass as z };
+export { noop as A, regenerator as B, _createClass as C, validate_each_argument as D, create_component as E, query_selector_all as F, claim_component as G, mount_component as H, transition_in as I, transition_out as J, destroy_each as K, destroy_component as L, SvelteComponentDev as S, _inherits as _, commonjsGlobal as a, _getPrototypeOf as b, createCommonjsModule as c, _possibleConstructorReturn as d, _classCallCheck as e, _assertThisInitialized as f, dispatch_dev as g, handle_promise as h, init$1 as i, element as j, space as k, claim_element as l, children as m, claim_text as n, detach_dev as o, claim_space as p, add_location as q, attr_dev as r, safe_not_equal as s, text as t, insert_dev as u, validate_slots as v, append_dev as w, _slicedToArray as x, set_data_dev as y, update_await_block_branch as z };
 
 import __inject_styles from './inject_styles.fe622066.js';
