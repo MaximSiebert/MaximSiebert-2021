@@ -62,7 +62,7 @@
 		</div>
 		<div class="w-full ml-auto md:w-8/12">
 			{#each projects as project}
-				<a class="flex block ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white" href="{project.url}" target="_blank" rel="noreferrer noopener">
+				<a class="flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white" href="{project.url}" target="_blank" rel="noreferrer noopener">
 					<div class="w-8/12 px-4 sm:w-4/12">
 						<p>{project.title}</p>
 					</div>
@@ -92,7 +92,7 @@
 	<section class="flex flex-wrap mb-5 sm:mb-8 md:mb-12">
 		<div class="w-full ml-auto md:w-8/12">
 			{#each experiences as experience}
-				<a class="flex block ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white" href="{experience.url}" target="_blank" rel="noreferrer noopener">
+				<a class="flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white" href="{experience.url}" target="_blank" rel="noreferrer noopener">
 					<div class="w-4/12 px-4">
 						<p>{experience.title}</p>
 					</div>
