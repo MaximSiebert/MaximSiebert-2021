@@ -34,4 +34,8 @@
 			content: "|";
 		}
 	}
+
+	.dot {
+		@apply bg-black dark:bg-white h-2 w-2 absolute rounded-full;
+	}
 </style>

@@ -20,6 +20,7 @@
 </script>
 
 <script>
+	import { onMount } from 'svelte';
 	import Footer from '../components/Footer.svelte';
 	
 	export let projects;
@@ -29,13 +30,34 @@
 	export let links;
 
 	let description = "is a French Canadian designer & developer. He's currently a Principal Designer at <a href=\"https://blunt.af/\" class=\"hover:text-black dark:hover:text-white hover:underline\" target=\"_blank\" rel=\"noreferrer noopener\">Peggy</a> and freelances through his studio, <a href=\"https://blunt.af/\" class=\"hover:text-black dark:hover:text-white hover:underline\" target=\"_blank\" rel=\"noreferrer noopener\">Blunt</a>. This site lists most of the work he's done over the years. If you'd like to discuss new commissions or collaborate with Maxim, email him at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:underline\">maxim@hey.com</a>."
+
+	onMount(() => {
+		[].forEach.call(document.getElementsByTagName("a"),function(e){
+			e.addEventListener("click", function(e){
+				let mouseX = e.pageX;
+				let mouseY = e.pageY;
+				console.log("Mouse Position:\t" + mouseX + "|" + mouseY);
+
+				let div = document.createElement("div");
+				div.className = "dot";
+				div.style.left = mouseX + "px";
+				div.style.top= mouseY + "px";
+
+				document.body.appendChild(div);
+			});
+		});
+
+		window.addEventListener("resize", function(){
+			document.querySelectorAll(".dot").forEach(e => e.remove());
+		});
+	});
 </script>
 
 <svelte:head>
 	<title>Maxim Siebert – Designer & Developer</title>
 </svelte:head>
 
-<div class="flex flex-col min-h-screen py-5 text-xs bg-gray-100 lg:px-4 dark:bg-black dark:text-white">
+<div class="flex flex-col min-h-screen py-5 text-xs text-black bg-gray-100 lg:px-4 dark:bg-black dark:text-white">
 	<a href="/" class="self-start inline-block px-4 mb-5 loader"></a>
 	<header class="flex flex-wrap mb-1 sm:mb-2">
 		<div class="w-full px-4 mb-5 sm:mb-8 lg:w-3/12 md:w-4/12 md:mb-0">
