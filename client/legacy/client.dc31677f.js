@@ -1167,6 +1167,10 @@ function get_current_component() {
   return current_component;
 }
 
+function onMount(fn) {
+  get_current_component().$$.on_mount.push(fn);
+}
+
 function afterUpdate(fn) {
   get_current_component().$$.after_update.push(fn);
 }
@@ -2827,7 +2831,7 @@ var App = /*#__PURE__*/function (_SvelteComponentDev) {
 var ignore = [/^\/content\/collaborators\.json$/, /^\/content\/experiences\.json$/, /^\/content\/projects\.json$/, /^\/content\/services\.json$/, /^\/content\/links\.json$/];
 var components = [{
   js: function js() {
-    return Promise.all([import('./index.4e221268.js'), __inject_styles(["client-6979b1e4.css"])]).then(function(x) { return x[0]; });
+    return Promise.all([import('./index.f2b47876.js'), __inject_styles(["client-2905d588.css"])]).then(function(x) { return x[0]; });
   }
 }];
 var routes = [{
@@ -3724,6 +3728,6 @@ start$1({
   target: document.querySelector('#sapper')
 });
 
-export { noop as A, regenerator as B, _createClass as C, validate_each_argument as D, create_component as E, query_selector_all as F, claim_component as G, mount_component as H, transition_in as I, transition_out as J, destroy_each as K, destroy_component as L, SvelteComponentDev as S, _inherits as _, commonjsGlobal as a, _getPrototypeOf as b, createCommonjsModule as c, _possibleConstructorReturn as d, _classCallCheck as e, _assertThisInitialized as f, dispatch_dev as g, handle_promise as h, init$1 as i, element as j, space as k, claim_element as l, children as m, claim_text as n, detach_dev as o, claim_space as p, add_location as q, attr_dev as r, safe_not_equal as s, text as t, insert_dev as u, validate_slots as v, append_dev as w, _slicedToArray as x, set_data_dev as y, update_await_block_branch as z };
+export { noop as A, regenerator as B, _createClass as C, globals as D, validate_each_argument as E, create_component as F, query_selector_all as G, claim_component as H, mount_component as I, transition_in as J, transition_out as K, destroy_each as L, destroy_component as M, onMount as N, SvelteComponentDev as S, _inherits as _, commonjsGlobal as a, _getPrototypeOf as b, createCommonjsModule as c, _possibleConstructorReturn as d, _classCallCheck as e, _assertThisInitialized as f, dispatch_dev as g, handle_promise as h, init$1 as i, element as j, space as k, claim_element as l, children as m, claim_text as n, detach_dev as o, claim_space as p, add_location as q, attr_dev as r, safe_not_equal as s, text as t, insert_dev as u, validate_slots as v, append_dev as w, _slicedToArray as x, set_data_dev as y, update_await_block_branch as z };
 
 import __inject_styles from './inject_styles.fe622066.js';

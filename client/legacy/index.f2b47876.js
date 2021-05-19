@@ -1,4 +1,4 @@
-import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as set_data_dev, z as update_await_block_branch, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.3cc6d321.js';
+import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as set_data_dev, z as update_await_block_branch, A as noop, B as regenerator, C as _createClass, D as globals, E as validate_each_argument, F as create_component, G as query_selector_all, H as claim_component, I as mount_component, J as transition_in, K as transition_out, L as destroy_each, M as destroy_component, N as onMount } from './client.dc31677f.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -978,6 +978,8 @@ var Footer = /*#__PURE__*/function (_SvelteComponentDev) {
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+var console_1 = globals.console,
+    document_1 = globals.document;
 var file = "src/routes/index.svelte";
 
 function get_each_context(ctx, list, i) {
@@ -1008,7 +1010,7 @@ function get_each_context_4(ctx, list, i) {
   var child_ctx = ctx.slice();
   child_ctx[18] = list[i];
   return child_ctx;
-} // (64:3) {#each projects as project}
+} // (86:3) {#each projects as project}
 
 
 function create_each_block_4(ctx) {
@@ -1094,22 +1096,22 @@ function create_each_block_4(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file, 66, 6, 2905);
+      add_location(p0, file, 88, 6, 3503);
       attr_dev(div0, "class", "w-8/12 px-4 sm:w-4/12");
-      add_location(div0, file, 65, 5, 2863);
-      add_location(p1, file, 69, 6, 2993);
+      add_location(div0, file, 87, 5, 3461);
+      add_location(p1, file, 91, 6, 3591);
       attr_dev(div1, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div1, file, 68, 5, 2945);
-      add_location(p2, file, 72, 6, 3081);
+      add_location(div1, file, 90, 5, 3543);
+      add_location(p2, file, 94, 6, 3679);
       attr_dev(div2, "class", "flex justify-end w-4/12 px-4");
-      add_location(div2, file, 71, 5, 3032);
-      attr_dev(a, "class", "flex block ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
+      add_location(div2, file, 93, 5, 3630);
+      attr_dev(a, "class", "flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "href", a_href_value =
       /*project*/
       ctx[18].url);
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 64, 4, 2676);
+      add_location(a, file, 86, 4, 3280);
     },
     m: function mount(target, anchor) {
       insert_dev(target, a, anchor);
@@ -1159,11 +1161,11 @@ function create_each_block_4(ctx) {
     block: block,
     id: create_each_block_4.name,
     type: "each",
-    source: "(64:3) {#each projects as project}",
+    source: "(86:3) {#each projects as project}",
     ctx: ctx
   });
   return block;
-} // (94:3) {#each experiences as experience}
+} // (116:3) {#each experiences as experience}
 
 
 function create_each_block_3(ctx) {
@@ -1249,22 +1251,22 @@ function create_each_block_3(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file, 96, 6, 3833);
+      add_location(p0, file, 118, 6, 4425);
       attr_dev(div0, "class", "w-4/12 px-4");
-      add_location(div0, file, 95, 5, 3801);
-      add_location(p1, file, 99, 6, 3924);
+      add_location(div0, file, 117, 5, 4393);
+      add_location(p1, file, 121, 6, 4516);
       attr_dev(div1, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div1, file, 98, 5, 3876);
-      add_location(p2, file, 102, 6, 4025);
+      add_location(div1, file, 120, 5, 4468);
+      add_location(p2, file, 124, 6, 4617);
       attr_dev(div2, "class", "flex justify-end w-8/12 px-4 sm:w-4/12");
-      add_location(div2, file, 101, 5, 3966);
-      attr_dev(a, "class", "flex block ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
+      add_location(div2, file, 123, 5, 4558);
+      attr_dev(a, "class", "flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "href", a_href_value =
       /*experience*/
       ctx[15].url);
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 94, 4, 3611);
+      add_location(a, file, 116, 4, 4209);
     },
     m: function mount(target, anchor) {
       insert_dev(target, a, anchor);
@@ -1314,11 +1316,11 @@ function create_each_block_3(ctx) {
     block: block,
     id: create_each_block_3.name,
     type: "each",
-    source: "(94:3) {#each experiences as experience}",
+    source: "(116:3) {#each experiences as experience}",
     ctx: ctx
   });
   return block;
-} // (112:3) {#each services as service}
+} // (134:3) {#each services as service}
 
 
 function create_each_block_2(ctx) {
@@ -1344,7 +1346,7 @@ function create_each_block_2(ctx) {
     },
     h: function hydrate() {
       attr_dev(p, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p, file, 112, 4, 4275);
+      add_location(p, file, 134, 4, 4867);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -1365,11 +1367,11 @@ function create_each_block_2(ctx) {
     block: block,
     id: create_each_block_2.name,
     type: "each",
-    source: "(112:3) {#each services as service}",
+    source: "(134:3) {#each services as service}",
     ctx: ctx
   });
   return block;
-} // (118:3) {#each collaborators as collaborator}
+} // (140:3) {#each collaborators as collaborator}
 
 
 function create_each_block_1(ctx) {
@@ -1395,7 +1397,7 @@ function create_each_block_1(ctx) {
     },
     h: function hydrate() {
       attr_dev(p, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p, file, 118, 4, 4496);
+      add_location(p, file, 140, 4, 5088);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -1416,11 +1418,11 @@ function create_each_block_1(ctx) {
     block: block,
     id: create_each_block_1.name,
     type: "each",
-    source: "(118:3) {#each collaborators as collaborator}",
+    source: "(140:3) {#each collaborators as collaborator}",
     ctx: ctx
   });
   return block;
-} // (124:3) {#each links as link}
+} // (146:3) {#each links as link}
 
 
 function create_each_block(ctx) {
@@ -1460,8 +1462,8 @@ function create_each_block(ctx) {
       attr_dev(a, "class", "text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 124, 7, 4693);
-      add_location(p, file, 124, 4, 4690);
+      add_location(a, file, 146, 7, 5285);
+      add_location(p, file, 146, 4, 5282);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -1491,7 +1493,7 @@ function create_each_block(ctx) {
     block: block,
     id: create_each_block.name,
     type: "each",
-    source: "(124:3) {#each links as link}",
+    source: "(146:3) {#each links as link}",
     ctx: ctx
   });
   return block;
@@ -1708,7 +1710,7 @@ function create_fragment(ctx) {
       this.h();
     },
     l: function claim(nodes) {
-      var head_nodes = query_selector_all("[data-svelte=\"svelte-1e6j3ni\"]", document.head);
+      var head_nodes = query_selector_all("[data-svelte=\"svelte-1e6j3ni\"]", document_1.head);
       head_nodes.forEach(detach_dev);
       t0 = claim_space(nodes);
       div16 = claim_element(nodes, "DIV", {
@@ -1921,68 +1923,68 @@ function create_fragment(ctx) {
       this.h();
     },
     h: function hydrate() {
-      document.title = "Maxim Siebert – Designer & Developer";
+      document_1.title = "Maxim Siebert – Designer & Developer";
       attr_dev(a, "href", "/");
       attr_dev(a, "class", "self-start inline-block px-4 mb-5 loader");
-      add_location(a, file, 38, 1, 1790);
+      add_location(a, file, 60, 1, 2394);
       attr_dev(h1, "class", "inline-block mb-1 sm:mb-2 md:mb-0");
-      add_location(h1, file, 41, 3, 1974);
+      add_location(h1, file, 63, 3, 2578);
       attr_dev(div0, "class", "block text-gray-600 dark:text-gray-400 md:hidden");
-      add_location(div0, file, 42, 3, 2042);
+      add_location(div0, file, 64, 3, 2646);
       attr_dev(div1, "class", "w-full px-4 mb-5 sm:mb-8 lg:w-3/12 md:w-4/12 md:mb-0");
-      add_location(div1, file, 40, 2, 1904);
-      add_location(p0, file, 48, 4, 2227);
+      add_location(div1, file, 62, 2, 2508);
+      add_location(p0, file, 70, 4, 2831);
       attr_dev(div2, "class", "w-4/12 px-4");
-      add_location(div2, file, 47, 3, 2197);
-      add_location(p1, file, 51, 4, 2301);
+      add_location(div2, file, 69, 3, 2801);
+      add_location(p1, file, 73, 4, 2905);
       attr_dev(div3, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div3, file, 50, 3, 2255);
-      add_location(p2, file, 54, 4, 2383);
+      add_location(div3, file, 72, 3, 2859);
+      add_location(p2, file, 76, 4, 2987);
       attr_dev(div4, "class", "flex justify-end w-8/12 px-4 sm:w-4/12");
-      add_location(div4, file, 53, 3, 2326);
+      add_location(div4, file, 75, 3, 2930);
       attr_dev(div5, "class", "flex w-full ml-auto md:w-8/12");
-      add_location(div5, file, 46, 2, 2150);
+      add_location(div5, file, 68, 2, 2754);
       attr_dev(header0, "class", "flex flex-wrap mb-1 sm:mb-2");
-      add_location(header0, file, 39, 1, 1857);
+      add_location(header0, file, 61, 1, 2461);
       attr_dev(div6, "class", "hidden w-4/12 px-4 text-gray-600 lg:w-3/12 dark:text-gray-400 md:block");
-      add_location(div6, file, 59, 2, 2483);
+      add_location(div6, file, 81, 2, 3087);
       attr_dev(div7, "class", "w-full ml-auto md:w-8/12");
-      add_location(div7, file, 62, 2, 2602);
+      add_location(div7, file, 84, 2, 3206);
       attr_dev(section0, "class", "flex flex-wrap mb-5 sm:mb-8 md:mb-12");
-      add_location(section0, file, 58, 1, 2426);
-      add_location(p3, file, 81, 4, 3271);
+      add_location(section0, file, 80, 1, 3030);
+      add_location(p3, file, 103, 4, 3869);
       attr_dev(div8, "class", "w-4/12 px-4");
-      add_location(div8, file, 80, 3, 3241);
-      add_location(p4, file, 84, 4, 3348);
+      add_location(div8, file, 102, 3, 3839);
+      add_location(p4, file, 106, 4, 3946);
       attr_dev(div9, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div9, file, 83, 3, 3302);
-      add_location(p5, file, 87, 4, 3431);
+      add_location(div9, file, 105, 3, 3900);
+      add_location(p5, file, 109, 4, 4029);
       attr_dev(div10, "class", "flex justify-end w-8/12 px-4 sm:w-4/12");
-      add_location(div10, file, 86, 3, 3374);
+      add_location(div10, file, 108, 3, 3972);
       attr_dev(div11, "class", "flex w-full ml-auto md:w-8/12");
-      add_location(div11, file, 79, 2, 3194);
+      add_location(div11, file, 101, 2, 3792);
       attr_dev(header1, "class", "flex mb-1 sm:mb-2");
-      add_location(header1, file, 78, 1, 3157);
+      add_location(header1, file, 100, 1, 3755);
       attr_dev(div12, "class", "w-full ml-auto md:w-8/12");
-      add_location(div12, file, 92, 2, 3531);
+      add_location(div12, file, 114, 2, 4129);
       attr_dev(section1, "class", "flex flex-wrap mb-5 sm:mb-8 md:mb-12");
-      add_location(section1, file, 91, 1, 3474);
+      add_location(section1, file, 113, 1, 4072);
       attr_dev(p6, "class", "mb-1 sm:mb-2");
-      add_location(p6, file, 110, 3, 4203);
+      add_location(p6, file, 132, 3, 4795);
       attr_dev(div13, "class", "w-8/12 px-4 sm:w-4/12");
-      add_location(div13, file, 109, 2, 4164);
+      add_location(div13, file, 131, 2, 4756);
       attr_dev(p7, "class", "mb-1 sm:mb-2");
-      add_location(p7, file, 116, 3, 4406);
+      add_location(p7, file, 138, 3, 4998);
       attr_dev(div14, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div14, file, 115, 2, 4361);
+      add_location(div14, file, 137, 2, 4953);
       attr_dev(p8, "class", "mb-1 sm:mb-2");
-      add_location(p8, file, 122, 3, 4627);
+      add_location(p8, file, 144, 3, 5219);
       attr_dev(div15, "class", "w-4/12 px-4 text-right");
-      add_location(div15, file, 121, 2, 4587);
+      add_location(div15, file, 143, 2, 5179);
       attr_dev(section2, "class", "flex flex-wrap w-full ml-auto md:w-8/12");
-      add_location(section2, file, 108, 1, 4104);
-      attr_dev(div16, "class", "flex flex-col min-h-screen py-5 text-xs bg-gray-100 lg:px-4 dark:bg-black dark:text-white");
-      add_location(div16, file, 37, 0, 1685);
+      add_location(section2, file, 130, 1, 4696);
+      attr_dev(div16, "class", "flex flex-col min-h-screen py-5 text-xs text-black bg-gray-100 lg:px-4 dark:bg-black dark:text-white");
+      add_location(div16, file, 59, 0, 2278);
     },
     m: function mount(target, anchor) {
       insert_dev(target, t0, anchor);
@@ -2360,9 +2362,28 @@ function instance($$self, $$props, $$invalidate) {
   var services = $$props.services;
   var links = $$props.links;
   var description = "is a French Canadian designer & developer. He's currently a Principal Designer at <a href=\"https://blunt.af/\" class=\"hover:text-black dark:hover:text-white hover:underline\" target=\"_blank\" rel=\"noreferrer noopener\">Peggy</a> and freelances through his studio, <a href=\"https://blunt.af/\" class=\"hover:text-black dark:hover:text-white hover:underline\" target=\"_blank\" rel=\"noreferrer noopener\">Blunt</a>. This site lists most of the work he's done over the years. If you'd like to discuss new commissions or collaborate with Maxim, email him at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:underline\">maxim@hey.com</a>.";
+  onMount(function () {
+    [].forEach.call(document.getElementsByTagName("a"), function (e) {
+      e.addEventListener("click", function (e) {
+        var mouseX = e.pageX;
+        var mouseY = e.pageY;
+        console.log("Mouse Position:\t" + mouseX + "|" + mouseY);
+        var div = document.createElement("div");
+        div.className = "dot";
+        div.style.left = mouseX + "px";
+        div.style.top = mouseY + "px";
+        document.body.appendChild(div);
+      });
+    });
+    window.addEventListener("resize", function () {
+      document.querySelectorAll(".dot").forEach(function (e) {
+        return e.remove();
+      });
+    });
+  });
   var writable_props = ["projects", "experiences", "collaborators", "services", "links"];
   Object.keys($$props).forEach(function (key) {
-    if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn("<Routes> was created with unknown prop '".concat(key, "'"));
+    if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1.warn("<Routes> was created with unknown prop '".concat(key, "'"));
   });
 
   $$self.$$set = function ($$props) {
@@ -2376,6 +2397,7 @@ function instance($$self, $$props, $$invalidate) {
   $$self.$capture_state = function () {
     return {
       preload: preload,
+      onMount: onMount,
       Footer: Footer,
       projects: projects,
       experiences: experiences,
@@ -2432,31 +2454,31 @@ var Routes = /*#__PURE__*/function (_SvelteComponentDev) {
     if (
     /*projects*/
     ctx[0] === undefined && !("projects" in props)) {
-      console.warn("<Routes> was created without expected prop 'projects'");
+      console_1.warn("<Routes> was created without expected prop 'projects'");
     }
 
     if (
     /*experiences*/
     ctx[1] === undefined && !("experiences" in props)) {
-      console.warn("<Routes> was created without expected prop 'experiences'");
+      console_1.warn("<Routes> was created without expected prop 'experiences'");
     }
 
     if (
     /*collaborators*/
     ctx[2] === undefined && !("collaborators" in props)) {
-      console.warn("<Routes> was created without expected prop 'collaborators'");
+      console_1.warn("<Routes> was created without expected prop 'collaborators'");
     }
 
     if (
     /*services*/
     ctx[3] === undefined && !("services" in props)) {
-      console.warn("<Routes> was created without expected prop 'services'");
+      console_1.warn("<Routes> was created without expected prop 'services'");
     }
 
     if (
     /*links*/
     ctx[4] === undefined && !("links" in props)) {
-      console.warn("<Routes> was created without expected prop 'links'");
+      console_1.warn("<Routes> was created without expected prop 'links'");
     }
 
     return _this;
