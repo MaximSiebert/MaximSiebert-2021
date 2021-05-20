@@ -1,4 +1,4 @@
-import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as set_data_dev, z as update_await_block_branch, A as noop, B as regenerator, C as _createClass, D as globals, E as validate_each_argument, F as create_component, G as query_selector_all, H as claim_component, I as mount_component, J as transition_in, K as transition_out, L as destroy_each, M as destroy_component, N as onMount } from './client.dc31677f.js';
+import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as set_data_dev, z as update_await_block_branch, A as noop, B as regenerator, C as _createClass, D as globals, E as validate_each_argument, F as create_component, G as query_selector_all, H as claim_component, I as mount_component, J as transition_in, K as transition_out, L as destroy_each, M as destroy_component, N as onMount } from './client.ce59449a.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -1096,22 +1096,22 @@ function create_each_block_4(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file, 88, 6, 3503);
+      add_location(p0, file, 88, 6, 3504);
       attr_dev(div0, "class", "w-8/12 px-4 sm:w-4/12");
-      add_location(div0, file, 87, 5, 3461);
-      add_location(p1, file, 91, 6, 3591);
+      add_location(div0, file, 87, 5, 3462);
+      add_location(p1, file, 91, 6, 3592);
       attr_dev(div1, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div1, file, 90, 5, 3543);
-      add_location(p2, file, 94, 6, 3679);
+      add_location(div1, file, 90, 5, 3544);
+      add_location(p2, file, 94, 6, 3680);
       attr_dev(div2, "class", "flex justify-end w-4/12 px-4");
-      add_location(div2, file, 93, 5, 3630);
+      add_location(div2, file, 93, 5, 3631);
       attr_dev(a, "class", "flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "href", a_href_value =
       /*project*/
       ctx[18].url);
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 86, 4, 3280);
+      add_location(a, file, 86, 4, 3281);
     },
     m: function mount(target, anchor) {
       insert_dev(target, a, anchor);
@@ -1251,22 +1251,22 @@ function create_each_block_3(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file, 118, 6, 4425);
+      add_location(p0, file, 118, 6, 4426);
       attr_dev(div0, "class", "w-4/12 px-4");
-      add_location(div0, file, 117, 5, 4393);
-      add_location(p1, file, 121, 6, 4516);
+      add_location(div0, file, 117, 5, 4394);
+      add_location(p1, file, 121, 6, 4517);
       attr_dev(div1, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div1, file, 120, 5, 4468);
-      add_location(p2, file, 124, 6, 4617);
+      add_location(div1, file, 120, 5, 4469);
+      add_location(p2, file, 124, 6, 4618);
       attr_dev(div2, "class", "flex justify-end w-8/12 px-4 sm:w-4/12");
-      add_location(div2, file, 123, 5, 4558);
+      add_location(div2, file, 123, 5, 4559);
       attr_dev(a, "class", "flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "href", a_href_value =
       /*experience*/
       ctx[15].url);
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 116, 4, 4209);
+      add_location(a, file, 116, 4, 4210);
     },
     m: function mount(target, anchor) {
       insert_dev(target, a, anchor);
@@ -1346,7 +1346,7 @@ function create_each_block_2(ctx) {
     },
     h: function hydrate() {
       attr_dev(p, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p, file, 134, 4, 4867);
+      add_location(p, file, 134, 4, 4868);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -1397,7 +1397,7 @@ function create_each_block_1(ctx) {
     },
     h: function hydrate() {
       attr_dev(p, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p, file, 140, 4, 5088);
+      add_location(p, file, 140, 4, 5089);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -1462,8 +1462,8 @@ function create_each_block(ctx) {
       attr_dev(a, "class", "text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 146, 7, 5285);
-      add_location(p, file, 146, 4, 5282);
+      add_location(a, file, 146, 7, 5286);
+      add_location(p, file, 146, 4, 5283);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -1926,65 +1926,65 @@ function create_fragment(ctx) {
       document_1.title = "Maxim Siebert – Designer & Developer";
       attr_dev(a, "href", "/");
       attr_dev(a, "class", "self-start inline-block px-4 mb-5 loader");
-      add_location(a, file, 60, 1, 2394);
+      add_location(a, file, 60, 1, 2395);
       attr_dev(h1, "class", "inline-block mb-1 sm:mb-2 md:mb-0");
-      add_location(h1, file, 63, 3, 2578);
+      add_location(h1, file, 63, 3, 2579);
       attr_dev(div0, "class", "block text-gray-600 dark:text-gray-400 md:hidden");
-      add_location(div0, file, 64, 3, 2646);
+      add_location(div0, file, 64, 3, 2647);
       attr_dev(div1, "class", "w-full px-4 mb-5 sm:mb-8 lg:w-3/12 md:w-4/12 md:mb-0");
-      add_location(div1, file, 62, 2, 2508);
-      add_location(p0, file, 70, 4, 2831);
+      add_location(div1, file, 62, 2, 2509);
+      add_location(p0, file, 70, 4, 2832);
       attr_dev(div2, "class", "w-4/12 px-4");
-      add_location(div2, file, 69, 3, 2801);
-      add_location(p1, file, 73, 4, 2905);
+      add_location(div2, file, 69, 3, 2802);
+      add_location(p1, file, 73, 4, 2906);
       attr_dev(div3, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div3, file, 72, 3, 2859);
-      add_location(p2, file, 76, 4, 2987);
+      add_location(div3, file, 72, 3, 2860);
+      add_location(p2, file, 76, 4, 2988);
       attr_dev(div4, "class", "flex justify-end w-8/12 px-4 sm:w-4/12");
-      add_location(div4, file, 75, 3, 2930);
+      add_location(div4, file, 75, 3, 2931);
       attr_dev(div5, "class", "flex w-full ml-auto md:w-8/12");
-      add_location(div5, file, 68, 2, 2754);
+      add_location(div5, file, 68, 2, 2755);
       attr_dev(header0, "class", "flex flex-wrap mb-1 sm:mb-2");
-      add_location(header0, file, 61, 1, 2461);
+      add_location(header0, file, 61, 1, 2462);
       attr_dev(div6, "class", "hidden w-4/12 px-4 text-gray-600 lg:w-3/12 dark:text-gray-400 md:block");
-      add_location(div6, file, 81, 2, 3087);
+      add_location(div6, file, 81, 2, 3088);
       attr_dev(div7, "class", "w-full ml-auto md:w-8/12");
-      add_location(div7, file, 84, 2, 3206);
+      add_location(div7, file, 84, 2, 3207);
       attr_dev(section0, "class", "flex flex-wrap mb-5 sm:mb-8 md:mb-12");
-      add_location(section0, file, 80, 1, 3030);
-      add_location(p3, file, 103, 4, 3869);
+      add_location(section0, file, 80, 1, 3031);
+      add_location(p3, file, 103, 4, 3870);
       attr_dev(div8, "class", "w-4/12 px-4");
-      add_location(div8, file, 102, 3, 3839);
-      add_location(p4, file, 106, 4, 3946);
+      add_location(div8, file, 102, 3, 3840);
+      add_location(p4, file, 106, 4, 3947);
       attr_dev(div9, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div9, file, 105, 3, 3900);
-      add_location(p5, file, 109, 4, 4029);
+      add_location(div9, file, 105, 3, 3901);
+      add_location(p5, file, 109, 4, 4030);
       attr_dev(div10, "class", "flex justify-end w-8/12 px-4 sm:w-4/12");
-      add_location(div10, file, 108, 3, 3972);
+      add_location(div10, file, 108, 3, 3973);
       attr_dev(div11, "class", "flex w-full ml-auto md:w-8/12");
-      add_location(div11, file, 101, 2, 3792);
+      add_location(div11, file, 101, 2, 3793);
       attr_dev(header1, "class", "flex mb-1 sm:mb-2");
-      add_location(header1, file, 100, 1, 3755);
+      add_location(header1, file, 100, 1, 3756);
       attr_dev(div12, "class", "w-full ml-auto md:w-8/12");
-      add_location(div12, file, 114, 2, 4129);
+      add_location(div12, file, 114, 2, 4130);
       attr_dev(section1, "class", "flex flex-wrap mb-5 sm:mb-8 md:mb-12");
-      add_location(section1, file, 113, 1, 4072);
+      add_location(section1, file, 113, 1, 4073);
       attr_dev(p6, "class", "mb-1 sm:mb-2");
-      add_location(p6, file, 132, 3, 4795);
+      add_location(p6, file, 132, 3, 4796);
       attr_dev(div13, "class", "w-8/12 px-4 sm:w-4/12");
-      add_location(div13, file, 131, 2, 4756);
+      add_location(div13, file, 131, 2, 4757);
       attr_dev(p7, "class", "mb-1 sm:mb-2");
-      add_location(p7, file, 138, 3, 4998);
+      add_location(p7, file, 138, 3, 4999);
       attr_dev(div14, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div14, file, 137, 2, 4953);
+      add_location(div14, file, 137, 2, 4954);
       attr_dev(p8, "class", "mb-1 sm:mb-2");
-      add_location(p8, file, 144, 3, 5219);
+      add_location(p8, file, 144, 3, 5220);
       attr_dev(div15, "class", "w-4/12 px-4 text-right");
-      add_location(div15, file, 143, 2, 5179);
+      add_location(div15, file, 143, 2, 5180);
       attr_dev(section2, "class", "flex flex-wrap w-full ml-auto md:w-8/12");
-      add_location(section2, file, 130, 1, 4696);
+      add_location(section2, file, 130, 1, 4697);
       attr_dev(div16, "class", "flex flex-col min-h-screen py-5 text-xs text-black bg-gray-100 lg:px-4 dark:bg-black dark:text-white");
-      add_location(div16, file, 59, 0, 2278);
+      add_location(div16, file, 59, 0, 2279);
     },
     m: function mount(target, anchor) {
       insert_dev(target, t0, anchor);
@@ -2361,7 +2361,7 @@ function instance($$self, $$props, $$invalidate) {
   var collaborators = $$props.collaborators;
   var services = $$props.services;
   var links = $$props.links;
-  var description = "is a French Canadian designer & developer. He's currently a Principal Designer at <a href=\"https://blunt.af/\" class=\"hover:text-black dark:hover:text-white hover:underline\" target=\"_blank\" rel=\"noreferrer noopener\">Peggy</a> and freelances through his studio, <a href=\"https://blunt.af/\" class=\"hover:text-black dark:hover:text-white hover:underline\" target=\"_blank\" rel=\"noreferrer noopener\">Blunt</a>. This site lists most of the work he's done over the years. If you'd like to discuss new commissions or collaborate with Maxim, email him at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:underline\">maxim@hey.com</a>.";
+  var description = "is a French Canadian designer & developer. He's currently a Principal Designer at <a href=\"https://peggy.com/\" class=\"hover:text-black dark:hover:text-white hover:underline\" target=\"_blank\" rel=\"noreferrer noopener\">Peggy</a> and freelances through his studio, <a href=\"https://blunt.af/\" class=\"hover:text-black dark:hover:text-white hover:underline\" target=\"_blank\" rel=\"noreferrer noopener\">Blunt</a>. This site lists most of the work he's done over the years. If you'd like to discuss new commissions or collaborate with Maxim, email him at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:underline\">maxim@hey.com</a>.";
   onMount(function () {
     [].forEach.call(document.getElementsByTagName("a"), function (e) {
       e.addEventListener("click", function (e) {
