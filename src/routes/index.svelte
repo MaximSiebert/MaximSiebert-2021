@@ -80,7 +80,7 @@
 	<title>Maxim Siebert – Designer & Developer</title>
 </svelte:head>
 
-<div id="cursor" class="absolute w-2 h-2 duration-100 ease-in-out bg-black rounded-full pointer-events-none dark:bg-white"></div>
+<div id="cursor" class="absolute w-2 h-2 duration-100 ease-in-out bg-black rounded-full pointer-events-none dark:bg-white -top-10 -left-10"></div>
 <div class="flex flex-col min-h-screen py-5 text-xs text-black bg-gray-100 lg:px-4 dark:bg-black dark:text-white">
 	<a href="/" class="self-start inline-block px-4 mb-5 loader"></a>
 	<header class="flex flex-wrap mb-1 sm:mb-2">
@@ -103,8 +103,8 @@
 		</div>
 	</header>
 	<section class="flex flex-wrap mb-5 sm:mb-8 md:mb-12">
-		<div class="hidden w-4/12 px-4 text-gray-600 lg:w-3/12 dark:text-gray-400 md:block">
-			{@html description}
+		<div class="hidden w-4/12 px-4 text-base tracking-tight text-black lg:text-lg lg:w-3/12 dark:text-white md:block">
+			<div class="leading-tight">{@html description}</div>
 		</div>
 		<div class="w-full ml-auto md:w-8/12">
 			{#each projects as project}

@@ -19,6 +19,12 @@
 		transition-property: height, width;
 	}
 
+	@media (hover: none) {
+		#cursor {
+			display: none;
+		}
+	}
+
 	.loader:before {
 		content: "/";
 		text-shadow: 0 0 10px rgba(255, 255, 255, .8);
