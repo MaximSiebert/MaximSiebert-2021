@@ -1,4 +1,4 @@
-import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as set_data_dev, z as update_await_block_branch, A as noop, B as regenerator, C as _createClass, D as globals, E as validate_each_argument, F as create_component, G as query_selector_all, H as claim_component, I as mount_component, J as transition_in, K as transition_out, L as destroy_each, M as destroy_component, N as onMount } from './client.ce59449a.js';
+import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as set_data_dev, z as update_await_block_branch, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component, M as onMount, N as globals } from './client.f33ec2b3.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -978,8 +978,7 @@ var Footer = /*#__PURE__*/function (_SvelteComponentDev) {
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-var console_1 = globals.console,
-    document_1 = globals.document;
+var document_1 = globals.document;
 var file = "src/routes/index.svelte";
 
 function get_each_context(ctx, list, i) {
@@ -1010,7 +1009,7 @@ function get_each_context_4(ctx, list, i) {
   var child_ctx = ctx.slice();
   child_ctx[18] = list[i];
   return child_ctx;
-} // (86:3) {#each projects as project}
+} // (110:3) {#each projects as project}
 
 
 function create_each_block_4(ctx) {
@@ -1096,22 +1095,22 @@ function create_each_block_4(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file, 88, 6, 3504);
+      add_location(p0, file, 112, 6, 4155);
       attr_dev(div0, "class", "w-8/12 px-4 sm:w-4/12");
-      add_location(div0, file, 87, 5, 3462);
-      add_location(p1, file, 91, 6, 3592);
+      add_location(div0, file, 111, 5, 4113);
+      add_location(p1, file, 115, 6, 4243);
       attr_dev(div1, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div1, file, 90, 5, 3544);
-      add_location(p2, file, 94, 6, 3680);
+      add_location(div1, file, 114, 5, 4195);
+      add_location(p2, file, 118, 6, 4331);
       attr_dev(div2, "class", "flex justify-end w-4/12 px-4");
-      add_location(div2, file, 93, 5, 3631);
+      add_location(div2, file, 117, 5, 4282);
       attr_dev(a, "class", "flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "href", a_href_value =
       /*project*/
       ctx[18].url);
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 86, 4, 3281);
+      add_location(a, file, 110, 4, 3932);
     },
     m: function mount(target, anchor) {
       insert_dev(target, a, anchor);
@@ -1161,11 +1160,11 @@ function create_each_block_4(ctx) {
     block: block,
     id: create_each_block_4.name,
     type: "each",
-    source: "(86:3) {#each projects as project}",
+    source: "(110:3) {#each projects as project}",
     ctx: ctx
   });
   return block;
-} // (116:3) {#each experiences as experience}
+} // (140:3) {#each experiences as experience}
 
 
 function create_each_block_3(ctx) {
@@ -1251,22 +1250,22 @@ function create_each_block_3(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file, 118, 6, 4426);
+      add_location(p0, file, 142, 6, 5077);
       attr_dev(div0, "class", "w-4/12 px-4");
-      add_location(div0, file, 117, 5, 4394);
-      add_location(p1, file, 121, 6, 4517);
+      add_location(div0, file, 141, 5, 5045);
+      add_location(p1, file, 145, 6, 5168);
       attr_dev(div1, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div1, file, 120, 5, 4469);
-      add_location(p2, file, 124, 6, 4618);
+      add_location(div1, file, 144, 5, 5120);
+      add_location(p2, file, 148, 6, 5269);
       attr_dev(div2, "class", "flex justify-end w-8/12 px-4 sm:w-4/12");
-      add_location(div2, file, 123, 5, 4559);
+      add_location(div2, file, 147, 5, 5210);
       attr_dev(a, "class", "flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "href", a_href_value =
       /*experience*/
       ctx[15].url);
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 116, 4, 4210);
+      add_location(a, file, 140, 4, 4861);
     },
     m: function mount(target, anchor) {
       insert_dev(target, a, anchor);
@@ -1316,11 +1315,11 @@ function create_each_block_3(ctx) {
     block: block,
     id: create_each_block_3.name,
     type: "each",
-    source: "(116:3) {#each experiences as experience}",
+    source: "(140:3) {#each experiences as experience}",
     ctx: ctx
   });
   return block;
-} // (134:3) {#each services as service}
+} // (158:3) {#each services as service}
 
 
 function create_each_block_2(ctx) {
@@ -1346,7 +1345,7 @@ function create_each_block_2(ctx) {
     },
     h: function hydrate() {
       attr_dev(p, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p, file, 134, 4, 4868);
+      add_location(p, file, 158, 4, 5519);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -1367,11 +1366,11 @@ function create_each_block_2(ctx) {
     block: block,
     id: create_each_block_2.name,
     type: "each",
-    source: "(134:3) {#each services as service}",
+    source: "(158:3) {#each services as service}",
     ctx: ctx
   });
   return block;
-} // (140:3) {#each collaborators as collaborator}
+} // (164:3) {#each collaborators as collaborator}
 
 
 function create_each_block_1(ctx) {
@@ -1397,7 +1396,7 @@ function create_each_block_1(ctx) {
     },
     h: function hydrate() {
       attr_dev(p, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p, file, 140, 4, 5089);
+      add_location(p, file, 164, 4, 5740);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -1418,11 +1417,11 @@ function create_each_block_1(ctx) {
     block: block,
     id: create_each_block_1.name,
     type: "each",
-    source: "(140:3) {#each collaborators as collaborator}",
+    source: "(164:3) {#each collaborators as collaborator}",
     ctx: ctx
   });
   return block;
-} // (146:3) {#each links as link}
+} // (170:3) {#each links as link}
 
 
 function create_each_block(ctx) {
@@ -1462,8 +1461,8 @@ function create_each_block(ctx) {
       attr_dev(a, "class", "text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 146, 7, 5286);
-      add_location(p, file, 146, 4, 5283);
+      add_location(a, file, 170, 7, 5937);
+      add_location(p, file, 170, 4, 5934);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -1493,7 +1492,7 @@ function create_each_block(ctx) {
     block: block,
     id: create_each_block.name,
     type: "each",
-    source: "(146:3) {#each links as link}",
+    source: "(170:3) {#each links as link}",
     ctx: ctx
   });
   return block;
@@ -1501,67 +1500,69 @@ function create_each_block(ctx) {
 
 function create_fragment(ctx) {
   var t0;
-  var div16;
-  var a;
-  var t1;
-  var header0;
-  var div1;
-  var h1;
-  var t2;
-  var t3;
   var div0;
-  var t4;
-  var div5;
+  var t1;
+  var div17;
+  var a;
+  var t2;
+  var header0;
   var div2;
-  var p0;
+  var h1;
+  var t3;
+  var t4;
+  var div1;
   var t5;
-  var t6;
-  var div3;
-  var p1;
-  var t7;
-  var t8;
-  var div4;
-  var p2;
-  var t9;
-  var t10;
-  var section0;
   var div6;
+  var div3;
+  var p0;
+  var t6;
+  var t7;
+  var div4;
+  var p1;
+  var t8;
+  var t9;
+  var div5;
+  var p2;
+  var t10;
   var t11;
+  var section0;
   var div7;
   var t12;
-  var header1;
-  var div11;
   var div8;
-  var p3;
   var t13;
-  var t14;
-  var div9;
-  var p4;
-  var t15;
-  var t16;
-  var div10;
-  var p5;
-  var t17;
-  var t18;
-  var section1;
+  var header1;
   var div12;
+  var div9;
+  var p3;
+  var t14;
+  var t15;
+  var div10;
+  var p4;
+  var t16;
+  var t17;
+  var div11;
+  var p5;
+  var t18;
   var t19;
-  var section2;
+  var section1;
   var div13;
-  var p6;
   var t20;
+  var section2;
+  var div14;
+  var p6;
   var t21;
   var t22;
-  var div14;
-  var p7;
   var t23;
+  var div15;
+  var p7;
   var t24;
   var t25;
-  var div15;
-  var p8;
   var t26;
+  var div16;
+  var p8;
   var t27;
   var t28;
+  var t29;
   var footer;
   var current;
   var each_value_4 =
@@ -1620,92 +1621,94 @@ function create_fragment(ctx) {
   var block = {
     c: function create() {
       t0 = space();
-      div16 = element("div");
-      a = element("a");
-      t1 = space();
-      header0 = element("header");
-      div1 = element("div");
-      h1 = element("h1");
-      t2 = text("Maxim Siebert");
-      t3 = space();
       div0 = element("div");
-      t4 = space();
-      div5 = element("div");
+      t1 = space();
+      div17 = element("div");
+      a = element("a");
+      t2 = space();
+      header0 = element("header");
       div2 = element("div");
-      p0 = element("p");
-      t5 = text("Project");
-      t6 = space();
-      div3 = element("div");
-      p1 = element("p");
-      t7 = text("Role");
-      t8 = space();
-      div4 = element("div");
-      p2 = element("p");
-      t9 = text("Year");
-      t10 = space();
-      section0 = element("section");
+      h1 = element("h1");
+      t3 = text("Maxim Siebert");
+      t4 = space();
+      div1 = element("div");
+      t5 = space();
       div6 = element("div");
+      div3 = element("div");
+      p0 = element("p");
+      t6 = text("Project");
+      t7 = space();
+      div4 = element("div");
+      p1 = element("p");
+      t8 = text("Role");
+      t9 = space();
+      div5 = element("div");
+      p2 = element("p");
+      t10 = text("Year");
       t11 = space();
+      section0 = element("section");
       div7 = element("div");
+      t12 = space();
+      div8 = element("div");
 
       for (var _i5 = 0; _i5 < each_blocks_4.length; _i5 += 1) {
         each_blocks_4[_i5].c();
       }
 
-      t12 = space();
+      t13 = space();
       header1 = element("header");
-      div11 = element("div");
-      div8 = element("div");
-      p3 = element("p");
-      t13 = text("Experience");
-      t14 = space();
-      div9 = element("div");
-      p4 = element("p");
-      t15 = text("Title");
-      t16 = space();
-      div10 = element("div");
-      p5 = element("p");
-      t17 = text("Year");
-      t18 = space();
-      section1 = element("section");
       div12 = element("div");
+      div9 = element("div");
+      p3 = element("p");
+      t14 = text("Experience");
+      t15 = space();
+      div10 = element("div");
+      p4 = element("p");
+      t16 = text("Title");
+      t17 = space();
+      div11 = element("div");
+      p5 = element("p");
+      t18 = text("Year");
+      t19 = space();
+      section1 = element("section");
+      div13 = element("div");
 
       for (var _i6 = 0; _i6 < each_blocks_3.length; _i6 += 1) {
         each_blocks_3[_i6].c();
       }
 
-      t19 = space();
+      t20 = space();
       section2 = element("section");
-      div13 = element("div");
+      div14 = element("div");
       p6 = element("p");
-      t20 = text("Services");
-      t21 = space();
+      t21 = text("Services");
+      t22 = space();
 
       for (var _i7 = 0; _i7 < each_blocks_2.length; _i7 += 1) {
         each_blocks_2[_i7].c();
       }
 
-      t22 = space();
-      div14 = element("div");
+      t23 = space();
+      div15 = element("div");
       p7 = element("p");
-      t23 = text("Selected Clients");
-      t24 = space();
+      t24 = text("Selected Clients");
+      t25 = space();
 
       for (var _i8 = 0; _i8 < each_blocks_1.length; _i8 += 1) {
         each_blocks_1[_i8].c();
       }
 
-      t25 = space();
-      div15 = element("div");
+      t26 = space();
+      div16 = element("div");
       p8 = element("p");
-      t26 = text("Links");
-      t27 = space();
+      t27 = text("Links");
+      t28 = space();
 
       for (var _i9 = 0; _i9 < each_blocks.length; _i9 += 1) {
         each_blocks[_i9].c();
       }
 
-      t28 = space();
+      t29 = space();
       create_component(footer.$$.fragment);
       this.h();
     },
@@ -1713,374 +1716,385 @@ function create_fragment(ctx) {
       var head_nodes = query_selector_all("[data-svelte=\"svelte-1e6j3ni\"]", document_1.head);
       head_nodes.forEach(detach_dev);
       t0 = claim_space(nodes);
-      div16 = claim_element(nodes, "DIV", {
+      div0 = claim_element(nodes, "DIV", {
+        id: true,
         class: true
       });
-      var div16_nodes = children(div16);
-      a = claim_element(div16_nodes, "A", {
+      children(div0).forEach(detach_dev);
+      t1 = claim_space(nodes);
+      div17 = claim_element(nodes, "DIV", {
+        class: true
+      });
+      var div17_nodes = children(div17);
+      a = claim_element(div17_nodes, "A", {
         href: true,
         class: true
       });
       children(a).forEach(detach_dev);
-      t1 = claim_space(div16_nodes);
-      header0 = claim_element(div16_nodes, "HEADER", {
+      t2 = claim_space(div17_nodes);
+      header0 = claim_element(div17_nodes, "HEADER", {
         class: true
       });
       var header0_nodes = children(header0);
-      div1 = claim_element(header0_nodes, "DIV", {
-        class: true
-      });
-      var div1_nodes = children(div1);
-      h1 = claim_element(div1_nodes, "H1", {
-        class: true
-      });
-      var h1_nodes = children(h1);
-      t2 = claim_text(h1_nodes, "Maxim Siebert");
-      h1_nodes.forEach(detach_dev);
-      t3 = claim_space(div1_nodes);
-      div0 = claim_element(div1_nodes, "DIV", {
-        class: true
-      });
-      var div0_nodes = children(div0);
-      div0_nodes.forEach(detach_dev);
-      div1_nodes.forEach(detach_dev);
-      t4 = claim_space(header0_nodes);
-      div5 = claim_element(header0_nodes, "DIV", {
-        class: true
-      });
-      var div5_nodes = children(div5);
-      div2 = claim_element(div5_nodes, "DIV", {
+      div2 = claim_element(header0_nodes, "DIV", {
         class: true
       });
       var div2_nodes = children(div2);
-      p0 = claim_element(div2_nodes, "P", {});
-      var p0_nodes = children(p0);
-      t5 = claim_text(p0_nodes, "Project");
-      p0_nodes.forEach(detach_dev);
+      h1 = claim_element(div2_nodes, "H1", {
+        class: true
+      });
+      var h1_nodes = children(h1);
+      t3 = claim_text(h1_nodes, "Maxim Siebert");
+      h1_nodes.forEach(detach_dev);
+      t4 = claim_space(div2_nodes);
+      div1 = claim_element(div2_nodes, "DIV", {
+        class: true
+      });
+      var div1_nodes = children(div1);
+      div1_nodes.forEach(detach_dev);
       div2_nodes.forEach(detach_dev);
-      t6 = claim_space(div5_nodes);
-      div3 = claim_element(div5_nodes, "DIV", {
-        class: true
-      });
-      var div3_nodes = children(div3);
-      p1 = claim_element(div3_nodes, "P", {});
-      var p1_nodes = children(p1);
-      t7 = claim_text(p1_nodes, "Role");
-      p1_nodes.forEach(detach_dev);
-      div3_nodes.forEach(detach_dev);
-      t8 = claim_space(div5_nodes);
-      div4 = claim_element(div5_nodes, "DIV", {
-        class: true
-      });
-      var div4_nodes = children(div4);
-      p2 = claim_element(div4_nodes, "P", {});
-      var p2_nodes = children(p2);
-      t9 = claim_text(p2_nodes, "Year");
-      p2_nodes.forEach(detach_dev);
-      div4_nodes.forEach(detach_dev);
-      div5_nodes.forEach(detach_dev);
-      header0_nodes.forEach(detach_dev);
-      t10 = claim_space(div16_nodes);
-      section0 = claim_element(div16_nodes, "SECTION", {
-        class: true
-      });
-      var section0_nodes = children(section0);
-      div6 = claim_element(section0_nodes, "DIV", {
+      t5 = claim_space(header0_nodes);
+      div6 = claim_element(header0_nodes, "DIV", {
         class: true
       });
       var div6_nodes = children(div6);
+      div3 = claim_element(div6_nodes, "DIV", {
+        class: true
+      });
+      var div3_nodes = children(div3);
+      p0 = claim_element(div3_nodes, "P", {});
+      var p0_nodes = children(p0);
+      t6 = claim_text(p0_nodes, "Project");
+      p0_nodes.forEach(detach_dev);
+      div3_nodes.forEach(detach_dev);
+      t7 = claim_space(div6_nodes);
+      div4 = claim_element(div6_nodes, "DIV", {
+        class: true
+      });
+      var div4_nodes = children(div4);
+      p1 = claim_element(div4_nodes, "P", {});
+      var p1_nodes = children(p1);
+      t8 = claim_text(p1_nodes, "Role");
+      p1_nodes.forEach(detach_dev);
+      div4_nodes.forEach(detach_dev);
+      t9 = claim_space(div6_nodes);
+      div5 = claim_element(div6_nodes, "DIV", {
+        class: true
+      });
+      var div5_nodes = children(div5);
+      p2 = claim_element(div5_nodes, "P", {});
+      var p2_nodes = children(p2);
+      t10 = claim_text(p2_nodes, "Year");
+      p2_nodes.forEach(detach_dev);
+      div5_nodes.forEach(detach_dev);
       div6_nodes.forEach(detach_dev);
-      t11 = claim_space(section0_nodes);
+      header0_nodes.forEach(detach_dev);
+      t11 = claim_space(div17_nodes);
+      section0 = claim_element(div17_nodes, "SECTION", {
+        class: true
+      });
+      var section0_nodes = children(section0);
       div7 = claim_element(section0_nodes, "DIV", {
         class: true
       });
       var div7_nodes = children(div7);
-
-      for (var _i10 = 0; _i10 < each_blocks_4.length; _i10 += 1) {
-        each_blocks_4[_i10].l(div7_nodes);
-      }
-
       div7_nodes.forEach(detach_dev);
-      section0_nodes.forEach(detach_dev);
-      t12 = claim_space(div16_nodes);
-      header1 = claim_element(div16_nodes, "HEADER", {
-        class: true
-      });
-      var header1_nodes = children(header1);
-      div11 = claim_element(header1_nodes, "DIV", {
-        class: true
-      });
-      var div11_nodes = children(div11);
-      div8 = claim_element(div11_nodes, "DIV", {
+      t12 = claim_space(section0_nodes);
+      div8 = claim_element(section0_nodes, "DIV", {
         class: true
       });
       var div8_nodes = children(div8);
-      p3 = claim_element(div8_nodes, "P", {});
-      var p3_nodes = children(p3);
-      t13 = claim_text(p3_nodes, "Experience");
-      p3_nodes.forEach(detach_dev);
+
+      for (var _i10 = 0; _i10 < each_blocks_4.length; _i10 += 1) {
+        each_blocks_4[_i10].l(div8_nodes);
+      }
+
       div8_nodes.forEach(detach_dev);
-      t14 = claim_space(div11_nodes);
-      div9 = claim_element(div11_nodes, "DIV", {
+      section0_nodes.forEach(detach_dev);
+      t13 = claim_space(div17_nodes);
+      header1 = claim_element(div17_nodes, "HEADER", {
         class: true
       });
-      var div9_nodes = children(div9);
-      p4 = claim_element(div9_nodes, "P", {});
-      var p4_nodes = children(p4);
-      t15 = claim_text(p4_nodes, "Title");
-      p4_nodes.forEach(detach_dev);
-      div9_nodes.forEach(detach_dev);
-      t16 = claim_space(div11_nodes);
-      div10 = claim_element(div11_nodes, "DIV", {
-        class: true
-      });
-      var div10_nodes = children(div10);
-      p5 = claim_element(div10_nodes, "P", {});
-      var p5_nodes = children(p5);
-      t17 = claim_text(p5_nodes, "Year");
-      p5_nodes.forEach(detach_dev);
-      div10_nodes.forEach(detach_dev);
-      div11_nodes.forEach(detach_dev);
-      header1_nodes.forEach(detach_dev);
-      t18 = claim_space(div16_nodes);
-      section1 = claim_element(div16_nodes, "SECTION", {
-        class: true
-      });
-      var section1_nodes = children(section1);
-      div12 = claim_element(section1_nodes, "DIV", {
+      var header1_nodes = children(header1);
+      div12 = claim_element(header1_nodes, "DIV", {
         class: true
       });
       var div12_nodes = children(div12);
-
-      for (var _i11 = 0; _i11 < each_blocks_3.length; _i11 += 1) {
-        each_blocks_3[_i11].l(div12_nodes);
-      }
-
-      div12_nodes.forEach(detach_dev);
-      section1_nodes.forEach(detach_dev);
-      t19 = claim_space(div16_nodes);
-      section2 = claim_element(div16_nodes, "SECTION", {
+      div9 = claim_element(div12_nodes, "DIV", {
         class: true
       });
-      var section2_nodes = children(section2);
-      div13 = claim_element(section2_nodes, "DIV", {
+      var div9_nodes = children(div9);
+      p3 = claim_element(div9_nodes, "P", {});
+      var p3_nodes = children(p3);
+      t14 = claim_text(p3_nodes, "Experience");
+      p3_nodes.forEach(detach_dev);
+      div9_nodes.forEach(detach_dev);
+      t15 = claim_space(div12_nodes);
+      div10 = claim_element(div12_nodes, "DIV", {
+        class: true
+      });
+      var div10_nodes = children(div10);
+      p4 = claim_element(div10_nodes, "P", {});
+      var p4_nodes = children(p4);
+      t16 = claim_text(p4_nodes, "Title");
+      p4_nodes.forEach(detach_dev);
+      div10_nodes.forEach(detach_dev);
+      t17 = claim_space(div12_nodes);
+      div11 = claim_element(div12_nodes, "DIV", {
+        class: true
+      });
+      var div11_nodes = children(div11);
+      p5 = claim_element(div11_nodes, "P", {});
+      var p5_nodes = children(p5);
+      t18 = claim_text(p5_nodes, "Year");
+      p5_nodes.forEach(detach_dev);
+      div11_nodes.forEach(detach_dev);
+      div12_nodes.forEach(detach_dev);
+      header1_nodes.forEach(detach_dev);
+      t19 = claim_space(div17_nodes);
+      section1 = claim_element(div17_nodes, "SECTION", {
+        class: true
+      });
+      var section1_nodes = children(section1);
+      div13 = claim_element(section1_nodes, "DIV", {
         class: true
       });
       var div13_nodes = children(div13);
-      p6 = claim_element(div13_nodes, "P", {
-        class: true
-      });
-      var p6_nodes = children(p6);
-      t20 = claim_text(p6_nodes, "Services");
-      p6_nodes.forEach(detach_dev);
-      t21 = claim_space(div13_nodes);
 
-      for (var _i12 = 0; _i12 < each_blocks_2.length; _i12 += 1) {
-        each_blocks_2[_i12].l(div13_nodes);
+      for (var _i11 = 0; _i11 < each_blocks_3.length; _i11 += 1) {
+        each_blocks_3[_i11].l(div13_nodes);
       }
 
       div13_nodes.forEach(detach_dev);
-      t22 = claim_space(section2_nodes);
+      section1_nodes.forEach(detach_dev);
+      t20 = claim_space(div17_nodes);
+      section2 = claim_element(div17_nodes, "SECTION", {
+        class: true
+      });
+      var section2_nodes = children(section2);
       div14 = claim_element(section2_nodes, "DIV", {
         class: true
       });
       var div14_nodes = children(div14);
-      p7 = claim_element(div14_nodes, "P", {
+      p6 = claim_element(div14_nodes, "P", {
         class: true
       });
-      var p7_nodes = children(p7);
-      t23 = claim_text(p7_nodes, "Selected Clients");
-      p7_nodes.forEach(detach_dev);
-      t24 = claim_space(div14_nodes);
+      var p6_nodes = children(p6);
+      t21 = claim_text(p6_nodes, "Services");
+      p6_nodes.forEach(detach_dev);
+      t22 = claim_space(div14_nodes);
 
-      for (var _i13 = 0; _i13 < each_blocks_1.length; _i13 += 1) {
-        each_blocks_1[_i13].l(div14_nodes);
+      for (var _i12 = 0; _i12 < each_blocks_2.length; _i12 += 1) {
+        each_blocks_2[_i12].l(div14_nodes);
       }
 
       div14_nodes.forEach(detach_dev);
-      t25 = claim_space(section2_nodes);
+      t23 = claim_space(section2_nodes);
       div15 = claim_element(section2_nodes, "DIV", {
         class: true
       });
       var div15_nodes = children(div15);
-      p8 = claim_element(div15_nodes, "P", {
+      p7 = claim_element(div15_nodes, "P", {
         class: true
       });
-      var p8_nodes = children(p8);
-      t26 = claim_text(p8_nodes, "Links");
-      p8_nodes.forEach(detach_dev);
-      t27 = claim_space(div15_nodes);
+      var p7_nodes = children(p7);
+      t24 = claim_text(p7_nodes, "Selected Clients");
+      p7_nodes.forEach(detach_dev);
+      t25 = claim_space(div15_nodes);
 
-      for (var _i14 = 0; _i14 < each_blocks.length; _i14 += 1) {
-        each_blocks[_i14].l(div15_nodes);
+      for (var _i13 = 0; _i13 < each_blocks_1.length; _i13 += 1) {
+        each_blocks_1[_i13].l(div15_nodes);
       }
 
       div15_nodes.forEach(detach_dev);
-      section2_nodes.forEach(detach_dev);
+      t26 = claim_space(section2_nodes);
+      div16 = claim_element(section2_nodes, "DIV", {
+        class: true
+      });
+      var div16_nodes = children(div16);
+      p8 = claim_element(div16_nodes, "P", {
+        class: true
+      });
+      var p8_nodes = children(p8);
+      t27 = claim_text(p8_nodes, "Links");
+      p8_nodes.forEach(detach_dev);
       t28 = claim_space(div16_nodes);
-      claim_component(footer.$$.fragment, div16_nodes);
+
+      for (var _i14 = 0; _i14 < each_blocks.length; _i14 += 1) {
+        each_blocks[_i14].l(div16_nodes);
+      }
+
       div16_nodes.forEach(detach_dev);
+      section2_nodes.forEach(detach_dev);
+      t29 = claim_space(div17_nodes);
+      claim_component(footer.$$.fragment, div17_nodes);
+      div17_nodes.forEach(detach_dev);
       this.h();
     },
     h: function hydrate() {
       document_1.title = "Maxim Siebert – Designer & Developer";
+      attr_dev(div0, "id", "cursor");
+      attr_dev(div0, "class", "absolute w-2 h-2 duration-100 ease-in-out bg-black rounded-full pointer-events-none dark:bg-white");
+      add_location(div0, file, 82, 0, 2800);
       attr_dev(a, "href", "/");
       attr_dev(a, "class", "self-start inline-block px-4 mb-5 loader");
-      add_location(a, file, 60, 1, 2395);
+      add_location(a, file, 84, 1, 3046);
       attr_dev(h1, "class", "inline-block mb-1 sm:mb-2 md:mb-0");
-      add_location(h1, file, 63, 3, 2579);
-      attr_dev(div0, "class", "block text-gray-600 dark:text-gray-400 md:hidden");
-      add_location(div0, file, 64, 3, 2647);
-      attr_dev(div1, "class", "w-full px-4 mb-5 sm:mb-8 lg:w-3/12 md:w-4/12 md:mb-0");
-      add_location(div1, file, 62, 2, 2509);
-      add_location(p0, file, 70, 4, 2832);
-      attr_dev(div2, "class", "w-4/12 px-4");
-      add_location(div2, file, 69, 3, 2802);
-      add_location(p1, file, 73, 4, 2906);
-      attr_dev(div3, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div3, file, 72, 3, 2860);
-      add_location(p2, file, 76, 4, 2988);
-      attr_dev(div4, "class", "flex justify-end w-8/12 px-4 sm:w-4/12");
-      add_location(div4, file, 75, 3, 2931);
-      attr_dev(div5, "class", "flex w-full ml-auto md:w-8/12");
-      add_location(div5, file, 68, 2, 2755);
+      add_location(h1, file, 87, 3, 3230);
+      attr_dev(div1, "class", "block text-gray-600 dark:text-gray-400 md:hidden");
+      add_location(div1, file, 88, 3, 3298);
+      attr_dev(div2, "class", "w-full px-4 mb-5 sm:mb-8 lg:w-3/12 md:w-4/12 md:mb-0");
+      add_location(div2, file, 86, 2, 3160);
+      add_location(p0, file, 94, 4, 3483);
+      attr_dev(div3, "class", "w-4/12 px-4");
+      add_location(div3, file, 93, 3, 3453);
+      add_location(p1, file, 97, 4, 3557);
+      attr_dev(div4, "class", "hidden w-4/12 px-4 sm:block");
+      add_location(div4, file, 96, 3, 3511);
+      add_location(p2, file, 100, 4, 3639);
+      attr_dev(div5, "class", "flex justify-end w-8/12 px-4 sm:w-4/12");
+      add_location(div5, file, 99, 3, 3582);
+      attr_dev(div6, "class", "flex w-full ml-auto md:w-8/12");
+      add_location(div6, file, 92, 2, 3406);
       attr_dev(header0, "class", "flex flex-wrap mb-1 sm:mb-2");
-      add_location(header0, file, 61, 1, 2462);
-      attr_dev(div6, "class", "hidden w-4/12 px-4 text-gray-600 lg:w-3/12 dark:text-gray-400 md:block");
-      add_location(div6, file, 81, 2, 3088);
-      attr_dev(div7, "class", "w-full ml-auto md:w-8/12");
-      add_location(div7, file, 84, 2, 3207);
+      add_location(header0, file, 85, 1, 3113);
+      attr_dev(div7, "class", "hidden w-4/12 px-4 text-gray-600 lg:w-3/12 dark:text-gray-400 md:block");
+      add_location(div7, file, 105, 2, 3739);
+      attr_dev(div8, "class", "w-full ml-auto md:w-8/12");
+      add_location(div8, file, 108, 2, 3858);
       attr_dev(section0, "class", "flex flex-wrap mb-5 sm:mb-8 md:mb-12");
-      add_location(section0, file, 80, 1, 3031);
-      add_location(p3, file, 103, 4, 3870);
-      attr_dev(div8, "class", "w-4/12 px-4");
-      add_location(div8, file, 102, 3, 3840);
-      add_location(p4, file, 106, 4, 3947);
-      attr_dev(div9, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div9, file, 105, 3, 3901);
-      add_location(p5, file, 109, 4, 4030);
-      attr_dev(div10, "class", "flex justify-end w-8/12 px-4 sm:w-4/12");
-      add_location(div10, file, 108, 3, 3973);
-      attr_dev(div11, "class", "flex w-full ml-auto md:w-8/12");
-      add_location(div11, file, 101, 2, 3793);
+      add_location(section0, file, 104, 1, 3682);
+      add_location(p3, file, 127, 4, 4521);
+      attr_dev(div9, "class", "w-4/12 px-4");
+      add_location(div9, file, 126, 3, 4491);
+      add_location(p4, file, 130, 4, 4598);
+      attr_dev(div10, "class", "hidden w-4/12 px-4 sm:block");
+      add_location(div10, file, 129, 3, 4552);
+      add_location(p5, file, 133, 4, 4681);
+      attr_dev(div11, "class", "flex justify-end w-8/12 px-4 sm:w-4/12");
+      add_location(div11, file, 132, 3, 4624);
+      attr_dev(div12, "class", "flex w-full ml-auto md:w-8/12");
+      add_location(div12, file, 125, 2, 4444);
       attr_dev(header1, "class", "flex mb-1 sm:mb-2");
-      add_location(header1, file, 100, 1, 3756);
-      attr_dev(div12, "class", "w-full ml-auto md:w-8/12");
-      add_location(div12, file, 114, 2, 4130);
+      add_location(header1, file, 124, 1, 4407);
+      attr_dev(div13, "class", "w-full ml-auto md:w-8/12");
+      add_location(div13, file, 138, 2, 4781);
       attr_dev(section1, "class", "flex flex-wrap mb-5 sm:mb-8 md:mb-12");
-      add_location(section1, file, 113, 1, 4073);
+      add_location(section1, file, 137, 1, 4724);
       attr_dev(p6, "class", "mb-1 sm:mb-2");
-      add_location(p6, file, 132, 3, 4796);
-      attr_dev(div13, "class", "w-8/12 px-4 sm:w-4/12");
-      add_location(div13, file, 131, 2, 4757);
+      add_location(p6, file, 156, 3, 5447);
+      attr_dev(div14, "class", "w-8/12 px-4 sm:w-4/12");
+      add_location(div14, file, 155, 2, 5408);
       attr_dev(p7, "class", "mb-1 sm:mb-2");
-      add_location(p7, file, 138, 3, 4999);
-      attr_dev(div14, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div14, file, 137, 2, 4954);
+      add_location(p7, file, 162, 3, 5650);
+      attr_dev(div15, "class", "hidden w-4/12 px-4 sm:block");
+      add_location(div15, file, 161, 2, 5605);
       attr_dev(p8, "class", "mb-1 sm:mb-2");
-      add_location(p8, file, 144, 3, 5220);
-      attr_dev(div15, "class", "w-4/12 px-4 text-right");
-      add_location(div15, file, 143, 2, 5180);
+      add_location(p8, file, 168, 3, 5871);
+      attr_dev(div16, "class", "w-4/12 px-4 text-right");
+      add_location(div16, file, 167, 2, 5831);
       attr_dev(section2, "class", "flex flex-wrap w-full ml-auto md:w-8/12");
-      add_location(section2, file, 130, 1, 4697);
-      attr_dev(div16, "class", "flex flex-col min-h-screen py-5 text-xs text-black bg-gray-100 lg:px-4 dark:bg-black dark:text-white");
-      add_location(div16, file, 59, 0, 2279);
+      add_location(section2, file, 154, 1, 5348);
+      attr_dev(div17, "class", "flex flex-col min-h-screen py-5 text-xs text-black bg-gray-100 lg:px-4 dark:bg-black dark:text-white");
+      add_location(div17, file, 83, 0, 2930);
     },
     m: function mount(target, anchor) {
       insert_dev(target, t0, anchor);
-      insert_dev(target, div16, anchor);
-      append_dev(div16, a);
-      append_dev(div16, t1);
-      append_dev(div16, header0);
-      append_dev(header0, div1);
-      append_dev(div1, h1);
-      append_dev(h1, t2);
-      append_dev(div1, t3);
-      append_dev(div1, div0);
-      div0.innerHTML =
+      insert_dev(target, div0, anchor);
+      insert_dev(target, t1, anchor);
+      insert_dev(target, div17, anchor);
+      append_dev(div17, a);
+      append_dev(div17, t2);
+      append_dev(div17, header0);
+      append_dev(header0, div2);
+      append_dev(div2, h1);
+      append_dev(h1, t3);
+      append_dev(div2, t4);
+      append_dev(div2, div1);
+      div1.innerHTML =
       /*description*/
       ctx[5];
-      append_dev(header0, t4);
-      append_dev(header0, div5);
-      append_dev(div5, div2);
-      append_dev(div2, p0);
-      append_dev(p0, t5);
-      append_dev(div5, t6);
-      append_dev(div5, div3);
-      append_dev(div3, p1);
-      append_dev(p1, t7);
-      append_dev(div5, t8);
-      append_dev(div5, div4);
-      append_dev(div4, p2);
-      append_dev(p2, t9);
-      append_dev(div16, t10);
-      append_dev(div16, section0);
-      append_dev(section0, div6);
-      div6.innerHTML =
-      /*description*/
-      ctx[5];
-      append_dev(section0, t11);
+      append_dev(header0, t5);
+      append_dev(header0, div6);
+      append_dev(div6, div3);
+      append_dev(div3, p0);
+      append_dev(p0, t6);
+      append_dev(div6, t7);
+      append_dev(div6, div4);
+      append_dev(div4, p1);
+      append_dev(p1, t8);
+      append_dev(div6, t9);
+      append_dev(div6, div5);
+      append_dev(div5, p2);
+      append_dev(p2, t10);
+      append_dev(div17, t11);
+      append_dev(div17, section0);
       append_dev(section0, div7);
+      div7.innerHTML =
+      /*description*/
+      ctx[5];
+      append_dev(section0, t12);
+      append_dev(section0, div8);
 
       for (var _i15 = 0; _i15 < each_blocks_4.length; _i15 += 1) {
-        each_blocks_4[_i15].m(div7, null);
+        each_blocks_4[_i15].m(div8, null);
       }
 
-      append_dev(div16, t12);
-      append_dev(div16, header1);
-      append_dev(header1, div11);
-      append_dev(div11, div8);
-      append_dev(div8, p3);
-      append_dev(p3, t13);
-      append_dev(div11, t14);
-      append_dev(div11, div9);
-      append_dev(div9, p4);
-      append_dev(p4, t15);
-      append_dev(div11, t16);
-      append_dev(div11, div10);
-      append_dev(div10, p5);
-      append_dev(p5, t17);
-      append_dev(div16, t18);
-      append_dev(div16, section1);
-      append_dev(section1, div12);
+      append_dev(div17, t13);
+      append_dev(div17, header1);
+      append_dev(header1, div12);
+      append_dev(div12, div9);
+      append_dev(div9, p3);
+      append_dev(p3, t14);
+      append_dev(div12, t15);
+      append_dev(div12, div10);
+      append_dev(div10, p4);
+      append_dev(p4, t16);
+      append_dev(div12, t17);
+      append_dev(div12, div11);
+      append_dev(div11, p5);
+      append_dev(p5, t18);
+      append_dev(div17, t19);
+      append_dev(div17, section1);
+      append_dev(section1, div13);
 
       for (var _i16 = 0; _i16 < each_blocks_3.length; _i16 += 1) {
-        each_blocks_3[_i16].m(div12, null);
+        each_blocks_3[_i16].m(div13, null);
       }
 
-      append_dev(div16, t19);
-      append_dev(div16, section2);
-      append_dev(section2, div13);
-      append_dev(div13, p6);
-      append_dev(p6, t20);
-      append_dev(div13, t21);
+      append_dev(div17, t20);
+      append_dev(div17, section2);
+      append_dev(section2, div14);
+      append_dev(div14, p6);
+      append_dev(p6, t21);
+      append_dev(div14, t22);
 
       for (var _i17 = 0; _i17 < each_blocks_2.length; _i17 += 1) {
-        each_blocks_2[_i17].m(div13, null);
+        each_blocks_2[_i17].m(div14, null);
       }
 
-      append_dev(section2, t22);
-      append_dev(section2, div14);
-      append_dev(div14, p7);
-      append_dev(p7, t23);
-      append_dev(div14, t24);
+      append_dev(section2, t23);
+      append_dev(section2, div15);
+      append_dev(div15, p7);
+      append_dev(p7, t24);
+      append_dev(div15, t25);
 
       for (var _i18 = 0; _i18 < each_blocks_1.length; _i18 += 1) {
-        each_blocks_1[_i18].m(div14, null);
+        each_blocks_1[_i18].m(div15, null);
       }
 
-      append_dev(section2, t25);
-      append_dev(section2, div15);
-      append_dev(div15, p8);
-      append_dev(p8, t26);
-      append_dev(div15, t27);
+      append_dev(section2, t26);
+      append_dev(section2, div16);
+      append_dev(div16, p8);
+      append_dev(p8, t27);
+      append_dev(div16, t28);
 
       for (var _i19 = 0; _i19 < each_blocks.length; _i19 += 1) {
-        each_blocks[_i19].m(div15, null);
+        each_blocks[_i19].m(div16, null);
       }
 
-      append_dev(div16, t28);
-      mount_component(footer, div16, null);
+      append_dev(div17, t29);
+      mount_component(footer, div17, null);
       current = true;
     },
     p: function update(ctx, _ref) {
@@ -2107,7 +2121,7 @@ function create_fragment(ctx) {
 
             each_blocks_4[_i20].c();
 
-            each_blocks_4[_i20].m(div7, null);
+            each_blocks_4[_i20].m(div8, null);
           }
         }
 
@@ -2138,7 +2152,7 @@ function create_fragment(ctx) {
 
             each_blocks_3[_i21].c();
 
-            each_blocks_3[_i21].m(div12, null);
+            each_blocks_3[_i21].m(div13, null);
           }
         }
 
@@ -2169,7 +2183,7 @@ function create_fragment(ctx) {
 
             each_blocks_2[_i22].c();
 
-            each_blocks_2[_i22].m(div13, null);
+            each_blocks_2[_i22].m(div14, null);
           }
         }
 
@@ -2200,7 +2214,7 @@ function create_fragment(ctx) {
 
             each_blocks_1[_i23].c();
 
-            each_blocks_1[_i23].m(div14, null);
+            each_blocks_1[_i23].m(div15, null);
           }
         }
 
@@ -2231,7 +2245,7 @@ function create_fragment(ctx) {
 
             each_blocks[_i24].c();
 
-            each_blocks[_i24].m(div15, null);
+            each_blocks[_i24].m(div16, null);
           }
         }
 
@@ -2253,7 +2267,9 @@ function create_fragment(ctx) {
     },
     d: function destroy(detaching) {
       if (detaching) detach_dev(t0);
-      if (detaching) detach_dev(div16);
+      if (detaching) detach_dev(div0);
+      if (detaching) detach_dev(t1);
+      if (detaching) detach_dev(div17);
       destroy_each(each_blocks_4, detaching);
       destroy_each(each_blocks_3, detaching);
       destroy_each(each_blocks_2, detaching);
@@ -2363,18 +2379,35 @@ function instance($$self, $$props, $$invalidate) {
   var links = $$props.links;
   var description = "is a French Canadian designer & developer. He's currently a Principal Designer at <a href=\"https://peggy.com/\" class=\"hover:text-black dark:hover:text-white hover:underline\" target=\"_blank\" rel=\"noreferrer noopener\">Peggy</a> and freelances through his studio, <a href=\"https://blunt.af/\" class=\"hover:text-black dark:hover:text-white hover:underline\" target=\"_blank\" rel=\"noreferrer noopener\">Blunt</a>. This site lists most of the work he's done over the years. If you'd like to discuss new commissions or collaborate with Maxim, email him at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:underline\">maxim@hey.com</a>.";
   onMount(function () {
+    var cursor = document.getElementById("cursor"); // Custom cursor
+
+    document.addEventListener("mousemove", function (e) {
+      var mouseX = e.pageX;
+      var mouseY = e.pageY;
+      cursor.style.left = mouseX + "px";
+      cursor.style.top = mouseY + "px";
+    }); // Add dots when clicking links
+
     [].forEach.call(document.getElementsByTagName("a"), function (e) {
       e.addEventListener("click", function (e) {
         var mouseX = e.pageX;
         var mouseY = e.pageY;
-        console.log("Mouse Position:\t" + mouseX + "|" + mouseY);
         var div = document.createElement("div");
         div.className = "dot";
         div.style.left = mouseX + "px";
         div.style.top = mouseY + "px";
         document.body.appendChild(div);
       });
-    });
+      e.addEventListener("mouseover", function () {
+        cursor.style.width = "0.75rem";
+        cursor.style.height = "0.75rem";
+      });
+      e.addEventListener("mouseleave", function () {
+        cursor.style.width = "0.5rem";
+        cursor.style.height = "0.5rem";
+      });
+    }); // Remove dots on window resize
+
     window.addEventListener("resize", function () {
       document.querySelectorAll(".dot").forEach(function (e) {
         return e.remove();
@@ -2383,7 +2416,7 @@ function instance($$self, $$props, $$invalidate) {
   });
   var writable_props = ["projects", "experiences", "collaborators", "services", "links"];
   Object.keys($$props).forEach(function (key) {
-    if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1.warn("<Routes> was created with unknown prop '".concat(key, "'"));
+    if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn("<Routes> was created with unknown prop '".concat(key, "'"));
   });
 
   $$self.$$set = function ($$props) {
@@ -2454,31 +2487,31 @@ var Routes = /*#__PURE__*/function (_SvelteComponentDev) {
     if (
     /*projects*/
     ctx[0] === undefined && !("projects" in props)) {
-      console_1.warn("<Routes> was created without expected prop 'projects'");
+      console.warn("<Routes> was created without expected prop 'projects'");
     }
 
     if (
     /*experiences*/
     ctx[1] === undefined && !("experiences" in props)) {
-      console_1.warn("<Routes> was created without expected prop 'experiences'");
+      console.warn("<Routes> was created without expected prop 'experiences'");
     }
 
     if (
     /*collaborators*/
     ctx[2] === undefined && !("collaborators" in props)) {
-      console_1.warn("<Routes> was created without expected prop 'collaborators'");
+      console.warn("<Routes> was created without expected prop 'collaborators'");
     }
 
     if (
     /*services*/
     ctx[3] === undefined && !("services" in props)) {
-      console_1.warn("<Routes> was created without expected prop 'services'");
+      console.warn("<Routes> was created without expected prop 'services'");
     }
 
     if (
     /*links*/
     ctx[4] === undefined && !("links" in props)) {
-      console_1.warn("<Routes> was created without expected prop 'links'");
+      console.warn("<Routes> was created without expected prop 'links'");
     }
 
     return _this;
