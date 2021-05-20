@@ -2,6 +2,10 @@
 	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
 	@import "../global.pcss";
 
+	* {
+		cursor: none !important;
+	}
+
 	body {
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
@@ -9,6 +13,10 @@
 
 	::selection {
 		@apply bg-black text-white dark:bg-gray-100 dark:text-black;
+	}
+
+	#cursor {
+		transition-property: height, width;
 	}
 
 	.loader:before {
