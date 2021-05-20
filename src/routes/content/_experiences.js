@@ -51,7 +51,7 @@ const content = [
 		title: 'ResIM',
 		role: 'Senior Designer',
     date: '04/2014 → 05/2015',
-    url: 'https://res.im/'
+    url: 'https://dribbble.com/resim'
   },
   {
 		title: 'Arcane',
