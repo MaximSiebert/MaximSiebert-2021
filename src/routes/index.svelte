@@ -103,8 +103,8 @@
 		</div>
 	</header>
 	<section class="flex flex-wrap mb-5 sm:mb-8 md:mb-12">
-		<div class="hidden w-4/12 px-4 text-base tracking-tight text-black lg:text-lg lg:w-3/12 dark:text-white md:block">
-			<div class="leading-tight">{@html description}</div>
+		<div class="hidden w-4/12 px-4 text-gray-600 dark:text-gray-400 lg:w-3/12 md:block">
+			{@html description}
 		</div>
 		<div class="w-full ml-auto md:w-8/12">
 			{#each projects as project}

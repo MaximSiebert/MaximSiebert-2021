@@ -9,6 +9,7 @@
 	body {
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+		@apply overflow-x-hidden;
 	}
 
 	::selection {
