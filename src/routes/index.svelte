@@ -20,7 +20,6 @@
 </script>
 
 <script>
-	import { onMount } from 'svelte';
 	import Footer from '../components/Footer.svelte';
 	
 	export let projects;
@@ -30,50 +29,6 @@
 	export let links;
 
 	let description = "A French-Canadian designer and developer specialized in web and product design. If you'd like to collaborate with Maxim, email him at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:underline\">maxim@hey.com</a>."
-
-	onMount(() => {
-
-		const cursor = document.getElementById("cursor")
-
-		// Custom cursor
-		document.addEventListener('mousemove', function(e) {
-			let mouseX = e.pageX;
-			let mouseY = e.pageY;
-
-			cursor.style.left = mouseX + "px"
-			cursor.style.top = mouseY + "px"
-		});
-
-		// Add dots when clicking links
-		[].forEach.call(document.getElementsByTagName("a"), function(e){
-			e.addEventListener("click", function(e){
-				let mouseX = e.pageX;
-				let mouseY = e.pageY;
-
-				let div = document.createElement("div");
-				div.className = "dot";
-				div.style.left = mouseX + "px";
-				div.style.top = mouseY + "px";
-
-				document.body.appendChild(div);
-			});
-
-			e.addEventListener("mouseover", function(){
-				cursor.style.width = "0.75rem";
-				cursor.style.height = "0.75rem";
-			});
-
-			e.addEventListener("mouseleave", function(){
-				cursor.style.width = "0.5rem";
-				cursor.style.height = "0.5rem";
-			});
-		});
-
-		// Remove dots on window resize
-		window.addEventListener("resize", function(){
-			document.querySelectorAll(".dot").forEach(e => e.remove());
-		});
-	});
 
 	var year = '';
 
@@ -89,17 +44,16 @@
 	<title>Maxim Siebert — Designer + Developer</title>
 </svelte:head>
 
-<div id="cursor" class="absolute w-2 h-2 duration-100 ease-in-out bg-black rounded-full pointer-events-none dark:bg-white -top-10 -left-10"></div>
 <div class="flex flex-col min-h-screen py-4 text-xs text-black bg-gray-100 dark:bg-black dark:text-white">
 	<a href="/" class="self-start inline-block px-4 mb-4 loader"></a>
 	<div class="flex flex-wrap">
 		<header class="w-full px-4 mb-8 md:w-3/12 md:mb-0">
-			<h1 class="inline-block">Maxim Siebert</h1>
+			<h1>Maxim Siebert</h1>
 			<p class="text-gray-600 dark:text-gray-400">Designer + Developer</p>
 			<p class="text-gray-600 dark:text-gray-400">2011–{year}</p>
 		</header>
 		<div class="w-full ml-auto md:w-9/12 md:-mt-1">
-			<div class="w-full px-4 pr-8 mb-10 text-base leading-snug text-black dark:text-white lg:w-5/12 md:w-8/12 md:block md:mb-12">
+			<div class="w-full px-4 mb-8 text-base leading-snug text-black dark:text-white lg:w-5/12 md:w-8/12 md:block md:mb-12">
 				{@html description}
 			</div>
 			<div class="flex mb-1 sm:mb-2">
