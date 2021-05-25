@@ -46,8 +46,8 @@
 
 <div class="flex flex-col min-h-screen py-4 text-xs text-black bg-gray-100 dark:bg-black dark:text-white">
 	<a href="/" class="self-start inline-block px-4 mb-4 loader"></a>
-	<div class="flex flex-wrap">
-		<header class="w-full px-4 mb-8 md:w-3/12 md:mb-0">
+	<div class="flex flex-wrap items-start">
+		<header class="w-full px-4 mb-8 md:w-3/12 md:mb-0 md:sticky top-4">
 			<h1>Maxim Siebert</h1>
 			<p class="text-gray-600 dark:text-gray-400">Designer + Developer</p>
 			<p class="text-gray-600 dark:text-gray-400">2011–{year}</p>
