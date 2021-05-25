@@ -38,23 +38,23 @@
 </script>
 
 <div class="flex pt-5 mt-auto text-gray-600 sm:pt-8 md:pt-12 dark:text-gray-400">
-    <div class="w-8/12 px-4 sm:w-3/12">
+    <div class="w-8/12 px-4 lg:w-3/12 sm:w-4/12">
         <p>Ottawa — {time} ET</p>
     </div>
-    <div class="flex w-4/12 ml-auto sm:w-8/12">
+    <div class="flex w-4/12 ml-auto sm:w-9/12">
         <div class="hidden w-8/12 px-4 sm:block">
             <p>
                 {#await promise}
                 
                 {:then data}
-                    Updated —
+                    Updated — 
                     {monthNames[new Date(data.commit.commit.author.date).getMonth()]}
                     {new Date(data.commit.commit.author.date).getFullYear()}
                 {/await}
             </p>
         </div>
         <div class="flex justify-end w-full px-4 sm:w-4/12">
-            <p>2011–{year} ©</p>
+            <p>{year} ©</p>
         </div>
     </div>
 </div>
