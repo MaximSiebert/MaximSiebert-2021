@@ -45,14 +45,14 @@
 </svelte:head>
 
 <div class="flex flex-col min-h-screen py-4 text-xs text-black bg-gray-100 dark:bg-black dark:text-white">
-	<a href="/" class="self-start inline-block px-4 mb-4 loader"></a>
 	<div class="flex flex-wrap items-start">
 		<header class="w-full px-4 mb-8 md:w-3/12 md:mb-0 md:sticky top-4">
+			<a href="/" class="self-start inline-block px-4 mb-4 loader"></a>
 			<h1>Maxim Siebert</h1>
 			<p class="text-gray-600 dark:text-gray-400">Designer + Developer</p>
 			<p class="text-gray-600 dark:text-gray-400">2011–{year}</p>
 		</header>
-		<div class="w-full ml-auto md:w-9/12 md:-mt-1">
+		<div class="w-full ml-auto md:w-9/12 md:mt-7">
 			<div class="w-full px-4 mb-8 text-base leading-snug text-black dark:text-white lg:w-5/12 md:w-8/12 md:block md:mb-12">
 				{@html description}
 			</div>
