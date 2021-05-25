@@ -1851,7 +1851,9 @@ var file$1 = "src/routes/_layout.svelte";
 function create_fragment$2(ctx) {
   var main;
   var globalstyle;
-  var t;
+  var t0;
+  var div;
+  var t1;
   var current;
   globalstyle = new GlobalStyle({
     $$inline: true
@@ -1866,7 +1868,9 @@ function create_fragment$2(ctx) {
     c: function create() {
       main = element("main");
       create_component(globalstyle.$$.fragment);
-      t = space();
+      t0 = space();
+      div = element("div");
+      t1 = space();
       if (default_slot) default_slot.c();
       this.h();
     },
@@ -1874,18 +1878,29 @@ function create_fragment$2(ctx) {
       main = claim_element(nodes, "MAIN", {});
       var main_nodes = children(main);
       claim_component(globalstyle.$$.fragment, main_nodes);
-      t = claim_space(main_nodes);
+      t0 = claim_space(main_nodes);
+      div = claim_element(main_nodes, "DIV", {
+        id: true,
+        class: true
+      });
+      children(div).forEach(detach_dev);
+      t1 = claim_space(main_nodes);
       if (default_slot) default_slot.l(main_nodes);
       main_nodes.forEach(detach_dev);
       this.h();
     },
     h: function hydrate() {
-      add_location(main, file$1, 5, 0, 82);
+      attr_dev(div, "id", "cursor");
+      attr_dev(div, "class", "absolute w-2 h-2 duration-100 ease-in-out bg-black rounded-full pointer-events-none dark:bg-white -top-10 -left-10");
+      add_location(div, file$1, 52, 1, 1221);
+      add_location(main, file$1, 50, 0, 1196);
     },
     m: function mount(target, anchor) {
       insert_dev(target, main, anchor);
       mount_component(globalstyle, main, null);
-      append_dev(main, t);
+      append_dev(main, t0);
+      append_dev(main, div);
+      append_dev(main, t1);
 
       if (default_slot) {
         default_slot.m(main, null);
@@ -1939,6 +1954,42 @@ function instance$2($$self, $$props, $$invalidate) {
       slots = _$$props$$$slots === void 0 ? {} : _$$props$$$slots,
       $$scope = $$props.$$scope;
   validate_slots("Layout", slots, ['default']);
+  onMount(function () {
+    var cursor = document.getElementById("cursor"); // Custom cursor
+
+    document.addEventListener("mousemove", function (e) {
+      var mouseX = e.pageX;
+      var mouseY = e.pageY;
+      cursor.style.left = mouseX + "px";
+      cursor.style.top = mouseY + "px";
+    }); // Add dots when clicking links
+
+    [].forEach.call(document.getElementsByTagName("a"), function (e) {
+      e.addEventListener("click", function (e) {
+        var mouseX = e.pageX;
+        var mouseY = e.pageY;
+        var div = document.createElement("div");
+        div.className = "dot";
+        div.style.left = mouseX + "px";
+        div.style.top = mouseY + "px";
+        document.body.appendChild(div);
+      });
+      e.addEventListener("mouseover", function () {
+        cursor.style.width = "0.75rem";
+        cursor.style.height = "0.75rem";
+      });
+      e.addEventListener("mouseleave", function () {
+        cursor.style.width = "0.5rem";
+        cursor.style.height = "0.5rem";
+      });
+    }); // Remove dots on window resize
+
+    window.addEventListener("resize", function () {
+      document.querySelectorAll(".dot").forEach(function (e) {
+        return e.remove();
+      });
+    });
+  });
   var writable_props = [];
   Object.keys($$props).forEach(function (key) {
     if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn("<Layout> was created with unknown prop '".concat(key, "'"));
@@ -1950,6 +2001,7 @@ function instance$2($$self, $$props, $$invalidate) {
 
   $$self.$capture_state = function () {
     return {
+      onMount: onMount,
       GlobalStyle: GlobalStyle
     };
   };
@@ -2012,7 +2064,7 @@ function create_if_block$1(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(pre, file, 21, 3, 550);
+      add_location(pre, file, 21, 3, 521);
     },
     m: function mount(target, anchor) {
       insert_dev(target, pre, anchor);
@@ -2096,9 +2148,7 @@ function create_fragment$1(ctx) {
         class: true
       });
       var div0_nodes = children(div0);
-      h1 = claim_element(div0_nodes, "H1", {
-        class: true
-      });
+      h1 = claim_element(div0_nodes, "H1", {});
       var h1_nodes = children(h1);
       t2 = claim_text(h1_nodes,
       /*status*/
@@ -2119,15 +2169,14 @@ function create_fragment$1(ctx) {
     },
     h: function hydrate() {
       attr_dev(a, "href", "/");
-      attr_dev(a, "class", "self-start inline-block px-4 mb-5 loader");
-      add_location(a, file, 13, 1, 283);
-      attr_dev(h1, "class", "mb-1 sm:mb-2");
-      add_location(h1, file, 15, 2, 371);
+      attr_dev(a, "class", "self-start inline-block px-4 mb-4 loader");
+      add_location(a, file, 13, 1, 275);
+      add_location(h1, file, 15, 2, 363);
       attr_dev(p, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p, file, 16, 2, 412);
+      add_location(p, file, 16, 2, 383);
       attr_dev(div0, "class", "px-4");
-      add_location(div0, file, 14, 1, 350);
-      attr_dev(div1, "class", "flex flex-col min-h-screen py-5 text-xs bg-gray-100 lg:px-4 dark:bg-black dark:text-white");
+      add_location(div0, file, 14, 1, 342);
+      attr_dev(div1, "class", "flex flex-col min-h-screen py-4 text-xs bg-gray-100 dark:bg-black dark:text-white");
       add_location(div1, file, 12, 0, 178);
     },
     m: function mount(target, anchor) {
@@ -2831,7 +2880,7 @@ var App = /*#__PURE__*/function (_SvelteComponentDev) {
 var ignore = [/^\/content\/collaborators\.json$/, /^\/content\/experiences\.json$/, /^\/content\/projects\.json$/, /^\/content\/services\.json$/, /^\/content\/links\.json$/];
 var components = [{
   js: function js() {
-    return Promise.all([import('./index.c43d588f.js'), __inject_styles(["client-4b703a29.css"])]).then(function(x) { return x[0]; });
+    return Promise.all([import('./index.5e21f9e0.js'), __inject_styles(["client-4b703a29.css"])]).then(function(x) { return x[0]; });
   }
 }];
 var routes = [{
@@ -3728,6 +3777,6 @@ start$1({
   target: document.querySelector('#sapper')
 });
 
-export { noop as A, regenerator as B, _createClass as C, validate_each_argument as D, create_component as E, query_selector_all as F, claim_component as G, mount_component as H, transition_in as I, transition_out as J, destroy_each as K, destroy_component as L, onMount as M, globals as N, SvelteComponentDev as S, _inherits as _, commonjsGlobal as a, _getPrototypeOf as b, createCommonjsModule as c, _possibleConstructorReturn as d, _classCallCheck as e, _assertThisInitialized as f, dispatch_dev as g, handle_promise as h, init$1 as i, element as j, space as k, claim_element as l, children as m, claim_text as n, detach_dev as o, claim_space as p, add_location as q, attr_dev as r, safe_not_equal as s, text as t, insert_dev as u, validate_slots as v, append_dev as w, _slicedToArray as x, set_data_dev as y, update_await_block_branch as z };
+export { noop as A, regenerator as B, _createClass as C, validate_each_argument as D, create_component as E, query_selector_all as F, claim_component as G, mount_component as H, transition_in as I, transition_out as J, destroy_each as K, destroy_component as L, SvelteComponentDev as S, _inherits as _, commonjsGlobal as a, _getPrototypeOf as b, createCommonjsModule as c, _possibleConstructorReturn as d, _classCallCheck as e, _assertThisInitialized as f, dispatch_dev as g, handle_promise as h, init$1 as i, element as j, space as k, claim_element as l, children as m, claim_text as n, detach_dev as o, claim_space as p, add_location as q, attr_dev as r, safe_not_equal as s, text as t, insert_dev as u, validate_slots as v, append_dev as w, _slicedToArray as x, set_data_dev as y, update_await_block_branch as z };
 
 import __inject_styles from './inject_styles.fe622066.js';
