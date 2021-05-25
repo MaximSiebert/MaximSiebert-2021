@@ -1,4 +1,4 @@
-import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as set_data_dev, z as update_await_block_branch, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component, M as onMount, N as globals } from './client.5b20992e.js';
+import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as set_data_dev, z as update_await_block_branch, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component, M as onMount, N as globals } from './client.f3686a2e.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -652,13 +652,13 @@ function create_then_block(ctx) {
   var t3;
   var block = {
     c: function create() {
-      t0 = text("Updated – \n                    ");
+      t0 = text("Updated —\n                    ");
       t1 = text(t1_value);
       t2 = space();
       t3 = text(t3_value);
     },
     l: function claim(nodes) {
-      t0 = claim_text(nodes, "Updated – \n                    ");
+      t0 = claim_text(nodes, "Updated —\n                    ");
       t1 = claim_text(nodes, t1_value);
       t2 = claim_space(nodes);
       t3 = claim_text(nodes, t3_value);
@@ -740,7 +740,7 @@ function create_fragment$1(ctx) {
       div4 = element("div");
       div0 = element("div");
       p0 = element("p");
-      t0 = text("Ottawa – ");
+      t0 = text("Ottawa — ");
       t1 = text(
       /*time*/
       ctx[0]);
@@ -753,7 +753,7 @@ function create_fragment$1(ctx) {
       t4 = space();
       div2 = element("div");
       p2 = element("p");
-      t5 = text("2011 – ");
+      t5 = text("2011–");
       t6 = text(
       /*year*/
       ctx[1]);
@@ -771,7 +771,7 @@ function create_fragment$1(ctx) {
       var div0_nodes = children(div0);
       p0 = claim_element(div0_nodes, "P", {});
       var p0_nodes = children(p0);
-      t0 = claim_text(p0_nodes, "Ottawa – ");
+      t0 = claim_text(p0_nodes, "Ottawa — ");
       t1 = claim_text(p0_nodes,
       /*time*/
       ctx[0]);
@@ -799,7 +799,7 @@ function create_fragment$1(ctx) {
       var div2_nodes = children(div2);
       p2 = claim_element(div2_nodes, "P", {});
       var p2_nodes = children(p2);
-      t5 = claim_text(p2_nodes, "2011 – ");
+      t5 = claim_text(p2_nodes, "2011–");
       t6 = claim_text(p2_nodes,
       /*year*/
       ctx[1]);
@@ -817,9 +817,9 @@ function create_fragment$1(ctx) {
       add_location(p1, file$1, 45, 12, 1241);
       attr_dev(div1, "class", "hidden w-8/12 px-4 sm:block");
       add_location(div1, file$1, 44, 8, 1187);
-      add_location(p2, file$1, 56, 12, 1648);
+      add_location(p2, file$1, 56, 12, 1647);
       attr_dev(div2, "class", "flex justify-end w-full px-4 sm:w-4/12");
-      add_location(div2, file$1, 55, 8, 1583);
+      add_location(div2, file$1, 55, 8, 1582);
       attr_dev(div3, "class", "flex w-4/12 ml-auto sm:w-8/12");
       add_location(div3, file$1, 43, 4, 1135);
       attr_dev(div4, "class", "flex pt-5 mt-auto text-gray-600 sm:pt-8 md:pt-12 dark:text-gray-400");
