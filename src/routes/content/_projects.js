@@ -73,7 +73,7 @@ const content = [
   },
   {
 		title: 'Maxim Siebert',
-		role: 'Designer & Developer',
+		role: 'Designer + Developer',
     year: '2018',
     url: 'https://maximsiebert.github.io/maximsiebert/'
   },

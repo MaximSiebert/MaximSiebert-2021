@@ -29,7 +29,7 @@
 	export let services;
 	export let links;
 
-	let description = "is a French-Canadian designer and developer specialized in web and product design. If you'd like to collaborate with him, email him at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:underline\">maxim@hey.com</a>."
+	let description = "A French-Canadian designer and developer specialized in web and product design. If you'd like to collaborate with Maxim, email him at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:underline\">maxim@hey.com</a>."
 
 	onMount(() => {
 
@@ -74,103 +74,107 @@
 			document.querySelectorAll(".dot").forEach(e => e.remove());
 		});
 	});
+
+	var year = '';
+
+	function updateClock() {
+		var now = new Date();
+		year = now.getFullYear();
+	}
+
+	updateClock();
 </script>
 
 <svelte:head>
-	<title>Maxim Siebert – Designer & Developer</title>
+	<title>Maxim Siebert — Designer + Developer</title>
 </svelte:head>
 
 <div id="cursor" class="absolute w-2 h-2 duration-100 ease-in-out bg-black rounded-full pointer-events-none dark:bg-white -top-10 -left-10"></div>
 <div class="flex flex-col min-h-screen py-4 text-xs text-black bg-gray-100 dark:bg-black dark:text-white">
 	<a href="/" class="self-start inline-block px-4 mb-4 loader"></a>
-	<header class="flex flex-wrap mb-1 sm:mb-2">
-		<div class="w-full px-4 mb-5 sm:mb-8 lg:w-3/12 md:w-4/12 md:mb-0">
-			<h1 class="inline-block mb-1 sm:mb-2 md:mb-0">Maxim Siebert</h1>
-			<div class="block text-gray-600 dark:text-gray-400 md:hidden">
+	<div class="flex flex-wrap">
+		<header class="w-full px-4 mb-8 md:w-3/12 md:mb-0">
+			<h1 class="inline-block">Maxim Siebert</h1>
+			<p class="text-gray-600 dark:text-gray-400">Designer + Developer</p>
+			<p class="text-gray-600 dark:text-gray-400">2011–{year}</p>
+		</header>
+		<div class="w-full ml-auto md:w-9/12 md:-mt-1">
+			<div class="w-full px-4 pr-8 mb-10 text-base leading-snug text-black dark:text-white lg:w-5/12 md:w-8/12 md:block md:mb-12">
 				{@html description}
 			</div>
-		</div>
-		<div class="flex w-full ml-auto md:w-8/12">
-			<div class="w-4/12 px-4">
-				<p>Project</p>
+			<div class="flex mb-1 sm:mb-2">
+				<div class="w-4/12 px-4 lg:w-3/12">
+					<p>Project</p>
+				</div>
+				<div class="hidden w-4/12 px-4 sm:block">
+					<p>Role</p>
+				</div>
+				<div class="flex justify-end w-8/12 px-4 sm:w-5/12">
+					<p>Year</p>
+				</div>
 			</div>
-			<div class="hidden w-4/12 px-4 sm:block">
-				<p>Role</p>
-			</div>
-			<div class="flex justify-end w-8/12 px-4 sm:w-4/12">
-				<p>Year</p>
-			</div>
+			<section class="w-full mb-5 sm:mb-8 md:mb-12">
+				{#each projects as project}
+					<a class="flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white" href="{project.url}" target="_blank" rel="noreferrer noopener">
+						<div class="w-8/12 px-4 lg:w-3/12 sm:w-4/12">
+							<p>{project.title}</p>
+						</div>
+						<div class="hidden w-4/12 px-4 sm:block">
+							<p>{project.role}</p>
+						</div>
+						<div class="flex justify-end w-5/12 px-4">
+							<p>{project.year}</p>
+						</div>
+					</a>
+				{/each}
+			</section>
+			<header class="flex mb-1 sm:mb-2">
+				<div class="w-8/12 px-4 lg:w-3/12 sm:w-4/12">
+					<p>Experience</p>
+				</div>
+				<div class="hidden w-4/12 px-4 sm:block">
+					<p>Title</p>
+				</div>
+				<div class="flex justify-end w-8/12 px-4 sm:w-5/12">
+					<p>Year</p>
+				</div>
+			</header>
+			<section class="w-full mb-5 sm:mb-8 md:mb-12">
+				{#each experiences as experience}
+					<a class="flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white" href="{experience.url}" target="_blank" rel="noreferrer noopener">
+						<div class="w-8/12 px-4 lg:w-3/12 sm:w-4/12">
+							<p>{experience.title}</p>
+						</div>
+						<div class="hidden w-4/12 px-4 sm:block">
+							<p>{experience.role}</p>
+						</div>
+						<div class="flex justify-end w-8/12 px-4 sm:w-5/12">
+							<p>{experience.date}</p>
+						</div>
+					</a>
+				{/each}
+			</section>
+			<section class="flex">
+				<div class="w-8/12 px-4 lg:w-3/12 sm:w-4/12">
+					<p class="mb-1 sm:mb-2">Services</p>
+					{#each services as service}
+						<p class="text-gray-600 dark:text-gray-400">{service.title}</p>
+					{/each}
+				</div>
+				<div class="hidden w-4/12 px-4 sm:block">
+					<p class="mb-1 sm:mb-2">Selected Clients</p>
+					{#each collaborators as collaborator}
+						<p class="text-gray-600 dark:text-gray-400">{collaborator.title}</p>
+					{/each}
+				</div>
+				<div class="w-5/12 px-4 text-right">
+					<p class="mb-1 sm:mb-2">Links</p>
+					{#each links as link}
+						<p><a href="{link.url}" class="text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white"  target="_blank" rel="noreferrer noopener">{link.title}</a></p>
+					{/each}
+				</div>
+			</section>
 		</div>
-	</header>
-	<section class="flex flex-wrap mb-5 sm:mb-8 md:mb-12">
-		<div class="hidden w-4/12 px-4 text-gray-600 dark:text-gray-400 lg:w-3/12 md:block">
-			{@html description}
-		</div>
-		<div class="w-full ml-auto md:w-8/12">
-			{#each projects as project}
-				<a class="flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white" href="{project.url}" target="_blank" rel="noreferrer noopener">
-					<div class="w-8/12 px-4 sm:w-4/12">
-						<p>{project.title}</p>
-					</div>
-					<div class="hidden w-4/12 px-4 sm:block">
-						<p>{project.role}</p>
-					</div>
-					<div class="flex justify-end w-4/12 px-4">
-						<p>{project.year}</p>
-					</div>
-				</a>
-			{/each}
-		</div>
-	</section>
-	<header class="flex mb-1 sm:mb-2">
-		<div class="flex w-full ml-auto md:w-8/12">
-			<div class="w-4/12 px-4">
-				<p>Experience</p>
-			</div>
-			<div class="hidden w-4/12 px-4 sm:block">
-				<p>Title</p>
-			</div>
-			<div class="flex justify-end w-8/12 px-4 sm:w-4/12">
-				<p>Year</p>
-			</div>
-		</div>
-	</header>
-	<section class="flex flex-wrap mb-5 sm:mb-8 md:mb-12">
-		<div class="w-full ml-auto md:w-8/12">
-			{#each experiences as experience}
-				<a class="flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white" href="{experience.url}" target="_blank" rel="noreferrer noopener">
-					<div class="w-4/12 px-4">
-						<p>{experience.title}</p>
-					</div>
-					<div class="hidden w-4/12 px-4 sm:block">
-						<p>{experience.role}</p>
-					</div>
-					<div class="flex justify-end w-8/12 px-4 sm:w-4/12">
-						<p>{experience.date}</p>
-					</div>
-				</a>
-			{/each}
-		</div>
-	</section>
-	<section class="flex flex-wrap w-full ml-auto md:w-8/12">
-		<div class="w-8/12 px-4 sm:w-4/12">
-			<p class="mb-1 sm:mb-2">Services</p>
-			{#each services as service}
-				<p class="text-gray-600 dark:text-gray-400">{service.title}</p>
-			{/each}
-		</div>
-		<div class="hidden w-4/12 px-4 sm:block">
-			<p class="mb-1 sm:mb-2">Selected Clients</p>
-			{#each collaborators as collaborator}
-				<p class="text-gray-600 dark:text-gray-400">{collaborator.title}</p>
-			{/each}
-		</div>
-		<div class="w-4/12 px-4 text-right">
-			<p class="mb-1 sm:mb-2">Links</p>
-			{#each links as link}
-				<p><a href="{link.url}" class="text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white"  target="_blank" rel="noreferrer noopener">{link.title}</a></p>
-			{/each}
-		</div>
-	</section>
+	</div>
 	<Footer />
 </div>
