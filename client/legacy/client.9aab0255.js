@@ -2880,7 +2880,7 @@ var App = /*#__PURE__*/function (_SvelteComponentDev) {
 var ignore = [/^\/content\/collaborators\.json$/, /^\/content\/experiences\.json$/, /^\/content\/projects\.json$/, /^\/content\/services\.json$/, /^\/content\/links\.json$/];
 var components = [{
   js: function js() {
-    return Promise.all([import('./index.8acbe213.js'), __inject_styles(["client-cdb134d6.css"])]).then(function(x) { return x[0]; });
+    return Promise.all([import('./index.d0ddbfed.js'), __inject_styles(["client-cdb134d6.css"])]).then(function(x) { return x[0]; });
   }
 }];
 var routes = [{
