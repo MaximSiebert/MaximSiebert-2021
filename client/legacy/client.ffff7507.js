@@ -2064,7 +2064,7 @@ function create_if_block$1(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(pre, file, 21, 3, 521);
+      add_location(pre, file, 21, 3, 551);
     },
     m: function mount(target, anchor) {
       insert_dev(target, pre, anchor);
@@ -2097,13 +2097,14 @@ function create_fragment$1(ctx) {
   var div1;
   var a;
   var t1;
+  var t2;
   var div0;
   var h1;
-  var t2;
   var t3;
-  var p;
   var t4;
+  var p;
   var t5;
+  var t6;
   document.title = title_value = "Maxim Siebert – " +
   /*status*/
   ctx[0];
@@ -2117,16 +2118,17 @@ function create_fragment$1(ctx) {
       t0 = space();
       div1 = element("div");
       a = element("a");
-      t1 = space();
+      t1 = text("Back home");
+      t2 = space();
       div0 = element("div");
       h1 = element("h1");
-      t2 = text(
+      t3 = text(
       /*status*/
       ctx[0]);
-      t3 = space();
+      t4 = space();
       p = element("p");
-      t4 = text("Ceci n'est pas une page.");
-      t5 = space();
+      t5 = text("Ceci n'est pas une page.");
+      t6 = space();
       if (if_block) if_block.c();
       this.h();
     },
@@ -2142,26 +2144,30 @@ function create_fragment$1(ctx) {
         href: true,
         class: true
       });
-      children(a).forEach(detach_dev);
-      t1 = claim_space(div1_nodes);
+      var a_nodes = children(a);
+      t1 = claim_text(a_nodes, "Back home");
+      a_nodes.forEach(detach_dev);
+      t2 = claim_space(div1_nodes);
       div0 = claim_element(div1_nodes, "DIV", {
         class: true
       });
       var div0_nodes = children(div0);
-      h1 = claim_element(div0_nodes, "H1", {});
+      h1 = claim_element(div0_nodes, "H1", {
+        class: true
+      });
       var h1_nodes = children(h1);
-      t2 = claim_text(h1_nodes,
+      t3 = claim_text(h1_nodes,
       /*status*/
       ctx[0]);
       h1_nodes.forEach(detach_dev);
-      t3 = claim_space(div0_nodes);
+      t4 = claim_space(div0_nodes);
       p = claim_element(div0_nodes, "P", {
         class: true
       });
       var p_nodes = children(p);
-      t4 = claim_text(p_nodes, "Ceci n'est pas une page.");
+      t5 = claim_text(p_nodes, "Ceci n'est pas une page.");
       p_nodes.forEach(detach_dev);
-      t5 = claim_space(div0_nodes);
+      t6 = claim_space(div0_nodes);
       if (if_block) if_block.l(div0_nodes);
       div0_nodes.forEach(detach_dev);
       div1_nodes.forEach(detach_dev);
@@ -2171,11 +2177,12 @@ function create_fragment$1(ctx) {
       attr_dev(a, "href", "/");
       attr_dev(a, "class", "self-start inline-block px-4 mb-4 loader");
       add_location(a, file, 13, 1, 275);
-      add_location(h1, file, 15, 2, 363);
+      attr_dev(h1, "class", "mb-1 sm:mb-2");
+      add_location(h1, file, 15, 2, 372);
       attr_dev(p, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p, file, 16, 2, 383);
+      add_location(p, file, 16, 2, 413);
       attr_dev(div0, "class", "px-4");
-      add_location(div0, file, 14, 1, 342);
+      add_location(div0, file, 14, 1, 351);
       attr_dev(div1, "class", "flex flex-col min-h-screen py-4 text-xs bg-gray-100 dark:bg-black dark:text-white");
       add_location(div1, file, 12, 0, 178);
     },
@@ -2183,14 +2190,15 @@ function create_fragment$1(ctx) {
       insert_dev(target, t0, anchor);
       insert_dev(target, div1, anchor);
       append_dev(div1, a);
-      append_dev(div1, t1);
+      append_dev(a, t1);
+      append_dev(div1, t2);
       append_dev(div1, div0);
       append_dev(div0, h1);
-      append_dev(h1, t2);
-      append_dev(div0, t3);
+      append_dev(h1, t3);
+      append_dev(div0, t4);
       append_dev(div0, p);
-      append_dev(p, t4);
-      append_dev(div0, t5);
+      append_dev(p, t5);
+      append_dev(div0, t6);
       if (if_block) if_block.m(div0, null);
     },
     p: function update(ctx, _ref) {
@@ -2207,7 +2215,7 @@ function create_fragment$1(ctx) {
 
       if (dirty &
       /*status*/
-      1) set_data_dev(t2,
+      1) set_data_dev(t3,
       /*status*/
       ctx[0]);
 
@@ -2880,7 +2888,7 @@ var App = /*#__PURE__*/function (_SvelteComponentDev) {
 var ignore = [/^\/content\/collaborators\.json$/, /^\/content\/experiences\.json$/, /^\/content\/projects\.json$/, /^\/content\/services\.json$/, /^\/content\/links\.json$/];
 var components = [{
   js: function js() {
-    return Promise.all([import('./index.c4613c99.js'), __inject_styles(["client-cdb134d6.css"])]).then(function(x) { return x[0]; });
+    return Promise.all([import('./index.2985debb.js'), __inject_styles(["client-e62db579.css"])]).then(function(x) { return x[0]; });
   }
 }];
 var routes = [{
