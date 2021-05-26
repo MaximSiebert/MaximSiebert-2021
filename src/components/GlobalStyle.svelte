@@ -1,5 +1,5 @@
 <style global lang="postcss">
-	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 	@import "../global.pcss";
 
 	* {
@@ -26,7 +26,16 @@
 		}
 	}
 
+	.loader {
+		line-height: 0; 
+		font-size: 0;
+		color: transparent;
+	}
+
 	.loader:before {
+		@apply text-black dark:text-white;
+		font-size: 12px;
+		line-height: 1.333;
 		content: "/";
 		text-shadow: 0 0 10px rgba(255, 255, 255, .8);
 		animation: load .5s linear infinite;
