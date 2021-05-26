@@ -2,10 +2,13 @@ const { fontFamily } = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-  purge: [
-    './src/*.html',
-    './src/**/*.svelte',
-  ],
+  purge: {
+    enabled: true,
+    content: [
+      './src/*.html',
+      './src/**/*.svelte',
+    ]
+  },
   darkMode: 'media',
   variants: {},
   theme: {

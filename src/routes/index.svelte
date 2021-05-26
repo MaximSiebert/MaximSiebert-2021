@@ -42,6 +42,7 @@
 
 <svelte:head>
 	<title>Maxim Siebert — Designer + Developer</title>
+	<meta name="description" content="A French-Canadian designer and developer specialized in web and product design." />
 </svelte:head>
 
 <div class="flex flex-col min-h-screen py-4 text-xs text-black bg-gray-100 dark:bg-black dark:text-white">

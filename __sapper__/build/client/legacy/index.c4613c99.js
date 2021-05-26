@@ -1,4 +1,4 @@
-import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as set_data_dev, z as update_await_block_branch, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.61be7eda.js';
+import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as set_data_dev, z as update_await_block_branch, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.4d72a0bc.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -1004,7 +1004,7 @@ function get_each_context_4(ctx, list, i) {
   var child_ctx = ctx.slice();
   child_ctx[20] = list[i];
   return child_ctx;
-} // (71:4) {#each projects as project}
+} // (72:4) {#each projects as project}
 
 
 function create_each_block_4(ctx) {
@@ -1090,22 +1090,22 @@ function create_each_block_4(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file, 73, 7, 2633);
+      add_location(p0, file, 74, 7, 2773);
       attr_dev(div0, "class", "w-8/12 px-4 lg:w-3/12 sm:w-4/12");
-      add_location(div0, file, 72, 6, 2580);
-      add_location(p1, file, 76, 7, 2724);
+      add_location(div0, file, 73, 6, 2720);
+      add_location(p1, file, 77, 7, 2864);
       attr_dev(div1, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div1, file, 75, 6, 2675);
-      add_location(p2, file, 79, 7, 2815);
+      add_location(div1, file, 76, 6, 2815);
+      add_location(p2, file, 80, 7, 2955);
       attr_dev(div2, "class", "flex justify-end w-5/12 px-4");
-      add_location(div2, file, 78, 6, 2765);
+      add_location(div2, file, 79, 6, 2905);
       attr_dev(a, "class", "flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "href", a_href_value =
       /*project*/
       ctx[20].url);
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 71, 5, 2398);
+      add_location(a, file, 72, 5, 2538);
     },
     m: function mount(target, anchor) {
       insert_dev(target, a, anchor);
@@ -1155,11 +1155,11 @@ function create_each_block_4(ctx) {
     block: block,
     id: create_each_block_4.name,
     type: "each",
-    source: "(71:4) {#each projects as project}",
+    source: "(72:4) {#each projects as project}",
     ctx: ctx
   });
   return block;
-} // (97:4) {#each experiences as experience}
+} // (98:4) {#each experiences as experience}
 
 
 function create_each_block_3(ctx) {
@@ -1245,22 +1245,22 @@ function create_each_block_3(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file, 99, 7, 3512);
+      add_location(p0, file, 100, 7, 3652);
       attr_dev(div0, "class", "w-8/12 px-4 lg:w-3/12 sm:w-4/12");
-      add_location(div0, file, 98, 6, 3459);
-      add_location(p1, file, 102, 7, 3606);
+      add_location(div0, file, 99, 6, 3599);
+      add_location(p1, file, 103, 7, 3746);
       attr_dev(div1, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div1, file, 101, 6, 3557);
-      add_location(p2, file, 105, 7, 3710);
+      add_location(div1, file, 102, 6, 3697);
+      add_location(p2, file, 106, 7, 3850);
       attr_dev(div2, "class", "flex justify-end w-8/12 px-4 sm:w-5/12");
-      add_location(div2, file, 104, 6, 3650);
+      add_location(div2, file, 105, 6, 3790);
       attr_dev(a, "class", "flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "href", a_href_value =
       /*experience*/
       ctx[17].url);
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 97, 5, 3274);
+      add_location(a, file, 98, 5, 3414);
     },
     m: function mount(target, anchor) {
       insert_dev(target, a, anchor);
@@ -1310,11 +1310,11 @@ function create_each_block_3(ctx) {
     block: block,
     id: create_each_block_3.name,
     type: "each",
-    source: "(97:4) {#each experiences as experience}",
+    source: "(98:4) {#each experiences as experience}",
     ctx: ctx
   });
   return block;
-} // (114:5) {#each services as service}
+} // (115:5) {#each services as service}
 
 
 function create_each_block_2(ctx) {
@@ -1340,7 +1340,7 @@ function create_each_block_2(ctx) {
     },
     h: function hydrate() {
       attr_dev(p, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p, file, 114, 6, 3941);
+      add_location(p, file, 115, 6, 4081);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -1361,11 +1361,11 @@ function create_each_block_2(ctx) {
     block: block,
     id: create_each_block_2.name,
     type: "each",
-    source: "(114:5) {#each services as service}",
+    source: "(115:5) {#each services as service}",
     ctx: ctx
   });
   return block;
-} // (120:5) {#each collaborators as collaborator}
+} // (121:5) {#each collaborators as collaborator}
 
 
 function create_each_block_1(ctx) {
@@ -1391,7 +1391,7 @@ function create_each_block_1(ctx) {
     },
     h: function hydrate() {
       attr_dev(p, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p, file, 120, 6, 4174);
+      add_location(p, file, 121, 6, 4314);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -1412,11 +1412,11 @@ function create_each_block_1(ctx) {
     block: block,
     id: create_each_block_1.name,
     type: "each",
-    source: "(120:5) {#each collaborators as collaborator}",
+    source: "(121:5) {#each collaborators as collaborator}",
     ctx: ctx
   });
   return block;
-} // (126:5) {#each links as link}
+} // (127:5) {#each links as link}
 
 
 function create_each_block(ctx) {
@@ -1456,8 +1456,8 @@ function create_each_block(ctx) {
       attr_dev(a, "class", "text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 126, 9, 4383);
-      add_location(p, file, 126, 6, 4380);
+      add_location(a, file, 127, 9, 4523);
+      add_location(p, file, 127, 6, 4520);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -1487,13 +1487,14 @@ function create_each_block(ctx) {
     block: block,
     id: create_each_block.name,
     type: "each",
-    source: "(126:5) {#each links as link}",
+    source: "(127:5) {#each links as link}",
     ctx: ctx
   });
   return block;
 }
 
 function create_fragment(ctx) {
+  var meta;
   var t0;
   var div13;
   var div12;
@@ -1616,6 +1617,7 @@ function create_fragment(ctx) {
   });
   var block = {
     c: function create() {
+      meta = element("meta");
       t0 = space();
       div13 = element("div");
       div12 = element("div");
@@ -1712,7 +1714,11 @@ function create_fragment(ctx) {
       this.h();
     },
     l: function claim(nodes) {
-      var head_nodes = query_selector_all("[data-svelte=\"svelte-k4gemi\"]", document.head);
+      var head_nodes = query_selector_all("[data-svelte=\"svelte-x374ds\"]", document.head);
+      meta = claim_element(head_nodes, "META", {
+        name: true,
+        content: true
+      });
       head_nodes.forEach(detach_dev);
       t0 = claim_space(nodes);
       div13 = claim_element(nodes, "DIV", {
@@ -1733,7 +1739,9 @@ function create_fragment(ctx) {
       });
       children(a).forEach(detach_dev);
       t1 = claim_space(header0_nodes);
-      h1 = claim_element(header0_nodes, "H1", {});
+      h1 = claim_element(header0_nodes, "H1", {
+        class: true
+      });
       var h1_nodes = children(h1);
       t2 = claim_text(h1_nodes, "Maxim Siebert");
       h1_nodes.forEach(detach_dev);
@@ -1925,66 +1933,71 @@ function create_fragment(ctx) {
     },
     h: function hydrate() {
       document.title = "Maxim Siebert — Designer + Developer";
+      attr_dev(meta, "name", "description");
+      attr_dev(meta, "content", "A French-Canadian designer and developer specialized in web and product design.");
+      add_location(meta, file, 44, 1, 1360);
       attr_dev(a, "href", "/");
       attr_dev(a, "class", "self-start inline-block mb-4 loader");
-      add_location(a, file, 49, 3, 1597);
-      add_location(h1, file, 50, 3, 1661);
+      add_location(a, file, 50, 3, 1716);
+      attr_dev(h1, "class", "mb-1 sm:mb-2");
+      add_location(h1, file, 51, 3, 1780);
       attr_dev(p0, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p0, file, 51, 3, 1687);
+      add_location(p0, file, 52, 3, 1827);
       attr_dev(p1, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p1, file, 52, 3, 1759);
+      add_location(p1, file, 53, 3, 1899);
       attr_dev(header0, "class", "w-full px-4 mb-8 md:w-3/12 md:mb-0 md:sticky top-4");
-      add_location(header0, file, 48, 2, 1526);
+      add_location(header0, file, 49, 2, 1645);
       attr_dev(div0, "class", "w-full px-4 mb-8 text-base leading-snug text-black dark:text-white lg:w-5/12 md:w-8/12 md:block md:mb-12");
-      add_location(div0, file, 55, 3, 1883);
-      add_location(p2, file, 60, 5, 2116);
+      add_location(div0, file, 56, 3, 2023);
+      add_location(p2, file, 61, 5, 2256);
       attr_dev(div1, "class", "w-4/12 px-4 lg:w-3/12");
-      add_location(div1, file, 59, 4, 2075);
-      add_location(p3, file, 63, 5, 2193);
+      add_location(div1, file, 60, 4, 2215);
+      add_location(p3, file, 64, 5, 2333);
       attr_dev(div2, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div2, file, 62, 4, 2146);
-      add_location(p4, file, 66, 5, 2278);
+      add_location(div2, file, 63, 4, 2286);
+      add_location(p4, file, 67, 5, 2418);
       attr_dev(div3, "class", "flex justify-end w-8/12 px-4 sm:w-5/12");
-      add_location(div3, file, 65, 4, 2220);
+      add_location(div3, file, 66, 4, 2360);
       attr_dev(div4, "class", "flex mb-1 sm:mb-2");
-      add_location(div4, file, 58, 3, 2039);
+      add_location(div4, file, 59, 3, 2179);
       attr_dev(section0, "class", "w-full mb-5 sm:mb-8 md:mb-12");
-      add_location(section0, file, 69, 3, 2314);
-      add_location(p5, file, 86, 5, 2979);
+      add_location(section0, file, 70, 3, 2454);
+      add_location(p5, file, 87, 5, 3119);
       attr_dev(div5, "class", "w-8/12 px-4 lg:w-3/12 sm:w-4/12");
-      add_location(div5, file, 85, 4, 2928);
-      add_location(p6, file, 89, 5, 3059);
+      add_location(div5, file, 86, 4, 3068);
+      add_location(p6, file, 90, 5, 3199);
       attr_dev(div6, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div6, file, 88, 4, 3012);
-      add_location(p7, file, 92, 5, 3145);
+      add_location(div6, file, 89, 4, 3152);
+      add_location(p7, file, 93, 5, 3285);
       attr_dev(div7, "class", "flex justify-end w-8/12 px-4 sm:w-5/12");
-      add_location(div7, file, 91, 4, 3087);
+      add_location(div7, file, 92, 4, 3227);
       attr_dev(header1, "class", "flex mb-1 sm:mb-2");
-      add_location(header1, file, 84, 3, 2889);
+      add_location(header1, file, 85, 3, 3029);
       attr_dev(section1, "class", "w-full mb-5 sm:mb-8 md:mb-12");
-      add_location(section1, file, 95, 3, 3184);
+      add_location(section1, file, 96, 3, 3324);
       attr_dev(p8, "class", "mb-1 sm:mb-2");
-      add_location(p8, file, 112, 5, 3865);
+      add_location(p8, file, 113, 5, 4005);
       attr_dev(div8, "class", "w-8/12 px-4 lg:w-3/12 sm:w-4/12");
-      add_location(div8, file, 111, 4, 3814);
+      add_location(div8, file, 112, 4, 3954);
       attr_dev(p9, "class", "mb-1 sm:mb-2");
-      add_location(p9, file, 118, 5, 4080);
+      add_location(p9, file, 119, 5, 4220);
       attr_dev(div9, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div9, file, 117, 4, 4033);
+      add_location(div9, file, 118, 4, 4173);
       attr_dev(p10, "class", "mb-1 sm:mb-2");
-      add_location(p10, file, 124, 5, 4313);
+      add_location(p10, file, 125, 5, 4453);
       attr_dev(div10, "class", "w-5/12 px-4 text-right");
-      add_location(div10, file, 123, 4, 4271);
+      add_location(div10, file, 124, 4, 4411);
       attr_dev(section2, "class", "flex");
-      add_location(section2, file, 110, 3, 3787);
+      add_location(section2, file, 111, 3, 3927);
       attr_dev(div11, "class", "w-full ml-auto md:w-9/12 md:mt-7");
-      add_location(div11, file, 54, 2, 1833);
+      add_location(div11, file, 55, 2, 1973);
       attr_dev(div12, "class", "flex flex-wrap items-start");
-      add_location(div12, file, 47, 1, 1483);
+      add_location(div12, file, 48, 1, 1602);
       attr_dev(div13, "class", "flex flex-col min-h-screen py-4 text-xs text-black bg-gray-100 dark:bg-black dark:text-white");
-      add_location(div13, file, 46, 0, 1375);
+      add_location(div13, file, 47, 0, 1494);
     },
     m: function mount(target, anchor) {
+      append_dev(document.head, meta);
       insert_dev(target, t0, anchor);
       insert_dev(target, div13, anchor);
       append_dev(div13, div12);
@@ -2256,6 +2269,7 @@ function create_fragment(ctx) {
       current = false;
     },
     d: function destroy(detaching) {
+      detach_dev(meta);
       if (detaching) detach_dev(t0);
       if (detaching) detach_dev(div13);
       destroy_each(each_blocks_4, detaching);
