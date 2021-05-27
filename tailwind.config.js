@@ -16,8 +16,13 @@ module.exports = {
       sans: ['"Inter"', ...fontFamily.sans],
     },
     colors: {
-      gray: colors.trueGray,
-      black: '#141414',
+      gray: {
+        100: '#EAE9E5',
+        400: '#AAA496',
+        600: '#695F47',
+        800: '#243513',
+      },
+      black: '#19260C',
       white: '#fff'
     },
     extend: {}
