@@ -66,6 +66,12 @@ const content = [
     url: 'https://www.ada.support/'
   },
   {
+		title: 'Blunt',
+		role: 'Designer + Developer',
+    year: '2019',
+    url: 'https://blunt.af/'
+  },
+  {
 		title: 'Ada Brand',
 		role: 'Designer',
     year: '2018',
@@ -117,7 +123,7 @@ const content = [
 		title: 'Blunt',
 		role: 'Designer + Developer',
     year: '2017',
-    url: 'https://blunt.af/'
+    url: 'https://blunt.af/blunt-17'
   },
   {
 		title: 'Maxim Siebert',
@@ -148,12 +154,6 @@ const content = [
 		role: 'Developer',
     year: '2017',
     url: 'http://bokeh.agency/'
-  },
-  {
-		title: 'Blunt',
-		role: 'Designer + Developer',
-    year: '2017',
-    url: 'https://hairdresser-header-43444.netlify.app/'
   },
   {
 		title: 'Tachy.Tools',
@@ -202,6 +202,12 @@ const content = [
 		role: 'Designer',
     year: '2017',
     url: 'https://www.figma.com/file/TIcttY94llGictHXk3LOkmDn/Website?node-id=0%3A1'
+  },
+  {
+		title: 'Blunt',
+		role: 'Designer + Developer',
+    year: '2016',
+    url: 'https://hairdresser-header-43444.netlify.app/'
   },
   {
 		title: 'Curate Luxe',
