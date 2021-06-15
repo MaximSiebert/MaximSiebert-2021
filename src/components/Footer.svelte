@@ -1,7 +1,16 @@
 <script>
     import fetch from 'cross-fetch';
 
-    let promise = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)
+    let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)
+    .then(r => r.json());
+
+    let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd",
+            "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"
+        }
+    })
     .then(r => r.json());
 
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -39,14 +48,18 @@
 
 <div class="flex pt-5 mt-auto text-gray-600 sm:pt-8 md:pt-12 dark:text-gray-400">
     <div class="w-8/12 px-4 lg:w-3/12 sm:w-4/12">
-        <p>Ottawa — {time} ET</p>
+        <p>
+            Ottawa
+            {#await temperature then temp}
+                {temp.current.temp_c}°C
+            {/await}
+             — {time} ET
+        </p>
     </div>
     <div class="flex w-4/12 ml-auto sm:w-9/12">
         <div class="hidden w-8/12 px-4 sm:block">
             <p>
-                {#await promise}
-                
-                {:then data}
+                {#await updatedDate then data}
                     Updated — 
                     {monthNames[new Date(data.commit.commit.author.date).getMonth()]}
                     {new Date(data.commit.commit.author.date).getFullYear()}
