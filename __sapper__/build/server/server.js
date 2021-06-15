@@ -626,7 +626,7 @@ const Footer = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	let temperature = fetch__default['default'](`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {
 		"method": "GET",
 		"headers": {
-			"x-rapidapi-key": "625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd",
+			"x-rapidapi-key": process.env.SVELTE_APP_RAPID_API_KEY,
 			"x-rapidapi-host": "weatherapi-com.p.rapidapi.com"
 		}
 	}).then(r => r.json());

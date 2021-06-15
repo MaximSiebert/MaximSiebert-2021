@@ -51,7 +51,7 @@
         <p>
             Ottawa
             {#await temperature then temp}
-                {temp.current.temp_c}°C
+                {Math.round(temp.current.temp_c)}°C
             {/await}
              — {time} ET
         </p>

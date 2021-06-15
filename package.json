@@ -5,9 +5,9 @@
   "version": "0.0.1",
   "scripts": {
     "env:dev": "env-cmd npm run dev",
-    "dev": "sapper dev",
+    "dev": "env-cmd sapper dev",
     "build": "sapper build --legacy",
-    "export": "sapper export --legacy --entry \"/ /404\"",
+    "export": "env-cmd sapper export --legacy --entry \"/ /404\"",
     "postexport": "mv __sapper__/export/404/index.html __sapper__/export/404.html",
     "start": "node __sapper__/build",
     "deploy": "npm run export && node ./scripts/gh-pages.js"
