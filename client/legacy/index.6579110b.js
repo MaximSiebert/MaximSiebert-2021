@@ -1,4 +1,4 @@
-import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as update_await_block_branch, z as set_data_dev, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.bc396e88.js';
+import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as update_await_block_branch, z as set_data_dev, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.70628bd1.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -616,7 +616,7 @@ var browserPonyfill = createCommonjsModule(function (module, exports) {
 function _createSuper$1(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct$1(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct$1() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-var file$1 = "src/components/Footer.svelte"; // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         "method": "GET",         "headers": {             "x-rapidapi-key": "625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd",             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
+var file$1 = "src/components/Footer.svelte"; // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         "method": "GET",         "headers": {             "x-rapidapi-key": process.env.SVELTE_APP_RAPID_API_KEY,             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
 
 function create_catch_block_1(ctx) {
   var block = {
@@ -630,7 +630,7 @@ function create_catch_block_1(ctx) {
     block: block,
     id: create_catch_block_1.name,
     type: "catch",
-    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": \\\"625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd\\\",             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
+    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": process.env.SVELTE_APP_RAPID_API_KEY,             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
     ctx: ctx
   });
   return block;
@@ -670,7 +670,7 @@ function create_then_block_1(ctx) {
     ctx: ctx
   });
   return block;
-} // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         "method": "GET",         "headers": {             "x-rapidapi-key": "625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd",             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
+} // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         "method": "GET",         "headers": {             "x-rapidapi-key": process.env.SVELTE_APP_RAPID_API_KEY,             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
 
 
 function create_pending_block_1(ctx) {
@@ -685,11 +685,11 @@ function create_pending_block_1(ctx) {
     block: block,
     id: create_pending_block_1.name,
     type: "pending",
-    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": \\\"625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd\\\",             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
+    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": process.env.SVELTE_APP_RAPID_API_KEY,             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
     ctx: ctx
   });
   return block;
-} // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         "method": "GET",         "headers": {             "x-rapidapi-key": "625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd",             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
+} // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         "method": "GET",         "headers": {             "x-rapidapi-key": process.env.SVELTE_APP_RAPID_API_KEY,             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
 
 
 function create_catch_block(ctx) {
@@ -704,7 +704,7 @@ function create_catch_block(ctx) {
     block: block,
     id: create_catch_block.name,
     type: "catch",
-    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": \\\"625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd\\\",             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
+    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": process.env.SVELTE_APP_RAPID_API_KEY,             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
     ctx: ctx
   });
   return block;
@@ -759,7 +759,7 @@ function create_then_block(ctx) {
     ctx: ctx
   });
   return block;
-} // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         "method": "GET",         "headers": {             "x-rapidapi-key": "625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd",             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
+} // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         "method": "GET",         "headers": {             "x-rapidapi-key": process.env.SVELTE_APP_RAPID_API_KEY,             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
 
 
 function create_pending_block(ctx) {
@@ -774,7 +774,7 @@ function create_pending_block(ctx) {
     block: block,
     id: create_pending_block.name,
     type: "pending",
-    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": \\\"625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd\\\",             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
+    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": process.env.SVELTE_APP_RAPID_API_KEY,             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
     ctx: ctx
   });
   return block;
@@ -899,19 +899,19 @@ function create_fragment$1(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file$1, 50, 8, 1438);
+      add_location(p0, file$1, 50, 8, 1422);
       attr_dev(div0, "class", "w-8/12 px-4 lg:w-3/12 sm:w-4/12");
-      add_location(div0, file$1, 49, 4, 1384);
-      add_location(p1, file$1, 60, 12, 1724);
+      add_location(div0, file$1, 49, 4, 1368);
+      add_location(p1, file$1, 60, 12, 1708);
       attr_dev(div1, "class", "hidden w-8/12 px-4 sm:block");
-      add_location(div1, file$1, 59, 8, 1670);
-      add_location(p2, file$1, 69, 12, 2099);
+      add_location(div1, file$1, 59, 8, 1654);
+      add_location(p2, file$1, 69, 12, 2083);
       attr_dev(div2, "class", "flex justify-end w-full px-4 sm:w-4/12");
-      add_location(div2, file$1, 68, 8, 2034);
+      add_location(div2, file$1, 68, 8, 2018);
       attr_dev(div3, "class", "flex w-4/12 ml-auto sm:w-9/12");
-      add_location(div3, file$1, 58, 4, 1618);
+      add_location(div3, file$1, 58, 4, 1602);
       attr_dev(div4, "class", "flex pt-5 mt-auto text-gray-600 sm:pt-8 md:pt-12 dark:text-gray-400");
-      add_location(div4, file$1, 48, 0, 1298);
+      add_location(div4, file$1, 48, 0, 1282);
     },
     m: function mount(target, anchor) {
       insert_dev(target, div4, anchor);
@@ -996,7 +996,7 @@ function instance$1($$self, $$props, $$invalidate) {
   var temperature = browserPonyfill("https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa", {
     "method": "GET",
     "headers": {
-      "x-rapidapi-key": "625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd",
+      "x-rapidapi-key": process.env.SVELTE_APP_RAPID_API_KEY,
       "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"
     }
   }).then(function (r) {
