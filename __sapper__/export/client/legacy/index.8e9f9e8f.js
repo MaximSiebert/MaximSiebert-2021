@@ -1,4 +1,4 @@
-import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as set_data_dev, z as update_await_block_branch, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.ffff7507.js';
+import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as update_await_block_branch, z as set_data_dev, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.bc396e88.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -616,7 +616,81 @@ var browserPonyfill = createCommonjsModule(function (module, exports) {
 function _createSuper$1(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct$1(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct$1() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-var file$1 = "src/components/Footer.svelte"; // (1:0) <script>     import fetch from 'cross-fetch';      let promise = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];   var time = '';  var year = '';   function updateClock() {   var now = new Date(), // current date    hour = now.getHours(),    minutes = now.getMinutes(),    sep = ':',    ampm = 'am';      if (hour >= 12) {     hour -= 12;     ampm = 'pm';   }
+var file$1 = "src/components/Footer.svelte"; // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         "method": "GET",         "headers": {             "x-rapidapi-key": "625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd",             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
+
+function create_catch_block_1(ctx) {
+  var block = {
+    c: noop,
+    l: noop,
+    m: noop,
+    p: noop,
+    d: noop
+  };
+  dispatch_dev("SvelteRegisterBlock", {
+    block: block,
+    id: create_catch_block_1.name,
+    type: "catch",
+    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": \\\"625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd\\\",             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
+    ctx: ctx
+  });
+  return block;
+} // (53:42)                  {temp.current.temp_c}
+
+
+function create_then_block_1(ctx) {
+  var t0_value =
+  /*temp*/
+  ctx[7].current.temp_c + "";
+  var t0;
+  var t1;
+  var block = {
+    c: function create() {
+      t0 = text(t0_value);
+      t1 = text("°C");
+    },
+    l: function claim(nodes) {
+      t0 = claim_text(nodes, t0_value);
+      t1 = claim_text(nodes, "°C");
+    },
+    m: function mount(target, anchor) {
+      insert_dev(target, t0, anchor);
+      insert_dev(target, t1, anchor);
+    },
+    p: noop,
+    d: function destroy(detaching) {
+      if (detaching) detach_dev(t0);
+      if (detaching) detach_dev(t1);
+    }
+  };
+  dispatch_dev("SvelteRegisterBlock", {
+    block: block,
+    id: create_then_block_1.name,
+    type: "then",
+    source: "(53:42)                  {temp.current.temp_c}",
+    ctx: ctx
+  });
+  return block;
+} // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         "method": "GET",         "headers": {             "x-rapidapi-key": "625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd",             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
+
+
+function create_pending_block_1(ctx) {
+  var block = {
+    c: noop,
+    l: noop,
+    m: noop,
+    p: noop,
+    d: noop
+  };
+  dispatch_dev("SvelteRegisterBlock", {
+    block: block,
+    id: create_pending_block_1.name,
+    type: "pending",
+    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": \\\"625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd\\\",             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
+    ctx: ctx
+  });
+  return block;
+} // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         "method": "GET",         "headers": {             "x-rapidapi-key": "625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd",             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
+
 
 function create_catch_block(ctx) {
   var block = {
@@ -630,25 +704,25 @@ function create_catch_block(ctx) {
     block: block,
     id: create_catch_block.name,
     type: "catch",
-    source: "(1:0) <script>     import fetch from 'cross-fetch';      let promise = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      const monthNames = [\\\"January\\\", \\\"February\\\", \\\"March\\\", \\\"April\\\", \\\"May\\\", \\\"June\\\", \\\"July\\\", \\\"August\\\", \\\"September\\\", \\\"October\\\", \\\"November\\\", \\\"December\\\"];   var time = '';  var year = '';   function updateClock() {   var now = new Date(), // current date    hour = now.getHours(),    minutes = now.getMinutes(),    sep = ':',    ampm = 'am';      if (hour >= 12) {     hour -= 12;     ampm = 'pm';   }",
+    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": \\\"625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd\\\",             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
     ctx: ctx
   });
   return block;
-} // (49:16) {:then data}
+} // (62:46)                      Updated —                      {monthNames[new Date(data.commit.commit.author.date).getMonth()]}
 
 
 function create_then_block(ctx) {
   var t0;
   var t1_value =
   /*monthNames*/
-  ctx[3][new Date(
+  ctx[4][new Date(
   /*data*/
-  ctx[5].commit.commit.author.date).getMonth()] + "";
+  ctx[6].commit.commit.author.date).getMonth()] + "";
   var t1;
   var t2;
   var t3_value = new Date(
   /*data*/
-  ctx[5].commit.commit.author.date).getFullYear() + "";
+  ctx[6].commit.commit.author.date).getFullYear() + "";
   var t3;
   var block = {
     c: function create() {
@@ -681,11 +755,11 @@ function create_then_block(ctx) {
     block: block,
     id: create_then_block.name,
     type: "then",
-    source: "(49:16) {:then data}",
+    source: "(62:46)                      Updated —                      {monthNames[new Date(data.commit.commit.author.date).getMonth()]}",
     ctx: ctx
   });
   return block;
-} // (47:32)                                   {:then data}
+} // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         "method": "GET",         "headers": {             "x-rapidapi-key": "625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd",             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
 
 
 function create_pending_block(ctx) {
@@ -700,7 +774,7 @@ function create_pending_block(ctx) {
     block: block,
     id: create_pending_block.name,
     type: "pending",
-    source: "(47:32)                                   {:then data}",
+    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": \\\"625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd\\\",             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
     ctx: ctx
   });
   return block;
@@ -714,15 +788,28 @@ function create_fragment$1(ctx) {
   var t1;
   var t2;
   var t3;
+  var t4;
   var div3;
   var div1;
   var p1;
-  var t4;
+  var t5;
   var div2;
   var p2;
-  var t5;
   var t6;
+  var t7;
   var info = {
+    ctx: ctx,
+    current: null,
+    token: null,
+    hasCatch: false,
+    pending: create_pending_block_1,
+    then: create_then_block_1,
+    catch: create_catch_block_1,
+    value: 7
+  };
+  handle_promise(/*temperature*/
+  ctx[3], info);
+  var info_1 = {
     ctx: ctx,
     current: null,
     token: null,
@@ -730,32 +817,34 @@ function create_fragment$1(ctx) {
     pending: create_pending_block,
     then: create_then_block,
     catch: create_catch_block,
-    value: 5
+    value: 6
   };
-  handle_promise(/*promise*/
-  ctx[2], info);
+  handle_promise(/*updatedDate*/
+  ctx[2], info_1);
   var block = {
     c: function create() {
       div4 = element("div");
       div0 = element("div");
       p0 = element("p");
-      t0 = text("Ottawa — ");
-      t1 = text(
+      t0 = text("Ottawa\n            ");
+      info.block.c();
+      t1 = text("\n             — ");
+      t2 = text(
       /*time*/
       ctx[0]);
-      t2 = text(" ET");
-      t3 = space();
+      t3 = text(" ET");
+      t4 = space();
       div3 = element("div");
       div1 = element("div");
       p1 = element("p");
-      info.block.c();
-      t4 = space();
+      info_1.block.c();
+      t5 = space();
       div2 = element("div");
       p2 = element("p");
-      t5 = text(
+      t6 = text(
       /*year*/
       ctx[1]);
-      t6 = text(" ©");
+      t7 = text(" ©");
       this.h();
     },
     l: function claim(nodes) {
@@ -769,14 +858,16 @@ function create_fragment$1(ctx) {
       var div0_nodes = children(div0);
       p0 = claim_element(div0_nodes, "P", {});
       var p0_nodes = children(p0);
-      t0 = claim_text(p0_nodes, "Ottawa — ");
-      t1 = claim_text(p0_nodes,
+      t0 = claim_text(p0_nodes, "Ottawa\n            ");
+      info.block.l(p0_nodes);
+      t1 = claim_text(p0_nodes, "\n             — ");
+      t2 = claim_text(p0_nodes,
       /*time*/
       ctx[0]);
-      t2 = claim_text(p0_nodes, " ET");
+      t3 = claim_text(p0_nodes, " ET");
       p0_nodes.forEach(detach_dev);
       div0_nodes.forEach(detach_dev);
-      t3 = claim_space(div4_nodes);
+      t4 = claim_space(div4_nodes);
       div3 = claim_element(div4_nodes, "DIV", {
         class: true
       });
@@ -787,20 +878,20 @@ function create_fragment$1(ctx) {
       var div1_nodes = children(div1);
       p1 = claim_element(div1_nodes, "P", {});
       var p1_nodes = children(p1);
-      info.block.l(p1_nodes);
+      info_1.block.l(p1_nodes);
       p1_nodes.forEach(detach_dev);
       div1_nodes.forEach(detach_dev);
-      t4 = claim_space(div3_nodes);
+      t5 = claim_space(div3_nodes);
       div2 = claim_element(div3_nodes, "DIV", {
         class: true
       });
       var div2_nodes = children(div2);
       p2 = claim_element(div2_nodes, "P", {});
       var p2_nodes = children(p2);
-      t5 = claim_text(p2_nodes,
+      t6 = claim_text(p2_nodes,
       /*year*/
       ctx[1]);
-      t6 = claim_text(p2_nodes, " ©");
+      t7 = claim_text(p2_nodes, " ©");
       p2_nodes.forEach(detach_dev);
       div2_nodes.forEach(detach_dev);
       div3_nodes.forEach(detach_dev);
@@ -808,58 +899,67 @@ function create_fragment$1(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file$1, 41, 8, 1104);
+      add_location(p0, file$1, 50, 8, 1438);
       attr_dev(div0, "class", "w-8/12 px-4 lg:w-3/12 sm:w-4/12");
-      add_location(div0, file$1, 40, 4, 1050);
-      add_location(p1, file$1, 45, 12, 1251);
+      add_location(div0, file$1, 49, 4, 1384);
+      add_location(p1, file$1, 60, 12, 1724);
       attr_dev(div1, "class", "hidden w-8/12 px-4 sm:block");
-      add_location(div1, file$1, 44, 8, 1197);
-      add_location(p2, file$1, 56, 12, 1658);
+      add_location(div1, file$1, 59, 8, 1670);
+      add_location(p2, file$1, 69, 12, 2099);
       attr_dev(div2, "class", "flex justify-end w-full px-4 sm:w-4/12");
-      add_location(div2, file$1, 55, 8, 1593);
+      add_location(div2, file$1, 68, 8, 2034);
       attr_dev(div3, "class", "flex w-4/12 ml-auto sm:w-9/12");
-      add_location(div3, file$1, 43, 4, 1145);
+      add_location(div3, file$1, 58, 4, 1618);
       attr_dev(div4, "class", "flex pt-5 mt-auto text-gray-600 sm:pt-8 md:pt-12 dark:text-gray-400");
-      add_location(div4, file$1, 39, 0, 964);
+      add_location(div4, file$1, 48, 0, 1298);
     },
     m: function mount(target, anchor) {
       insert_dev(target, div4, anchor);
       append_dev(div4, div0);
       append_dev(div0, p0);
       append_dev(p0, t0);
+      info.block.m(p0, info.anchor = null);
+
+      info.mount = function () {
+        return p0;
+      };
+
+      info.anchor = t1;
       append_dev(p0, t1);
       append_dev(p0, t2);
-      append_dev(div4, t3);
+      append_dev(p0, t3);
+      append_dev(div4, t4);
       append_dev(div4, div3);
       append_dev(div3, div1);
       append_dev(div1, p1);
-      info.block.m(p1, info.anchor = null);
+      info_1.block.m(p1, info_1.anchor = null);
 
-      info.mount = function () {
+      info_1.mount = function () {
         return p1;
       };
 
-      info.anchor = null;
-      append_dev(div3, t4);
+      info_1.anchor = null;
+      append_dev(div3, t5);
       append_dev(div3, div2);
       append_dev(div2, p2);
-      append_dev(p2, t5);
       append_dev(p2, t6);
+      append_dev(p2, t7);
     },
     p: function update(new_ctx, _ref) {
       var _ref2 = _slicedToArray(_ref, 1),
           dirty = _ref2[0];
 
       ctx = new_ctx;
-      if (dirty &
-      /*time*/
-      1) set_data_dev(t1,
-      /*time*/
-      ctx[0]);
       update_await_block_branch(info, ctx, dirty);
       if (dirty &
+      /*time*/
+      1) set_data_dev(t2,
+      /*time*/
+      ctx[0]);
+      update_await_block_branch(info_1, ctx, dirty);
+      if (dirty &
       /*year*/
-      2) set_data_dev(t5,
+      2) set_data_dev(t6,
       /*year*/
       ctx[1]);
     },
@@ -870,6 +970,9 @@ function create_fragment$1(ctx) {
       info.block.d();
       info.token = null;
       info = null;
+      info_1.block.d();
+      info_1.token = null;
+      info_1 = null;
     }
   };
   dispatch_dev("SvelteRegisterBlock", {
@@ -887,7 +990,16 @@ function instance$1($$self, $$props, $$invalidate) {
       slots = _$$props$$$slots === void 0 ? {} : _$$props$$$slots;
       $$props.$$scope;
   validate_slots("Footer", slots, []);
-  var promise = browserPonyfill("https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages").then(function (r) {
+  var updatedDate = browserPonyfill("https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages").then(function (r) {
+    return r.json();
+  });
+  var temperature = browserPonyfill("https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa", {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-key": "625a60b2f2msh45ddd53f1e268ccp1cd03cjsndaf288fc29fd",
+      "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"
+    }
+  }).then(function (r) {
     return r.json();
   });
   var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -926,7 +1038,8 @@ function instance$1($$self, $$props, $$invalidate) {
   $$self.$capture_state = function () {
     return {
       fetch: browserPonyfill,
-      promise: promise,
+      updatedDate: updatedDate,
+      temperature: temperature,
       monthNames: monthNames,
       time: time,
       year: year,
@@ -935,7 +1048,8 @@ function instance$1($$self, $$props, $$invalidate) {
   };
 
   $$self.$inject_state = function ($$props) {
-    if ("promise" in $$props) $$invalidate(2, promise = $$props.promise);
+    if ("updatedDate" in $$props) $$invalidate(2, updatedDate = $$props.updatedDate);
+    if ("temperature" in $$props) $$invalidate(3, temperature = $$props.temperature);
     if ("time" in $$props) $$invalidate(0, time = $$props.time);
     if ("year" in $$props) $$invalidate(1, year = $$props.year);
   };
@@ -944,7 +1058,7 @@ function instance$1($$self, $$props, $$invalidate) {
     $$self.$inject_state($$props.$$inject);
   }
 
-  return [time, year, promise, monthNames];
+  return [time, year, updatedDate, temperature, monthNames];
 }
 
 var Footer = /*#__PURE__*/function (_SvelteComponentDev) {
