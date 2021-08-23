@@ -1,4 +1,4 @@
-import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as update_await_block_branch, z as set_data_dev, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.e3d5b45e.js';
+import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as update_await_block_branch, z as set_data_dev, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.2f5896a4.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -634,13 +634,13 @@ function create_catch_block_1(ctx) {
     ctx: ctx
   });
   return block;
-} // (53:42)                  {temp.current.temp_c}
+} // (53:42)                  {Math.round(temp.current.temp_c)}
 
 
 function create_then_block_1(ctx) {
-  var t0_value =
+  var t0_value = Math.round(
   /*temp*/
-  ctx[7].current.temp_c + "";
+  ctx[7].current.temp_c) + "";
   var t0;
   var t1;
   var block = {
@@ -666,7 +666,7 @@ function create_then_block_1(ctx) {
     block: block,
     id: create_then_block_1.name,
     type: "then",
-    source: "(53:42)                  {temp.current.temp_c}",
+    source: "(53:42)                  {Math.round(temp.current.temp_c)}",
     ctx: ctx
   });
   return block;
@@ -902,14 +902,14 @@ function create_fragment$1(ctx) {
       add_location(p0, file$1, 50, 8, 1438);
       attr_dev(div0, "class", "w-8/12 px-4 lg:w-3/12 sm:w-4/12");
       add_location(div0, file$1, 49, 4, 1384);
-      add_location(p1, file$1, 60, 12, 1724);
+      add_location(p1, file$1, 60, 12, 1736);
       attr_dev(div1, "class", "hidden w-8/12 px-4 sm:block");
-      add_location(div1, file$1, 59, 8, 1670);
-      add_location(p2, file$1, 69, 12, 2099);
+      add_location(div1, file$1, 59, 8, 1682);
+      add_location(p2, file$1, 69, 12, 2111);
       attr_dev(div2, "class", "flex justify-end w-full px-4 sm:w-4/12");
-      add_location(div2, file$1, 68, 8, 2034);
+      add_location(div2, file$1, 68, 8, 2046);
       attr_dev(div3, "class", "flex w-4/12 ml-auto sm:w-9/12");
-      add_location(div3, file$1, 58, 4, 1618);
+      add_location(div3, file$1, 58, 4, 1630);
       attr_dev(div4, "class", "flex pt-5 mt-auto text-gray-600 sm:pt-8 md:pt-12 dark:text-gray-400");
       add_location(div4, file$1, 48, 0, 1298);
     },

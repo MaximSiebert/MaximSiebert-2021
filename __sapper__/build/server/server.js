@@ -682,7 +682,7 @@ const Footer = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 		return (function (temp) {
 			return `
-                ${escape(temp.current.temp_c)}°C
+                ${escape(Math.round(temp.current.temp_c))}°C
             `;
 		})(__value);
 	})(temperature)}
