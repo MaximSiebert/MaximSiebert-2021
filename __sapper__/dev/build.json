@@ -1,0 +1,18 @@
+{
+  "bundler": "rollup",
+  "shimport": "2.0.4",
+  "assets": {
+    "main": "client.cad2325a.js"
+  },
+  "css": {
+    "main": [
+      "client-a61f71ff.css"
+    ]
+  },
+  "dependencies": {
+    "index.svelte": [
+      "index.862edd98.js",
+      "inject_styles.5607aec6.js"
+    ]
+  }
+}

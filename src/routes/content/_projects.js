@@ -1,5 +1,17 @@
 const content = [
   {
+		title: "Tailscale",
+		role: 'Developer',
+    year: '2021',
+    url: 'https://www.tailscale.com/'
+  },
+  {
+		title: "Taildrop by Tailscale",
+		role: 'Designer + Developer',
+    year: '2021',
+    url: 'https://www.tailscale.com/taildrop'
+  },
+  {
 		title: "Peggy",
 		role: 'Designer + Developer',
     year: '2021',

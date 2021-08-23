@@ -38,6 +38,17 @@ Open up [localhost:3000](http://localhost:3000) and start clicking around.
 Consult [sapper.svelte.dev](https://sapper.svelte.dev) for help getting started.
 
 
+### Deploying the project
+
+You can deploy the project to gh-pages with:
+
+```bash
+cd my-app
+npm install # or yarn
+npm run deploy
+```
+
+
 ## Structure
 
 Sapper expects to find two directories in the root of your project —  `src` and `static`.
