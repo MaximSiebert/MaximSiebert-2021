@@ -28,7 +28,7 @@
 	export let services;
 	export let links;
 
-	let description = "A French-Canadian designer and developer specialized in web and product design. If you'd like to collaborate with Maxim, email him at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:underline\">maxim@hey.com</a>."
+	let description = "A French-Canadian designer and developer specialized in web and product design. If you'd like to collaborate with Maxim, email him at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:border-transparent border-b pb-1\">maxim@hey.com</a>."
 
 	var year = '';
 
@@ -45,72 +45,79 @@
 	<meta name="description" content="A French-Canadian designer and developer specialized in web and product design." />
 </svelte:head>
 
-<div class="flex flex-col min-h-screen py-4 text-xs text-black bg-gray-100 dark:bg-black dark:text-white">
-	<div class="flex flex-wrap items-start">
-		<header class="w-full px-4 mb-8 md:w-3/12 md:mb-0 md:sticky top-4">
+<div class="flex flex-col min-h-screen py-4 text-xs text-black bg-gray-100 lg:py-24 md:py-14 dark:bg-black dark:text-white">
+	<div class="max-w-2xl mx-auto">
+		<header class="w-full px-4 mb-8 md:mb-12 top-4">
 			<a href="/" class="self-start inline-block mb-4 loader">Back home</a>
-			<h1 class="mb-1 sm:mb-2">Maxim Siebert</h1>
+			<h1>Maxim Siebert</h1>
 			<p class="text-gray-600 dark:text-gray-400">Designer + Developer</p>
 			<p class="text-gray-600 dark:text-gray-400">2011–{year}</p>
 		</header>
-		<div class="w-full ml-auto md:w-9/12 md:mt-7">
-			<div class="w-full px-4 mb-8 text-base leading-snug text-black dark:text-white lg:w-5/12 md:w-8/12 md:block md:mb-12">
+		<div class="w-full ml-auto">
+			<div class="w-full px-4 text-base leading-snug text-black md:text-lg dark:text-white md:block">
 				{@html description}
 			</div>
-			<div class="flex mb-1 sm:mb-2">
-				<div class="w-4/12 px-4 lg:w-3/12">
-					<p>Project</p>
+			<hr class="mx-4 mt-8 mb-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:mb-14 md:mt-12">
+			<section>
+				<div class="flex mb-1 sm:mb-2">
+					<div class="w-4/12 px-4 lg:w-5/12">
+						<p>Project</p>
+					</div>
+					<div class="hidden w-4/12 px-4 sm:block">
+						<p>Role</p>
+					</div>
+					<div class="flex justify-end w-8/12 px-4 sm:w-5/12">
+						<p>Year</p>
+					</div>
 				</div>
-				<div class="hidden w-4/12 px-4 sm:block">
-					<p>Role</p>
-				</div>
-				<div class="flex justify-end w-8/12 px-4 sm:w-5/12">
-					<p>Year</p>
-				</div>
-			</div>
-			<section class="w-full mb-5 sm:mb-8 md:mb-12">
-				{#each projects as project}
-					<a class="flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white" href="{project.url}" target="_blank" rel="noreferrer noopener">
-						<div class="w-8/12 px-4 lg:w-3/12 sm:w-4/12">
-							<p>{project.title}</p>
-						</div>
-						<div class="hidden w-4/12 px-4 sm:block">
-							<p>{project.role}</p>
-						</div>
-						<div class="flex justify-end w-5/12 px-4">
-							<p>{project.year}</p>
-						</div>
-					</a>
-				{/each}
+				<section class="w-full">
+					{#each projects as project}
+						<a class="flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white" href="{project.url}" target="_blank" rel="noreferrer noopener">
+							<div class="w-8/12 px-4 lg:w-5/12 sm:w-4/12">
+								<p>{project.title}</p>
+							</div>
+							<div class="hidden w-4/12 px-4 sm:block">
+								<p>{project.role}</p>
+							</div>
+							<div class="flex justify-end w-5/12 px-4">
+								<p>{project.year}</p>
+							</div>
+						</a>
+					{/each}
+				</section>
 			</section>
-			<header class="flex mb-1 sm:mb-2">
-				<div class="w-8/12 px-4 lg:w-3/12 sm:w-4/12">
-					<p>Experience</p>
-				</div>
-				<div class="hidden w-4/12 px-4 sm:block">
-					<p>Title</p>
-				</div>
-				<div class="flex justify-end w-8/12 px-4 sm:w-5/12">
-					<p>Year</p>
-				</div>
-			</header>
-			<section class="w-full mb-5 sm:mb-8 md:mb-12">
-				{#each experiences as experience}
-					<a class="flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white" href="{experience.url}" target="_blank" rel="noreferrer noopener">
-						<div class="w-8/12 px-4 lg:w-3/12 sm:w-4/12">
-							<p>{experience.title}</p>
-						</div>
-						<div class="hidden w-4/12 px-4 sm:block">
-							<p>{experience.role}</p>
-						</div>
-						<div class="flex justify-end w-8/12 px-4 sm:w-5/12">
-							<p>{experience.date}</p>
-						</div>
-					</a>
-				{/each}
+			<hr class="mx-4 mt-8 mb-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:mb-14 md:mt-12">
+			<section>
+				<header class="flex mb-1 sm:mb-2">
+					<div class="w-8/12 px-4 lg:w-5/12 sm:w-4/12">
+						<p>Experience</p>
+					</div>
+					<div class="hidden w-4/12 px-4 sm:block">
+						<p>Title</p>
+					</div>
+					<div class="flex justify-end w-8/12 px-4 sm:w-5/12">
+						<p>Year</p>
+					</div>
+				</header>
+				<section class="w-full">
+					{#each experiences as experience}
+						<a class="flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white" href="{experience.url}" target="_blank" rel="noreferrer noopener">
+							<div class="w-8/12 px-4 lg:w-5/12 sm:w-4/12">
+								<p>{experience.title}</p>
+							</div>
+							<div class="hidden w-4/12 px-4 sm:block">
+								<p>{experience.role}</p>
+							</div>
+							<div class="flex justify-end w-8/12 px-4 sm:w-5/12">
+								<p>{experience.date}</p>
+							</div>
+						</a>
+					{/each}
+				</section>
 			</section>
+			<hr class="mx-4 mt-8 mb-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:mb-14 md:mt-12">
 			<section class="flex">
-				<div class="w-8/12 px-4 lg:w-3/12 sm:w-4/12">
+				<div class="w-8/12 px-4 lg:w-5/12 sm:w-4/12">
 					<p class="mb-1 sm:mb-2">Services</p>
 					{#each services as service}
 						<p class="text-gray-600 dark:text-gray-400">{service.title}</p>
@@ -130,6 +137,7 @@
 				</div>
 			</section>
 		</div>
+		<hr class="mx-4 mt-8 mb-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:mb-14 md:mt-12">
+		<Footer />
 	</div>
-	<Footer />
 </div>

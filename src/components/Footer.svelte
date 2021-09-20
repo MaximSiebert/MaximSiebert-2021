@@ -46,8 +46,8 @@
 	updateClock();
 </script>
 
-<div class="flex pt-5 mt-auto text-gray-600 sm:pt-8 md:pt-12 dark:text-gray-400">
-    <div class="w-8/12 px-4 lg:w-3/12 sm:w-4/12">
+<div class="flex mt-auto text-gray-600 dark:text-gray-400">
+    <div class="w-8/12 px-4 lg:w-5/12 sm:w-4/12">
         <p>
             Ottawa
             {#await temperature then temp}
