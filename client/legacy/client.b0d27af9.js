@@ -2042,7 +2042,7 @@ function _createSuper$1(Derived) { var hasNativeReflectConstruct = _isNativeRefl
 
 function _isNativeReflectConstruct$1() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 var Error_1$1 = globals.Error;
-var file = "src/routes/_error.svelte"; // (21:2) {#if dev && error.stack}
+var file = "src/routes/_error.svelte"; // (22:3) {#if dev && error.stack}
 
 function create_if_block$1(ctx) {
   var pre;
@@ -2064,7 +2064,7 @@ function create_if_block$1(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(pre, file, 21, 3, 551);
+      add_location(pre, file, 22, 4, 615);
     },
     m: function mount(target, anchor) {
       insert_dev(target, pre, anchor);
@@ -2085,7 +2085,7 @@ function create_if_block$1(ctx) {
     block: block,
     id: create_if_block$1.name,
     type: "if",
-    source: "(21:2) {#if dev && error.stack}",
+    source: "(22:3) {#if dev && error.stack}",
     ctx: ctx
   });
   return block;
@@ -2094,6 +2094,7 @@ function create_if_block$1(ctx) {
 function create_fragment$1(ctx) {
   var title_value;
   var t0;
+  var div2;
   var div1;
   var a;
   var t1;
@@ -2116,6 +2117,7 @@ function create_fragment$1(ctx) {
   var block = {
     c: function create() {
       t0 = space();
+      div2 = element("div");
       div1 = element("div");
       a = element("a");
       t1 = text("Back home");
@@ -2136,7 +2138,11 @@ function create_fragment$1(ctx) {
       var head_nodes = query_selector_all("[data-svelte=\"svelte-1e46zjp\"]", document.head);
       head_nodes.forEach(detach_dev);
       t0 = claim_space(nodes);
-      div1 = claim_element(nodes, "DIV", {
+      div2 = claim_element(nodes, "DIV", {
+        class: true
+      });
+      var div2_nodes = children(div2);
+      div1 = claim_element(div2_nodes, "DIV", {
         class: true
       });
       var div1_nodes = children(div1);
@@ -2152,9 +2158,7 @@ function create_fragment$1(ctx) {
         class: true
       });
       var div0_nodes = children(div0);
-      h1 = claim_element(div0_nodes, "H1", {
-        class: true
-      });
+      h1 = claim_element(div0_nodes, "H1", {});
       var h1_nodes = children(h1);
       t3 = claim_text(h1_nodes,
       /*status*/
@@ -2171,24 +2175,27 @@ function create_fragment$1(ctx) {
       if (if_block) if_block.l(div0_nodes);
       div0_nodes.forEach(detach_dev);
       div1_nodes.forEach(detach_dev);
+      div2_nodes.forEach(detach_dev);
       this.h();
     },
     h: function hydrate() {
       attr_dev(a, "href", "/");
       attr_dev(a, "class", "self-start inline-block px-4 mb-4 loader");
-      add_location(a, file, 13, 1, 275);
-      attr_dev(h1, "class", "mb-1 sm:mb-2");
-      add_location(h1, file, 15, 2, 372);
+      add_location(a, file, 14, 2, 352);
+      add_location(h1, file, 16, 3, 451);
       attr_dev(p, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p, file, 16, 2, 413);
+      add_location(p, file, 17, 3, 472);
       attr_dev(div0, "class", "px-4");
-      add_location(div0, file, 14, 1, 351);
-      attr_dev(div1, "class", "flex flex-col min-h-screen py-4 text-xs bg-gray-100 dark:bg-black dark:text-white");
-      add_location(div1, file, 12, 0, 178);
+      add_location(div0, file, 15, 2, 429);
+      attr_dev(div1, "class", "w-full max-w-2xl mx-auto");
+      add_location(div1, file, 13, 1, 311);
+      attr_dev(div2, "class", "flex flex-col min-h-screen py-4 overflow-y-scroll text-xs bg-gray-100 lg:py-24 md:py-14 dark:bg-black dark:text-white");
+      add_location(div2, file, 12, 0, 178);
     },
     m: function mount(target, anchor) {
       insert_dev(target, t0, anchor);
-      insert_dev(target, div1, anchor);
+      insert_dev(target, div2, anchor);
+      append_dev(div2, div1);
       append_dev(div1, a);
       append_dev(a, t1);
       append_dev(div1, t2);
@@ -2240,7 +2247,7 @@ function create_fragment$1(ctx) {
     o: noop,
     d: function destroy(detaching) {
       if (detaching) detach_dev(t0);
-      if (detaching) detach_dev(div1);
+      if (detaching) detach_dev(div2);
       if (if_block) if_block.d();
     }
   };
@@ -2888,7 +2895,7 @@ var App = /*#__PURE__*/function (_SvelteComponentDev) {
 var ignore = [/^\/content\/collaborators\.json$/, /^\/content\/experiences\.json$/, /^\/content\/projects\.json$/, /^\/content\/services\.json$/, /^\/content\/links\.json$/];
 var components = [{
   js: function js() {
-    return Promise.all([import('./index.03487296.js'), __inject_styles(["client-2cc70a0c.css"])]).then(function(x) { return x[0]; });
+    return Promise.all([import('./index.97ee9626.js'), __inject_styles(["client-5da4c034.css"])]).then(function(x) { return x[0]; });
   }
 }];
 var routes = [{
