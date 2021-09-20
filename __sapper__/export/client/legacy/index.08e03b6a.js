@@ -1,4 +1,4 @@
-import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as update_await_block_branch, z as set_data_dev, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.b0d27af9.js';
+import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as update_await_block_branch, z as set_data_dev, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.80cb3c54.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -634,7 +634,7 @@ function create_catch_block_1(ctx) {
     ctx: ctx
   });
   return block;
-} // (53:42)                  {Math.round(temp.current.temp_c)}
+} // (53:42) {Math.round(temp.current.temp_c)}
 
 
 function create_then_block_1(ctx) {
@@ -666,7 +666,7 @@ function create_then_block_1(ctx) {
     block: block,
     id: create_then_block_1.name,
     type: "then",
-    source: "(53:42)                  {Math.round(temp.current.temp_c)}",
+    source: "(53:42) {Math.round(temp.current.temp_c)}",
     ctx: ctx
   });
   return block;
@@ -708,7 +708,7 @@ function create_catch_block(ctx) {
     ctx: ctx
   });
   return block;
-} // (62:46)                      Updated —                      {monthNames[new Date(data.commit.commit.author.date).getMonth()]}
+} // (59:46)                      Updated –                      {monthNames[new Date(data.commit.commit.author.date).getMonth()]}
 
 
 function create_then_block(ctx) {
@@ -726,13 +726,13 @@ function create_then_block(ctx) {
   var t3;
   var block = {
     c: function create() {
-      t0 = text("Updated — \n                    ");
+      t0 = text("Updated – \n                    ");
       t1 = text(t1_value);
       t2 = space();
       t3 = text(t3_value);
     },
     l: function claim(nodes) {
-      t0 = claim_text(nodes, "Updated — \n                    ");
+      t0 = claim_text(nodes, "Updated – \n                    ");
       t1 = claim_text(nodes, t1_value);
       t2 = claim_space(nodes);
       t3 = claim_text(nodes, t3_value);
@@ -755,7 +755,7 @@ function create_then_block(ctx) {
     block: block,
     id: create_then_block.name,
     type: "then",
-    source: "(62:46)                      Updated —                      {monthNames[new Date(data.commit.commit.author.date).getMonth()]}",
+    source: "(59:46)                      Updated –                      {monthNames[new Date(data.commit.commit.author.date).getMonth()]}",
     ctx: ctx
   });
   return block;
@@ -828,7 +828,7 @@ function create_fragment$1(ctx) {
       p0 = element("p");
       t0 = text("Ottawa\n            ");
       info.block.c();
-      t1 = text("\n             — ");
+      t1 = text(", ");
       t2 = text(
       /*time*/
       ctx[0]);
@@ -860,7 +860,7 @@ function create_fragment$1(ctx) {
       var p0_nodes = children(p0);
       t0 = claim_text(p0_nodes, "Ottawa\n            ");
       info.block.l(p0_nodes);
-      t1 = claim_text(p0_nodes, "\n             — ");
+      t1 = claim_text(p0_nodes, ", ");
       t2 = claim_text(p0_nodes,
       /*time*/
       ctx[0]);
@@ -899,19 +899,19 @@ function create_fragment$1(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file$1, 50, 8, 1416);
+      add_location(p0, file$1, 50, 8, 1389);
       attr_dev(div0, "class", "w-8/12 px-4 lg:w-5/12 sm:w-4/12");
-      add_location(div0, file$1, 49, 4, 1362);
-      add_location(p1, file$1, 60, 12, 1714);
+      add_location(div0, file$1, 49, 4, 1335);
+      add_location(p1, file$1, 57, 12, 1643);
       attr_dev(div1, "class", "hidden w-8/12 px-4 sm:block");
-      add_location(div1, file$1, 59, 8, 1660);
-      add_location(p2, file$1, 69, 12, 2089);
+      add_location(div1, file$1, 56, 8, 1589);
+      add_location(p2, file$1, 66, 12, 2018);
       attr_dev(div2, "class", "flex justify-end w-full px-4 sm:w-4/12");
-      add_location(div2, file$1, 68, 8, 2024);
+      add_location(div2, file$1, 65, 8, 1953);
       attr_dev(div3, "class", "flex w-4/12 ml-auto sm:w-9/12");
-      add_location(div3, file$1, 58, 4, 1608);
+      add_location(div3, file$1, 55, 4, 1537);
       attr_dev(div4, "class", "flex mt-auto text-gray-600 dark:text-gray-400");
-      add_location(div4, file$1, 48, 0, 1298);
+      add_location(div4, file$1, 48, 0, 1271);
     },
     m: function mount(target, anchor) {
       insert_dev(target, div4, anchor);
@@ -1002,7 +1002,7 @@ function instance$1($$self, $$props, $$invalidate) {
   }).then(function (r) {
     return r.json();
   });
-  var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var monthNames = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
   var time = "";
   var year = "";
 
@@ -1204,22 +1204,22 @@ function create_each_block_4(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file, 76, 8, 2894);
+      add_location(p0, file, 76, 8, 2872);
       attr_dev(div0, "class", "w-8/12 px-4 lg:w-5/12 sm:w-4/12");
-      add_location(div0, file, 75, 7, 2840);
-      add_location(p1, file, 79, 8, 2988);
+      add_location(div0, file, 75, 7, 2818);
+      add_location(p1, file, 79, 8, 2966);
       attr_dev(div1, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div1, file, 78, 7, 2938);
-      add_location(p2, file, 82, 8, 3082);
+      add_location(div1, file, 78, 7, 2916);
+      add_location(p2, file, 82, 8, 3060);
       attr_dev(div2, "class", "flex justify-end w-5/12 px-4");
-      add_location(div2, file, 81, 7, 3031);
+      add_location(div2, file, 81, 7, 3009);
       attr_dev(a, "class", "flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "href", a_href_value =
       /*project*/
       ctx[20].url);
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 74, 6, 2657);
+      add_location(a, file, 74, 6, 2635);
     },
     m: function mount(target, anchor) {
       insert_dev(target, a, anchor);
@@ -1359,22 +1359,22 @@ function create_each_block_3(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file, 105, 8, 3951);
+      add_location(p0, file, 105, 8, 3915);
       attr_dev(div0, "class", "w-8/12 px-4 lg:w-5/12 sm:w-4/12");
-      add_location(div0, file, 104, 7, 3897);
-      add_location(p1, file, 108, 8, 4048);
+      add_location(div0, file, 104, 7, 3861);
+      add_location(p1, file, 108, 8, 4012);
       attr_dev(div1, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div1, file, 107, 7, 3998);
-      add_location(p2, file, 111, 8, 4155);
+      add_location(div1, file, 107, 7, 3962);
+      add_location(p2, file, 111, 8, 4119);
       attr_dev(div2, "class", "flex justify-end w-8/12 px-4 sm:w-5/12");
-      add_location(div2, file, 110, 7, 4094);
+      add_location(div2, file, 110, 7, 4058);
       attr_dev(a, "class", "flex ml-auto text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "href", a_href_value =
       /*experience*/
       ctx[17].url);
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 103, 6, 3711);
+      add_location(a, file, 103, 6, 3675);
     },
     m: function mount(target, anchor) {
       insert_dev(target, a, anchor);
@@ -1454,7 +1454,7 @@ function create_each_block_2(ctx) {
     },
     h: function hydrate() {
       attr_dev(p, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p, file, 122, 6, 4551);
+      add_location(p, file, 122, 6, 4501);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -1505,7 +1505,7 @@ function create_each_block_1(ctx) {
     },
     h: function hydrate() {
       attr_dev(p, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p, file, 128, 6, 4784);
+      add_location(p, file, 128, 6, 4734);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -1570,8 +1570,8 @@ function create_each_block(ctx) {
       attr_dev(a, "class", "text-gray-600 dark:text-gray-400 hover:underline hover:text-black dark:hover:text-white");
       attr_dev(a, "target", "_blank");
       attr_dev(a, "rel", "noreferrer noopener");
-      add_location(a, file, 134, 9, 4993);
-      add_location(p, file, 134, 6, 4990);
+      add_location(a, file, 134, 9, 4943);
+      add_location(p, file, 134, 6, 4940);
     },
     m: function mount(target, anchor) {
       insert_dev(target, p, anchor);
@@ -2093,75 +2093,75 @@ function create_fragment(ctx) {
       document.title = "Maxim Siebert — Designer + Developer";
       attr_dev(meta, "name", "description");
       attr_dev(meta, "content", "A French-Canadian designer and developer specialized in web and product design.");
-      add_location(meta, file, 44, 1, 1383);
+      add_location(meta, file, 44, 1, 1375);
       attr_dev(a, "href", "/");
       attr_dev(a, "class", "self-start inline-block mb-4 loader");
-      add_location(a, file, 50, 3, 1736);
-      add_location(h1, file, 51, 3, 1809);
+      add_location(a, file, 50, 3, 1728);
+      add_location(h1, file, 51, 3, 1801);
       attr_dev(p0, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p0, file, 52, 3, 1835);
+      add_location(p0, file, 52, 3, 1827);
       attr_dev(p1, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p1, file, 53, 3, 1907);
-      attr_dev(header0, "class", "w-full px-4 mb-8 md:mb-12 top-4");
-      add_location(header0, file, 49, 2, 1684);
+      add_location(p1, file, 53, 3, 1899);
+      attr_dev(header0, "class", "w-full px-4 mb-8 md:mb-10 top-4");
+      add_location(header0, file, 49, 2, 1676);
       attr_dev(div0, "class", "w-full px-4 text-base leading-snug text-black md:text-lg dark:text-white md:block");
-      add_location(div0, file, 56, 3, 2013);
-      attr_dev(hr0, "class", "mx-4 mt-8 mb-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:mb-14 md:mt-12");
-      add_location(hr0, file, 59, 3, 2146);
-      add_location(p2, file, 63, 6, 2386);
+      add_location(div0, file, 56, 3, 2005);
+      attr_dev(hr0, "class", "mx-4 my-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:my-12");
+      add_location(hr0, file, 59, 3, 2138);
+      add_location(p2, file, 63, 6, 2364);
       attr_dev(div1, "class", "w-4/12 px-4 lg:w-5/12");
-      add_location(div1, file, 62, 5, 2344);
-      add_location(p3, file, 66, 6, 2466);
+      add_location(div1, file, 62, 5, 2322);
+      add_location(p3, file, 66, 6, 2444);
       attr_dev(div2, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div2, file, 65, 5, 2418);
-      add_location(p4, file, 69, 6, 2554);
+      add_location(div2, file, 65, 5, 2396);
+      add_location(p4, file, 69, 6, 2532);
       attr_dev(div3, "class", "flex justify-end w-8/12 px-4 sm:w-5/12");
-      add_location(div3, file, 68, 5, 2495);
+      add_location(div3, file, 68, 5, 2473);
       attr_dev(div4, "class", "flex mb-1 sm:mb-2");
-      add_location(div4, file, 61, 4, 2307);
+      add_location(div4, file, 61, 4, 2285);
       attr_dev(section0, "class", "w-full");
-      add_location(section0, file, 72, 4, 2593);
-      add_location(section1, file, 60, 3, 2293);
-      attr_dev(hr1, "class", "mx-4 mt-8 mb-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:mb-14 md:mt-12");
-      add_location(hr1, file, 88, 3, 3174);
-      add_location(p5, file, 92, 6, 3427);
+      add_location(section0, file, 72, 4, 2571);
+      add_location(section1, file, 60, 3, 2271);
+      attr_dev(hr1, "class", "mx-4 my-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:my-12");
+      add_location(hr1, file, 88, 3, 3152);
+      add_location(p5, file, 92, 6, 3391);
       attr_dev(div5, "class", "w-8/12 px-4 lg:w-5/12 sm:w-4/12");
-      add_location(div5, file, 91, 5, 3375);
-      add_location(p6, file, 95, 6, 3510);
+      add_location(div5, file, 91, 5, 3339);
+      add_location(p6, file, 95, 6, 3474);
       attr_dev(div6, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div6, file, 94, 5, 3462);
-      add_location(p7, file, 98, 6, 3599);
+      add_location(div6, file, 94, 5, 3426);
+      add_location(p7, file, 98, 6, 3563);
       attr_dev(div7, "class", "flex justify-end w-8/12 px-4 sm:w-5/12");
-      add_location(div7, file, 97, 5, 3540);
+      add_location(div7, file, 97, 5, 3504);
       attr_dev(header1, "class", "flex mb-1 sm:mb-2");
-      add_location(header1, file, 90, 4, 3335);
+      add_location(header1, file, 90, 4, 3299);
       attr_dev(section2, "class", "w-full");
-      add_location(section2, file, 101, 4, 3641);
-      add_location(section3, file, 89, 3, 3321);
-      attr_dev(hr2, "class", "mx-4 mt-8 mb-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:mb-14 md:mt-12");
-      add_location(hr2, file, 117, 3, 4250);
+      add_location(section2, file, 101, 4, 3605);
+      add_location(section3, file, 89, 3, 3285);
+      attr_dev(hr2, "class", "mx-4 my-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:my-12");
+      add_location(hr2, file, 117, 3, 4214);
       attr_dev(p8, "class", "mb-1 sm:mb-2");
-      add_location(p8, file, 120, 5, 4475);
+      add_location(p8, file, 120, 5, 4425);
       attr_dev(div8, "class", "w-8/12 px-4 lg:w-5/12 sm:w-4/12");
-      add_location(div8, file, 119, 4, 4424);
+      add_location(div8, file, 119, 4, 4374);
       attr_dev(p9, "class", "mb-1 sm:mb-2");
-      add_location(p9, file, 126, 5, 4690);
+      add_location(p9, file, 126, 5, 4640);
       attr_dev(div9, "class", "hidden w-4/12 px-4 sm:block");
-      add_location(div9, file, 125, 4, 4643);
+      add_location(div9, file, 125, 4, 4593);
       attr_dev(p10, "class", "mb-1 sm:mb-2");
-      add_location(p10, file, 132, 5, 4923);
+      add_location(p10, file, 132, 5, 4873);
       attr_dev(div10, "class", "w-5/12 px-4 text-right");
-      add_location(div10, file, 131, 4, 4881);
+      add_location(div10, file, 131, 4, 4831);
       attr_dev(section4, "class", "flex");
-      add_location(section4, file, 118, 3, 4397);
+      add_location(section4, file, 118, 3, 4347);
       attr_dev(div11, "class", "w-full ml-auto");
-      add_location(div11, file, 55, 2, 1981);
-      attr_dev(hr3, "class", "mx-4 mt-8 mb-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:mb-14 md:mt-12");
-      add_location(hr3, file, 139, 2, 5223);
+      add_location(div11, file, 55, 2, 1973);
+      attr_dev(hr3, "class", "mx-4 my-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:my-12");
+      add_location(hr3, file, 139, 2, 5173);
       attr_dev(div12, "class", "w-full max-w-2xl mx-auto");
-      add_location(div12, file, 48, 1, 1643);
+      add_location(div12, file, 48, 1, 1635);
       attr_dev(div13, "class", "flex flex-col min-h-screen py-4 text-xs text-black bg-gray-100 lg:py-24 md:py-14 dark:bg-black dark:text-white");
-      add_location(div13, file, 47, 0, 1517);
+      add_location(div13, file, 47, 0, 1509);
     },
     m: function mount(target, anchor) {
       append_dev(document.head, meta);
@@ -2557,7 +2557,7 @@ function instance($$self, $$props, $$invalidate) {
   var collaborators = $$props.collaborators;
   var services = $$props.services;
   var links = $$props.links;
-  var description = "A French-Canadian designer and developer specialized in web and product design. If you'd like to collaborate with Maxim, email him at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:border-transparent border-b pb-1\">maxim@hey.com</a>.";
+  var description = "I'm a French-Canadian designer and developer specialized in web and product design. If you'd like to collaborate, email me at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:border-transparent border-b pb-1\">maxim@hey.com</a>.";
   var year = "";
 
   function updateClock() {
