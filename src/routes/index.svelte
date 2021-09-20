@@ -46,7 +46,7 @@
 </svelte:head>
 
 <div class="flex flex-col min-h-screen py-4 text-xs text-black bg-gray-100 lg:py-24 md:py-14 dark:bg-black dark:text-white">
-	<div class="max-w-2xl mx-auto">
+	<div class="w-full max-w-2xl mx-auto">
 		<header class="w-full px-4 mb-8 md:mb-12 top-4">
 			<a href="/" class="self-start inline-block mb-4 loader">Back home</a>
 			<h1>Maxim Siebert</h1>
