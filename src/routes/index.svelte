@@ -28,7 +28,7 @@
 	export let services;
 	export let links;
 
-	let description = "A French-Canadian designer and developer specialized in web and product design. If you'd like to collaborate with Maxim, email him at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:border-transparent border-b pb-1\">maxim@hey.com</a>."
+	let description = "I'm a French-Canadian designer and developer specialized in web and product design. If you'd like to collaborate, email me at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:border-transparent border-b pb-1\">maxim@hey.com</a>."
 
 	var year = '';
 
@@ -47,7 +47,7 @@
 
 <div class="flex flex-col min-h-screen py-4 text-xs text-black bg-gray-100 lg:py-24 md:py-14 dark:bg-black dark:text-white">
 	<div class="w-full max-w-2xl mx-auto">
-		<header class="w-full px-4 mb-8 md:mb-12 top-4">
+		<header class="w-full px-4 mb-8 md:mb-10 top-4">
 			<a href="/" class="self-start inline-block mb-4 loader">Back home</a>
 			<h1>Maxim Siebert</h1>
 			<p class="text-gray-600 dark:text-gray-400">Designer + Developer</p>
@@ -57,7 +57,7 @@
 			<div class="w-full px-4 text-base leading-snug text-black md:text-lg dark:text-white md:block">
 				{@html description}
 			</div>
-			<hr class="mx-4 mt-8 mb-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:mb-14 md:mt-12">
+			<hr class="mx-4 my-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:my-12">
 			<section>
 				<div class="flex mb-1 sm:mb-2">
 					<div class="w-4/12 px-4 lg:w-5/12">
@@ -86,7 +86,7 @@
 					{/each}
 				</section>
 			</section>
-			<hr class="mx-4 mt-8 mb-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:mb-14 md:mt-12">
+			<hr class="mx-4 my-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:my-12">
 			<section>
 				<header class="flex mb-1 sm:mb-2">
 					<div class="w-8/12 px-4 lg:w-5/12 sm:w-4/12">
@@ -115,7 +115,7 @@
 					{/each}
 				</section>
 			</section>
-			<hr class="mx-4 mt-8 mb-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:mb-14 md:mt-12">
+			<hr class="mx-4 my-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:my-12">
 			<section class="flex">
 				<div class="w-8/12 px-4 lg:w-5/12 sm:w-4/12">
 					<p class="mb-1 sm:mb-2">Services</p>
@@ -137,7 +137,7 @@
 				</div>
 			</section>
 		</div>
-		<hr class="mx-4 mt-8 mb-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:mb-14 md:mt-12">
+		<hr class="mx-4 my-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:my-12">
 		<Footer />
 	</div>
 </div>

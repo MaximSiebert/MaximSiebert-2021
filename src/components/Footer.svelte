@@ -13,7 +13,7 @@
     })
     .then(r => r.json());
 
-    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const monthNames = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
 
 	var time = '';
 	var year = '';
@@ -50,17 +50,14 @@
     <div class="w-8/12 px-4 lg:w-5/12 sm:w-4/12">
         <p>
             Ottawa
-            {#await temperature then temp}
-                {Math.round(temp.current.temp_c)}°C
-            {/await}
-             — {time} ET
+            {#await temperature then temp}{Math.round(temp.current.temp_c)}°C{/await}, {time} ET
         </p>
     </div>
     <div class="flex w-4/12 ml-auto sm:w-9/12">
         <div class="hidden w-8/12 px-4 sm:block">
             <p>
                 {#await updatedDate then data}
-                    Updated — 
+                    Updated – 
                     {monthNames[new Date(data.commit.commit.author.date).getMonth()]}
                     {new Date(data.commit.commit.author.date).getFullYear()}
                 {/await}
