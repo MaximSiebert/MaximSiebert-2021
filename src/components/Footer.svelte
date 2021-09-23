@@ -13,7 +13,7 @@
     })
     .then(r => r.json());
 
-    const monthNames = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
+    const monthNames = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
 
 	var time = '';
 	var year = '';
@@ -53,18 +53,13 @@
             {#await temperature then temp}{Math.round(temp.current.temp_c)}°C{/await}, {time} ET
         </p>
     </div>
-    <div class="flex w-4/12 ml-auto sm:w-9/12">
-        <div class="hidden w-8/12 px-4 sm:block">
-            <p>
-                {#await updatedDate then data}
-                    Updated – 
-                    {monthNames[new Date(data.commit.commit.author.date).getMonth()]}
-                    {new Date(data.commit.commit.author.date).getFullYear()}
-                {/await}
-            </p>
-        </div>
-        <div class="flex justify-end w-full px-4 sm:w-4/12">
-            <p>{year} ©</p>
-        </div>
+    <div class="flex justify-end w-full px-4 ml-auto sm:w-8/12">
+        <p>
+            {#await updatedDate then data}
+                Last Updated – 
+                {monthNames[new Date(data.commit.commit.author.date).getMonth()]}
+                {new Date(data.commit.commit.author.date).getFullYear()}
+            {/await} ©
+        </p>
     </div>
 </div>
