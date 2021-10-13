@@ -1,4 +1,4 @@
-import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as update_await_block_branch, z as set_data_dev, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.80cb3c54.js';
+import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as update_await_block_branch, z as set_data_dev, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.6cb3f12c.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -708,14 +708,14 @@ function create_catch_block(ctx) {
     ctx: ctx
   });
   return block;
-} // (59:46)                      Updated –                      {monthNames[new Date(data.commit.commit.author.date).getMonth()]}
+} // (58:42)                  Last Updated –                  {monthNames[new Date(data.commit.commit.author.date).getMonth()]}
 
 
 function create_then_block(ctx) {
   var t0;
   var t1_value =
   /*monthNames*/
-  ctx[4][new Date(
+  ctx[3][new Date(
   /*data*/
   ctx[6].commit.commit.author.date).getMonth()] + "";
   var t1;
@@ -726,13 +726,13 @@ function create_then_block(ctx) {
   var t3;
   var block = {
     c: function create() {
-      t0 = text("Updated – \n                    ");
+      t0 = text("Last Updated – \n                ");
       t1 = text(t1_value);
       t2 = space();
       t3 = text(t3_value);
     },
     l: function claim(nodes) {
-      t0 = claim_text(nodes, "Updated – \n                    ");
+      t0 = claim_text(nodes, "Last Updated – \n                ");
       t1 = claim_text(nodes, t1_value);
       t2 = claim_space(nodes);
       t3 = claim_text(nodes, t3_value);
@@ -755,7 +755,7 @@ function create_then_block(ctx) {
     block: block,
     id: create_then_block.name,
     type: "then",
-    source: "(59:46)                      Updated –                      {monthNames[new Date(data.commit.commit.author.date).getMonth()]}",
+    source: "(58:42)                  Last Updated –                  {monthNames[new Date(data.commit.commit.author.date).getMonth()]}",
     ctx: ctx
   });
   return block;
@@ -781,7 +781,7 @@ function create_pending_block(ctx) {
 }
 
 function create_fragment$1(ctx) {
-  var div4;
+  var div2;
   var div0;
   var p0;
   var t0;
@@ -789,14 +789,9 @@ function create_fragment$1(ctx) {
   var t2;
   var t3;
   var t4;
-  var div3;
   var div1;
   var p1;
   var t5;
-  var div2;
-  var p2;
-  var t6;
-  var t7;
   var info = {
     ctx: ctx,
     current: null,
@@ -808,7 +803,7 @@ function create_fragment$1(ctx) {
     value: 7
   };
   handle_promise(/*temperature*/
-  ctx[3], info);
+  ctx[2], info);
   var info_1 = {
     ctx: ctx,
     current: null,
@@ -820,10 +815,10 @@ function create_fragment$1(ctx) {
     value: 6
   };
   handle_promise(/*updatedDate*/
-  ctx[2], info_1);
+  ctx[1], info_1);
   var block = {
     c: function create() {
-      div4 = element("div");
+      div2 = element("div");
       div0 = element("div");
       p0 = element("p");
       t0 = text("Ottawa\n            ");
@@ -834,25 +829,18 @@ function create_fragment$1(ctx) {
       ctx[0]);
       t3 = text(" ET");
       t4 = space();
-      div3 = element("div");
       div1 = element("div");
       p1 = element("p");
       info_1.block.c();
-      t5 = space();
-      div2 = element("div");
-      p2 = element("p");
-      t6 = text(
-      /*year*/
-      ctx[1]);
-      t7 = text(" ©");
+      t5 = text(" ©");
       this.h();
     },
     l: function claim(nodes) {
-      div4 = claim_element(nodes, "DIV", {
+      div2 = claim_element(nodes, "DIV", {
         class: true
       });
-      var div4_nodes = children(div4);
-      div0 = claim_element(div4_nodes, "DIV", {
+      var div2_nodes = children(div2);
+      div0 = claim_element(div2_nodes, "DIV", {
         class: true
       });
       var div0_nodes = children(div0);
@@ -867,55 +855,33 @@ function create_fragment$1(ctx) {
       t3 = claim_text(p0_nodes, " ET");
       p0_nodes.forEach(detach_dev);
       div0_nodes.forEach(detach_dev);
-      t4 = claim_space(div4_nodes);
-      div3 = claim_element(div4_nodes, "DIV", {
-        class: true
-      });
-      var div3_nodes = children(div3);
-      div1 = claim_element(div3_nodes, "DIV", {
+      t4 = claim_space(div2_nodes);
+      div1 = claim_element(div2_nodes, "DIV", {
         class: true
       });
       var div1_nodes = children(div1);
       p1 = claim_element(div1_nodes, "P", {});
       var p1_nodes = children(p1);
       info_1.block.l(p1_nodes);
+      t5 = claim_text(p1_nodes, " ©");
       p1_nodes.forEach(detach_dev);
       div1_nodes.forEach(detach_dev);
-      t5 = claim_space(div3_nodes);
-      div2 = claim_element(div3_nodes, "DIV", {
-        class: true
-      });
-      var div2_nodes = children(div2);
-      p2 = claim_element(div2_nodes, "P", {});
-      var p2_nodes = children(p2);
-      t6 = claim_text(p2_nodes,
-      /*year*/
-      ctx[1]);
-      t7 = claim_text(p2_nodes, " ©");
-      p2_nodes.forEach(detach_dev);
       div2_nodes.forEach(detach_dev);
-      div3_nodes.forEach(detach_dev);
-      div4_nodes.forEach(detach_dev);
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file$1, 50, 8, 1389);
+      add_location(p0, file$1, 50, 8, 1390);
       attr_dev(div0, "class", "w-8/12 px-4 lg:w-5/12 sm:w-4/12");
-      add_location(div0, file$1, 49, 4, 1335);
-      add_location(p1, file$1, 57, 12, 1643);
-      attr_dev(div1, "class", "hidden w-8/12 px-4 sm:block");
-      add_location(div1, file$1, 56, 8, 1589);
-      add_location(p2, file$1, 66, 12, 2018);
-      attr_dev(div2, "class", "flex justify-end w-full px-4 sm:w-4/12");
-      add_location(div2, file$1, 65, 8, 1953);
-      attr_dev(div3, "class", "flex w-4/12 ml-auto sm:w-9/12");
-      add_location(div3, file$1, 55, 4, 1537);
-      attr_dev(div4, "class", "flex mt-auto text-gray-600 dark:text-gray-400");
-      add_location(div4, file$1, 48, 0, 1271);
+      add_location(div0, file$1, 49, 4, 1336);
+      add_location(p1, file$1, 56, 8, 1607);
+      attr_dev(div1, "class", "flex justify-end w-full px-4 ml-auto sm:w-8/12");
+      add_location(div1, file$1, 55, 4, 1538);
+      attr_dev(div2, "class", "flex mt-auto text-gray-600 dark:text-gray-400");
+      add_location(div2, file$1, 48, 0, 1272);
     },
     m: function mount(target, anchor) {
-      insert_dev(target, div4, anchor);
-      append_dev(div4, div0);
+      insert_dev(target, div2, anchor);
+      append_dev(div2, div0);
       append_dev(div0, p0);
       append_dev(p0, t0);
       info.block.m(p0, info.anchor = null);
@@ -928,9 +894,8 @@ function create_fragment$1(ctx) {
       append_dev(p0, t1);
       append_dev(p0, t2);
       append_dev(p0, t3);
-      append_dev(div4, t4);
-      append_dev(div4, div3);
-      append_dev(div3, div1);
+      append_dev(div2, t4);
+      append_dev(div2, div1);
       append_dev(div1, p1);
       info_1.block.m(p1, info_1.anchor = null);
 
@@ -938,12 +903,8 @@ function create_fragment$1(ctx) {
         return p1;
       };
 
-      info_1.anchor = null;
-      append_dev(div3, t5);
-      append_dev(div3, div2);
-      append_dev(div2, p2);
-      append_dev(p2, t6);
-      append_dev(p2, t7);
+      info_1.anchor = t5;
+      append_dev(p1, t5);
     },
     p: function update(new_ctx, _ref) {
       var _ref2 = _slicedToArray(_ref, 1),
@@ -957,16 +918,11 @@ function create_fragment$1(ctx) {
       /*time*/
       ctx[0]);
       update_await_block_branch(info_1, ctx, dirty);
-      if (dirty &
-      /*year*/
-      2) set_data_dev(t6,
-      /*year*/
-      ctx[1]);
     },
     i: noop,
     o: noop,
     d: function destroy(detaching) {
-      if (detaching) detach_dev(div4);
+      if (detaching) detach_dev(div2);
       info.block.d();
       info.token = null;
       info = null;
@@ -1002,7 +958,7 @@ function instance$1($$self, $$props, $$invalidate) {
   }).then(function (r) {
     return r.json();
   });
-  var monthNames = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."];
+  var monthNames = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
   var time = "";
   var year = "";
 
@@ -1024,7 +980,7 @@ function instance$1($$self, $$props, $$invalidate) {
     // set the content of the element with the ID time to the formatted string
 
     $$invalidate(0, time = hour + sep + minutes + " " + ampm);
-    $$invalidate(1, year = now.getFullYear()); // call this function again in 1000ms
+    year = now.getFullYear(); // call this function again in 1000ms
 
     setTimeout(updateClock, 1000);
   }
@@ -1048,17 +1004,17 @@ function instance$1($$self, $$props, $$invalidate) {
   };
 
   $$self.$inject_state = function ($$props) {
-    if ("updatedDate" in $$props) $$invalidate(2, updatedDate = $$props.updatedDate);
-    if ("temperature" in $$props) $$invalidate(3, temperature = $$props.temperature);
+    if ("updatedDate" in $$props) $$invalidate(1, updatedDate = $$props.updatedDate);
+    if ("temperature" in $$props) $$invalidate(2, temperature = $$props.temperature);
     if ("time" in $$props) $$invalidate(0, time = $$props.time);
-    if ("year" in $$props) $$invalidate(1, year = $$props.year);
+    if ("year" in $$props) year = $$props.year;
   };
 
   if ($$props && "$$inject" in $$props) {
     $$self.$inject_state($$props.$$inject);
   }
 
-  return [time, year, updatedDate, temperature, monthNames];
+  return [time, updatedDate, temperature, monthNames];
 }
 
 var Footer = /*#__PURE__*/function (_SvelteComponentDev) {
