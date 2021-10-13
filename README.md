@@ -40,7 +40,7 @@ Consult [sapper.svelte.dev](https://sapper.svelte.dev) for help getting started.
 
 ### Deploying the project
 
-You can deploy the project to gh-pages with:
+You can deploy the project, while running npm run dev, to gh-pages with:
 
 ```bash
 cd my-app
