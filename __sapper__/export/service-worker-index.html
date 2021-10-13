@@ -1,1 +1,6582 @@
-<!doctype html> <html class="bg-black dark:bg-gray-800" lang=en> <head> <meta charset=utf-8> <meta content="width=device-width,initial-scale=1" name=viewport> <meta content=#19260C name=theme-color> <base href=/ > <link href=manifest.json rel=manifest crossorigin=use-credentials> <link href=favicon.png rel=icon type=image/png> <script>__SAPPER__={baseUrl:"",preloaded:[void 0]};if('serviceWorker' in navigator)navigator.serviceWorker.register('/service-worker.js');(function(){try{eval("async function x(){}");var main="/client/client.6386af23.js"}catch(e){main="/client/legacy/client.6cb3f12c.js"};var s=document.createElement("script");try{new Function("if(0)import('')")();s.src=main;s.type="module";s.crossOrigin="use-credentials";}catch(e){s.src="/client/shimport@2.0.4.js";s.setAttribute("data-main",main);}document.head.appendChild(s);}());</script> <link href=client/client-655263f1.css rel=stylesheet> <link href=/client/client.6386af23.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/client-655263f1.css rel=preload as=style><link href=/client/index.e48abdf4.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/inject_styles.5607aec6.js rel=modulepreload as=script crossorigin=use-credentials></head> <body> <div id=sapper> <main> <div id=cursor class="bg-black -left-10 -top-10 absolute dark:bg-white duration-100 ease-in-out h-2 pointer-events-none rounded-full w-2"></div> </main></div> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Action Controller: Exception caught</title>
+  <style>
+    body {
+      background-color: #FAFAFA;
+      color: #333;
+      color-scheme: light dark;
+      supported-color-schemes: light dark;
+      margin: 0px;
+    }
+
+    body, p, ol, ul, td {
+      font-family: helvetica, verdana, arial, sans-serif;
+      font-size:   13px;
+      line-height: 18px;
+    }
+
+    pre {
+      font-size: 11px;
+      white-space: pre-wrap;
+    }
+
+    pre.box {
+      border: 1px solid #EEE;
+      padding: 10px;
+      margin: 0px;
+      width: 958px;
+    }
+
+    header {
+      color: #F0F0F0;
+      background: #C00;
+      padding: 0.5em 1.5em;
+    }
+
+    h1 {
+      overflow-wrap: break-word;
+      margin: 0.2em 0;
+      line-height: 1.1em;
+      font-size: 2em;
+    }
+
+    h2 {
+      color: #C00;
+      line-height: 25px;
+    }
+
+    .exception-message {
+      padding: 8px 0;
+    }
+
+    .exception-message .message{
+      margin-bottom: 8px;
+      line-height: 25px;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #C00;
+    }
+
+    .details {
+      border: 1px solid #D0D0D0;
+      border-radius: 4px;
+      margin: 1em 0px;
+      display: block;
+      max-width: 978px;
+    }
+
+    .summary {
+      padding: 8px 15px;
+      border-bottom: 1px solid #D0D0D0;
+      display: block;
+    }
+
+    .details pre {
+      margin: 5px;
+      border: none;
+    }
+
+    #container {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0 1.5em;
+    }
+
+    .source * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .source {
+      border: 1px solid #D9D9D9;
+      background: #ECECEC;
+      max-width: 978px;
+    }
+
+    .source pre {
+      padding: 10px 0px;
+      border: none;
+    }
+
+    .source .data {
+      font-size: 80%;
+      overflow: auto;
+      background-color: #FFF;
+    }
+
+    .info {
+      padding: 0.5em;
+    }
+
+    .source .data .line_numbers {
+      background-color: #ECECEC;
+      color: #AAA;
+      padding: 1em .5em;
+      border-right: 1px solid #DDD;
+      text-align: right;
+    }
+
+    .line {
+      padding-left: 10px;
+      white-space: pre;
+    }
+
+    .line:hover {
+      background-color: #F6F6F6;
+    }
+
+    .line.active {
+      background-color: #FCC;
+    }
+
+    .button_to {
+      display: inline-block;
+      margin-top: 0.75em;
+      margin-bottom: 0.75em;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    input[type="submit"] {
+      color: white;
+      background-color: #C00;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 3px #F99;
+      font-size: 13px;
+      font-weight: bold;
+      margin: 0;
+      padding: 10px 18px;
+      -webkit-appearance: none;
+    }
+    input[type="submit"]:focus,
+    input[type="submit"]:hover {
+      opacity: 0.8;
+    }
+    input[type="submit"]:active {
+      box-shadow: 0 2px #F99;
+      transform: translateY(1px)
+    }
+
+
+    a { color: #980905; }
+    a:visited { color: #666; }
+    a.trace-frames {
+      color: #666;
+      overflow-wrap: break-word;
+    }
+    a:hover { color: #C00; }
+    a.trace-frames.selected { color: #C00 }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #222;
+        color: #ECECEC;
+      }
+
+      .details {
+        border-color: #666;
+      }
+
+      .summary {
+        border-color: #666;
+      }
+
+      .source {
+        border-color: #555;
+        background-color: #333;
+      }
+
+      .source .data {
+        background: #444;
+      }
+
+      .source .data .line_numbers {
+        background: #333;
+        border-color: #222;
+      }
+
+      .line:hover {
+        background: #666;
+      }
+
+      .line.active {
+        background-color: #900;
+      }
+
+      input[type="submit"] {
+        box-shadow: 0 3px #800;
+      }
+      input[type="submit"]:active {
+        box-shadow: 0 2px #800;
+      }
+
+      a { color: #C00; }
+      a.trace-frames { color: #999; }
+      a:hover { color: #E9382B; }
+      a.trace-frames.selected { color: #E9382B; }
+    }
+
+      #route_table {
+    margin: 0;
+    border-collapse: collapse;
+  }
+
+  #route_table thead tr {
+    border-bottom: 2px solid #ddd;
+  }
+
+  #route_table thead tr.bottom {
+    border-bottom: none;
+  }
+
+  #route_table thead tr.bottom th {
+    padding: 10px 0;
+    line-height: 15px;
+  }
+
+  #route_table thead tr.bottom th input#search {
+    -webkit-appearance: textfield;
+  }
+
+  #route_table tbody tr {
+    border-bottom: 1px solid #ddd;
+  }
+
+  #route_table tbody tr:nth-child(odd) {
+    background: #f2f2f2;
+  }
+
+  #route_table tbody.exact_matches,
+  #route_table tbody.fuzzy_matches {
+    background-color: LightGoldenRodYellow;
+    border-bottom: solid 2px SlateGrey;
+  }
+
+  #route_table tbody.exact_matches tr,
+  #route_table tbody.fuzzy_matches tr {
+    background: none;
+    border-bottom: none;
+  }
+
+  #route_table td {
+    padding: 4px 30px;
+  }
+
+  #path_search {
+    width: 80%;
+    font-size: inherit;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #222;
+      color: #ECECEC;
+    }
+
+    #route_table tbody tr:nth-child(odd) {
+      background: #333;
+    }
+
+    #route_table tbody tr:nth-child(even) {
+      background: #444;
+    }
+
+    #route_table tbody.exact_matches,
+    #route_table tbody.fuzzy_matches {
+      color: #333;
+    }
+  }
+
+  </style>
+
+  <script>
+    var toggle = function(id) {
+      var s = document.getElementById(id).style;
+      s.display = s.display == 'none' ? 'block' : 'none';
+      return false;
+    }
+    var show = function(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+    var hide = function(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+    var toggleTrace = function() {
+      return toggle('blame_trace');
+    }
+    var toggleSessionDump = function() {
+      return toggle('session_dump');
+    }
+    var toggleEnvDump = function() {
+      return toggle('env_dump');
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <h1>Routing Error</h1>
+</header>
+<div id="container">
+  <h2>No route matches [GET] &quot;/service-worker-index.html&quot;</h2>
+
+  
+<p><code>Rails.root: /Users/maximsiebert/Documents/Projects/api</code></p>
+
+<div id="traces-0">
+    <a href="#" onclick="hide(&#39;Framework-Trace-0&#39;);hide(&#39;Full-Trace-0&#39;);show(&#39;Application-Trace-0&#39;);; return false;">Application Trace</a> |
+    <a href="#" onclick="hide(&#39;Application-Trace-0&#39;);hide(&#39;Full-Trace-0&#39;);show(&#39;Framework-Trace-0&#39;);; return false;">Framework Trace</a> |
+    <a href="#" onclick="hide(&#39;Application-Trace-0&#39;);hide(&#39;Framework-Trace-0&#39;);show(&#39;Full-Trace-0&#39;);; return false;">Full Trace</a> 
+
+    <div id="Application-Trace-0" style="display: block;">
+      <code style="font-size: 11px;">
+      </code>
+    </div>
+    <div id="Framework-Trace-0" style="display: none;">
+      <code style="font-size: 11px;">
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="0" href="#">
+            rails (a205f5110d69) actionpack/lib/action_dispatch/middleware/debug_exceptions.rb:33:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="1" href="#">
+            rails (a205f5110d69) actionpack/lib/action_dispatch/middleware/show_exceptions.rb:33:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="2" href="#">
+            lograge (0.11.2) lib/lograge/rails_ext/rack/logger.rb:15:in `call_app&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="3" href="#">
+            rails (a205f5110d69) railties/lib/rails/rack/logger.rb:26:in `block in call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="4" href="#">
+            rails (a205f5110d69) activesupport/lib/active_support/tagged_logging.rb:99:in `block in tagged&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="5" href="#">
+            rails (a205f5110d69) activesupport/lib/active_support/tagged_logging.rb:37:in `tagged&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="6" href="#">
+            rails (a205f5110d69) activesupport/lib/active_support/tagged_logging.rb:99:in `tagged&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="7" href="#">
+            rails (a205f5110d69) railties/lib/rails/rack/logger.rb:26:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="8" href="#">
+            sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="9" href="#">
+            rails (a205f5110d69) actionpack/lib/action_dispatch/middleware/remote_ip.rb:81:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="10" href="#">
+            request_store (1.5.0) lib/request_store/middleware.rb:19:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="11" href="#">
+            rails (a205f5110d69) actionpack/lib/action_dispatch/middleware/request_id.rb:26:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="12" href="#">
+            rack (2.2.3) lib/rack/method_override.rb:24:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="13" href="#">
+            rack (2.2.3) lib/rack/runtime.rb:22:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="14" href="#">
+            rails (a205f5110d69) activesupport/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="15" href="#">
+            rails (a205f5110d69) actionpack/lib/action_dispatch/middleware/executor.rb:14:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="16" href="#">
+            rails (a205f5110d69) actionpack/lib/action_dispatch/middleware/static.rb:24:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="17" href="#">
+            rails (a205f5110d69) actionpack/lib/action_dispatch/middleware/static.rb:24:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="18" href="#">
+            rack (2.2.3) lib/rack/sendfile.rb:110:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="19" href="#">
+            rails (a205f5110d69) actionpack/lib/action_dispatch/middleware/host_authorization.rb:92:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="20" href="#">
+            sentry-ruby-core (4.3.0) lib/sentry/rack/capture_exceptions.rb:23:in `block in call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="21" href="#">
+            sentry-ruby-core (4.3.0) lib/sentry/hub.rb:52:in `with_scope&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="22" href="#">
+            sentry-ruby-core (4.3.0) lib/sentry-ruby.rb:147:in `with_scope&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="23" href="#">
+            sentry-ruby-core (4.3.0) lib/sentry/rack/capture_exceptions.rb:14:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="24" href="#">
+            webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="25" href="#">
+            rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="26" href="#">
+            rails (a205f5110d69) railties/lib/rails/engine.rb:539:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="27" href="#">
+            puma (5.2.2) lib/puma/configuration.rb:248:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="28" href="#">
+            puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="29" href="#">
+            puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="30" href="#">
+            puma (5.2.2) lib/puma/request.rb:75:in `handle_request&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="31" href="#">
+            puma (5.2.2) lib/puma/server.rb:431:in `process_client&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="32" href="#">
+            puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread&#39;
+          </a>
+          <br>
+      </code>
+    </div>
+    <div id="Full-Trace-0" style="display: none;">
+      <code style="font-size: 11px;">
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="0" href="#">
+            rails (a205f5110d69) actionpack/lib/action_dispatch/middleware/debug_exceptions.rb:33:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="1" href="#">
+            rails (a205f5110d69) actionpack/lib/action_dispatch/middleware/show_exceptions.rb:33:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="2" href="#">
+            lograge (0.11.2) lib/lograge/rails_ext/rack/logger.rb:15:in `call_app&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="3" href="#">
+            rails (a205f5110d69) railties/lib/rails/rack/logger.rb:26:in `block in call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="4" href="#">
+            rails (a205f5110d69) activesupport/lib/active_support/tagged_logging.rb:99:in `block in tagged&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="5" href="#">
+            rails (a205f5110d69) activesupport/lib/active_support/tagged_logging.rb:37:in `tagged&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="6" href="#">
+            rails (a205f5110d69) activesupport/lib/active_support/tagged_logging.rb:99:in `tagged&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="7" href="#">
+            rails (a205f5110d69) railties/lib/rails/rack/logger.rb:26:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="8" href="#">
+            sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="9" href="#">
+            rails (a205f5110d69) actionpack/lib/action_dispatch/middleware/remote_ip.rb:81:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="10" href="#">
+            request_store (1.5.0) lib/request_store/middleware.rb:19:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="11" href="#">
+            rails (a205f5110d69) actionpack/lib/action_dispatch/middleware/request_id.rb:26:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="12" href="#">
+            rack (2.2.3) lib/rack/method_override.rb:24:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="13" href="#">
+            rack (2.2.3) lib/rack/runtime.rb:22:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="14" href="#">
+            rails (a205f5110d69) activesupport/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="15" href="#">
+            rails (a205f5110d69) actionpack/lib/action_dispatch/middleware/executor.rb:14:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="16" href="#">
+            rails (a205f5110d69) actionpack/lib/action_dispatch/middleware/static.rb:24:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="17" href="#">
+            rails (a205f5110d69) actionpack/lib/action_dispatch/middleware/static.rb:24:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="18" href="#">
+            rack (2.2.3) lib/rack/sendfile.rb:110:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="19" href="#">
+            rails (a205f5110d69) actionpack/lib/action_dispatch/middleware/host_authorization.rb:92:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="20" href="#">
+            sentry-ruby-core (4.3.0) lib/sentry/rack/capture_exceptions.rb:23:in `block in call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="21" href="#">
+            sentry-ruby-core (4.3.0) lib/sentry/hub.rb:52:in `with_scope&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="22" href="#">
+            sentry-ruby-core (4.3.0) lib/sentry-ruby.rb:147:in `with_scope&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="23" href="#">
+            sentry-ruby-core (4.3.0) lib/sentry/rack/capture_exceptions.rb:14:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="24" href="#">
+            webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="25" href="#">
+            rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="26" href="#">
+            rails (a205f5110d69) railties/lib/rails/engine.rb:539:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="27" href="#">
+            puma (5.2.2) lib/puma/configuration.rb:248:in `call&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="28" href="#">
+            puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="29" href="#">
+            puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="30" href="#">
+            puma (5.2.2) lib/puma/request.rb:75:in `handle_request&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="31" href="#">
+            puma (5.2.2) lib/puma/server.rb:431:in `process_client&#39;
+          </a>
+          <br>
+          <a class="trace-frames trace-frames-0" data-exception-object-id="147920" data-frame-id="32" href="#">
+            puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread&#39;
+          </a>
+          <br>
+      </code>
+    </div>
+
+  <script type="text/javascript">
+    (function() {
+      var traceFrames = document.getElementsByClassName('trace-frames-0');
+      var selectedFrame, currentSource = document.getElementById('frame-source-0-0');
+
+      // Add click listeners for all stack frames
+      for (var i = 0; i < traceFrames.length; i++) {
+        traceFrames[i].addEventListener('click', function(e) {
+          e.preventDefault();
+          var target = e.target;
+          var frame_id = target.dataset.frameId;
+
+          if (selectedFrame) {
+            selectedFrame.className = selectedFrame.className.replace("selected", "");
+          }
+
+          target.className += " selected";
+          selectedFrame = target;
+
+          // Change the extracted source code
+          changeSourceExtract(frame_id);
+        });
+
+        function changeSourceExtract(frame_id) {
+          var el = document.getElementById('frame-source-0-' + frame_id);
+          if (currentSource && el) {
+            currentSource.className += " hidden";
+            el.className = el.className.replace(" hidden", "");
+            currentSource = el;
+          }
+        }
+      }
+    })();
+  </script>
+</div>
+
+
+    <h2>
+      Routes
+    </h2>
+
+    <p>
+      Routes match in priority from top to bottom
+    </p>
+
+    
+<table id='route_table' class='route_table'>
+  <thead>
+    <tr>
+      <th>Helper</th>
+      <th>HTTP Verb</th>
+      <th>Path</th>
+      <th>Controller#Action</th>
+    </tr>
+    <tr class='bottom'>
+      <th>
+        <a data-route-helper="_path" title="Returns a relative path (without the http or domain)" href="#">Path</a> /
+        <a data-route-helper="_url" title="Returns an absolute URL (with the http and domain)" href="#">Url</a>
+      </th>
+      <th>
+      </th>
+      <th>
+        <input id="search" placeholder="Path Match" type="search" name="path[]" />
+      </th>
+      <th>
+      </th>
+    </tr>
+  </thead>
+  <tbody class='exact_matches' id='exact_matches'>
+  </tbody>
+  <tbody class='fuzzy_matches' id='fuzzy_matches'>
+  </tbody>
+  <tbody>
+    <tr class='route_row' data-helper='path'>
+  <td data-route-name='graphql'>
+      graphql<span class='helper'>_path</span>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/graphql(.:format)'>
+    /graphql(.:format)
+  </td>
+  <td>
+    <p>graphql#execute</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='auth_store'>
+      auth_store<span class='helper'>_path</span>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/auth/store(.:format)'>
+    /auth/store(.:format)
+  </td>
+  <td>
+    <p>auth0#store</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='auth_logout'>
+      auth_logout<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/auth/logout(.:format)'>
+    /auth/logout(.:format)
+  </td>
+  <td>
+    <p>auth0#logout</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='accountable_avatar'>
+      accountable_avatar<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/:type/:id/avatar(-:digest).jpg(.:format)'>
+    /:type/:id/avatar(-:digest).jpg(.:format)
+  </td>
+  <td>
+    <p>accountables#avatar {:type=&gt;/(artists|collectors|galleries)/}</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='accountable_cover_video'>
+      accountable_cover_video<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/:type/:id/cover_video(-:digest).mp4(.:format)'>
+    /:type/:id/cover_video(-:digest).mp4(.:format)
+  </td>
+  <td>
+    <p>accountables#cover_video {:type=&gt;/(artists|collectors|galleries|artworks)/}</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='accountable_cover_video_thumbnail'>
+      accountable_cover_video_thumbnail<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/:type/:id/cover_video_thumbnail(-:digest).jpg(.:format)'>
+    /:type/:id/cover_video_thumbnail(-:digest).jpg(.:format)
+  </td>
+  <td>
+    <p>accountables#cover_video_thumbnail {:type=&gt;/(artists|collectors|galleries|artworks)/}</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='pegboard_thumbnail'>
+      pegboard_thumbnail<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/pegboards/:id/thumbnail(-:digest).jpg(.:format)'>
+    /pegboards/:id/thumbnail(-:digest).jpg(.:format)
+  </td>
+  <td>
+    <p>pegboards#thumbnail</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='artwork_image'>
+      artwork_image<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/artwork_images/:id/image(-:digest).jpg(.:format)'>
+    /artwork_images/:id/image(-:digest).jpg(.:format)
+  </td>
+  <td>
+    <p>artwork_images#image</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='_liveness'>
+      _liveness<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/_liveness(.:format)'>
+    /_liveness(.:format)
+  </td>
+  <td>
+    <p>health_checks#health</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='_readiness'>
+      _readiness<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/_readiness(.:format)'>
+    /_readiness(.:format)
+  </td>
+  <td>
+    <p>health_checks#health</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='_health'>
+      _health<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/_health(.:format)'>
+    /_health(.:format)
+  </td>
+  <td>
+    <p>health_checks#health</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='root'>
+      root<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/'>
+    /
+  </td>
+  <td>
+    <p>home#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='home_show'>
+      home_show<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/home/show(.:format)'>
+    /home/show(.:format)
+  </td>
+  <td>
+    <p>home#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='representation_show'>
+      representation_show<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/representation/show(.:format)'>
+    /representation/show(.:format)
+  </td>
+  <td>
+    <p>representation#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/representation/show/:id(.:format)'>
+    /representation/show/:id(.:format)
+  </td>
+  <td>
+    <p>representation#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='sidekiq_web'>
+      sidekiq_web<span class='helper'>_path</span>
+  </td>
+  <td>
+    
+  </td>
+  <td data-route-path='/sidekiq'>
+    /sidekiq
+  </td>
+  <td>
+    <p>Sidekiq::Web</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_users'>
+      admin_users<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/users(.:format)'>
+    /admin/users(.:format)
+  </td>
+  <td>
+    <p>admin/users#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/users(.:format)'>
+    /admin/users(.:format)
+  </td>
+  <td>
+    <p>admin/users#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_user'>
+      new_admin_user<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/users/new(.:format)'>
+    /admin/users/new(.:format)
+  </td>
+  <td>
+    <p>admin/users#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_user'>
+      edit_admin_user<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/users/:id/edit(.:format)'>
+    /admin/users/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/users#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_user'>
+      admin_user<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/users/:id(.:format)'>
+    /admin/users/:id(.:format)
+  </td>
+  <td>
+    <p>admin/users#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/users/:id(.:format)'>
+    /admin/users/:id(.:format)
+  </td>
+  <td>
+    <p>admin/users#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/users/:id(.:format)'>
+    /admin/users/:id(.:format)
+  </td>
+  <td>
+    <p>admin/users#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/users/:id(.:format)'>
+    /admin/users/:id(.:format)
+  </td>
+  <td>
+    <p>admin/users#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_accountable_infos'>
+      admin_accountable_infos<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/accountable_infos(.:format)'>
+    /admin/accountable_infos(.:format)
+  </td>
+  <td>
+    <p>admin/accountable_infos#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/accountable_infos(.:format)'>
+    /admin/accountable_infos(.:format)
+  </td>
+  <td>
+    <p>admin/accountable_infos#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_accountable_info'>
+      new_admin_accountable_info<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/accountable_infos/new(.:format)'>
+    /admin/accountable_infos/new(.:format)
+  </td>
+  <td>
+    <p>admin/accountable_infos#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_accountable_info'>
+      edit_admin_accountable_info<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/accountable_infos/:id/edit(.:format)'>
+    /admin/accountable_infos/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/accountable_infos#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_accountable_info'>
+      admin_accountable_info<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/accountable_infos/:id(.:format)'>
+    /admin/accountable_infos/:id(.:format)
+  </td>
+  <td>
+    <p>admin/accountable_infos#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/accountable_infos/:id(.:format)'>
+    /admin/accountable_infos/:id(.:format)
+  </td>
+  <td>
+    <p>admin/accountable_infos#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/accountable_infos/:id(.:format)'>
+    /admin/accountable_infos/:id(.:format)
+  </td>
+  <td>
+    <p>admin/accountable_infos#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/accountable_infos/:id(.:format)'>
+    /admin/accountable_infos/:id(.:format)
+  </td>
+  <td>
+    <p>admin/accountable_infos#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='avatar_admin_collector'>
+      avatar_admin_collector<span class='helper'>_path</span>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/collectors/:id/avatar(.:format)'>
+    /admin/collectors/:id/avatar(.:format)
+  </td>
+  <td>
+    <p>admin/collectors#destroy_avatar</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='cover_video_admin_collector'>
+      cover_video_admin_collector<span class='helper'>_path</span>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/collectors/:id/cover_video(.:format)'>
+    /admin/collectors/:id/cover_video(.:format)
+  </td>
+  <td>
+    <p>admin/collectors#destroy_cover_video</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='cover_video_thumbnail_admin_collector'>
+      cover_video_thumbnail_admin_collector<span class='helper'>_path</span>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/collectors/:id/cover_video_thumbnail(.:format)'>
+    /admin/collectors/:id/cover_video_thumbnail(.:format)
+  </td>
+  <td>
+    <p>admin/collectors#destroy_cover_video_thumbnail</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_collectors'>
+      admin_collectors<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/collectors(.:format)'>
+    /admin/collectors(.:format)
+  </td>
+  <td>
+    <p>admin/collectors#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/collectors(.:format)'>
+    /admin/collectors(.:format)
+  </td>
+  <td>
+    <p>admin/collectors#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_collector'>
+      new_admin_collector<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/collectors/new(.:format)'>
+    /admin/collectors/new(.:format)
+  </td>
+  <td>
+    <p>admin/collectors#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_collector'>
+      edit_admin_collector<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/collectors/:id/edit(.:format)'>
+    /admin/collectors/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/collectors#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_collector'>
+      admin_collector<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/collectors/:id(.:format)'>
+    /admin/collectors/:id(.:format)
+  </td>
+  <td>
+    <p>admin/collectors#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/collectors/:id(.:format)'>
+    /admin/collectors/:id(.:format)
+  </td>
+  <td>
+    <p>admin/collectors#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/collectors/:id(.:format)'>
+    /admin/collectors/:id(.:format)
+  </td>
+  <td>
+    <p>admin/collectors#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/collectors/:id(.:format)'>
+    /admin/collectors/:id(.:format)
+  </td>
+  <td>
+    <p>admin/collectors#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_collector_roles'>
+      admin_collector_roles<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/collector_roles(.:format)'>
+    /admin/collector_roles(.:format)
+  </td>
+  <td>
+    <p>admin/collector_roles#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/collector_roles(.:format)'>
+    /admin/collector_roles(.:format)
+  </td>
+  <td>
+    <p>admin/collector_roles#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_collector_role'>
+      new_admin_collector_role<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/collector_roles/new(.:format)'>
+    /admin/collector_roles/new(.:format)
+  </td>
+  <td>
+    <p>admin/collector_roles#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_collector_role'>
+      edit_admin_collector_role<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/collector_roles/:id/edit(.:format)'>
+    /admin/collector_roles/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/collector_roles#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_collector_role'>
+      admin_collector_role<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/collector_roles/:id(.:format)'>
+    /admin/collector_roles/:id(.:format)
+  </td>
+  <td>
+    <p>admin/collector_roles#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/collector_roles/:id(.:format)'>
+    /admin/collector_roles/:id(.:format)
+  </td>
+  <td>
+    <p>admin/collector_roles#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/collector_roles/:id(.:format)'>
+    /admin/collector_roles/:id(.:format)
+  </td>
+  <td>
+    <p>admin/collector_roles#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/collector_roles/:id(.:format)'>
+    /admin/collector_roles/:id(.:format)
+  </td>
+  <td>
+    <p>admin/collector_roles#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='avatar_admin_artist'>
+      avatar_admin_artist<span class='helper'>_path</span>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/artists/:id/avatar(.:format)'>
+    /admin/artists/:id/avatar(.:format)
+  </td>
+  <td>
+    <p>admin/artists#destroy_avatar</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='cover_video_admin_artist'>
+      cover_video_admin_artist<span class='helper'>_path</span>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/artists/:id/cover_video(.:format)'>
+    /admin/artists/:id/cover_video(.:format)
+  </td>
+  <td>
+    <p>admin/artists#destroy_cover_video</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='cover_video_thumbnail_admin_artist'>
+      cover_video_thumbnail_admin_artist<span class='helper'>_path</span>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/artists/:id/cover_video_thumbnail(.:format)'>
+    /admin/artists/:id/cover_video_thumbnail(.:format)
+  </td>
+  <td>
+    <p>admin/artists#destroy_cover_video_thumbnail</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_artists'>
+      admin_artists<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artists(.:format)'>
+    /admin/artists(.:format)
+  </td>
+  <td>
+    <p>admin/artists#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/artists(.:format)'>
+    /admin/artists(.:format)
+  </td>
+  <td>
+    <p>admin/artists#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_artist'>
+      new_admin_artist<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artists/new(.:format)'>
+    /admin/artists/new(.:format)
+  </td>
+  <td>
+    <p>admin/artists#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_artist'>
+      edit_admin_artist<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artists/:id/edit(.:format)'>
+    /admin/artists/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/artists#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_artist'>
+      admin_artist<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artists/:id(.:format)'>
+    /admin/artists/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artists#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/artists/:id(.:format)'>
+    /admin/artists/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artists#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/artists/:id(.:format)'>
+    /admin/artists/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artists#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/artists/:id(.:format)'>
+    /admin/artists/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artists#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_artist_roles'>
+      admin_artist_roles<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artist_roles(.:format)'>
+    /admin/artist_roles(.:format)
+  </td>
+  <td>
+    <p>admin/artist_roles#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/artist_roles(.:format)'>
+    /admin/artist_roles(.:format)
+  </td>
+  <td>
+    <p>admin/artist_roles#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_artist_role'>
+      new_admin_artist_role<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artist_roles/new(.:format)'>
+    /admin/artist_roles/new(.:format)
+  </td>
+  <td>
+    <p>admin/artist_roles#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_artist_role'>
+      edit_admin_artist_role<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artist_roles/:id/edit(.:format)'>
+    /admin/artist_roles/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/artist_roles#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_artist_role'>
+      admin_artist_role<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artist_roles/:id(.:format)'>
+    /admin/artist_roles/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artist_roles#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/artist_roles/:id(.:format)'>
+    /admin/artist_roles/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artist_roles#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/artist_roles/:id(.:format)'>
+    /admin/artist_roles/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artist_roles#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/artist_roles/:id(.:format)'>
+    /admin/artist_roles/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artist_roles#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='avatar_admin_gallery'>
+      avatar_admin_gallery<span class='helper'>_path</span>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/galleries/:id/avatar(.:format)'>
+    /admin/galleries/:id/avatar(.:format)
+  </td>
+  <td>
+    <p>admin/galleries#destroy_avatar</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='cover_video_admin_gallery'>
+      cover_video_admin_gallery<span class='helper'>_path</span>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/galleries/:id/cover_video(.:format)'>
+    /admin/galleries/:id/cover_video(.:format)
+  </td>
+  <td>
+    <p>admin/galleries#destroy_cover_video</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='cover_video_thumbnail_admin_gallery'>
+      cover_video_thumbnail_admin_gallery<span class='helper'>_path</span>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/galleries/:id/cover_video_thumbnail(.:format)'>
+    /admin/galleries/:id/cover_video_thumbnail(.:format)
+  </td>
+  <td>
+    <p>admin/galleries#destroy_cover_video_thumbnail</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_galleries'>
+      admin_galleries<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/galleries(.:format)'>
+    /admin/galleries(.:format)
+  </td>
+  <td>
+    <p>admin/galleries#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/galleries(.:format)'>
+    /admin/galleries(.:format)
+  </td>
+  <td>
+    <p>admin/galleries#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_gallery'>
+      new_admin_gallery<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/galleries/new(.:format)'>
+    /admin/galleries/new(.:format)
+  </td>
+  <td>
+    <p>admin/galleries#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_gallery'>
+      edit_admin_gallery<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/galleries/:id/edit(.:format)'>
+    /admin/galleries/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/galleries#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_gallery'>
+      admin_gallery<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/galleries/:id(.:format)'>
+    /admin/galleries/:id(.:format)
+  </td>
+  <td>
+    <p>admin/galleries#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/galleries/:id(.:format)'>
+    /admin/galleries/:id(.:format)
+  </td>
+  <td>
+    <p>admin/galleries#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/galleries/:id(.:format)'>
+    /admin/galleries/:id(.:format)
+  </td>
+  <td>
+    <p>admin/galleries#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/galleries/:id(.:format)'>
+    /admin/galleries/:id(.:format)
+  </td>
+  <td>
+    <p>admin/galleries#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_gallery_roles'>
+      admin_gallery_roles<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/gallery_roles(.:format)'>
+    /admin/gallery_roles(.:format)
+  </td>
+  <td>
+    <p>admin/gallery_roles#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/gallery_roles(.:format)'>
+    /admin/gallery_roles(.:format)
+  </td>
+  <td>
+    <p>admin/gallery_roles#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_gallery_role'>
+      new_admin_gallery_role<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/gallery_roles/new(.:format)'>
+    /admin/gallery_roles/new(.:format)
+  </td>
+  <td>
+    <p>admin/gallery_roles#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_gallery_role'>
+      edit_admin_gallery_role<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/gallery_roles/:id/edit(.:format)'>
+    /admin/gallery_roles/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/gallery_roles#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_gallery_role'>
+      admin_gallery_role<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/gallery_roles/:id(.:format)'>
+    /admin/gallery_roles/:id(.:format)
+  </td>
+  <td>
+    <p>admin/gallery_roles#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/gallery_roles/:id(.:format)'>
+    /admin/gallery_roles/:id(.:format)
+  </td>
+  <td>
+    <p>admin/gallery_roles#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/gallery_roles/:id(.:format)'>
+    /admin/gallery_roles/:id(.:format)
+  </td>
+  <td>
+    <p>admin/gallery_roles#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/gallery_roles/:id(.:format)'>
+    /admin/gallery_roles/:id(.:format)
+  </td>
+  <td>
+    <p>admin/gallery_roles#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_artwork_get_primary_image_url'>
+      admin_artwork_get_primary_image_url<span class='helper'>_path</span>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/artworks/:artwork_id/get_primary_image_url(.:format)'>
+    /admin/artworks/:artwork_id/get_primary_image_url(.:format)
+  </td>
+  <td>
+    <p>admin/artworks#get_primary_image_url</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='cover_video_admin_artwork'>
+      cover_video_admin_artwork<span class='helper'>_path</span>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/artworks/:id/cover_video(.:format)'>
+    /admin/artworks/:id/cover_video(.:format)
+  </td>
+  <td>
+    <p>admin/artworks#destroy_cover_video</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='cover_video_thumbnail_admin_artwork'>
+      cover_video_thumbnail_admin_artwork<span class='helper'>_path</span>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/artworks/:id/cover_video_thumbnail(.:format)'>
+    /admin/artworks/:id/cover_video_thumbnail(.:format)
+  </td>
+  <td>
+    <p>admin/artworks#destroy_cover_video_thumbnail</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_artworks'>
+      admin_artworks<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artworks(.:format)'>
+    /admin/artworks(.:format)
+  </td>
+  <td>
+    <p>admin/artworks#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/artworks(.:format)'>
+    /admin/artworks(.:format)
+  </td>
+  <td>
+    <p>admin/artworks#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_artwork'>
+      new_admin_artwork<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artworks/new(.:format)'>
+    /admin/artworks/new(.:format)
+  </td>
+  <td>
+    <p>admin/artworks#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_artwork'>
+      edit_admin_artwork<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artworks/:id/edit(.:format)'>
+    /admin/artworks/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/artworks#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_artwork'>
+      admin_artwork<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artworks/:id(.:format)'>
+    /admin/artworks/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artworks#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/artworks/:id(.:format)'>
+    /admin/artworks/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artworks#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/artworks/:id(.:format)'>
+    /admin/artworks/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artworks#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/artworks/:id(.:format)'>
+    /admin/artworks/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artworks#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='image_admin_artwork_image'>
+      image_admin_artwork_image<span class='helper'>_path</span>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/artwork_images/:id/image(.:format)'>
+    /admin/artwork_images/:id/image(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_images#destroy_image</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_artwork_images'>
+      admin_artwork_images<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artwork_images(.:format)'>
+    /admin/artwork_images(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_images#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/artwork_images(.:format)'>
+    /admin/artwork_images(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_images#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_artwork_image'>
+      new_admin_artwork_image<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artwork_images/new(.:format)'>
+    /admin/artwork_images/new(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_images#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_artwork_image'>
+      edit_admin_artwork_image<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artwork_images/:id/edit(.:format)'>
+    /admin/artwork_images/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_images#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_artwork_image'>
+      admin_artwork_image<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artwork_images/:id(.:format)'>
+    /admin/artwork_images/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_images#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/artwork_images/:id(.:format)'>
+    /admin/artwork_images/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_images#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/artwork_images/:id(.:format)'>
+    /admin/artwork_images/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_images#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/artwork_images/:id(.:format)'>
+    /admin/artwork_images/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_images#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_pegboards'>
+      admin_pegboards<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/pegboards(.:format)'>
+    /admin/pegboards(.:format)
+  </td>
+  <td>
+    <p>admin/pegboards#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/pegboards(.:format)'>
+    /admin/pegboards(.:format)
+  </td>
+  <td>
+    <p>admin/pegboards#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_pegboard'>
+      new_admin_pegboard<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/pegboards/new(.:format)'>
+    /admin/pegboards/new(.:format)
+  </td>
+  <td>
+    <p>admin/pegboards#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_pegboard'>
+      edit_admin_pegboard<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/pegboards/:id/edit(.:format)'>
+    /admin/pegboards/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/pegboards#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_pegboard'>
+      admin_pegboard<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/pegboards/:id(.:format)'>
+    /admin/pegboards/:id(.:format)
+  </td>
+  <td>
+    <p>admin/pegboards#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/pegboards/:id(.:format)'>
+    /admin/pegboards/:id(.:format)
+  </td>
+  <td>
+    <p>admin/pegboards#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/pegboards/:id(.:format)'>
+    /admin/pegboards/:id(.:format)
+  </td>
+  <td>
+    <p>admin/pegboards#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/pegboards/:id(.:format)'>
+    /admin/pegboards/:id(.:format)
+  </td>
+  <td>
+    <p>admin/pegboards#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_pegboard_artworks'>
+      admin_pegboard_artworks<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/pegboard_artworks(.:format)'>
+    /admin/pegboard_artworks(.:format)
+  </td>
+  <td>
+    <p>admin/pegboard_artworks#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/pegboard_artworks(.:format)'>
+    /admin/pegboard_artworks(.:format)
+  </td>
+  <td>
+    <p>admin/pegboard_artworks#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_pegboard_artwork'>
+      new_admin_pegboard_artwork<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/pegboard_artworks/new(.:format)'>
+    /admin/pegboard_artworks/new(.:format)
+  </td>
+  <td>
+    <p>admin/pegboard_artworks#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_pegboard_artwork'>
+      edit_admin_pegboard_artwork<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/pegboard_artworks/:id/edit(.:format)'>
+    /admin/pegboard_artworks/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/pegboard_artworks#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_pegboard_artwork'>
+      admin_pegboard_artwork<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/pegboard_artworks/:id(.:format)'>
+    /admin/pegboard_artworks/:id(.:format)
+  </td>
+  <td>
+    <p>admin/pegboard_artworks#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/pegboard_artworks/:id(.:format)'>
+    /admin/pegboard_artworks/:id(.:format)
+  </td>
+  <td>
+    <p>admin/pegboard_artworks#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/pegboard_artworks/:id(.:format)'>
+    /admin/pegboard_artworks/:id(.:format)
+  </td>
+  <td>
+    <p>admin/pegboard_artworks#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/pegboard_artworks/:id(.:format)'>
+    /admin/pegboard_artworks/:id(.:format)
+  </td>
+  <td>
+    <p>admin/pegboard_artworks#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='attachment_admin_pegcast'>
+      attachment_admin_pegcast<span class='helper'>_path</span>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/pegcasts/:id/attachment(.:format)'>
+    /admin/pegcasts/:id/attachment(.:format)
+  </td>
+  <td>
+    <p>admin/pegcasts#destroy_attachment</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_pegcasts'>
+      admin_pegcasts<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/pegcasts(.:format)'>
+    /admin/pegcasts(.:format)
+  </td>
+  <td>
+    <p>admin/pegcasts#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/pegcasts(.:format)'>
+    /admin/pegcasts(.:format)
+  </td>
+  <td>
+    <p>admin/pegcasts#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_pegcast'>
+      new_admin_pegcast<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/pegcasts/new(.:format)'>
+    /admin/pegcasts/new(.:format)
+  </td>
+  <td>
+    <p>admin/pegcasts#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_pegcast'>
+      edit_admin_pegcast<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/pegcasts/:id/edit(.:format)'>
+    /admin/pegcasts/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/pegcasts#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_pegcast'>
+      admin_pegcast<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/pegcasts/:id(.:format)'>
+    /admin/pegcasts/:id(.:format)
+  </td>
+  <td>
+    <p>admin/pegcasts#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/pegcasts/:id(.:format)'>
+    /admin/pegcasts/:id(.:format)
+  </td>
+  <td>
+    <p>admin/pegcasts#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/pegcasts/:id(.:format)'>
+    /admin/pegcasts/:id(.:format)
+  </td>
+  <td>
+    <p>admin/pegcasts#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/pegcasts/:id(.:format)'>
+    /admin/pegcasts/:id(.:format)
+  </td>
+  <td>
+    <p>admin/pegcasts#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_pegcast_subjects'>
+      admin_pegcast_subjects<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/pegcast_subjects(.:format)'>
+    /admin/pegcast_subjects(.:format)
+  </td>
+  <td>
+    <p>admin/pegcast_subjects#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/pegcast_subjects(.:format)'>
+    /admin/pegcast_subjects(.:format)
+  </td>
+  <td>
+    <p>admin/pegcast_subjects#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_pegcast_subject'>
+      new_admin_pegcast_subject<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/pegcast_subjects/new(.:format)'>
+    /admin/pegcast_subjects/new(.:format)
+  </td>
+  <td>
+    <p>admin/pegcast_subjects#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_pegcast_subject'>
+      edit_admin_pegcast_subject<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/pegcast_subjects/:id/edit(.:format)'>
+    /admin/pegcast_subjects/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/pegcast_subjects#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_pegcast_subject'>
+      admin_pegcast_subject<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/pegcast_subjects/:id(.:format)'>
+    /admin/pegcast_subjects/:id(.:format)
+  </td>
+  <td>
+    <p>admin/pegcast_subjects#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/pegcast_subjects/:id(.:format)'>
+    /admin/pegcast_subjects/:id(.:format)
+  </td>
+  <td>
+    <p>admin/pegcast_subjects#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/pegcast_subjects/:id(.:format)'>
+    /admin/pegcast_subjects/:id(.:format)
+  </td>
+  <td>
+    <p>admin/pegcast_subjects#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/pegcast_subjects/:id(.:format)'>
+    /admin/pegcast_subjects/:id(.:format)
+  </td>
+  <td>
+    <p>admin/pegcast_subjects#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_resumes'>
+      admin_resumes<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resumes(.:format)'>
+    /admin/resumes(.:format)
+  </td>
+  <td>
+    <p>admin/resumes#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/resumes(.:format)'>
+    /admin/resumes(.:format)
+  </td>
+  <td>
+    <p>admin/resumes#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_resume'>
+      new_admin_resume<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resumes/new(.:format)'>
+    /admin/resumes/new(.:format)
+  </td>
+  <td>
+    <p>admin/resumes#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_resume'>
+      edit_admin_resume<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resumes/:id/edit(.:format)'>
+    /admin/resumes/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/resumes#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_resume'>
+      admin_resume<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resumes/:id(.:format)'>
+    /admin/resumes/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resumes#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/resumes/:id(.:format)'>
+    /admin/resumes/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resumes#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/resumes/:id(.:format)'>
+    /admin/resumes/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resumes#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/resumes/:id(.:format)'>
+    /admin/resumes/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resumes#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_resume_awards'>
+      admin_resume_awards<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_awards(.:format)'>
+    /admin/resume_awards(.:format)
+  </td>
+  <td>
+    <p>admin/resume_awards#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/resume_awards(.:format)'>
+    /admin/resume_awards(.:format)
+  </td>
+  <td>
+    <p>admin/resume_awards#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_resume_award'>
+      new_admin_resume_award<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_awards/new(.:format)'>
+    /admin/resume_awards/new(.:format)
+  </td>
+  <td>
+    <p>admin/resume_awards#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_resume_award'>
+      edit_admin_resume_award<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_awards/:id/edit(.:format)'>
+    /admin/resume_awards/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/resume_awards#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_resume_award'>
+      admin_resume_award<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_awards/:id(.:format)'>
+    /admin/resume_awards/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_awards#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/resume_awards/:id(.:format)'>
+    /admin/resume_awards/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_awards#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/resume_awards/:id(.:format)'>
+    /admin/resume_awards/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_awards#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/resume_awards/:id(.:format)'>
+    /admin/resume_awards/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_awards#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_resume_grants'>
+      admin_resume_grants<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_grants(.:format)'>
+    /admin/resume_grants(.:format)
+  </td>
+  <td>
+    <p>admin/resume_grants#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/resume_grants(.:format)'>
+    /admin/resume_grants(.:format)
+  </td>
+  <td>
+    <p>admin/resume_grants#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_resume_grant'>
+      new_admin_resume_grant<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_grants/new(.:format)'>
+    /admin/resume_grants/new(.:format)
+  </td>
+  <td>
+    <p>admin/resume_grants#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_resume_grant'>
+      edit_admin_resume_grant<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_grants/:id/edit(.:format)'>
+    /admin/resume_grants/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/resume_grants#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_resume_grant'>
+      admin_resume_grant<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_grants/:id(.:format)'>
+    /admin/resume_grants/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_grants#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/resume_grants/:id(.:format)'>
+    /admin/resume_grants/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_grants#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/resume_grants/:id(.:format)'>
+    /admin/resume_grants/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_grants#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/resume_grants/:id(.:format)'>
+    /admin/resume_grants/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_grants#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_resume_presses'>
+      admin_resume_presses<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_presses(.:format)'>
+    /admin/resume_presses(.:format)
+  </td>
+  <td>
+    <p>admin/resume_presses#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/resume_presses(.:format)'>
+    /admin/resume_presses(.:format)
+  </td>
+  <td>
+    <p>admin/resume_presses#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_resume_press'>
+      new_admin_resume_press<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_presses/new(.:format)'>
+    /admin/resume_presses/new(.:format)
+  </td>
+  <td>
+    <p>admin/resume_presses#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_resume_press'>
+      edit_admin_resume_press<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_presses/:id/edit(.:format)'>
+    /admin/resume_presses/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/resume_presses#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_resume_press'>
+      admin_resume_press<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_presses/:id(.:format)'>
+    /admin/resume_presses/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_presses#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/resume_presses/:id(.:format)'>
+    /admin/resume_presses/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_presses#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/resume_presses/:id(.:format)'>
+    /admin/resume_presses/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_presses#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/resume_presses/:id(.:format)'>
+    /admin/resume_presses/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_presses#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_resume_teachings'>
+      admin_resume_teachings<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_teachings(.:format)'>
+    /admin/resume_teachings(.:format)
+  </td>
+  <td>
+    <p>admin/resume_teachings#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/resume_teachings(.:format)'>
+    /admin/resume_teachings(.:format)
+  </td>
+  <td>
+    <p>admin/resume_teachings#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_resume_teaching'>
+      new_admin_resume_teaching<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_teachings/new(.:format)'>
+    /admin/resume_teachings/new(.:format)
+  </td>
+  <td>
+    <p>admin/resume_teachings#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_resume_teaching'>
+      edit_admin_resume_teaching<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_teachings/:id/edit(.:format)'>
+    /admin/resume_teachings/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/resume_teachings#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_resume_teaching'>
+      admin_resume_teaching<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_teachings/:id(.:format)'>
+    /admin/resume_teachings/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_teachings#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/resume_teachings/:id(.:format)'>
+    /admin/resume_teachings/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_teachings#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/resume_teachings/:id(.:format)'>
+    /admin/resume_teachings/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_teachings#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/resume_teachings/:id(.:format)'>
+    /admin/resume_teachings/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_teachings#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_resume_educations'>
+      admin_resume_educations<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_educations(.:format)'>
+    /admin/resume_educations(.:format)
+  </td>
+  <td>
+    <p>admin/resume_educations#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/resume_educations(.:format)'>
+    /admin/resume_educations(.:format)
+  </td>
+  <td>
+    <p>admin/resume_educations#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_resume_education'>
+      new_admin_resume_education<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_educations/new(.:format)'>
+    /admin/resume_educations/new(.:format)
+  </td>
+  <td>
+    <p>admin/resume_educations#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_resume_education'>
+      edit_admin_resume_education<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_educations/:id/edit(.:format)'>
+    /admin/resume_educations/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/resume_educations#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_resume_education'>
+      admin_resume_education<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_educations/:id(.:format)'>
+    /admin/resume_educations/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_educations#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/resume_educations/:id(.:format)'>
+    /admin/resume_educations/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_educations#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/resume_educations/:id(.:format)'>
+    /admin/resume_educations/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_educations#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/resume_educations/:id(.:format)'>
+    /admin/resume_educations/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_educations#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_resume_collections'>
+      admin_resume_collections<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_collections(.:format)'>
+    /admin/resume_collections(.:format)
+  </td>
+  <td>
+    <p>admin/resume_collections#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/resume_collections(.:format)'>
+    /admin/resume_collections(.:format)
+  </td>
+  <td>
+    <p>admin/resume_collections#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_resume_collection'>
+      new_admin_resume_collection<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_collections/new(.:format)'>
+    /admin/resume_collections/new(.:format)
+  </td>
+  <td>
+    <p>admin/resume_collections#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_resume_collection'>
+      edit_admin_resume_collection<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_collections/:id/edit(.:format)'>
+    /admin/resume_collections/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/resume_collections#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_resume_collection'>
+      admin_resume_collection<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_collections/:id(.:format)'>
+    /admin/resume_collections/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_collections#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/resume_collections/:id(.:format)'>
+    /admin/resume_collections/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_collections#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/resume_collections/:id(.:format)'>
+    /admin/resume_collections/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_collections#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/resume_collections/:id(.:format)'>
+    /admin/resume_collections/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_collections#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_resume_exhibitions'>
+      admin_resume_exhibitions<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_exhibitions(.:format)'>
+    /admin/resume_exhibitions(.:format)
+  </td>
+  <td>
+    <p>admin/resume_exhibitions#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/resume_exhibitions(.:format)'>
+    /admin/resume_exhibitions(.:format)
+  </td>
+  <td>
+    <p>admin/resume_exhibitions#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_resume_exhibition'>
+      new_admin_resume_exhibition<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_exhibitions/new(.:format)'>
+    /admin/resume_exhibitions/new(.:format)
+  </td>
+  <td>
+    <p>admin/resume_exhibitions#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_resume_exhibition'>
+      edit_admin_resume_exhibition<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_exhibitions/:id/edit(.:format)'>
+    /admin/resume_exhibitions/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/resume_exhibitions#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_resume_exhibition'>
+      admin_resume_exhibition<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_exhibitions/:id(.:format)'>
+    /admin/resume_exhibitions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_exhibitions#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/resume_exhibitions/:id(.:format)'>
+    /admin/resume_exhibitions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_exhibitions#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/resume_exhibitions/:id(.:format)'>
+    /admin/resume_exhibitions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_exhibitions#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/resume_exhibitions/:id(.:format)'>
+    /admin/resume_exhibitions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_exhibitions#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_resume_bibliographies'>
+      admin_resume_bibliographies<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_bibliographies(.:format)'>
+    /admin/resume_bibliographies(.:format)
+  </td>
+  <td>
+    <p>admin/resume_bibliographies#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/resume_bibliographies(.:format)'>
+    /admin/resume_bibliographies(.:format)
+  </td>
+  <td>
+    <p>admin/resume_bibliographies#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_resume_bibliography'>
+      new_admin_resume_bibliography<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_bibliographies/new(.:format)'>
+    /admin/resume_bibliographies/new(.:format)
+  </td>
+  <td>
+    <p>admin/resume_bibliographies#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_resume_bibliography'>
+      edit_admin_resume_bibliography<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_bibliographies/:id/edit(.:format)'>
+    /admin/resume_bibliographies/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/resume_bibliographies#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_resume_bibliography'>
+      admin_resume_bibliography<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/resume_bibliographies/:id(.:format)'>
+    /admin/resume_bibliographies/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_bibliographies#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/resume_bibliographies/:id(.:format)'>
+    /admin/resume_bibliographies/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_bibliographies#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/resume_bibliographies/:id(.:format)'>
+    /admin/resume_bibliographies/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_bibliographies#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/resume_bibliographies/:id(.:format)'>
+    /admin/resume_bibliographies/:id(.:format)
+  </td>
+  <td>
+    <p>admin/resume_bibliographies#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_subscriptions'>
+      admin_subscriptions<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/subscriptions(.:format)'>
+    /admin/subscriptions(.:format)
+  </td>
+  <td>
+    <p>admin/subscriptions#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/subscriptions(.:format)'>
+    /admin/subscriptions(.:format)
+  </td>
+  <td>
+    <p>admin/subscriptions#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_subscription'>
+      new_admin_subscription<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/subscriptions/new(.:format)'>
+    /admin/subscriptions/new(.:format)
+  </td>
+  <td>
+    <p>admin/subscriptions#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_subscription'>
+      edit_admin_subscription<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/subscriptions/:id/edit(.:format)'>
+    /admin/subscriptions/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/subscriptions#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_subscription'>
+      admin_subscription<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/subscriptions/:id(.:format)'>
+    /admin/subscriptions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/subscriptions#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/subscriptions/:id(.:format)'>
+    /admin/subscriptions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/subscriptions#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/subscriptions/:id(.:format)'>
+    /admin/subscriptions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/subscriptions#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/subscriptions/:id(.:format)'>
+    /admin/subscriptions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/subscriptions#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_news_articles'>
+      admin_news_articles<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/news_articles(.:format)'>
+    /admin/news_articles(.:format)
+  </td>
+  <td>
+    <p>admin/news_articles#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/news_articles(.:format)'>
+    /admin/news_articles(.:format)
+  </td>
+  <td>
+    <p>admin/news_articles#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_news_article'>
+      new_admin_news_article<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/news_articles/new(.:format)'>
+    /admin/news_articles/new(.:format)
+  </td>
+  <td>
+    <p>admin/news_articles#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_news_article'>
+      edit_admin_news_article<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/news_articles/:id/edit(.:format)'>
+    /admin/news_articles/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/news_articles#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_news_article'>
+      admin_news_article<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/news_articles/:id(.:format)'>
+    /admin/news_articles/:id(.:format)
+  </td>
+  <td>
+    <p>admin/news_articles#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/news_articles/:id(.:format)'>
+    /admin/news_articles/:id(.:format)
+  </td>
+  <td>
+    <p>admin/news_articles#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/news_articles/:id(.:format)'>
+    /admin/news_articles/:id(.:format)
+  </td>
+  <td>
+    <p>admin/news_articles#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/news_articles/:id(.:format)'>
+    /admin/news_articles/:id(.:format)
+  </td>
+  <td>
+    <p>admin/news_articles#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_followers'>
+      admin_followers<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/followers(.:format)'>
+    /admin/followers(.:format)
+  </td>
+  <td>
+    <p>admin/followers#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/followers(.:format)'>
+    /admin/followers(.:format)
+  </td>
+  <td>
+    <p>admin/followers#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_follower'>
+      new_admin_follower<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/followers/new(.:format)'>
+    /admin/followers/new(.:format)
+  </td>
+  <td>
+    <p>admin/followers#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_follower'>
+      edit_admin_follower<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/followers/:id/edit(.:format)'>
+    /admin/followers/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/followers#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_follower'>
+      admin_follower<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/followers/:id(.:format)'>
+    /admin/followers/:id(.:format)
+  </td>
+  <td>
+    <p>admin/followers#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/followers/:id(.:format)'>
+    /admin/followers/:id(.:format)
+  </td>
+  <td>
+    <p>admin/followers#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/followers/:id(.:format)'>
+    /admin/followers/:id(.:format)
+  </td>
+  <td>
+    <p>admin/followers#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/followers/:id(.:format)'>
+    /admin/followers/:id(.:format)
+  </td>
+  <td>
+    <p>admin/followers#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_representations'>
+      admin_representations<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/representations(.:format)'>
+    /admin/representations(.:format)
+  </td>
+  <td>
+    <p>admin/representations#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/representations(.:format)'>
+    /admin/representations(.:format)
+  </td>
+  <td>
+    <p>admin/representations#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_representation'>
+      new_admin_representation<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/representations/new(.:format)'>
+    /admin/representations/new(.:format)
+  </td>
+  <td>
+    <p>admin/representations#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_representation'>
+      edit_admin_representation<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/representations/:id/edit(.:format)'>
+    /admin/representations/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/representations#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_representation'>
+      admin_representation<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/representations/:id(.:format)'>
+    /admin/representations/:id(.:format)
+  </td>
+  <td>
+    <p>admin/representations#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/representations/:id(.:format)'>
+    /admin/representations/:id(.:format)
+  </td>
+  <td>
+    <p>admin/representations#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/representations/:id(.:format)'>
+    /admin/representations/:id(.:format)
+  </td>
+  <td>
+    <p>admin/representations#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/representations/:id(.:format)'>
+    /admin/representations/:id(.:format)
+  </td>
+  <td>
+    <p>admin/representations#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_sales'>
+      admin_sales<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/sales(.:format)'>
+    /admin/sales(.:format)
+  </td>
+  <td>
+    <p>admin/sales#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/sales(.:format)'>
+    /admin/sales(.:format)
+  </td>
+  <td>
+    <p>admin/sales#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_sale'>
+      new_admin_sale<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/sales/new(.:format)'>
+    /admin/sales/new(.:format)
+  </td>
+  <td>
+    <p>admin/sales#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_sale'>
+      edit_admin_sale<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/sales/:id/edit(.:format)'>
+    /admin/sales/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/sales#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_sale'>
+      admin_sale<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/sales/:id(.:format)'>
+    /admin/sales/:id(.:format)
+  </td>
+  <td>
+    <p>admin/sales#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/sales/:id(.:format)'>
+    /admin/sales/:id(.:format)
+  </td>
+  <td>
+    <p>admin/sales#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/sales/:id(.:format)'>
+    /admin/sales/:id(.:format)
+  </td>
+  <td>
+    <p>admin/sales#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/sales/:id(.:format)'>
+    /admin/sales/:id(.:format)
+  </td>
+  <td>
+    <p>admin/sales#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_ownerships'>
+      admin_ownerships<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/ownerships(.:format)'>
+    /admin/ownerships(.:format)
+  </td>
+  <td>
+    <p>admin/ownerships#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/ownerships(.:format)'>
+    /admin/ownerships(.:format)
+  </td>
+  <td>
+    <p>admin/ownerships#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_ownership'>
+      new_admin_ownership<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/ownerships/new(.:format)'>
+    /admin/ownerships/new(.:format)
+  </td>
+  <td>
+    <p>admin/ownerships#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_ownership'>
+      edit_admin_ownership<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/ownerships/:id/edit(.:format)'>
+    /admin/ownerships/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/ownerships#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_ownership'>
+      admin_ownership<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/ownerships/:id(.:format)'>
+    /admin/ownerships/:id(.:format)
+  </td>
+  <td>
+    <p>admin/ownerships#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/ownerships/:id(.:format)'>
+    /admin/ownerships/:id(.:format)
+  </td>
+  <td>
+    <p>admin/ownerships#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/ownerships/:id(.:format)'>
+    /admin/ownerships/:id(.:format)
+  </td>
+  <td>
+    <p>admin/ownerships#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/ownerships/:id(.:format)'>
+    /admin/ownerships/:id(.:format)
+  </td>
+  <td>
+    <p>admin/ownerships#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_allocations'>
+      admin_allocations<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/allocations(.:format)'>
+    /admin/allocations(.:format)
+  </td>
+  <td>
+    <p>admin/allocations#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/allocations(.:format)'>
+    /admin/allocations(.:format)
+  </td>
+  <td>
+    <p>admin/allocations#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_allocation'>
+      new_admin_allocation<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/allocations/new(.:format)'>
+    /admin/allocations/new(.:format)
+  </td>
+  <td>
+    <p>admin/allocations#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_allocation'>
+      edit_admin_allocation<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/allocations/:id/edit(.:format)'>
+    /admin/allocations/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/allocations#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_allocation'>
+      admin_allocation<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/allocations/:id(.:format)'>
+    /admin/allocations/:id(.:format)
+  </td>
+  <td>
+    <p>admin/allocations#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/allocations/:id(.:format)'>
+    /admin/allocations/:id(.:format)
+  </td>
+  <td>
+    <p>admin/allocations#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/allocations/:id(.:format)'>
+    /admin/allocations/:id(.:format)
+  </td>
+  <td>
+    <p>admin/allocations#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/allocations/:id(.:format)'>
+    /admin/allocations/:id(.:format)
+  </td>
+  <td>
+    <p>admin/allocations#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_addresses'>
+      admin_addresses<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/addresses(.:format)'>
+    /admin/addresses(.:format)
+  </td>
+  <td>
+    <p>admin/addresses#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/addresses(.:format)'>
+    /admin/addresses(.:format)
+  </td>
+  <td>
+    <p>admin/addresses#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_address'>
+      new_admin_address<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/addresses/new(.:format)'>
+    /admin/addresses/new(.:format)
+  </td>
+  <td>
+    <p>admin/addresses#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_address'>
+      edit_admin_address<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/addresses/:id/edit(.:format)'>
+    /admin/addresses/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/addresses#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_address'>
+      admin_address<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/addresses/:id(.:format)'>
+    /admin/addresses/:id(.:format)
+  </td>
+  <td>
+    <p>admin/addresses#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/addresses/:id(.:format)'>
+    /admin/addresses/:id(.:format)
+  </td>
+  <td>
+    <p>admin/addresses#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/addresses/:id(.:format)'>
+    /admin/addresses/:id(.:format)
+  </td>
+  <td>
+    <p>admin/addresses#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/addresses/:id(.:format)'>
+    /admin/addresses/:id(.:format)
+  </td>
+  <td>
+    <p>admin/addresses#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_profile_questions'>
+      admin_profile_questions<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/profile_questions(.:format)'>
+    /admin/profile_questions(.:format)
+  </td>
+  <td>
+    <p>admin/profile_questions#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/profile_questions(.:format)'>
+    /admin/profile_questions(.:format)
+  </td>
+  <td>
+    <p>admin/profile_questions#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_profile_question'>
+      new_admin_profile_question<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/profile_questions/new(.:format)'>
+    /admin/profile_questions/new(.:format)
+  </td>
+  <td>
+    <p>admin/profile_questions#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_profile_question'>
+      edit_admin_profile_question<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/profile_questions/:id/edit(.:format)'>
+    /admin/profile_questions/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/profile_questions#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_profile_question'>
+      admin_profile_question<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/profile_questions/:id(.:format)'>
+    /admin/profile_questions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/profile_questions#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/profile_questions/:id(.:format)'>
+    /admin/profile_questions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/profile_questions#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/profile_questions/:id(.:format)'>
+    /admin/profile_questions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/profile_questions#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/profile_questions/:id(.:format)'>
+    /admin/profile_questions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/profile_questions#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_profile_answers'>
+      admin_profile_answers<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/profile_answers(.:format)'>
+    /admin/profile_answers(.:format)
+  </td>
+  <td>
+    <p>admin/profile_answers#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/profile_answers(.:format)'>
+    /admin/profile_answers(.:format)
+  </td>
+  <td>
+    <p>admin/profile_answers#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_profile_answer'>
+      new_admin_profile_answer<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/profile_answers/new(.:format)'>
+    /admin/profile_answers/new(.:format)
+  </td>
+  <td>
+    <p>admin/profile_answers#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_profile_answer'>
+      edit_admin_profile_answer<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/profile_answers/:id/edit(.:format)'>
+    /admin/profile_answers/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/profile_answers#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_profile_answer'>
+      admin_profile_answer<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/profile_answers/:id(.:format)'>
+    /admin/profile_answers/:id(.:format)
+  </td>
+  <td>
+    <p>admin/profile_answers#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/profile_answers/:id(.:format)'>
+    /admin/profile_answers/:id(.:format)
+  </td>
+  <td>
+    <p>admin/profile_answers#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/profile_answers/:id(.:format)'>
+    /admin/profile_answers/:id(.:format)
+  </td>
+  <td>
+    <p>admin/profile_answers#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/profile_answers/:id(.:format)'>
+    /admin/profile_answers/:id(.:format)
+  </td>
+  <td>
+    <p>admin/profile_answers#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_artwork_questions'>
+      admin_artwork_questions<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artwork_questions(.:format)'>
+    /admin/artwork_questions(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_questions#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/artwork_questions(.:format)'>
+    /admin/artwork_questions(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_questions#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_artwork_question'>
+      new_admin_artwork_question<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artwork_questions/new(.:format)'>
+    /admin/artwork_questions/new(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_questions#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_artwork_question'>
+      edit_admin_artwork_question<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artwork_questions/:id/edit(.:format)'>
+    /admin/artwork_questions/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_questions#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_artwork_question'>
+      admin_artwork_question<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artwork_questions/:id(.:format)'>
+    /admin/artwork_questions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_questions#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/artwork_questions/:id(.:format)'>
+    /admin/artwork_questions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_questions#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/artwork_questions/:id(.:format)'>
+    /admin/artwork_questions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_questions#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/artwork_questions/:id(.:format)'>
+    /admin/artwork_questions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_questions#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_artwork_answers'>
+      admin_artwork_answers<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artwork_answers(.:format)'>
+    /admin/artwork_answers(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_answers#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/artwork_answers(.:format)'>
+    /admin/artwork_answers(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_answers#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_artwork_answer'>
+      new_admin_artwork_answer<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artwork_answers/new(.:format)'>
+    /admin/artwork_answers/new(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_answers#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_artwork_answer'>
+      edit_admin_artwork_answer<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artwork_answers/:id/edit(.:format)'>
+    /admin/artwork_answers/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_answers#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_artwork_answer'>
+      admin_artwork_answer<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/artwork_answers/:id(.:format)'>
+    /admin/artwork_answers/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_answers#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/artwork_answers/:id(.:format)'>
+    /admin/artwork_answers/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_answers#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/artwork_answers/:id(.:format)'>
+    /admin/artwork_answers/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_answers#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/artwork_answers/:id(.:format)'>
+    /admin/artwork_answers/:id(.:format)
+  </td>
+  <td>
+    <p>admin/artwork_answers#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_notification_preferences'>
+      admin_notification_preferences<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/notification_preferences(.:format)'>
+    /admin/notification_preferences(.:format)
+  </td>
+  <td>
+    <p>admin/notification_preferences#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/notification_preferences(.:format)'>
+    /admin/notification_preferences(.:format)
+  </td>
+  <td>
+    <p>admin/notification_preferences#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_notification_preference'>
+      new_admin_notification_preference<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/notification_preferences/new(.:format)'>
+    /admin/notification_preferences/new(.:format)
+  </td>
+  <td>
+    <p>admin/notification_preferences#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_notification_preference'>
+      edit_admin_notification_preference<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/notification_preferences/:id/edit(.:format)'>
+    /admin/notification_preferences/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/notification_preferences#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_notification_preference'>
+      admin_notification_preference<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/notification_preferences/:id(.:format)'>
+    /admin/notification_preferences/:id(.:format)
+  </td>
+  <td>
+    <p>admin/notification_preferences#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/notification_preferences/:id(.:format)'>
+    /admin/notification_preferences/:id(.:format)
+  </td>
+  <td>
+    <p>admin/notification_preferences#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/notification_preferences/:id(.:format)'>
+    /admin/notification_preferences/:id(.:format)
+  </td>
+  <td>
+    <p>admin/notification_preferences#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/notification_preferences/:id(.:format)'>
+    /admin/notification_preferences/:id(.:format)
+  </td>
+  <td>
+    <p>admin/notification_preferences#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_sale_log_items'>
+      admin_sale_log_items<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/sale_log_items(.:format)'>
+    /admin/sale_log_items(.:format)
+  </td>
+  <td>
+    <p>admin/sale_log_items#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/sale_log_items(.:format)'>
+    /admin/sale_log_items(.:format)
+  </td>
+  <td>
+    <p>admin/sale_log_items#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_sale_log_item'>
+      new_admin_sale_log_item<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/sale_log_items/new(.:format)'>
+    /admin/sale_log_items/new(.:format)
+  </td>
+  <td>
+    <p>admin/sale_log_items#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_sale_log_item'>
+      edit_admin_sale_log_item<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/sale_log_items/:id/edit(.:format)'>
+    /admin/sale_log_items/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/sale_log_items#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_sale_log_item'>
+      admin_sale_log_item<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/sale_log_items/:id(.:format)'>
+    /admin/sale_log_items/:id(.:format)
+  </td>
+  <td>
+    <p>admin/sale_log_items#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/sale_log_items/:id(.:format)'>
+    /admin/sale_log_items/:id(.:format)
+  </td>
+  <td>
+    <p>admin/sale_log_items#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/sale_log_items/:id(.:format)'>
+    /admin/sale_log_items/:id(.:format)
+  </td>
+  <td>
+    <p>admin/sale_log_items#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/sale_log_items/:id(.:format)'>
+    /admin/sale_log_items/:id(.:format)
+  </td>
+  <td>
+    <p>admin/sale_log_items#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_fingerprints'>
+      admin_fingerprints<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/fingerprints(.:format)'>
+    /admin/fingerprints(.:format)
+  </td>
+  <td>
+    <p>admin/fingerprints#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/fingerprints(.:format)'>
+    /admin/fingerprints(.:format)
+  </td>
+  <td>
+    <p>admin/fingerprints#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_fingerprint'>
+      new_admin_fingerprint<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/fingerprints/new(.:format)'>
+    /admin/fingerprints/new(.:format)
+  </td>
+  <td>
+    <p>admin/fingerprints#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_fingerprint'>
+      admin_fingerprint<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/fingerprints/:id(.:format)'>
+    /admin/fingerprints/:id(.:format)
+  </td>
+  <td>
+    <p>admin/fingerprints#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/fingerprints/:id(.:format)'>
+    /admin/fingerprints/:id(.:format)
+  </td>
+  <td>
+    <p>admin/fingerprints#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='original_image_admin_capture'>
+      original_image_admin_capture<span class='helper'>_path</span>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/captures/:id/original_image(.:format)'>
+    /admin/captures/:id/original_image(.:format)
+  </td>
+  <td>
+    <p>admin/captures#destroy_original_image</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_captures'>
+      admin_captures<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/captures(.:format)'>
+    /admin/captures(.:format)
+  </td>
+  <td>
+    <p>admin/captures#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_capture'>
+      edit_admin_capture<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/captures/:id/edit(.:format)'>
+    /admin/captures/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/captures#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_capture'>
+      admin_capture<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/captures/:id(.:format)'>
+    /admin/captures/:id(.:format)
+  </td>
+  <td>
+    <p>admin/captures#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/captures/:id(.:format)'>
+    /admin/captures/:id(.:format)
+  </td>
+  <td>
+    <p>admin/captures#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/captures/:id(.:format)'>
+    /admin/captures/:id(.:format)
+  </td>
+  <td>
+    <p>admin/captures#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/captures/:id(.:format)'>
+    /admin/captures/:id(.:format)
+  </td>
+  <td>
+    <p>admin/captures#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_capture_regions'>
+      admin_capture_regions<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/capture_regions(.:format)'>
+    /admin/capture_regions(.:format)
+  </td>
+  <td>
+    <p>admin/capture_regions#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_capture_region'>
+      edit_admin_capture_region<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/capture_regions/:id/edit(.:format)'>
+    /admin/capture_regions/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/capture_regions#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_capture_region'>
+      admin_capture_region<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/capture_regions/:id(.:format)'>
+    /admin/capture_regions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/capture_regions#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/capture_regions/:id(.:format)'>
+    /admin/capture_regions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/capture_regions#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/capture_regions/:id(.:format)'>
+    /admin/capture_regions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/capture_regions#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/capture_regions/:id(.:format)'>
+    /admin/capture_regions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/capture_regions#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_preferences'>
+      admin_preferences<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/preferences(.:format)'>
+    /admin/preferences(.:format)
+  </td>
+  <td>
+    <p>admin/preferences#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/preferences(.:format)'>
+    /admin/preferences(.:format)
+  </td>
+  <td>
+    <p>admin/preferences#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_preference'>
+      new_admin_preference<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/preferences/new(.:format)'>
+    /admin/preferences/new(.:format)
+  </td>
+  <td>
+    <p>admin/preferences#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_preference'>
+      edit_admin_preference<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/preferences/:id/edit(.:format)'>
+    /admin/preferences/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/preferences#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_preference'>
+      admin_preference<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/preferences/:id(.:format)'>
+    /admin/preferences/:id(.:format)
+  </td>
+  <td>
+    <p>admin/preferences#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/preferences/:id(.:format)'>
+    /admin/preferences/:id(.:format)
+  </td>
+  <td>
+    <p>admin/preferences#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/preferences/:id(.:format)'>
+    /admin/preferences/:id(.:format)
+  </td>
+  <td>
+    <p>admin/preferences#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/preferences/:id(.:format)'>
+    /admin/preferences/:id(.:format)
+  </td>
+  <td>
+    <p>admin/preferences#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_websites'>
+      admin_websites<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/websites(.:format)'>
+    /admin/websites(.:format)
+  </td>
+  <td>
+    <p>admin/websites#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/websites(.:format)'>
+    /admin/websites(.:format)
+  </td>
+  <td>
+    <p>admin/websites#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_website'>
+      new_admin_website<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/websites/new(.:format)'>
+    /admin/websites/new(.:format)
+  </td>
+  <td>
+    <p>admin/websites#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_website'>
+      edit_admin_website<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/websites/:id/edit(.:format)'>
+    /admin/websites/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/websites#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_website'>
+      admin_website<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/websites/:id(.:format)'>
+    /admin/websites/:id(.:format)
+  </td>
+  <td>
+    <p>admin/websites#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/websites/:id(.:format)'>
+    /admin/websites/:id(.:format)
+  </td>
+  <td>
+    <p>admin/websites#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/websites/:id(.:format)'>
+    /admin/websites/:id(.:format)
+  </td>
+  <td>
+    <p>admin/websites#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/websites/:id(.:format)'>
+    /admin/websites/:id(.:format)
+  </td>
+  <td>
+    <p>admin/websites#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_royalties'>
+      admin_royalties<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/royalties(.:format)'>
+    /admin/royalties(.:format)
+  </td>
+  <td>
+    <p>admin/royalties#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/royalties(.:format)'>
+    /admin/royalties(.:format)
+  </td>
+  <td>
+    <p>admin/royalties#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_royalty'>
+      new_admin_royalty<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/royalties/new(.:format)'>
+    /admin/royalties/new(.:format)
+  </td>
+  <td>
+    <p>admin/royalties#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_royalty'>
+      edit_admin_royalty<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/royalties/:id/edit(.:format)'>
+    /admin/royalties/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/royalties#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_royalty'>
+      admin_royalty<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/royalties/:id(.:format)'>
+    /admin/royalties/:id(.:format)
+  </td>
+  <td>
+    <p>admin/royalties#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/royalties/:id(.:format)'>
+    /admin/royalties/:id(.:format)
+  </td>
+  <td>
+    <p>admin/royalties#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/royalties/:id(.:format)'>
+    /admin/royalties/:id(.:format)
+  </td>
+  <td>
+    <p>admin/royalties#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/royalties/:id(.:format)'>
+    /admin/royalties/:id(.:format)
+  </td>
+  <td>
+    <p>admin/royalties#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_payouts'>
+      admin_payouts<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/payouts(.:format)'>
+    /admin/payouts(.:format)
+  </td>
+  <td>
+    <p>admin/payouts#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/payouts(.:format)'>
+    /admin/payouts(.:format)
+  </td>
+  <td>
+    <p>admin/payouts#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_payout'>
+      new_admin_payout<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/payouts/new(.:format)'>
+    /admin/payouts/new(.:format)
+  </td>
+  <td>
+    <p>admin/payouts#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_payout'>
+      edit_admin_payout<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/payouts/:id/edit(.:format)'>
+    /admin/payouts/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/payouts#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_payout'>
+      admin_payout<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/payouts/:id(.:format)'>
+    /admin/payouts/:id(.:format)
+  </td>
+  <td>
+    <p>admin/payouts#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/payouts/:id(.:format)'>
+    /admin/payouts/:id(.:format)
+  </td>
+  <td>
+    <p>admin/payouts#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/payouts/:id(.:format)'>
+    /admin/payouts/:id(.:format)
+  </td>
+  <td>
+    <p>admin/payouts#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/payouts/:id(.:format)'>
+    /admin/payouts/:id(.:format)
+  </td>
+  <td>
+    <p>admin/payouts#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_root'>
+      admin_root<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin(.:format)'>
+    /admin(.:format)
+  </td>
+  <td>
+    <p>admin/artists#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_auctions'>
+      admin_auctions<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/auctions(.:format)'>
+    /admin/auctions(.:format)
+  </td>
+  <td>
+    <p>admin/auctions#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/auctions(.:format)'>
+    /admin/auctions(.:format)
+  </td>
+  <td>
+    <p>admin/auctions#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_auction'>
+      new_admin_auction<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/auctions/new(.:format)'>
+    /admin/auctions/new(.:format)
+  </td>
+  <td>
+    <p>admin/auctions#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_auction'>
+      edit_admin_auction<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/auctions/:id/edit(.:format)'>
+    /admin/auctions/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/auctions#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_auction'>
+      admin_auction<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/auctions/:id(.:format)'>
+    /admin/auctions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/auctions#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/auctions/:id(.:format)'>
+    /admin/auctions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/auctions#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/auctions/:id(.:format)'>
+    /admin/auctions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/auctions#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/auctions/:id(.:format)'>
+    /admin/auctions/:id(.:format)
+  </td>
+  <td>
+    <p>admin/auctions#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_asks'>
+      admin_asks<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/asks(.:format)'>
+    /admin/asks(.:format)
+  </td>
+  <td>
+    <p>admin/asks#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/asks(.:format)'>
+    /admin/asks(.:format)
+  </td>
+  <td>
+    <p>admin/asks#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_ask'>
+      new_admin_ask<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/asks/new(.:format)'>
+    /admin/asks/new(.:format)
+  </td>
+  <td>
+    <p>admin/asks#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_ask'>
+      edit_admin_ask<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/asks/:id/edit(.:format)'>
+    /admin/asks/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/asks#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_ask'>
+      admin_ask<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/asks/:id(.:format)'>
+    /admin/asks/:id(.:format)
+  </td>
+  <td>
+    <p>admin/asks#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/asks/:id(.:format)'>
+    /admin/asks/:id(.:format)
+  </td>
+  <td>
+    <p>admin/asks#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/asks/:id(.:format)'>
+    /admin/asks/:id(.:format)
+  </td>
+  <td>
+    <p>admin/asks#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/asks/:id(.:format)'>
+    /admin/asks/:id(.:format)
+  </td>
+  <td>
+    <p>admin/asks#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='update_status_admin_bid'>
+      update_status_admin_bid<span class='helper'>_path</span>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/bids/:id/update_status(.:format)'>
+    /admin/bids/:id/update_status(.:format)
+  </td>
+  <td>
+    <p>admin/bids#update_status</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_bids'>
+      admin_bids<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/bids(.:format)'>
+    /admin/bids(.:format)
+  </td>
+  <td>
+    <p>admin/bids#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/bids(.:format)'>
+    /admin/bids(.:format)
+  </td>
+  <td>
+    <p>admin/bids#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_bid'>
+      new_admin_bid<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/bids/new(.:format)'>
+    /admin/bids/new(.:format)
+  </td>
+  <td>
+    <p>admin/bids#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_bid'>
+      edit_admin_bid<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/bids/:id/edit(.:format)'>
+    /admin/bids/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/bids#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_bid'>
+      admin_bid<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/bids/:id(.:format)'>
+    /admin/bids/:id(.:format)
+  </td>
+  <td>
+    <p>admin/bids#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/bids/:id(.:format)'>
+    /admin/bids/:id(.:format)
+  </td>
+  <td>
+    <p>admin/bids#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/bids/:id(.:format)'>
+    /admin/bids/:id(.:format)
+  </td>
+  <td>
+    <p>admin/bids#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/bids/:id(.:format)'>
+    /admin/bids/:id(.:format)
+  </td>
+  <td>
+    <p>admin/bids#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='update_status_admin_offer'>
+      update_status_admin_offer<span class='helper'>_path</span>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/offers/:id/update_status(.:format)'>
+    /admin/offers/:id/update_status(.:format)
+  </td>
+  <td>
+    <p>admin/offers#update_status</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_offers'>
+      admin_offers<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/offers(.:format)'>
+    /admin/offers(.:format)
+  </td>
+  <td>
+    <p>admin/offers#index</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/admin/offers(.:format)'>
+    /admin/offers(.:format)
+  </td>
+  <td>
+    <p>admin/offers#create</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='new_admin_offer'>
+      new_admin_offer<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/offers/new(.:format)'>
+    /admin/offers/new(.:format)
+  </td>
+  <td>
+    <p>admin/offers#new</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='edit_admin_offer'>
+      edit_admin_offer<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/offers/:id/edit(.:format)'>
+    /admin/offers/:id/edit(.:format)
+  </td>
+  <td>
+    <p>admin/offers#edit</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='admin_offer'>
+      admin_offer<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/admin/offers/:id(.:format)'>
+    /admin/offers/:id(.:format)
+  </td>
+  <td>
+    <p>admin/offers#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path='/admin/offers/:id(.:format)'>
+    /admin/offers/:id(.:format)
+  </td>
+  <td>
+    <p>admin/offers#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/admin/offers/:id(.:format)'>
+    /admin/offers/:id(.:format)
+  </td>
+  <td>
+    <p>admin/offers#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path='/admin/offers/:id(.:format)'>
+    /admin/offers/:id(.:format)
+  </td>
+  <td>
+    <p>admin/offers#destroy</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='pegboard'>
+      pegboard<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/pegboards/:id(.:format)'>
+    /pegboards/:id(.:format)
+  </td>
+  <td>
+    <p>pegboards#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='artwork'>
+      artwork<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/artworks/:id(.:format)'>
+    /artworks/:id(.:format)
+  </td>
+  <td>
+    <p>artworks#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/@:username/cv(.:format)'>
+    /@:username/cv(.:format)
+  </td>
+  <td>
+    <p>artists#cv</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/@:username(.:format)'>
+    /@:username(.:format)
+  </td>
+  <td>
+    <p>accountables#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='rails_service_blob'>
+      rails_service_blob<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/rails/active_storage/blobs/redirect/:signed_id/*filename(.:format)'>
+    /rails/active_storage/blobs/redirect/:signed_id/*filename(.:format)
+  </td>
+  <td>
+    <p>active_storage/blobs/redirect#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='rails_service_blob_proxy'>
+      rails_service_blob_proxy<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/rails/active_storage/blobs/proxy/:signed_id/*filename(.:format)'>
+    /rails/active_storage/blobs/proxy/:signed_id/*filename(.:format)
+  </td>
+  <td>
+    <p>active_storage/blobs/proxy#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/rails/active_storage/blobs/:signed_id/*filename(.:format)'>
+    /rails/active_storage/blobs/:signed_id/*filename(.:format)
+  </td>
+  <td>
+    <p>active_storage/blobs/redirect#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='rails_blob_representation'>
+      rails_blob_representation<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/rails/active_storage/representations/redirect/:signed_blob_id/:variation_key/*filename(.:format)'>
+    /rails/active_storage/representations/redirect/:signed_blob_id/:variation_key/*filename(.:format)
+  </td>
+  <td>
+    <p>active_storage/representations/redirect#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='rails_blob_representation_proxy'>
+      rails_blob_representation_proxy<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/rails/active_storage/representations/proxy/:signed_blob_id/:variation_key/*filename(.:format)'>
+    /rails/active_storage/representations/proxy/:signed_blob_id/:variation_key/*filename(.:format)
+  </td>
+  <td>
+    <p>active_storage/representations/proxy#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name=''>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format)'>
+    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format)
+  </td>
+  <td>
+    <p>active_storage/representations/redirect#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='rails_disk_service'>
+      rails_disk_service<span class='helper'>_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path='/rails/active_storage/disk/:encoded_key/*filename(.:format)'>
+    /rails/active_storage/disk/:encoded_key/*filename(.:format)
+  </td>
+  <td>
+    <p>active_storage/disk#show</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='update_rails_disk_service'>
+      update_rails_disk_service<span class='helper'>_path</span>
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path='/rails/active_storage/disk/:encoded_token(.:format)'>
+    /rails/active_storage/disk/:encoded_token(.:format)
+  </td>
+  <td>
+    <p>active_storage/disk#update</p>
+  </td>
+</tr>
+<tr class='route_row' data-helper='path'>
+  <td data-route-name='rails_direct_uploads'>
+      rails_direct_uploads<span class='helper'>_path</span>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path='/rails/active_storage/direct_uploads(.:format)'>
+    /rails/active_storage/direct_uploads(.:format)
+  </td>
+  <td>
+    <p>active_storage/direct_uploads#create</p>
+  </td>
+</tr>
+
+  </tbody>
+</table>
+
+<script type='text/javascript'>
+  // support forEach iterator on NodeList
+  NodeList.prototype.forEach = Array.prototype.forEach;
+
+  // Enables path search functionality
+  function setupMatchPaths() {
+    // Check if there are any matched results in a section
+    function checkNoMatch(section, noMatchText) {
+      if (section.children.length <= 1) {
+        section.innerHTML += noMatchText;
+      }
+    }
+
+    // get JSON from URL and invoke callback with result
+    function getJSON(url, success) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', url);
+      xhr.onload = function() {
+        if (this.status == 200)
+          success(JSON.parse(this.response));
+      };
+      xhr.send();
+    }
+
+    function delayedKeyup(input, callback) {
+      var timeout;
+      input.onkeyup = function(){
+        if (timeout) clearTimeout(timeout);
+        timeout = setTimeout(callback, 300);
+      }
+    }
+
+    // remove params or fragments
+    function sanitizePath(path) {
+      return path.replace(/[#?].*/, '');
+    }
+
+    var pathElements = document.querySelectorAll('#route_table [data-route-path]'),
+        searchElem   = document.querySelector('#search'),
+        exactSection = document.querySelector('#exact_matches'),
+        fuzzySection = document.querySelector('#fuzzy_matches');
+
+    // Remove matches when no search value is present
+    searchElem.onblur = function(e) {
+      if (searchElem.value === "") {
+        exactSection.innerHTML = "";
+        fuzzySection.innerHTML = "";
+      }
+    }
+
+    // On key press perform a search for matching paths
+    delayedKeyup(searchElem, function() {
+      var path = sanitizePath(searchElem.value),
+          defaultExactMatch = '<tr><th colspan="4">Paths Matching (' + path +'):</th></tr>',
+          defaultFuzzyMatch = '<tr><th colspan="4">Paths Containing (' + path +'):</th></tr>',
+          noExactMatch      = '<tr><th colspan="4">No Exact Matches Found</th></tr>',
+          noFuzzyMatch      = '<tr><th colspan="4">No Fuzzy Matches Found</th></tr>';
+
+      if (!path)
+        return searchElem.onblur();
+
+      getJSON('/rails/info/routes?path=' + path, function(matches){
+        // Clear out results section
+        exactSection.innerHTML = defaultExactMatch;
+        fuzzySection.innerHTML = defaultFuzzyMatch;
+
+        // Display exact matches and fuzzy matches
+        pathElements.forEach(function(elem) {
+          var elemPath = elem.getAttribute('data-route-path');
+
+          if (matches['exact'].indexOf(elemPath) != -1)
+            exactSection.appendChild(elem.parentNode.cloneNode(true));
+
+          if (matches['fuzzy'].indexOf(elemPath) != -1)
+            fuzzySection.appendChild(elem.parentNode.cloneNode(true));
+        })
+
+        // Display 'No Matches' message when no matches are found
+        checkNoMatch(exactSection, noExactMatch);
+        checkNoMatch(fuzzySection, noFuzzyMatch);
+      })
+    })
+  }
+
+  // Enables functionality to toggle between `_path` and `_url` helper suffixes
+  function setupRouteToggleHelperLinks() {
+
+    // Sets content for each element
+    function setValOn(elems, val) {
+      elems.forEach(function(elem) {
+        elem.innerHTML = val;
+      });
+    }
+
+    // Sets onClick event for each element
+    function onClick(elems, func) {
+      elems.forEach(function(elem) {
+        elem.onclick = func;
+      });
+    }
+
+    var toggleLinks = document.querySelectorAll('#route_table [data-route-helper]');
+
+    onClick(toggleLinks, function(){
+      var helperTxt   = this.getAttribute("data-route-helper"),
+          helperElems = document.querySelectorAll('[data-route-name] span.helper');
+
+      setValOn(helperElems, helperTxt);
+    });
+  }
+
+  setupMatchPaths();
+  setupRouteToggleHelperLinks();
+
+  // Focus the search input after page has loaded
+  document.getElementById('search').focus();
+</script>
+
+
+  
+<h2 style="margin-top: 30px">Request</h2>
+  <p><b>Parameters</b>:</p> <pre>None</pre>
+
+<div class="details">
+  <div class="summary"><a href="#" onclick="return toggleSessionDump()">Toggle session dump</a></div>
+  <div id="session_dump" style="display:none"><pre></pre></div>
+</div>
+
+<div class="details">
+  <div class="summary"><a href="#" onclick="return toggleEnvDump()">Toggle env dump</a></div>
+  <div id="env_dump" style="display:none"><pre>GATEWAY_INTERFACE: &quot;CGI/1.2&quot;
+HTTP_ACCEPT: &quot;*/*&quot;
+HTTP_ACCEPT_ENCODING: &quot;gzip,deflate&quot;
+HTTP_VERSION: &quot;HTTP/1.1&quot;
+ORIGINAL_SCRIPT_NAME: &quot;&quot;
+REMOTE_ADDR: &quot;127.0.0.1&quot;
+SERVER_NAME: &quot;localhost&quot;
+SERVER_PROTOCOL: &quot;HTTP/1.1&quot;</pre></div>
+</div>
+
+<h2 style="margin-top: 30px">Response</h2>
+<p><b>Headers</b>:</p> <pre>None</pre>
+
+</div>
+
+
+</body>
+</html>

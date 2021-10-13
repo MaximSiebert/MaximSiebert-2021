@@ -644,18 +644,18 @@ const Footer = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	}).then(r => r.json());
 
 	const monthNames = [
-		"Jan.",
-		"Feb.",
-		"Mar.",
-		"Apr.",
+		"Jan",
+		"Feb",
+		"Mar",
+		"Apr",
 		"May",
-		"Jun.",
-		"Jul.",
-		"Aug.",
-		"Sept.",
-		"Oct.",
-		"Nov.",
-		"Dec."
+		"Jun",
+		"Jul",
+		"Aug",
+		"Sept",
+		"Oct",
+		"Nov",
+		"Dec"
 	];
 
 	var time = "";
