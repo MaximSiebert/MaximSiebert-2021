@@ -652,7 +652,7 @@ const Footer = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 		"Jun",
 		"Jul",
 		"Aug",
-		"Sept",
+		"Sep",
 		"Oct",
 		"Nov",
 		"Dec"

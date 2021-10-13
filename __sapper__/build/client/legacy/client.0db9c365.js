@@ -2895,7 +2895,7 @@ var App = /*#__PURE__*/function (_SvelteComponentDev) {
 var ignore = [/^\/content\/collaborators\.json$/, /^\/content\/experiences\.json$/, /^\/content\/projects\.json$/, /^\/content\/services\.json$/, /^\/content\/links\.json$/];
 var components = [{
   js: function js() {
-    return Promise.all([import('./index.aa683bdb.js'), __inject_styles(["client-655263f1.css"])]).then(function(x) { return x[0]; });
+    return Promise.all([import('./index.68da70ce.js'), __inject_styles(["client-655263f1.css"])]).then(function(x) { return x[0]; });
   }
 }];
 var routes = [{
