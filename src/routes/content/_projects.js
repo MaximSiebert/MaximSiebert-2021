@@ -1,5 +1,11 @@
 const content = [
   {
+		title: "Remote Access by Tailscale",
+		role: 'Designer + Developer',
+    year: '2021',
+    url: 'https://tailscale.com/remote-access/'
+  },
+  {
 		title: "Tailscale",
 		role: 'Developer',
     year: '2021',
