@@ -156,6 +156,12 @@ var route_1 = /*#__PURE__*/Object.freeze({
 
 const content$2 = [
   {
+		title: "Remote Access by Tailscale",
+		role: 'Designer + Developer',
+    year: '2021',
+    url: 'https://tailscale.com/remote-access/'
+  },
+  {
 		title: "Tailscale",
 		role: 'Developer',
     year: '2021',

@@ -81,7 +81,7 @@ const content = [
 		title: 'Ada Website',
 		role: 'Designer + Developer',
     year: '2019',
-    url: 'https://www.ada.support/'
+    url: 'https://dribbble.com/shots/6061837-Ada-New-Website'
   },
   {
 		title: 'Blunt',
