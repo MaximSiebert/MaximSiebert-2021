@@ -28,7 +28,7 @@
 	export let services;
 	export let links;
 
-	let description = "I'm a French-Canadian designer and developer specialized in web and product design. If you'd like to collaborate, email me at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:border-transparent border-b pb-1\">maxim@hey.com</a>."
+	let description = "I'm a French Canadian designer and developer specialized in web and product design. If you'd like to collaborate, email me at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:border-transparent border-b pb-1\">maxim@hey.com</a>."
 
 	var year = '';
 
@@ -42,7 +42,7 @@
 
 <svelte:head>
 	<title>Maxim Siebert — Designer + Developer</title>
-	<meta name="description" content="A French-Canadian designer and developer specialized in web and product design." />
+	<meta name="description" content="A French Canadian designer and developer specialized in web and product design." />
 </svelte:head>
 
 <div class="flex flex-col min-h-screen py-4 text-xs text-black bg-gray-100 lg:py-24 md:py-14 dark:bg-black dark:text-white">
