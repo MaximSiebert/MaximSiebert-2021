@@ -1,6 +1,12 @@
 const content = [
   {
-		title: "Remote Access by Tailscale",
+		title: "Peggy",
+		role: 'Designer + Developer',
+    year: '2022',
+    url: 'https://www.peggy.com/'
+  },
+  {
+		title: "Remote Access",
 		role: 'Designer + Developer',
     year: '2021',
     url: 'https://tailscale.com/remote-access/'
@@ -12,16 +18,10 @@ const content = [
     url: 'https://www.tailscale.com/'
   },
   {
-		title: "Taildrop by Tailscale",
+		title: "Taildrop",
 		role: 'Designer + Developer',
     year: '2021',
     url: 'https://www.tailscale.com/taildrop'
-  },
-  {
-		title: "Peggy",
-		role: 'Designer + Developer',
-    year: '2021',
-    url: 'https://www.peggy.com/'
   },
   {
 		title: "Refine Labs",

@@ -1,9 +1,12 @@
 const content = [
 	{
-		title: 'Experience Design'
+		title: 'Art Direction'
   },
   {
-		title: 'Interactive Design'
+		title: 'Corporate Identity'
+  },
+	{
+		title: 'Product Design'
   },
   {
 		title: 'Web Design'
@@ -11,9 +14,6 @@ const content = [
   {
 		title: 'Web Development'
   },
-  {
-		title: 'Ecommerce'
-  }
 ];
 
 export default content;

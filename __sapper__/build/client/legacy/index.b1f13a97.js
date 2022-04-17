@@ -1,4 +1,4 @@
-import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as update_await_block_branch, z as set_data_dev, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.0db9c365.js';
+import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as update_await_block_branch, z as set_data_dev, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.8743b803.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -708,7 +708,7 @@ function create_catch_block(ctx) {
     ctx: ctx
   });
   return block;
-} // (58:42)                  Last Updated –                  {monthNames[new Date(data.commit.commit.author.date).getMonth()]}
+} // (58:42)                  Updated –                  {monthNames[new Date(data.commit.commit.author.date).getMonth()]}
 
 
 function create_then_block(ctx) {
@@ -726,13 +726,13 @@ function create_then_block(ctx) {
   var t3;
   var block = {
     c: function create() {
-      t0 = text("Last Updated – \n                ");
+      t0 = text("Updated – \n                ");
       t1 = text(t1_value);
       t2 = space();
       t3 = text(t3_value);
     },
     l: function claim(nodes) {
-      t0 = claim_text(nodes, "Last Updated – \n                ");
+      t0 = claim_text(nodes, "Updated – \n                ");
       t1 = claim_text(nodes, t1_value);
       t2 = claim_space(nodes);
       t3 = claim_text(nodes, t3_value);
@@ -755,7 +755,7 @@ function create_then_block(ctx) {
     block: block,
     id: create_then_block.name,
     type: "then",
-    source: "(58:42)                  Last Updated –                  {monthNames[new Date(data.commit.commit.author.date).getMonth()]}",
+    source: "(58:42)                  Updated –                  {monthNames[new Date(data.commit.commit.author.date).getMonth()]}",
     ctx: ctx
   });
   return block;
@@ -870,12 +870,12 @@ function create_fragment$1(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file$1, 50, 8, 1378);
-      attr_dev(div0, "class", "w-8/12 px-4 lg:w-5/12 sm:w-4/12");
+      add_location(p0, file$1, 50, 8, 1357);
+      attr_dev(div0, "class", "w-1/2 px-4");
       add_location(div0, file$1, 49, 4, 1324);
-      add_location(p1, file$1, 56, 8, 1595);
-      attr_dev(div1, "class", "flex justify-end w-full px-4 ml-auto sm:w-8/12");
-      add_location(div1, file$1, 55, 4, 1526);
+      add_location(p1, file$1, 56, 8, 1563);
+      attr_dev(div1, "class", "flex justify-end w-1/2 px-4 ml-auto");
+      add_location(div1, file$1, 55, 4, 1505);
       attr_dev(div2, "class", "flex mt-auto text-gray-600 dark:text-gray-400");
       add_location(div2, file$1, 48, 0, 1260);
     },
@@ -1806,7 +1806,7 @@ function create_fragment(ctx) {
       this.h();
     },
     l: function claim(nodes) {
-      var head_nodes = query_selector_all("[data-svelte=\"svelte-x374ds\"]", document.head);
+      var head_nodes = query_selector_all("[data-svelte=\"svelte-c4bbcl\"]", document.head);
       meta = claim_element(head_nodes, "META", {
         name: true,
         content: true
@@ -2048,7 +2048,7 @@ function create_fragment(ctx) {
     h: function hydrate() {
       document.title = "Maxim Siebert — Designer + Developer";
       attr_dev(meta, "name", "description");
-      attr_dev(meta, "content", "A French-Canadian designer and developer specialized in web and product design.");
+      attr_dev(meta, "content", "A French Canadian designer and developer specialized in web and product design.");
       add_location(meta, file, 44, 1, 1375);
       attr_dev(a, "href", "/");
       attr_dev(a, "class", "self-start inline-block mb-4 loader");
@@ -2513,7 +2513,7 @@ function instance($$self, $$props, $$invalidate) {
   var collaborators = $$props.collaborators;
   var services = $$props.services;
   var links = $$props.links;
-  var description = "I'm a French-Canadian designer and developer specialized in web and product design. If you'd like to collaborate, email me at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:border-transparent border-b pb-1\">maxim@hey.com</a>.";
+  var description = "I'm a French Canadian designer and developer specialized in web and product design. If you'd like to collaborate, email me at <a href=\"mailto:maxim@hey.com\" class=\"hover:text-black dark:hover:text-white hover:border-transparent border-b pb-1\">maxim@hey.com</a>.";
   var year = "";
 
   function updateClock() {

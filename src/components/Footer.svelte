@@ -47,16 +47,16 @@
 </script>
 
 <div class="flex mt-auto text-gray-600 dark:text-gray-400">
-    <div class="w-8/12 px-4 lg:w-5/12 sm:w-4/12">
+    <div class="w-1/2 px-4">
         <p>
             Ottawa
             {#await temperature then temp}{Math.round(temp.current.temp_c)}°C{/await}, {time} ET
         </p>
     </div>
-    <div class="flex justify-end w-full px-4 ml-auto sm:w-8/12">
+    <div class="flex justify-end w-1/2 px-4 ml-auto">
         <p>
             {#await updatedDate then data}
-                Last Updated – 
+                Updated – 
                 {monthNames[new Date(data.commit.commit.author.date).getMonth()]}
                 {new Date(data.commit.commit.author.date).getFullYear()}
             {/await} ©
