@@ -1597,7 +1597,7 @@ const ignore = [/^\/content\/collaborators\.json$/, /^\/content\/experiences\.js
 
 const components = [
 	{
-		js: () => Promise.all([import('./index.61d2a7c6.js'), __inject_styles(["client-655263f1.css"])]).then(function(x) { return x[0]; })
+		js: () => Promise.all([import('./index.61d2a7c6.js'), __inject_styles(["client-ef950a74.css"])]).then(function(x) { return x[0]; })
 	}
 ];
 
