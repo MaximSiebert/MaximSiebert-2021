@@ -1,285 +1,303 @@
 const content = [
   {
-		title: "Peggy",
-		role: 'Designer + Developer',
+    title: 'Splitfocus',
+    role: 'Designer + Developer',
     year: '2022',
-    url: 'https://www.peggy.com/'
+    url: 'https://splitfocus.app/',
   },
   {
-		title: "Remote Access",
-		role: 'Designer + Developer',
-    year: '2021',
-    url: 'https://tailscale.com/remote-access/'
+    title: 'Tailscale SSH',
+    role: 'Designer + Developer',
+    year: '2022',
+    url: 'https://www.tailscale.com/tailscale-ssh',
   },
   {
-		title: "Tailscale",
-		role: 'Developer',
-    year: '2021',
-    url: 'https://www.tailscale.com/'
+    title: 'MILLIONS',
+    role: 'Designer',
+    year: '2022',
+    url: 'https://millions.co',
   },
   {
-		title: "Taildrop",
-		role: 'Designer + Developer',
-    year: '2021',
-    url: 'https://www.tailscale.com/taildrop'
+    title: 'Peggy',
+    role: 'Designer + Developer',
+    year: '2022',
+    url: 'https://www.peggy.com/',
   },
   {
-		title: "Artist Royalty Movement",
-		role: 'Designer + Developer',
+    title: 'Remote Access',
+    role: 'Designer + Developer',
     year: '2021',
-    url: 'https://www.peggy.com/royalties'
+    url: 'https://tailscale.com/remote-access/',
   },
   {
-		title: "Refine Labs",
-		role: 'Developer',
+    title: 'Tailscale',
+    role: 'Developer',
     year: '2021',
-    url: 'https://www.refinelabs.com/'
+    url: 'https://www.tailscale.com/',
   },
-	{
-		title: "Miss Hall's",
-		role: 'Designer',
+  {
+    title: 'Taildrop',
+    role: 'Designer + Developer',
+    year: '2021',
+    url: 'https://www.tailscale.com/taildrop',
+  },
+  {
+    title: 'Artist Royalty Movement',
+    role: 'Designer + Developer',
+    year: '2021',
+    url: 'https://www.peggy.com/royalties',
+  },
+  {
+    title: 'Refine Labs',
+    role: 'Developer',
+    year: '2021',
+    url: 'https://www.refinelabs.com/',
+  },
+  {
+    title: "Miss Hall's",
+    role: 'Designer',
     year: '2020',
-    url: 'https://www.misshalls.org/'
+    url: 'https://www.misshalls.org/',
   },
-	{
-		title: 'Vena Solutions',
-		role: 'Developer',
+  {
+    title: 'Vena Solutions',
+    role: 'Developer',
     year: '2020',
-    url: 'https://www.venasolutions.com/'
+    url: 'https://www.venasolutions.com/',
   },
   {
-		title: 'Haywoodgolf',
-		role: 'Designer + Developer',
+    title: 'Haywoodgolf',
+    role: 'Designer + Developer',
     year: '2020',
-    url: 'https://www.haywoodgolf.com/'
+    url: 'https://www.haywoodgolf.com/',
   },
   {
-		title: 'Camila Coelho',
-		role: 'Designer',
+    title: 'Camila Coelho',
+    role: 'Designer',
     year: '2020',
-    url: 'https://camilacoelho.com/'
+    url: 'https://camilacoelho.com/',
   },
   {
-		title: 'N2',
-		role: 'Designer + Developer',
+    title: 'N2',
+    role: 'Designer + Developer',
     year: '2019',
-    url: 'https://blunt.af/n2/#/'
+    url: 'https://blunt.af/n2/#/',
   },
   {
-		title: 'Carley K.',
-		role: 'Designer',
+    title: 'Carley K.',
+    role: 'Designer',
     year: '2019',
-    url: 'https://carleyk.com/'
+    url: 'https://carleyk.com/',
   },
   {
-		title: 'Delphia',
-		role: 'Designer',
+    title: 'Delphia',
+    role: 'Designer',
     year: '2019',
-    url: 'https://www.figma.com/file/XNIs8uOHeG3BDIIv2QZuWXQ0/Website?node-id=172%3A8'
+    url: 'https://www.figma.com/file/XNIs8uOHeG3BDIIv2QZuWXQ0/Website?node-id=172%3A8',
   },
   {
-		title: 'Heaps Estrin',
-		role: 'Designer',
+    title: 'Heaps Estrin',
+    role: 'Designer',
     year: '2019',
-    url: 'https://heapsestrin.com/'
+    url: 'https://heapsestrin.com/',
   },
   {
-		title: 'Ada Website',
-		role: 'Designer + Developer',
+    title: 'Ada Website',
+    role: 'Designer + Developer',
     year: '2019',
-    url: 'https://dribbble.com/shots/6061837-Ada-New-Website'
+    url: 'https://dribbble.com/shots/6061837-Ada-New-Website',
   },
   {
-		title: 'Blunt',
-		role: 'Designer + Developer',
+    title: 'Blunt',
+    role: 'Designer + Developer',
     year: '2019',
-    url: 'https://blunt.af/'
+    url: 'https://blunt.af/',
   },
   {
-		title: 'Ada Brand',
-		role: 'Designer',
+    title: 'Ada Brand',
+    role: 'Designer',
     year: '2018',
-    url: 'https://www.figma.com/file/fHNJQ0LVE1xVWdXsAW7ThW/Ada-Brand?node-id=1%3A3740'
+    url: 'https://www.figma.com/file/fHNJQ0LVE1xVWdXsAW7ThW/Ada-Brand?node-id=1%3A3740',
   },
   {
-		title: 'Maxim Siebert',
-		role: 'Designer + Developer',
+    title: 'Maxim Siebert',
+    role: 'Designer + Developer',
     year: '2018',
-    url: 'https://maximsiebert.github.io/maximsiebert/'
+    url: 'https://maximsiebert.github.io/maximsiebert/',
   },
   {
-		title: 'Nice Sites',
-		role: 'Designer + Developer',
+    title: 'Nice Sites',
+    role: 'Designer + Developer',
     year: '2018',
-    url: 'https://blunt.af/nice-sites/'
+    url: 'https://blunt.af/nice-sites/',
   },
   {
-		title: 'Firewire Surfboards',
-		role: 'Designer',
+    title: 'Firewire Surfboards',
+    role: 'Designer',
     year: '2018',
-    url: 'https://firewiresurfboards.com/'
+    url: 'https://firewiresurfboards.com/',
   },
   {
-		title: 'Fabric',
-		role: 'Designer',
+    title: 'Fabric',
+    role: 'Designer',
     year: '2018',
-    url: 'https://www.format.com/website-templates/fabric'
+    url: 'https://www.format.com/website-templates/fabric',
   },
   {
-		title: 'Plaza Ventures',
-		role: 'Developer',
+    title: 'Plaza Ventures',
+    role: 'Developer',
     year: '2018',
-    url: 'https://plaza.ventures/'
+    url: 'https://plaza.ventures/',
   },
   {
-		title: 'Spruce',
-		role: 'Designer + Developer',
+    title: 'Spruce',
+    role: 'Designer + Developer',
     year: '2018',
-    url: 'https://www.format.com/website-templates/spruce'
+    url: 'https://www.format.com/website-templates/spruce',
   },
   {
-		title: 'Viewport Design',
-		role: 'Designer + Developer',
+    title: 'Viewport Design',
+    role: 'Designer + Developer',
     year: '2018',
-    url: 'http://blunt.af/viewport-design/'
+    url: 'http://blunt.af/viewport-design/',
   },
   {
-		title: 'Blunt',
-		role: 'Designer + Developer',
+    title: 'Blunt',
+    role: 'Designer + Developer',
     year: '2017',
-    url: 'https://blunt.af/blunt-17'
+    url: 'https://blunt.af/blunt-17',
   },
   {
-		title: 'Maxim Siebert',
-		role: 'Designer + Developer',
+    title: 'Maxim Siebert',
+    role: 'Designer + Developer',
     year: '2017',
-    url: 'http://maximsiebert.github.io/'
+    url: 'http://maximsiebert.github.io/',
   },
   {
-		title: 'Caraa',
-		role: 'Developer',
+    title: 'Caraa',
+    role: 'Developer',
     year: '2017',
-    url: 'https://caraasport.com/'
+    url: 'https://caraasport.com/',
   },
   {
-		title: 'Dropmark Website',
-		role: 'Designer',
+    title: 'Dropmark Website',
+    role: 'Designer',
     year: '2017',
-    url: 'https://www.figma.com/file/RepMfWG6Np5YINp38PxzOKyt/Marketing?node-id=0%3A1'
+    url: 'https://www.figma.com/file/RepMfWG6Np5YINp38PxzOKyt/Marketing?node-id=0%3A1',
   },
   {
-		title: 'Canada Learning Code',
-		role: 'Developer',
+    title: 'Canada Learning Code',
+    role: 'Developer',
     year: '2017',
-    url: 'https://canadalearningcode-blunt.netlify.app/'
+    url: 'https://canadalearningcode-blunt.netlify.app/',
   },
   {
-		title: 'Bokeh',
-		role: 'Developer',
+    title: 'Bokeh',
+    role: 'Developer',
     year: '2017',
-    url: 'http://bokeh.agency/'
+    url: 'http://bokeh.agency/',
   },
   {
-		title: 'Tachy.Tools',
-		role: 'Designer + Developer',
+    title: 'Tachy.Tools',
+    role: 'Designer + Developer',
     year: '2017',
-    url: 'http://blunt.af/tachy.tools/'
+    url: 'http://blunt.af/tachy.tools/',
   },
   {
-		title: 'Oscar Health',
-		role: 'Designer',
+    title: 'Oscar Health',
+    role: 'Designer',
     year: '2017',
-    url: 'https://www.figma.com/file/Bi6tvL46BdL1gTcCPq4cYObE/Oscar-Web?node-id=0%3A1'
+    url: 'https://www.figma.com/file/Bi6tvL46BdL1gTcCPq4cYObE/Oscar-Web?node-id=0%3A1',
   },
   {
-		title: 'Obama Foundation',
-		role: 'Designer + Developer',
+    title: 'Obama Foundation',
+    role: 'Designer + Developer',
     year: '2017',
-    url: 'https://www.figma.com/file/1PPLwvjEUsDyXvtj8dmQYV/Website-Copy?node-id=0%3A1'
+    url: 'https://www.figma.com/file/1PPLwvjEUsDyXvtj8dmQYV/Website-Copy?node-id=0%3A1',
   },
   {
-		title: 'Dropmark App',
-		role: 'Designer',
+    title: 'Dropmark App',
+    role: 'Designer',
     year: '2017',
-    url: 'https://www.figma.com/file/cpyt8WBleOoX8EpgYEgwOiL2/Design?node-id=0%3A1'
+    url: 'https://www.figma.com/file/cpyt8WBleOoX8EpgYEgwOiL2/Design?node-id=0%3A1',
   },
   {
-		title: 'Todo.txt',
-		role: 'Designer + Developer',
+    title: 'Todo.txt',
+    role: 'Designer + Developer',
     year: '2017',
-    url: 'https://consultant-sally-46210.netlify.app/'
+    url: 'https://consultant-sally-46210.netlify.app/',
   },
   {
-		title: 'Heather VV',
-		role: 'Designer',
+    title: 'Heather VV',
+    role: 'Designer',
     year: '2017',
-    url: 'http://heathervv.com/'
+    url: 'http://heathervv.com/',
   },
   {
-		title: 'Bac Ky',
-		role: 'Designer + Developer',
+    title: 'Bac Ky',
+    role: 'Designer + Developer',
     year: '2017',
-    url: 'https://backy.netlify.app/'
+    url: 'https://backy.netlify.app/',
   },
   {
-		title: 'Codescout',
-		role: 'Designer',
+    title: 'Codescout',
+    role: 'Designer',
     year: '2017',
-    url: 'https://www.figma.com/file/TIcttY94llGictHXk3LOkmDn/Website?node-id=0%3A1'
+    url: 'https://www.figma.com/file/TIcttY94llGictHXk3LOkmDn/Website?node-id=0%3A1',
   },
   {
-		title: 'Blunt',
-		role: 'Designer + Developer',
+    title: 'Blunt',
+    role: 'Designer + Developer',
     year: '2016',
-    url: 'https://hairdresser-header-43444.netlify.app/'
+    url: 'https://hairdresser-header-43444.netlify.app/',
   },
   {
-		title: 'Curate Luxe',
-		role: 'Designer',
+    title: 'Curate Luxe',
+    role: 'Designer',
     year: '2016',
-    url: 'https://dribbble.com/shots/3654757-Curate-Luxe-Preset/attachments/816934'
+    url: 'https://dribbble.com/shots/3654757-Curate-Luxe-Preset/attachments/816934',
   },
   {
-		title: 'Curate',
-		role: 'Designer',
+    title: 'Curate',
+    role: 'Designer',
     year: '2016',
-    url: 'https://dribbble.com/shots/3654797-Curate/attachments/816968'
+    url: 'https://dribbble.com/shots/3654797-Curate/attachments/816968',
   },
   {
-		title: 'Quantz',
-		role: 'Designer',
+    title: 'Quantz',
+    role: 'Designer',
     year: '2016',
-    url: 'https://dribbble.com/shots/2343098-Quantz/attachments/447397'
+    url: 'https://dribbble.com/shots/2343098-Quantz/attachments/447397',
   },
   {
-		title: 'Disrupt',
-		role: 'Designer',
+    title: 'Disrupt',
+    role: 'Designer',
     year: '2016',
-    url: 'https://dribbble.com/shots/2653568-Disrupt'
+    url: 'https://dribbble.com/shots/2653568-Disrupt',
   },
   {
-		title: 'Venture',
-		role: 'Designer',
+    title: 'Venture',
+    role: 'Designer',
     year: '2015',
-    url: 'https://venture-theme-snowboards.myshopify.com/'
+    url: 'https://venture-theme-snowboards.myshopify.com/',
   },
   {
-		title: 'Fanshawe College',
-		role: 'Designer + Developer',
+    title: 'Fanshawe College',
+    role: 'Designer + Developer',
     year: '2015',
-    url: 'https://www.fanshawec.ca/'
+    url: 'https://www.fanshawec.ca/',
   },
   {
-		title: 'Golf Canada',
-		role: 'Designer',
+    title: 'Golf Canada',
+    role: 'Designer',
     year: '2014',
-    url: 'https://ch.golfcanada.ca/'
+    url: 'https://ch.golfcanada.ca/',
   },
   {
-		title: 'Goodlife',
-		role: 'Designer',
+    title: 'Goodlife',
+    role: 'Designer',
     year: '2014',
-    url: 'https://dribbble.com/shots/2471385-Goodlife-2014/attachments/483258'
+    url: 'https://dribbble.com/shots/2471385-Goodlife-2014/attachments/483258',
   },
 ];
 

@@ -4,7 +4,7 @@
     let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)
     .then(r => r.json());
 
-    let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {
+    let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Gatineau`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-key": process.env.SVELTE_APP_RAPID_API_KEY,
@@ -49,7 +49,7 @@
 <div class="flex mt-auto text-gray-600 dark:text-gray-400">
     <div class="w-1/2 px-4">
         <p>
-            Ottawa
+            Gatineau
             {#await temperature then temp}{Math.round(temp.current.temp_c)}°C{/await}, {time} ET
         </p>
     </div>
