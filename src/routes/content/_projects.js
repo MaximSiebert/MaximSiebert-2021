@@ -1,5 +1,11 @@
 const content = [
   {
+    title: 'Elroy',
+    role: 'Designer',
+    year: '2022',
+    url: 'https://www.figma.com/proto/OH8d0Z1tAvVU97mC4xBOGx/Elroy-%E2%80%93-Brand-Guidelines?page-id=277%3A2261&node-id=277%3A2262&viewport=1194%2C416%2C0.14&scaling=scale-down-width',
+  },
+  {
     title: 'Splitfocus',
     role: 'Designer + Developer',
     year: '2022',
@@ -18,7 +24,7 @@ const content = [
     url: 'https://millions.co',
   },
   {
-    title: 'Peggy',
+    title: 'Peggy Website',
     role: 'Designer + Developer',
     year: '2022',
     url: 'https://www.peggy.com/',
@@ -52,6 +58,12 @@ const content = [
     role: 'Developer',
     year: '2021',
     url: 'https://www.refinelabs.com/',
+  },
+  {
+    title: 'Peggy Brand',
+    role: 'Designer',
+    year: '2020',
+    url: 'https://www.figma.com/proto/xMa7W3LHxgc6kS9PFSAgZp/Peggy-%E2%80%93-Brand-Book?page-id=0%3A1&node-id=1%3A2&viewport=1194%2C412%2C0.2&scaling=scale-down',
   },
   {
     title: "Miss Hall's",

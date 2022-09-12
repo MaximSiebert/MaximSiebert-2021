@@ -1,4 +1,4 @@
-import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as update_await_block_branch, z as set_data_dev, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.8743b803.js';
+import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as update_await_block_branch, z as set_data_dev, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.d0fbb450.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -616,7 +616,7 @@ var browserPonyfill = createCommonjsModule(function (module, exports) {
 function _createSuper$1(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct$1(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct$1() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-var file$1 = "src/components/Footer.svelte"; // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         "method": "GET",         "headers": {             "x-rapidapi-key": 'f5f5a79298msh7a8be4bd6aea657p1f6f5ejsn4dac3a5543b4',             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
+var file$1 = "src/components/Footer.svelte"; // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Gatineau`, {         "method": "GET",         "headers": {             "x-rapidapi-key": 'f5f5a79298msh7a8be4bd6aea657p1f6f5ejsn4dac3a5543b4',             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
 
 function create_catch_block_1(ctx) {
   var block = {
@@ -630,7 +630,7 @@ function create_catch_block_1(ctx) {
     block: block,
     id: create_catch_block_1.name,
     type: "catch",
-    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": 'f5f5a79298msh7a8be4bd6aea657p1f6f5ejsn4dac3a5543b4',             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
+    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Gatineau`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": 'f5f5a79298msh7a8be4bd6aea657p1f6f5ejsn4dac3a5543b4',             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
     ctx: ctx
   });
   return block;
@@ -670,7 +670,7 @@ function create_then_block_1(ctx) {
     ctx: ctx
   });
   return block;
-} // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         "method": "GET",         "headers": {             "x-rapidapi-key": 'f5f5a79298msh7a8be4bd6aea657p1f6f5ejsn4dac3a5543b4',             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
+} // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Gatineau`, {         "method": "GET",         "headers": {             "x-rapidapi-key": 'f5f5a79298msh7a8be4bd6aea657p1f6f5ejsn4dac3a5543b4',             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
 
 
 function create_pending_block_1(ctx) {
@@ -685,11 +685,11 @@ function create_pending_block_1(ctx) {
     block: block,
     id: create_pending_block_1.name,
     type: "pending",
-    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": 'f5f5a79298msh7a8be4bd6aea657p1f6f5ejsn4dac3a5543b4',             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
+    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Gatineau`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": 'f5f5a79298msh7a8be4bd6aea657p1f6f5ejsn4dac3a5543b4',             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
     ctx: ctx
   });
   return block;
-} // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         "method": "GET",         "headers": {             "x-rapidapi-key": 'f5f5a79298msh7a8be4bd6aea657p1f6f5ejsn4dac3a5543b4',             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
+} // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Gatineau`, {         "method": "GET",         "headers": {             "x-rapidapi-key": 'f5f5a79298msh7a8be4bd6aea657p1f6f5ejsn4dac3a5543b4',             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
 
 
 function create_catch_block(ctx) {
@@ -704,7 +704,7 @@ function create_catch_block(ctx) {
     block: block,
     id: create_catch_block.name,
     type: "catch",
-    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": 'f5f5a79298msh7a8be4bd6aea657p1f6f5ejsn4dac3a5543b4',             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
+    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Gatineau`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": 'f5f5a79298msh7a8be4bd6aea657p1f6f5ejsn4dac3a5543b4',             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
     ctx: ctx
   });
   return block;
@@ -759,7 +759,7 @@ function create_then_block(ctx) {
     ctx: ctx
   });
   return block;
-} // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         "method": "GET",         "headers": {             "x-rapidapi-key": 'f5f5a79298msh7a8be4bd6aea657p1f6f5ejsn4dac3a5543b4',             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
+} // (1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Gatineau`, {         "method": "GET",         "headers": {             "x-rapidapi-key": 'f5f5a79298msh7a8be4bd6aea657p1f6f5ejsn4dac3a5543b4',             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"         }
 
 
 function create_pending_block(ctx) {
@@ -774,7 +774,7 @@ function create_pending_block(ctx) {
     block: block,
     id: create_pending_block.name,
     type: "pending",
-    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": 'f5f5a79298msh7a8be4bd6aea657p1f6f5ejsn4dac3a5543b4',             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
+    source: "(1:0) <script>     import fetch from 'cross-fetch';      let updatedDate = fetch(`https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages`)     .then(r => r.json());      let temperature = fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=Gatineau`, {         \\\"method\\\": \\\"GET\\\",         \\\"headers\\\": {             \\\"x-rapidapi-key\\\": 'f5f5a79298msh7a8be4bd6aea657p1f6f5ejsn4dac3a5543b4',             \\\"x-rapidapi-host\\\": \\\"weatherapi-com.p.rapidapi.com\\\"         }",
     ctx: ctx
   });
   return block;
@@ -821,7 +821,7 @@ function create_fragment$1(ctx) {
       div2 = element("div");
       div0 = element("div");
       p0 = element("p");
-      t0 = text("Ottawa\n            ");
+      t0 = text("Gatineau\n            ");
       info.block.c();
       t1 = text(", ");
       t2 = text(
@@ -846,7 +846,7 @@ function create_fragment$1(ctx) {
       var div0_nodes = children(div0);
       p0 = claim_element(div0_nodes, "P", {});
       var p0_nodes = children(p0);
-      t0 = claim_text(p0_nodes, "Ottawa\n            ");
+      t0 = claim_text(p0_nodes, "Gatineau\n            ");
       info.block.l(p0_nodes);
       t1 = claim_text(p0_nodes, ", ");
       t2 = claim_text(p0_nodes,
@@ -870,14 +870,14 @@ function create_fragment$1(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file$1, 50, 8, 1357);
+      add_location(p0, file$1, 50, 8, 1359);
       attr_dev(div0, "class", "w-1/2 px-4");
-      add_location(div0, file$1, 49, 4, 1324);
-      add_location(p1, file$1, 56, 8, 1563);
+      add_location(div0, file$1, 49, 4, 1326);
+      add_location(p1, file$1, 56, 8, 1567);
       attr_dev(div1, "class", "flex justify-end w-1/2 px-4 ml-auto");
-      add_location(div1, file$1, 55, 4, 1505);
+      add_location(div1, file$1, 55, 4, 1509);
       attr_dev(div2, "class", "flex mt-auto text-gray-600 dark:text-gray-400");
-      add_location(div2, file$1, 48, 0, 1260);
+      add_location(div2, file$1, 48, 0, 1262);
     },
     m: function mount(target, anchor) {
       insert_dev(target, div2, anchor);
@@ -949,7 +949,7 @@ function instance$1($$self, $$props, $$invalidate) {
   var updatedDate = browserPonyfill("https://api.github.com/repos/MaximSiebert/MaximSiebert-2021/branches/gh-pages").then(function (r) {
     return r.json();
   });
-  var temperature = browserPonyfill("https://weatherapi-com.p.rapidapi.com/current.json?q=Ottawa", {
+  var temperature = browserPonyfill("https://weatherapi-com.p.rapidapi.com/current.json?q=Gatineau", {
     "method": "GET",
     "headers": {
       "x-rapidapi-key": "f5f5a79298msh7a8be4bd6aea657p1f6f5ejsn4dac3a5543b4",
