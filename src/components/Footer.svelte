@@ -23,19 +23,12 @@
 			hour = now.getHours(),
 			minutes = now.getMinutes(),
 			sep = ':',
-			ampm = 'am';
-		
-		if (hour >= 12) {
-				hour -= 12;
-				ampm = 'pm';
-		}
-				
+					
 		minutes = minutes < 10 ? '0' + minutes : minutes;
-		hour = hour % 12;
-		hour = hour ? hour : 12; // the hour '0' should be '12'
+		// hour = hour ? hour : 12; // the hour '0' should be '12'
 
 		// set the content of the element with the ID time to the formatted string
-		time = hour + sep + minutes + ' ' + ampm;
+		time = hour + sep + minutes;
 		year = now.getFullYear();
 
 		// call this function again in 1000ms

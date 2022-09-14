@@ -48,12 +48,6 @@ const content = [
     url: 'https://www.tailscale.com/taildrop',
   },
   {
-    title: 'Artist Royalty Movement',
-    role: 'Designer + Developer',
-    year: '2021',
-    url: 'https://www.peggy.com/royalties',
-  },
-  {
     title: 'Refine Labs',
     role: 'Developer',
     year: '2021',
