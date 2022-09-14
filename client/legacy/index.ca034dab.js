@@ -1,4 +1,4 @@
-import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as update_await_block_branch, z as set_data_dev, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.d0fbb450.js';
+import { c as createCommonjsModule, a as commonjsGlobal, _ as _inherits, b as _getPrototypeOf, d as _possibleConstructorReturn, e as _classCallCheck, i as init, s as safe_not_equal, f as _assertThisInitialized, g as dispatch_dev, S as SvelteComponentDev, h as handle_promise, v as validate_slots, j as element, t as text, k as space, l as claim_element, m as children, n as claim_text, o as detach_dev, p as claim_space, q as add_location, r as attr_dev, u as insert_dev, w as append_dev, x as _slicedToArray, y as update_await_block_branch, z as set_data_dev, A as noop, B as regenerator, C as _createClass, D as validate_each_argument, E as create_component, F as query_selector_all, G as claim_component, H as mount_component, I as transition_in, J as transition_out, K as destroy_each, L as destroy_component } from './client.126137ec.js';
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -634,7 +634,7 @@ function create_catch_block_1(ctx) {
     ctx: ctx
   });
   return block;
-} // (53:42) {Math.round(temp.current.temp_c)}
+} // (46:42) {Math.round(temp.current.temp_c)}
 
 
 function create_then_block_1(ctx) {
@@ -666,7 +666,7 @@ function create_then_block_1(ctx) {
     block: block,
     id: create_then_block_1.name,
     type: "then",
-    source: "(53:42) {Math.round(temp.current.temp_c)}",
+    source: "(46:42) {Math.round(temp.current.temp_c)}",
     ctx: ctx
   });
   return block;
@@ -708,7 +708,7 @@ function create_catch_block(ctx) {
     ctx: ctx
   });
   return block;
-} // (58:42)                  Updated –                  {monthNames[new Date(data.commit.commit.author.date).getMonth()]}
+} // (51:42)                  Updated –                  {monthNames[new Date(data.commit.commit.author.date).getMonth()]}
 
 
 function create_then_block(ctx) {
@@ -755,7 +755,7 @@ function create_then_block(ctx) {
     block: block,
     id: create_then_block.name,
     type: "then",
-    source: "(58:42)                  Updated –                  {monthNames[new Date(data.commit.commit.author.date).getMonth()]}",
+    source: "(51:42)                  Updated –                  {monthNames[new Date(data.commit.commit.author.date).getMonth()]}",
     ctx: ctx
   });
   return block;
@@ -870,14 +870,14 @@ function create_fragment$1(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(p0, file$1, 50, 8, 1359);
+      add_location(p0, file$1, 43, 8, 1254);
       attr_dev(div0, "class", "w-1/2 px-4");
-      add_location(div0, file$1, 49, 4, 1326);
-      add_location(p1, file$1, 56, 8, 1567);
+      add_location(div0, file$1, 42, 4, 1221);
+      add_location(p1, file$1, 49, 8, 1462);
       attr_dev(div1, "class", "flex justify-end w-1/2 px-4 ml-auto");
-      add_location(div1, file$1, 55, 4, 1509);
+      add_location(div1, file$1, 48, 4, 1404);
       attr_dev(div2, "class", "flex mt-auto text-gray-600 dark:text-gray-400");
-      add_location(div2, file$1, 48, 0, 1262);
+      add_location(div2, file$1, 41, 0, 1157);
     },
     m: function mount(target, anchor) {
       insert_dev(target, div2, anchor);
@@ -967,19 +967,11 @@ function instance$1($$self, $$props, $$invalidate) {
         hour = now.getHours(),
         minutes = now.getMinutes(),
         sep = ":",
-        ampm = "am"; // current date
-
-    if (hour >= 12) {
-      hour -= 12;
-      ampm = "pm";
-    }
-
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    hour = hour % 12;
-    hour = hour ? hour : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? "0" + minutes : minutes; // current date
+    // hour = hour ? hour : 12; // the hour '0' should be '12'
     // set the content of the element with the ID time to the formatted string
 
-    $$invalidate(0, time = hour + sep + minutes + " " + ampm);
+    $$invalidate(0, time = hour + sep + minutes);
     year = now.getFullYear(); // call this function again in 1000ms
 
     setTimeout(updateClock, 1000);
