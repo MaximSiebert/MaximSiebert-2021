@@ -2064,7 +2064,7 @@ function create_if_block$1(ctx) {
       this.h();
     },
     h: function hydrate() {
-      add_location(pre, file, 22, 4, 615);
+      add_location(pre, file, 22, 4, 631);
     },
     m: function mount(target, anchor) {
       insert_dev(target, pre, anchor);
@@ -2158,7 +2158,9 @@ function create_fragment$1(ctx) {
         class: true
       });
       var div0_nodes = children(div0);
-      h1 = claim_element(div0_nodes, "H1", {});
+      h1 = claim_element(div0_nodes, "H1", {
+        class: true
+      });
       var h1_nodes = children(h1);
       t3 = claim_text(h1_nodes,
       /*status*/
@@ -2182,9 +2184,10 @@ function create_fragment$1(ctx) {
       attr_dev(a, "href", "/");
       attr_dev(a, "class", "self-start inline-block px-4 mb-4 loader");
       add_location(a, file, 14, 2, 352);
+      attr_dev(h1, "class", "text-sm");
       add_location(h1, file, 16, 3, 451);
       attr_dev(p, "class", "text-gray-600 dark:text-gray-400");
-      add_location(p, file, 17, 3, 472);
+      add_location(p, file, 17, 3, 488);
       attr_dev(div0, "class", "px-4");
       add_location(div0, file, 15, 2, 429);
       attr_dev(div1, "class", "w-full max-w-2xl mx-auto");
@@ -2895,7 +2898,7 @@ var App = /*#__PURE__*/function (_SvelteComponentDev) {
 var ignore = [/^\/content\/collaborators\.json$/, /^\/content\/experiences\.json$/, /^\/content\/projects\.json$/, /^\/content\/services\.json$/, /^\/content\/links\.json$/];
 var components = [{
   js: function js() {
-    return Promise.all([import('./index.ca034dab.js'), __inject_styles(["client-ef950a74.css"])]).then(function(x) { return x[0]; });
+    return Promise.all([import('./index.291b07b4.js'), __inject_styles(["client-779954ba.css"])]).then(function(x) { return x[0]; });
   }
 }];
 var routes = [{
