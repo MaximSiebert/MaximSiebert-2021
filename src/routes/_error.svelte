@@ -14,7 +14,7 @@
 	<div class="w-full max-w-2xl mx-auto">
 		<a href="/" class="self-start inline-block px-4 mb-4 loader">Back home</a>
 		<div class="px-4">
-			<h1>{status}</h1>
+			<h1 class="text-sm">{status}</h1>
 			<p class="text-gray-600 dark:text-gray-400">
 				Ceci n'est pas une page.
 				<!-- {error.message} -->
