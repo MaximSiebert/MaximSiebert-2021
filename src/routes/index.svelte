@@ -47,17 +47,17 @@
 
 <div class="flex flex-col min-h-screen py-4 text-xs text-black bg-gray-100 lg:py-24 md:py-14 dark:bg-black dark:text-white">
 	<div class="w-full max-w-2xl mx-auto">
-		<header class="w-full px-4 mb-8 md:mb-10">
+		<header class="w-full px-4">
 			<a href="/" class="self-start inline-block mb-4 loader">Back home</a>
 			<h1 class="text-sm">Maxim Siebert</h1>
 			<p class="text-gray-600 dark:text-gray-400">Designer + Developer</p>
 			<p class="text-gray-600 dark:text-gray-400">2011–{year}</p>
 		</header>
 		<div class="w-full ml-auto">
-			<div class="w-full px-4 my-32 text-base leading-snug text-black sm:text-xl md:text-2xl dark:text-white md:block md:tracking-tight">
+			<div class="w-full px-4 pb-32 text-base leading-snug text-black pt-28 sm:text-xl md:text-2xl dark:text-white md:block md:tracking-tight">
 				{@html description}
 			</div>
-			<hr class="mx-4 my-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:my-12">
+			<hr class="mx-4 mb-8 border-t border-gray-400 border-opacity-50 border-dashed dark:border-white dark:border-opacity-20 md:mb-12">
 			<section>
 				<div class="flex mb-1 sm:mb-2">
 					<div class="w-4/12 px-4 lg:w-5/12">
